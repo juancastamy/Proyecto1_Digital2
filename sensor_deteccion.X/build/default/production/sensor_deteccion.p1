@@ -1,10 +1,86 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"543 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"856
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 856:     struct {
+[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
+"863
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 863:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"855
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 855: typedef union {
+[u S29 `S30 1 `S31 1 ]
+[n S29 . . . ]
+"870
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
+[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
+"843
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"2183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2183:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . BF UA R_nW S P D_nA CKE SMP ]
+"2193
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2193:     struct {
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . R . D ]
+"2199
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2199:     struct {
+[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+"2206
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2206:     struct {
+[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S85 . . nW . nA ]
+"2212
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2212:     struct {
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nWRITE . nADDRESS ]
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2218:     struct {
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . R_W . D_A ]
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2224:     struct {
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . READ_WRITE . DATA_ADDRESS ]
+"2182
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2182: typedef union {
+[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
+[n S81 . . . . . . . . ]
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
+[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+"352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"3641 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
+[v _BF `Vb ~T0 @X0 0 e@1184 ]
 [p mainexit ]
 "43 ./OSCILADOR.h
 [; ;./OSCILADOR.h: 43: void initOsc(uint8_t frec);
 [v _initOsc `(v ~T0 @X0 0 ef1`uc ]
-"41 sensor_deteccion.c
-[; ;sensor_deteccion.c: 41: void setup(void);
+"50 sensor_deteccion.c
+[; ;sensor_deteccion.c: 50: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "172 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 172:     struct {
@@ -58,12 +134,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "290
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"352
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "414
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"48 ./I2C_SLAVE3.h
+[; ;./I2C_SLAVE3.h: 48: void I2C_Slave_Init(uint8_t address);
+[v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
 "16 sensor_deteccion.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "17
@@ -324,122 +400,513 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "34 ./OSCILADOR.h
 [p x FOSC = INTRC_NOCLKOUT ]
-"39 sensor_deteccion.c
-[; ;sensor_deteccion.c: 39: uint8_t vehiculos = 8;
+"40 sensor_deteccion.c
+[; ;sensor_deteccion.c: 40: uint8_t vehiculos;
 [v _vehiculos `uc ~T0 @X0 1 e ]
-[i _vehiculos
--> -> 8 `i `uc
-]
-"40
-[; ;sensor_deteccion.c: 40: char S1=0;
+"41
+[; ;sensor_deteccion.c: 41: uint8_t z;
+[v _z `uc ~T0 @X0 1 e ]
+"42
+[; ;sensor_deteccion.c: 42: char S1=0;
 [v _S1 `uc ~T0 @X0 1 e ]
 [i _S1
 -> -> 0 `i `uc
 ]
+"43
+[; ;sensor_deteccion.c: 43: char S2=0;
+[v _S2 `uc ~T0 @X0 1 e ]
+[i _S2
+-> -> 0 `i `uc
+]
+"44
+[; ;sensor_deteccion.c: 44: char S3=0;
+[v _S3 `uc ~T0 @X0 1 e ]
+[i _S3
+-> -> 0 `i `uc
+]
+"45
+[; ;sensor_deteccion.c: 45: char S4=0;
+[v _S4 `uc ~T0 @X0 1 e ]
+[i _S4
+-> -> 0 `i `uc
+]
+"46
+[; ;sensor_deteccion.c: 46: char S5=0;
+[v _S5 `uc ~T0 @X0 1 e ]
+[i _S5
+-> -> 0 `i `uc
+]
+"47
+[; ;sensor_deteccion.c: 47: char S6=0;
+[v _S6 `uc ~T0 @X0 1 e ]
+[i _S6
+-> -> 0 `i `uc
+]
+"48
+[; ;sensor_deteccion.c: 48: char S7=0;
+[v _S7 `uc ~T0 @X0 1 e ]
+[i _S7
+-> -> 0 `i `uc
+]
+"49
+[; ;sensor_deteccion.c: 49: char S8=0;
+[v _S8 `uc ~T0 @X0 1 e ]
+[i _S8
+-> -> 0 `i `uc
+]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"51
+[; ;sensor_deteccion.c: 51: void __attribute__((picinterrupt(("")))) isr(void){
+[v _isr `(v ~T1 @X0 1 ef ]
+{
+[e :U _isr ]
+[f ]
+"52
+[; ;sensor_deteccion.c: 52:    if(PIR1bits.SSPIF == 1){
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 139  ]
+{
+"54
+[; ;sensor_deteccion.c: 54:         SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"56
+[; ;sensor_deteccion.c: 56:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 140  ]
+{
+"57
+[; ;sensor_deteccion.c: 57:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"58
+[; ;sensor_deteccion.c: 58:             SSPCONbits.SSPOV = 0;
+[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
+"59
+[; ;sensor_deteccion.c: 59:             SSPCONbits.WCOL = 0;
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+"60
+[; ;sensor_deteccion.c: 60:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"61
+[; ;sensor_deteccion.c: 61:         }
+}
+[e :U 140 ]
+"63
+[; ;sensor_deteccion.c: 63:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 141  ]
+{
+"65
+[; ;sensor_deteccion.c: 65:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"67
+[; ;sensor_deteccion.c: 67:             PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"68
+[; ;sensor_deteccion.c: 68:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"69
+[; ;sensor_deteccion.c: 69:             while(!SSPSTATbits.BF);
+[e $U 142  ]
+[e :U 143 ]
+[e :U 142 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
+[e :U 144 ]
+"70
+[; ;sensor_deteccion.c: 70:             PORTD = SSPBUF;
+[e = _PORTD _SSPBUF ]
+"71
+[; ;sensor_deteccion.c: 71:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"73
+[; ;sensor_deteccion.c: 73:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+}
+[e $U 145  ]
+[e :U 141 ]
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 146  ]
+{
+"74
+[; ;sensor_deteccion.c: 74:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"75
+[; ;sensor_deteccion.c: 75:             BF = 0;
+[e = _BF -> -> 0 `i `b ]
+"76
+[; ;sensor_deteccion.c: 76:             SSPBUF = vehiculos;
+[e = _SSPBUF _vehiculos ]
+"77
+[; ;sensor_deteccion.c: 77:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"78
+[; ;sensor_deteccion.c: 78:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"79
+[; ;sensor_deteccion.c: 79:             while(SSPSTATbits.BF);
+[e $U 147  ]
+[e :U 148 ]
+[e :U 147 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 148  ]
+[e :U 149 ]
+"80
+[; ;sensor_deteccion.c: 80:         }
+}
+[e :U 146 ]
+[e :U 145 ]
+"82
+[; ;sensor_deteccion.c: 82:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"83
+[; ;sensor_deteccion.c: 83:     }
+}
+[e :U 139 ]
+"84
+[; ;sensor_deteccion.c: 84: }
+[e :UE 138 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"42
-[; ;sensor_deteccion.c: 42: void main(void) {
+"85
+[; ;sensor_deteccion.c: 85: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"43
-[; ;sensor_deteccion.c: 43:     initOsc(6);
+"86
+[; ;sensor_deteccion.c: 86:     initOsc(6);
 [e ( _initOsc (1 -> -> 6 `i `uc ]
-"44
-[; ;sensor_deteccion.c: 44:     setup();
+"87
+[; ;sensor_deteccion.c: 87:     setup();
 [e ( _setup ..  ]
-"45
-[; ;sensor_deteccion.c: 45:     while(1){
-[e :U 140 ]
+"88
+[; ;sensor_deteccion.c: 88:     while(1){
+[e :U 152 ]
 {
-"47
-[; ;sensor_deteccion.c: 47:         if(PORTAbits.RA0==1&&S1==0){
-[e $ ! && == -> . . _PORTAbits 0 0 `i -> 1 `i == -> _S1 `i -> 0 `i 142  ]
+"90
+[; ;sensor_deteccion.c: 90:         if(PORTAbits.RA0==1 && S1==0){
+[e $ ! && == -> . . _PORTAbits 0 0 `i -> 1 `i == -> _S1 `i -> 0 `i 154  ]
 {
-"48
-[; ;sensor_deteccion.c: 48:             S1= 1;
+"91
+[; ;sensor_deteccion.c: 91:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"92
+[; ;sensor_deteccion.c: 92:             S1= 1;
 [e = _S1 -> -> 1 `i `uc ]
-"49
-[; ;sensor_deteccion.c: 49:             PORTBbits.RB0=0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"50
-[; ;sensor_deteccion.c: 50:         }
-}
-[e :U 142 ]
-"51
-[; ;sensor_deteccion.c: 51:         if(PORTAbits.RA0==0 && S1==1){
-[e $ ! && == -> . . _PORTAbits 0 0 `i -> 0 `i == -> _S1 `i -> 1 `i 143  ]
-{
-"52
-[; ;sensor_deteccion.c: 52:             vehiculos--;
-[e -- _vehiculos -> -> 1 `i `uc ]
-"53
-[; ;sensor_deteccion.c: 53:             S1=0;
-[e = _S1 -> -> 0 `i `uc ]
-"54
-[; ;sensor_deteccion.c: 54:             PORTBbits.RB0 = 1;
+"93
+[; ;sensor_deteccion.c: 93:             PORTBbits.RB0=1;
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"55
-[; ;sensor_deteccion.c: 55:         }
+"94
+[; ;sensor_deteccion.c: 94:         }
 }
-[e :U 143 ]
-"64
-[; ;sensor_deteccion.c: 64:     }
+[e :U 154 ]
+"95
+[; ;sensor_deteccion.c: 95:         if(PORTAbits.RA0==0 && S1==1){
+[e $ ! && == -> . . _PORTAbits 0 0 `i -> 0 `i == -> _S1 `i -> 1 `i 155  ]
+{
+"96
+[; ;sensor_deteccion.c: 96:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"97
+[; ;sensor_deteccion.c: 97:             S1=0;
+[e = _S1 -> -> 0 `i `uc ]
+"98
+[; ;sensor_deteccion.c: 98:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"99
+[; ;sensor_deteccion.c: 99:         }
 }
-[e :U 139 ]
-[e $U 140  ]
-[e :U 141 ]
-"65
-[; ;sensor_deteccion.c: 65:     return;
-[e $UE 138  ]
-"66
-[; ;sensor_deteccion.c: 66: }
-[e :UE 138 ]
+[e :U 155 ]
+"100
+[; ;sensor_deteccion.c: 100:         if(PORTAbits.RA1==1 && S2==0){
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 1 `i == -> _S2 `i -> 0 `i 156  ]
+{
+"101
+[; ;sensor_deteccion.c: 101:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"102
+[; ;sensor_deteccion.c: 102:             S2= 1;
+[e = _S2 -> -> 1 `i `uc ]
+"103
+[; ;sensor_deteccion.c: 103:             PORTBbits.RB1=1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"104
+[; ;sensor_deteccion.c: 104:         }
 }
-"67
-[; ;sensor_deteccion.c: 67: void setup(void){
+[e :U 156 ]
+"105
+[; ;sensor_deteccion.c: 105:         if(PORTAbits.RA1==0 && S2==1){
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 0 `i == -> _S2 `i -> 1 `i 157  ]
+{
+"106
+[; ;sensor_deteccion.c: 106:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"107
+[; ;sensor_deteccion.c: 107:             S2=0;
+[e = _S2 -> -> 0 `i `uc ]
+"108
+[; ;sensor_deteccion.c: 108:             PORTBbits.RB1 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"109
+[; ;sensor_deteccion.c: 109:         }
+}
+[e :U 157 ]
+"110
+[; ;sensor_deteccion.c: 110:         if(PORTAbits.RA2==1 && S3==0){
+[e $ ! && == -> . . _PORTAbits 0 2 `i -> 1 `i == -> _S3 `i -> 0 `i 158  ]
+{
+"111
+[; ;sensor_deteccion.c: 111:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"112
+[; ;sensor_deteccion.c: 112:             S3= 1;
+[e = _S3 -> -> 1 `i `uc ]
+"113
+[; ;sensor_deteccion.c: 113:             PORTBbits.RB2=1;
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+"114
+[; ;sensor_deteccion.c: 114:         }
+}
+[e :U 158 ]
+"115
+[; ;sensor_deteccion.c: 115:         if(PORTAbits.RA2==0 && S3==1){
+[e $ ! && == -> . . _PORTAbits 0 2 `i -> 0 `i == -> _S3 `i -> 1 `i 159  ]
+{
+"116
+[; ;sensor_deteccion.c: 116:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"117
+[; ;sensor_deteccion.c: 117:             S3=0;
+[e = _S3 -> -> 0 `i `uc ]
+"118
+[; ;sensor_deteccion.c: 118:             PORTBbits.RB2 = 0;
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+"119
+[; ;sensor_deteccion.c: 119:         }
+}
+[e :U 159 ]
+"120
+[; ;sensor_deteccion.c: 120:         if(PORTAbits.RA3==1 && S4==0){
+[e $ ! && == -> . . _PORTAbits 0 3 `i -> 1 `i == -> _S4 `i -> 0 `i 160  ]
+{
+"121
+[; ;sensor_deteccion.c: 121:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"122
+[; ;sensor_deteccion.c: 122:             S4= 1;
+[e = _S4 -> -> 1 `i `uc ]
+"123
+[; ;sensor_deteccion.c: 123:             PORTBbits.RB3=1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"124
+[; ;sensor_deteccion.c: 124:         }
+}
+[e :U 160 ]
+"125
+[; ;sensor_deteccion.c: 125:         if(PORTAbits.RA3==0 && S4==1){
+[e $ ! && == -> . . _PORTAbits 0 3 `i -> 0 `i == -> _S4 `i -> 1 `i 161  ]
+{
+"126
+[; ;sensor_deteccion.c: 126:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"127
+[; ;sensor_deteccion.c: 127:             S4=0;
+[e = _S4 -> -> 0 `i `uc ]
+"128
+[; ;sensor_deteccion.c: 128:             PORTBbits.RB3 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"129
+[; ;sensor_deteccion.c: 129:         }
+}
+[e :U 161 ]
+"130
+[; ;sensor_deteccion.c: 130:         if(PORTAbits.RA4==1 && S5==0){
+[e $ ! && == -> . . _PORTAbits 0 4 `i -> 1 `i == -> _S5 `i -> 0 `i 162  ]
+{
+"131
+[; ;sensor_deteccion.c: 131:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"132
+[; ;sensor_deteccion.c: 132:             S5= 1;
+[e = _S5 -> -> 1 `i `uc ]
+"133
+[; ;sensor_deteccion.c: 133:             PORTBbits.RB4=1;
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+"134
+[; ;sensor_deteccion.c: 134:         }
+}
+[e :U 162 ]
+"135
+[; ;sensor_deteccion.c: 135:         if(PORTAbits.RA4==0 && S5==1){
+[e $ ! && == -> . . _PORTAbits 0 4 `i -> 0 `i == -> _S5 `i -> 1 `i 163  ]
+{
+"136
+[; ;sensor_deteccion.c: 136:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"137
+[; ;sensor_deteccion.c: 137:             S5=0;
+[e = _S5 -> -> 0 `i `uc ]
+"138
+[; ;sensor_deteccion.c: 138:             PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+"139
+[; ;sensor_deteccion.c: 139:         }
+}
+[e :U 163 ]
+"140
+[; ;sensor_deteccion.c: 140:         if(PORTAbits.RA5==1 && S6==0){
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 1 `i == -> _S6 `i -> 0 `i 164  ]
+{
+"141
+[; ;sensor_deteccion.c: 141:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"142
+[; ;sensor_deteccion.c: 142:             S6= 1;
+[e = _S6 -> -> 1 `i `uc ]
+"143
+[; ;sensor_deteccion.c: 143:             PORTBbits.RB5=1;
+[e = . . _PORTBbits 0 5 -> -> 1 `i `uc ]
+"144
+[; ;sensor_deteccion.c: 144:         }
+}
+[e :U 164 ]
+"145
+[; ;sensor_deteccion.c: 145:         if(PORTAbits.RA5==0 && S6==1){
+[e $ ! && == -> . . _PORTAbits 0 5 `i -> 0 `i == -> _S6 `i -> 1 `i 165  ]
+{
+"146
+[; ;sensor_deteccion.c: 146:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"147
+[; ;sensor_deteccion.c: 147:             S6=0;
+[e = _S6 -> -> 0 `i `uc ]
+"148
+[; ;sensor_deteccion.c: 148:             PORTBbits.RB5 = 0;
+[e = . . _PORTBbits 0 5 -> -> 0 `i `uc ]
+"149
+[; ;sensor_deteccion.c: 149:         }
+}
+[e :U 165 ]
+"150
+[; ;sensor_deteccion.c: 150:         if(PORTAbits.RA6==1 && S7==0){
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 1 `i == -> _S7 `i -> 0 `i 166  ]
+{
+"151
+[; ;sensor_deteccion.c: 151:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"152
+[; ;sensor_deteccion.c: 152:             S7= 1;
+[e = _S7 -> -> 1 `i `uc ]
+"153
+[; ;sensor_deteccion.c: 153:             PORTBbits.RB6=1;
+[e = . . _PORTBbits 0 6 -> -> 1 `i `uc ]
+"154
+[; ;sensor_deteccion.c: 154:         }
+}
+[e :U 166 ]
+"155
+[; ;sensor_deteccion.c: 155:         if(PORTAbits.RA6==0 && S7==1){
+[e $ ! && == -> . . _PORTAbits 0 6 `i -> 0 `i == -> _S7 `i -> 1 `i 167  ]
+{
+"156
+[; ;sensor_deteccion.c: 156:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"157
+[; ;sensor_deteccion.c: 157:             S7=0;
+[e = _S7 -> -> 0 `i `uc ]
+"158
+[; ;sensor_deteccion.c: 158:             PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 6 -> -> 0 `i `uc ]
+"159
+[; ;sensor_deteccion.c: 159:         }
+}
+[e :U 167 ]
+"160
+[; ;sensor_deteccion.c: 160:         if(PORTAbits.RA7==1 && S8==0){
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 1 `i == -> _S8 `i -> 0 `i 168  ]
+{
+"161
+[; ;sensor_deteccion.c: 161:             vehiculos++;
+[e ++ _vehiculos -> -> 1 `i `uc ]
+"162
+[; ;sensor_deteccion.c: 162:             S8= 1;
+[e = _S8 -> -> 1 `i `uc ]
+"163
+[; ;sensor_deteccion.c: 163:             PORTBbits.RB7=1;
+[e = . . _PORTBbits 0 7 -> -> 1 `i `uc ]
+"164
+[; ;sensor_deteccion.c: 164:         }
+}
+[e :U 168 ]
+"165
+[; ;sensor_deteccion.c: 165:         if(PORTAbits.RA7==0 && S8==1){
+[e $ ! && == -> . . _PORTAbits 0 7 `i -> 0 `i == -> _S8 `i -> 1 `i 169  ]
+{
+"166
+[; ;sensor_deteccion.c: 166:             vehiculos--;
+[e -- _vehiculos -> -> 1 `i `uc ]
+"167
+[; ;sensor_deteccion.c: 167:             S8=0;
+[e = _S8 -> -> 0 `i `uc ]
+"168
+[; ;sensor_deteccion.c: 168:             PORTBbits.RB7 = 0;
+[e = . . _PORTBbits 0 7 -> -> 0 `i `uc ]
+"169
+[; ;sensor_deteccion.c: 169:         }
+}
+[e :U 169 ]
+"170
+[; ;sensor_deteccion.c: 170:     }
+}
+[e :U 151 ]
+[e $U 152  ]
+[e :U 153 ]
+"171
+[; ;sensor_deteccion.c: 171:     return;
+[e $UE 150  ]
+"172
+[; ;sensor_deteccion.c: 172: }
+[e :UE 150 ]
+}
+"173
+[; ;sensor_deteccion.c: 173: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"68
-[; ;sensor_deteccion.c: 68:     TRISA=1;
+"174
+[; ;sensor_deteccion.c: 174:     TRISA=1;
 [e = _TRISA -> -> 1 `i `uc ]
-"69
-[; ;sensor_deteccion.c: 69:     TRISB=0;
+"175
+[; ;sensor_deteccion.c: 175:     TRISB=0;
 [e = _TRISB -> -> 0 `i `uc ]
-"70
-[; ;sensor_deteccion.c: 70:     TRISC=0;
+"176
+[; ;sensor_deteccion.c: 176:     TRISC=0;
 [e = _TRISC -> -> 0 `i `uc ]
-"71
-[; ;sensor_deteccion.c: 71:     TRISD=0;
+"177
+[; ;sensor_deteccion.c: 177:     TRISD=0;
 [e = _TRISD -> -> 0 `i `uc ]
-"72
-[; ;sensor_deteccion.c: 72:     TRISE=0;
+"178
+[; ;sensor_deteccion.c: 178:     TRISE=0;
 [e = _TRISE -> -> 0 `i `uc ]
-"73
-[; ;sensor_deteccion.c: 73:     ANSEL=0;
+"179
+[; ;sensor_deteccion.c: 179:     ANSEL=0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"74
-[; ;sensor_deteccion.c: 74:     ANSELH=0;
+"180
+[; ;sensor_deteccion.c: 180:     ANSELH=0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"76
-[; ;sensor_deteccion.c: 76:     PORTA=0;
+"182
+[; ;sensor_deteccion.c: 182:     PORTA=0;
 [e = _PORTA -> -> 0 `i `uc ]
-"77
-[; ;sensor_deteccion.c: 77:     PORTB=0;
+"183
+[; ;sensor_deteccion.c: 183:     PORTB=0;
 [e = _PORTB -> -> 0 `i `uc ]
-"78
-[; ;sensor_deteccion.c: 78:     PORTC=0;
+"184
+[; ;sensor_deteccion.c: 184:     PORTC=0;
 [e = _PORTC -> -> 0 `i `uc ]
-"79
-[; ;sensor_deteccion.c: 79:     PORTD=0;
+"185
+[; ;sensor_deteccion.c: 185:     PORTD=0;
 [e = _PORTD -> -> 0 `i `uc ]
-"80
-[; ;sensor_deteccion.c: 80:     PORTE=0;
+"186
+[; ;sensor_deteccion.c: 186:     PORTE=0;
 [e = _PORTE -> -> 0 `i `uc ]
-"81
-[; ;sensor_deteccion.c: 81: }
-[e :UE 144 ]
+"187
+[; ;sensor_deteccion.c: 187:     I2C_Slave_Init(0x30);
+[e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
+"188
+[; ;sensor_deteccion.c: 188: }
+[e :UE 170 ]
 }

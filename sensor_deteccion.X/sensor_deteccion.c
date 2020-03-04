@@ -34,33 +34,139 @@
 #include <xc.h>
 #include "OSCILADOR.h"
 #include <stdint.h>
-#define __XTAL_FREC 4000000
+#include "I2C_SLAVE3.h"
+#define __XTAL_FREQ 4000000
 
-uint8_t vehiculos = 8;
+uint8_t vehiculos;
+uint8_t z;
 char S1=0;
+char S2=0;
+char S3=0;
+char S4=0;
+char S5=0;
+char S6=0;
+char S7=0;
+char S8=0;
 void setup(void);
+void __interrupt() isr(void){
+   if(PIR1bits.SSPIF == 1){ 
+
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            //__delay_us(7);
+            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            //__delay_us(2);
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+            PORTD = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+            __delay_us(250);
+
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = vehiculos;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;    
+    }
+}
 void main(void) {
     initOsc(6);
     setup();
     while(1){
         //PORTD = ~PORTAbits.RA0;
-        if(PORTAbits.RA0==1&&S1==0){
+        if(PORTAbits.RA0==1 && S1==0){
+            vehiculos++;
             S1= 1;
-            PORTBbits.RB0=0;
+            PORTBbits.RB0=1;
         }
         if(PORTAbits.RA0==0 && S1==1){
             vehiculos--;
             S1=0;
-            PORTBbits.RB0 = 1;
+            PORTBbits.RB0 = 0;
         }
-        
-//        if(PORTAbits.RA0==1 && S1==2){
-//            vehiculos++;
-//            PORTBbits.RB0 = 0;
-//            S1=0;
-//        }
-        
-        
+        if(PORTAbits.RA1==1 && S2==0){
+            vehiculos++;
+            S2= 1;
+            PORTBbits.RB1=1;
+        }
+        if(PORTAbits.RA1==0 && S2==1){
+            vehiculos--;
+            S2=0;
+            PORTBbits.RB1 = 0;
+        }
+        if(PORTAbits.RA2==1 && S3==0){
+            vehiculos++;
+            S3= 1;
+            PORTBbits.RB2=1;
+        }
+        if(PORTAbits.RA2==0 && S3==1){
+            vehiculos--;
+            S3=0;
+            PORTBbits.RB2 = 0;
+        }
+        if(PORTAbits.RA3==1 && S4==0){
+            vehiculos++;
+            S4= 1;
+            PORTBbits.RB3=1;
+        }
+        if(PORTAbits.RA3==0 && S4==1){
+            vehiculos--;
+            S4=0;
+            PORTBbits.RB3 = 0;
+        }
+        if(PORTAbits.RA4==1 && S5==0){
+            vehiculos++;
+            S5= 1;
+            PORTBbits.RB4=1;
+        }
+        if(PORTAbits.RA4==0 && S5==1){
+            vehiculos--;
+            S5=0;
+            PORTBbits.RB4 = 0;
+        }
+        if(PORTAbits.RA5==1 && S6==0){
+            vehiculos++;
+            S6= 1;
+            PORTBbits.RB5=1;
+        }
+        if(PORTAbits.RA5==0 && S6==1){
+            vehiculos--;
+            S6=0;
+            PORTBbits.RB5 = 0;
+        }
+        if(PORTAbits.RA6==1 && S7==0){
+            vehiculos++;
+            S7= 1;
+            PORTBbits.RB6=1;
+        }
+        if(PORTAbits.RA6==0 && S7==1){
+            vehiculos--;
+            S7=0;
+            PORTBbits.RB6 = 0;
+        }
+        if(PORTAbits.RA7==1 && S8==0){
+            vehiculos++;
+            S8= 1;
+            PORTBbits.RB7=1;
+        }
+        if(PORTAbits.RA7==0 && S8==1){
+            vehiculos--;
+            S8=0;
+            PORTBbits.RB7 = 0;
+        }
     }
     return;
 }
@@ -78,4 +184,5 @@ void setup(void){
     PORTC=0;
     PORTD=0;
     PORTE=0;
+    I2C_Slave_Init(0x30);
 }

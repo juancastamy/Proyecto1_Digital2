@@ -1,4 +1,4 @@
-# 1 "sensor_deteccion.c"
+# 1 "I2C_SLAVE3.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "sensor_deteccion.c" 2
-# 16 "sensor_deteccion.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "I2C_SLAVE3.c" 2
+# 1 "./I2C_SLAVE3.h" 1
+# 37 "./I2C_SLAVE3.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2511,13 +2493,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 34 "sensor_deteccion.c" 2
-
-# 1 "./OSCILADOR.h" 1
-# 34 "./OSCILADOR.h"
-#pragma config FOSC = INTRC_NOCLKOUT
-
-
+# 37 "./I2C_SLAVE3.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2652,22 +2628,6 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 37 "./OSCILADOR.h" 2
-
-
-
-
-
-
-void initOsc(uint8_t frec);
-# 35 "sensor_deteccion.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 36 "sensor_deteccion.c" 2
-
-# 1 "./I2C_SLAVE3.h" 1
-# 38 "./I2C_SLAVE3.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 38 "./I2C_SLAVE3.h" 2
 
 
@@ -2680,156 +2640,91 @@ void I2C_Master_Stop();
 void I2C_Master_Write(unsigned d);
 unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
-# 37 "sensor_deteccion.c" 2
+# 1 "I2C_SLAVE3.c" 2
 
 
 
-uint8_t vehiculos;
-uint8_t z;
-char S1=0;
-char S2=0;
-char S3=0;
-char S4=0;
-char S5=0;
-char S6=0;
-char S7=0;
-char S8=0;
-void setup(void);
-void __attribute__((picinterrupt(("")))) isr(void){
-   if(PIR1bits.SSPIF == 1){
 
-        SSPCONbits.CKP = 0;
-
-        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-            z = SSPBUF;
-            SSPCONbits.SSPOV = 0;
-            SSPCONbits.WCOL = 0;
-            SSPCONbits.CKP = 1;
-        }
-
-        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-
-            z = SSPBUF;
-
-            PIR1bits.SSPIF = 0;
-            SSPCONbits.CKP = 1;
-            while(!SSPSTATbits.BF);
-            PORTD = SSPBUF;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
-
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
-            SSPBUF = vehiculos;
-            SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
-            while(SSPSTATbits.BF);
-        }
-
-        PIR1bits.SSPIF = 0;
-    }
+void I2C_Master_Init(const unsigned long c) {
+    SSPCON = 0b00101000;
+    SSPCON2 = 0;
+    SSPADD = (4000000/(4*c))-1;
+    SSPSTAT = 0;
+    TRISCbits.TRISC3 = 1;
+    TRISCbits.TRISC4 = 1;
 }
-void main(void) {
-    initOsc(6);
-    setup();
-    while(1){
 
-        if(PORTAbits.RA0==1 && S1==0){
-            vehiculos++;
-            S1= 1;
-            PORTBbits.RB0=1;
-        }
-        if(PORTAbits.RA0==0 && S1==1){
-            vehiculos--;
-            S1=0;
-            PORTBbits.RB0 = 0;
-        }
-        if(PORTAbits.RA1==1 && S2==0){
-            vehiculos++;
-            S2= 1;
-            PORTBbits.RB1=1;
-        }
-        if(PORTAbits.RA1==0 && S2==1){
-            vehiculos--;
-            S2=0;
-            PORTBbits.RB1 = 0;
-        }
-        if(PORTAbits.RA2==1 && S3==0){
-            vehiculos++;
-            S3= 1;
-            PORTBbits.RB2=1;
-        }
-        if(PORTAbits.RA2==0 && S3==1){
-            vehiculos--;
-            S3=0;
-            PORTBbits.RB2 = 0;
-        }
-        if(PORTAbits.RA3==1 && S4==0){
-            vehiculos++;
-            S4= 1;
-            PORTBbits.RB3=1;
-        }
-        if(PORTAbits.RA3==0 && S4==1){
-            vehiculos--;
-            S4=0;
-            PORTBbits.RB3 = 0;
-        }
-        if(PORTAbits.RA4==1 && S5==0){
-            vehiculos++;
-            S5= 1;
-            PORTBbits.RB4=1;
-        }
-        if(PORTAbits.RA4==0 && S5==1){
-            vehiculos--;
-            S5=0;
-            PORTBbits.RB4 = 0;
-        }
-        if(PORTAbits.RA5==1 && S6==0){
-            vehiculos++;
-            S6= 1;
-            PORTBbits.RB5=1;
-        }
-        if(PORTAbits.RA5==0 && S6==1){
-            vehiculos--;
-            S6=0;
-            PORTBbits.RB5 = 0;
-        }
-        if(PORTAbits.RA6==1 && S7==0){
-            vehiculos++;
-            S7= 1;
-            PORTBbits.RB6=1;
-        }
-        if(PORTAbits.RA6==0 && S7==1){
-            vehiculos--;
-            S7=0;
-            PORTBbits.RB6 = 0;
-        }
-        if(PORTAbits.RA7==1 && S8==0){
-            vehiculos++;
-            S8= 1;
-            PORTBbits.RB7=1;
-        }
-        if(PORTAbits.RA7==0 && S8==1){
-            vehiculos--;
-            S8=0;
-            PORTBbits.RB7 = 0;
-        }
-    }
-    return;
+
+
+
+
+
+
+void I2C_Master_Wait(){
+    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
 }
-void setup(void){
-    TRISA=1;
-    TRISB=0;
-    TRISC=0;
-    TRISD=0;
-    TRISE=0;
-    ANSEL=0;
-    ANSELH=0;
 
-    PORTA=0;
-    PORTB=0;
-    PORTC=0;
-    PORTD=0;
-    PORTE=0;
-    I2C_Slave_Init(0x30);
+
+
+void I2C_Master_Start(){
+    I2C_Master_Wait();
+    SSPCON2bits.SEN = 1;
+}
+
+
+
+void I2C_Master_RepeatedStart(){
+    I2C_Master_Wait();
+    SSPCON2bits.RSEN = 1;
+}
+
+
+
+void I2C_Master_Stop(){
+    I2C_Master_Wait();
+    SSPCON2bits.PEN = 1;
+}
+
+
+
+
+
+void I2C_Master_Write(unsigned d){
+    I2C_Master_Wait();
+    SSPBUF = d;
+}
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a){
+    unsigned short temp;
+    I2C_Master_Wait();
+    SSPCON2bits.RCEN = 1;
+    I2C_Master_Wait();
+    temp = SSPBUF;
+    I2C_Master_Wait();
+    if(a == 1){
+        SSPCON2bits.ACKDT = 0;
+    }
+    else{
+        SSPCON2bits.ACKDT = 1;
+    }
+    SSPCON2bits.ACKEN = 1;
+    return temp;
+}
+
+
+
+void I2C_Slave_Init(uint8_t address){
+    SSPADD = address;
+    SSPCON = 0x36;
+    SSPSTAT = 0x80;
+    SSPCON2 = 0x01;
+    TRISC3 = 1;
+    TRISC4 = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
 }
