@@ -13,17 +13,23 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"29 C:\Users\50254\Documents\GitHub\lab5\TEMP_SLAVE.X\TEMP_SENSE.c
+"29 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SENSE.c
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "85
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
-"44 C:\Users\50254\Documents\GitHub\lab5\TEMP_SLAVE.X\TEMP_SLAVE.c
+"48 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
 [v _isr isr `II(v  1 e 1 0 ]
-"79
+"83
 [v _main main `(v  1 e 1 0 ]
-"111
+"92
+[v _setup setup `(v  1 e 1 0 ]
+"113
+[v _PWM PWM `(v  1 e 1 0 ]
+"127
+[v _adc adc `(v  1 e 1 0 ]
+"136
 [v _LOOP LOOP `(v  1 e 1 0 ]
-"118
+"143
 [v _ANALOGICO ANALOGICO `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -46,6 +52,21 @@
 "553
 [u S30 . 1 `S22 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES30  1 e 1 @12 ]
+[s S247 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 TOUTPS 1 0 :4:3 
+]
+"793
+[s S251 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TOUTPS0 1 0 :1:3 
+`uc 1 TOUTPS1 1 0 :1:4 
+`uc 1 TOUTPS2 1 0 :1:5 
+`uc 1 TOUTPS3 1 0 :1:6 
+]
+[u S259 . 1 `S247 1 . 1 0 `S251 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES259  1 e 1 @18 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -64,15 +85,19 @@
 ]
 [u S52 . 1 `S41 1 . 1 0 `S47 1 . 1 0 ]
 [v _SSPCONbits SSPCONbits `VES52  1 e 1 @20 ]
+"927
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"941
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S202 . 1 `uc 1 ADON 1 0 :1:0 
+[s S277 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S207 . 1 `uc 1 . 1 0 :1:0 
+[s S282 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -81,21 +106,21 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S216 . 1 `uc 1 . 1 0 :1:0 
+[s S291 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S219 . 1 `uc 1 . 1 0 :1:0 
+[s S294 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S222 . 1 `S202 1 . 1 0 `S207 1 . 1 0 `S216 1 . 1 0 `S219 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES222  1 e 1 @31 ]
+[u S297 . 1 `S277 1 . 1 0 `S282 1 . 1 0 `S291 1 . 1 0 `S294 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES297  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S337 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S224 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -105,29 +130,29 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S346 . 1 `S337 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES346  1 e 1 @135 ]
+[u S233 . 1 `S224 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES233  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S165 . 1 `uc 1 SCS 1 0 :1:0 
+[s S186 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S171 . 1 `uc 1 . 1 0 :4:0 
+[s S192 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S176 . 1 `S165 1 . 1 0 `S171 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES176  1 e 1 @143 ]
+[u S197 . 1 `S186 1 . 1 0 `S192 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES197  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S358 . 1 `uc 1 SEN 1 0 :1:0 
+[s S429 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -137,8 +162,10 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S367 . 1 `S358 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES367  1 e 1 @145 ]
+[u S438 . 1 `S429 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES438  1 e 1 @145 ]
+"2041
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -186,15 +213,15 @@
 ]
 [u S108 . 1 `S68 1 . 1 0 `S77 1 . 1 0 `S82 1 . 1 0 `S88 1 . 1 0 `S93 1 . 1 0 `S98 1 . 1 0 `S103 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES108  1 e 1 @148 ]
-[s S248 . 1 `uc 1 . 1 0 :4:0 
+[s S323 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S254 . 1 `S248 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES254  1 e 1 @159 ]
+[u S329 . 1 `S323 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES329  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -209,30 +236,49 @@
 [v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4277
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"4382
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"4454
+[v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"39 C:\Users\50254\Documents\GitHub\lab5\TEMP_SLAVE.X\TEMP_SLAVE.c
+"39 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
 [v _z z `uc  1 e 1 0 ]
 "40
 [v _ADC ADC `uc  1 e 1 0 ]
-"79
+"83
 [v _main main `(v  1 e 1 0 ]
 {
-"109
+"90
 } 0
+"92
+[v _setup setup `(v  1 e 1 0 ]
+{
 "111
+} 0
+"127
+[v _adc adc `(v  1 e 1 0 ]
+{
+"134
+} 0
+"113
+[v _PWM PWM `(v  1 e 1 0 ]
+{
+"125
+} 0
+"136
 [v _LOOP LOOP `(v  1 e 1 0 ]
 {
-"116
+"141
 } 0
-"118
+"143
 [v _ANALOGICO ANALOGICO `(v  1 e 1 0 ]
 {
-"127
+"152
 } 0
-"85 C:\Users\50254\Documents\GitHub\lab5\TEMP_SLAVE.X\TEMP_SENSE.c
+"85 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SENSE.c
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
 {
 [v I2C_Slave_Init@address address `uc  1 a 1 wreg ]
@@ -240,8 +286,8 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "96
 } 0
-"44 C:\Users\50254\Documents\GitHub\lab5\TEMP_SLAVE.X\TEMP_SLAVE.c
+"48 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"77
+"81
 } 0

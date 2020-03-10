@@ -2886,10 +2886,15 @@ extern char * ftoa(float f, int * status);
 # 37 "TEMP_SLAVE.c" 2
 
 
+
 uint8_t z;
 char ADC;
+void setup(void);
+void PWM (void);
+void adc(void);
 void LOOP(void);
 void ANALOGICO(void);
+
 
 void __attribute__((picinterrupt(("")))) isr(void){
    if(PIR1bits.SSPIF == 1){
@@ -2927,6 +2932,27 @@ void __attribute__((picinterrupt(("")))) isr(void){
 }
 
 void main(void) {
+    setup();
+    PWM();
+    adc();
+    I2C_Slave_Init(0x30);
+    while(1){
+        ANALOGICO();
+
+        if( > ){
+            _delay_ms(10);
+            CCP1CONbits.DC1B = 0b00;
+            CCPR1L = 0b00001000;
+        }
+        if(ADC>5){
+            _delay_ms(10);
+            CCP1CONbits.DC1B = 0b00;
+            CCPR1L = 3;
+        }
+
+}
+
+void setup(void){
     OSCCONbits.IRCF = 0b111;
     OSCCONbits.OSTS= 0;
     OSCCONbits.HTS = 0;
@@ -2945,24 +2971,29 @@ void main(void) {
     PORTD = 0;
     PORTE = 0;
     PORTA = 0;
+}
 
+void PWM(void){
+
+    CCP1CON = 0b00111100;
+    TRISCbits.TRISC2 = 1;
+    PR2 = 155;
+    CCPR1L=27;
+    PIR1bits.TMR2IF = 0;
+    T2CONbits.T2CKPS = 0b11;
+    T2CONbits.TMR2ON = 1;
+    while(!TMR2IF);
+    TMR2IF = 0;
+    TRISC2=0;
+}
+
+void adc(void){
 
     ADCON0bits.ADCS = 01;
     ADCON0bits.ADON = 1;
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
-    I2C_Slave_Init(0x30);
-
-      LOOP();
-
-}
-
-void LOOP(void){
-    while(1){
-        ANALOGICO();
-    }
-
 }
 
 void ANALOGICO(void){

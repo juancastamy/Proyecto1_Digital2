@@ -35,11 +35,16 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define _XTAL_FREQ 8000000
 
 uint8_t z;
 char ADC;
+void setup(void);
+void PWM (void);
+void adc(void);
 void LOOP(void);
 void ANALOGICO(void);
+
 
 void __interrupt() isr(void){
    if(PIR1bits.SSPIF == 1){ 
@@ -77,6 +82,28 @@ void __interrupt() isr(void){
 }
 
 void main(void) {
+    setup();
+    PWM();
+    adc();
+    I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
+    while(1){
+        ANALOGICO();
+        //GIRO A 90 GRADORS
+        if(/*VARIABLE DEL ULTRAZONICO*/>/*DISTANCIA REQUERIDA PARA QUE SE ACTIVE*/){
+            __delay_ms(10);
+            CCP1CONbits.DC1B = 0b00;
+            CCPR1L = 0b00001000;
+        }
+        if(ADC>5){
+            __delay_ms(10);
+            CCP1CONbits.DC1B = 0b00;
+            CCPR1L = 3;
+        }
+    }
+    return;
+}
+
+void setup(void){
     OSCCONbits.IRCF = 0b111; //8Mhz
     OSCCONbits.OSTS= 0;
     OSCCONbits.HTS = 0;
@@ -95,24 +122,29 @@ void main(void) {
     PORTD = 0;
     PORTE = 0;
     PORTA = 0;
+}
 
-            
+void PWM(void){
+    // inicializacion de PWM
+    CCP1CON = 0b00111100;
+    TRISCbits.TRISC2 = 1;       // CCP1 entrada
+    PR2 = 155;                  //valor para periodo de 20ms
+    CCPR1L=27;
+    PIR1bits.TMR2IF = 0;        // se limpea la bandera del TMR2
+    T2CONbits.T2CKPS = 0b11;    //se coloca el Prescaler 16
+    T2CONbits.TMR2ON = 1;       //se enciende el TRM2
+    while(!TMR2IF);
+    TMR2IF = 0;                //SE LIEMPIA LA BANDERA DEL TRM2
+    TRISC2=0;                  //PORTC 2 SE DECLARA COMO SALIDA
+}
+
+void adc(void){
+    //se inicializa ADC     
     ADCON0bits.ADCS = 01;
     ADCON0bits.ADON = 1;   // adc on
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
-    I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
-  
-      LOOP();
-  
-}
-
-void LOOP(void){
-    while(1){
-        ANALOGICO();
-    }
-    
 }
 
 void ANALOGICO(void){
