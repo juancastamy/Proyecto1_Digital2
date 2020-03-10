@@ -13,13 +13,13 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"20 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+"20 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "76
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
-"9 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
+"9 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
-"51 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"51 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _isr isr `II(v  1 e 1 0 ]
 "85
 [v _main main `(v  1 e 1 0 ]
@@ -203,7 +203,7 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"40 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"40 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _vehiculos vehiculos `uc  1 e 1 0 ]
 "41
 [v _z z `uc  1 e 1 0 ]
@@ -231,9 +231,9 @@
 "173
 [v _setup setup `(v  1 e 1 0 ]
 {
-"188
+"189
 } 0
-"76 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+"76 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
 {
 [v I2C_Slave_Init@address address `uc  1 a 1 wreg ]
@@ -241,7 +241,7 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "87
 } 0
-"9 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
+"9 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
 {
 [v initOsc@frec frec `uc  1 a 1 wreg ]
@@ -249,7 +249,7 @@
 [v initOsc@frec frec `uc  1 a 1 3 ]
 "59
 } 0
-"51 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"51 C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
 "84

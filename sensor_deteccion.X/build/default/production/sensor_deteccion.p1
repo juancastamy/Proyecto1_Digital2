@@ -868,45 +868,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _setup ]
 [f ]
 "174
-[; ;sensor_deteccion.c: 174:     TRISA=1;
-[e = _TRISA -> -> 1 `i `uc ]
+[; ;sensor_deteccion.c: 174:     vehiculos = 0;
+[e = _vehiculos -> -> 0 `i `uc ]
 "175
-[; ;sensor_deteccion.c: 175:     TRISB=0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 175:     TRISA=0b11111111;
+[e = _TRISA -> -> 255 `i `uc ]
 "176
-[; ;sensor_deteccion.c: 176:     TRISC=0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 176:     TRISB=0;
+[e = _TRISB -> -> 0 `i `uc ]
 "177
-[; ;sensor_deteccion.c: 177:     TRISD=0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 177:     TRISC=0;
+[e = _TRISC -> -> 0 `i `uc ]
 "178
-[; ;sensor_deteccion.c: 178:     TRISE=0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 178:     TRISD=0;
+[e = _TRISD -> -> 0 `i `uc ]
 "179
-[; ;sensor_deteccion.c: 179:     ANSEL=0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 179:     TRISE=0;
+[e = _TRISE -> -> 0 `i `uc ]
 "180
-[; ;sensor_deteccion.c: 180:     ANSELH=0;
+[; ;sensor_deteccion.c: 180:     ANSEL=0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"181
+[; ;sensor_deteccion.c: 181:     ANSELH=0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"182
-[; ;sensor_deteccion.c: 182:     PORTA=0;
-[e = _PORTA -> -> 0 `i `uc ]
 "183
-[; ;sensor_deteccion.c: 183:     PORTB=0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 183:     PORTA=0;
+[e = _PORTA -> -> 0 `i `uc ]
 "184
-[; ;sensor_deteccion.c: 184:     PORTC=0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 184:     PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
 "185
-[; ;sensor_deteccion.c: 185:     PORTD=0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 185:     PORTC=0;
+[e = _PORTC -> -> 0 `i `uc ]
 "186
-[; ;sensor_deteccion.c: 186:     PORTE=0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 186:     PORTD=0;
+[e = _PORTD -> -> 0 `i `uc ]
 "187
-[; ;sensor_deteccion.c: 187:     I2C_Slave_Init(0x30);
-[e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
+[; ;sensor_deteccion.c: 187:     PORTE=0;
+[e = _PORTE -> -> 0 `i `uc ]
 "188
-[; ;sensor_deteccion.c: 188: }
+[; ;sensor_deteccion.c: 188:     I2C_Slave_Init(0x10);
+[e ( _I2C_Slave_Init (1 -> -> 16 `i `uc ]
+"189
+[; ;sensor_deteccion.c: 189: }
 [e :UE 170 ]
 }
