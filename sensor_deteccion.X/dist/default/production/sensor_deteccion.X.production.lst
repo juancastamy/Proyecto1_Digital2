@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Wed Mar 04 17:18:57 2020
+                                                                                               Tue Mar 10 00:13:18 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -1107,8 +1107,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1093                           ; Regs used in _setup: [wreg+status,2+status,0+pclath+cstack]
   1094                           
   1095                           
-  1096                           ;sensor_deteccion.c: 174:     TRISA=1;
-  1097  01D7  3001               	movlw	1
+  1096                           ;sensor_deteccion.c: 174:     TRISA=0b11111111;
+  1097  01D7  30FF               	movlw	255
   1098  01D8  1683               	bsf	3,5	;RP0=1, select bank1
   1099  01D9  1303               	bcf	3,6	;RP1=0, select bank1
   1100  01DA  0085               	movwf	5	;volatile
@@ -1162,8 +1162,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1148  01E9  0189               	clrf	9	;volatile
   1149  01EA                     l1134:	
   1150                           
-  1151                           ;sensor_deteccion.c: 187:     I2C_Slave_Init(0x30);
-  1152  01EA  3030               	movlw	48
+  1151                           ;sensor_deteccion.c: 187:     I2C_Slave_Init(0x10);
+  1152  01EA  3010               	movlw	16
   1153  01EB  120A  118A  21F1  120A  118A  	fcall	_I2C_Slave_Init
   1154  01F0                     l127:	
   1155  01F0  0008               	return
@@ -1892,7 +1892,7 @@ DATA                 0      0      11      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Wed Mar 04 17:18:57 2020
+Symbol Table                                                                                   Tue Mar 10 00:13:18 2020
 
                        l6 017B                         l7 01D5                         l8 0181  
                        l9 0187                         _z 0021               __CFG_CP$OFF 0000  

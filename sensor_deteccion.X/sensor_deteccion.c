@@ -171,7 +171,7 @@ void main(void) {
     return;
 }
 void setup(void){
-    TRISA=1;
+    TRISA=0b11111111;
     TRISB=0;
     TRISC=0;
     TRISD=0;
@@ -184,5 +184,5 @@ void setup(void){
     PORTC=0;
     PORTD=0;
     PORTE=0;
-    I2C_Slave_Init(0x30);
+    I2C_Slave_Init(0x10);
 }

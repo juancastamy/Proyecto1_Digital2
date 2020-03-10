@@ -868,8 +868,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _setup ]
 [f ]
 "174
-[; ;sensor_deteccion.c: 174:     TRISA=1;
-[e = _TRISA -> -> 1 `i `uc ]
+[; ;sensor_deteccion.c: 174:     TRISA=0b11111111;
+[e = _TRISA -> -> 255 `i `uc ]
 "175
 [; ;sensor_deteccion.c: 175:     TRISB=0;
 [e = _TRISB -> -> 0 `i `uc ]
@@ -904,8 +904,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;sensor_deteccion.c: 186:     PORTE=0;
 [e = _PORTE -> -> 0 `i `uc ]
 "187
-[; ;sensor_deteccion.c: 187:     I2C_Slave_Init(0x30);
-[e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
+[; ;sensor_deteccion.c: 187:     I2C_Slave_Init(0x10);
+[e ( _I2C_Slave_Init (1 -> -> 16 `i `uc ]
 "188
 [; ;sensor_deteccion.c: 188: }
 [e :UE 170 ]
