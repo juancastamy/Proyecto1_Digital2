@@ -38,6 +38,7 @@
 #include <string.h>
 #include "PANTALLALCD.h"
 #include "I2C.h"
+#include "UART.h"
 #define _XTAL_FREQ  8000000
 void LOOP(void);
 uint8_t analogic_digital_a;
@@ -76,7 +77,7 @@ void SETUP(void);
 void main(void) {
     TRISA=0;
     TRISB=0;
-    TRISC=0b000011000;
+    TRISC=0b110011000;
     TRISD=0;
     TRISE=0;
     PORTA=0;
@@ -86,6 +87,7 @@ void main(void) {
     PORTE=0;
    
     I2C_INIT(100000);
+    UART_INIT(9600);
     inicializacion();
     LOOP();
 
@@ -170,7 +172,11 @@ void LOOP(void){
         lcd_msg(CONTD_CHAR);
         lcd_msg("  ");
         lcd_msg(CONTLUZA_CHAR);
-        
+        UART_WRITE(ADCC_CHARC);
+        __delay_ms(5);
+        UART_WRITE(CONTD_CHAR);
+        __delay_ms(5);
+        UART_WRITE(CONTLUZA_CHAR);
 
         I2C_Master_RepeatedStart();
 

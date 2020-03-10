@@ -28,15 +28,27 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef __UART_H
-#define	__UART_H
+#ifndef __UART_H_
+#define	__UART_H_
 
-#include <xc.h>
-#include <stdint.h>// include processor files - each processor file is guarded.  
-void SERIAL_INT(void);
-uint8_t UART_READ();
-uint8_t UART_TX_Empty();
-void UART_Write(uint8_t contador);
+//******************************************************************************
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+//Se define para poder utilizar la frecuencia de oscilación en el cálculo del Baud Rate
 
+//******************************************************************************
+#ifndef _XTAL_FREQ
+#define _XTAL_FREQ 8000000
+#endif
+
+//******************************************************************************
+
+//Prototipos de Funciones
+
+//******************************************************************************
+uint8_t UART_INIT(const long int baudrate);
+uint8_t UART_READ(void);
+void UART_Read_Text(char *Output, unsigned int length);
+void UART_WRITE(char data);
+void UART_Write_Text(char *text);
+
+#endif	/* UART_H */
