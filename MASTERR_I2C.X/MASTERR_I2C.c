@@ -40,7 +40,7 @@
 #include "I2C.h"
 #include "UART.h"
 #define _XTAL_FREQ  8000000
-void LOOP(void);
+
 uint8_t analogic_digital_a;
 uint8_t CONTADOR;
 uint8_t analogic_digital_b;
@@ -72,8 +72,9 @@ char ADCB_CHARB[5];
 char ADCC_CHARC[5];
 char POINTERA[5];
 
-
+void LOOP(void);
 void SETUP(void);
+
 void main(void) {
     TRISA=0;
     TRISB=0;
@@ -94,7 +95,7 @@ void main(void) {
 }
 
 void LOOP(void){
-        lcd_msg("ADC  CONT.  LUZ");
+    lcd_msg("ADC  CONT.  LUZ");
     while(1){
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x21);     //7 bit address + Read
@@ -177,8 +178,5 @@ void LOOP(void){
         UART_WRITE(CONTD_CHAR);
         __delay_ms(5);
         UART_WRITE(CONTLUZA_CHAR);
-
-        I2C_Master_RepeatedStart();
-
     }
 }

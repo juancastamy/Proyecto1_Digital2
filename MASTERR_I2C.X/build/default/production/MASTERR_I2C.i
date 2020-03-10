@@ -2903,7 +2903,7 @@ void UART_Write_Text(char *text);
 # 41 "MASTERR_I2C.c" 2
 
 
-void LOOP(void);
+
 uint8_t analogic_digital_a;
 uint8_t CONTADOR;
 uint8_t analogic_digital_b;
@@ -2935,8 +2935,9 @@ char ADCB_CHARB[5];
 char ADCC_CHARC[5];
 char POINTERA[5];
 
-
+void LOOP(void);
 void SETUP(void);
+
 void main(void) {
     TRISA=0;
     TRISB=0;
@@ -2957,7 +2958,7 @@ void main(void) {
 }
 
 void LOOP(void){
-        lcd_msg("ADC  CONT.  LUZ");
+    lcd_msg("ADC  CONT.  LUZ");
     while(1){
         I2C_Master_Start();
         I2C_Master_Write(0x21);
@@ -3009,7 +3010,7 @@ void LOOP(void){
         if(analogic_digital_b<=8){
             PORTAbits.RA0=1;
         }
-# 161 "MASTERR_I2C.c"
+# 162 "MASTERR_I2C.c"
         CONTLUZA = analogic_digital_b/10;
         itoa(CONTLUZA_CHAR,CONTLUZA,10);
         CONTLUZB = analogic_digital_b%10;
@@ -3029,8 +3030,5 @@ void LOOP(void){
         UART_WRITE(CONTD_CHAR);
         _delay((unsigned long)((5)*(8000000/4000.0)));
         UART_WRITE(CONTLUZA_CHAR);
-
-        I2C_Master_RepeatedStart();
-
     }
 }

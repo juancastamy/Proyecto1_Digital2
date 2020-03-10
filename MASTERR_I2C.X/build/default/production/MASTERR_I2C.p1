@@ -39,8 +39,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 ./PANTALLALCD.h
 [; ;./PANTALLALCD.h: 56: void inicializacion(void);
 [v _inicializacion `(v ~T0 @X0 0 ef ]
-"43 MASTERR_I2C.c
-[; ;MASTERR_I2C.c: 43: void LOOP(void);
+"75 MASTERR_I2C.c
+[; ;MASTERR_I2C.c: 75: void LOOP(void);
 [v _LOOP `(v ~T0 @X0 0 ef ]
 "53 ./PANTALLALCD.h
 [; ;./PANTALLALCD.h: 53: void lcd_msg(unsigned char *c);
@@ -439,254 +439,251 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MASTERR_I2C.c: 73: char POINTERA[5];
 [v _POINTERA `uc ~T0 @X0 -> 5 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"77
-[; ;MASTERR_I2C.c: 77: void main(void) {
+"78
+[; ;MASTERR_I2C.c: 78: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"78
-[; ;MASTERR_I2C.c: 78:     TRISA=0;
-[e = _TRISA -> -> 0 `i `uc ]
 "79
-[; ;MASTERR_I2C.c: 79:     TRISB=0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 79:     TRISA=0;
+[e = _TRISA -> -> 0 `i `uc ]
 "80
-[; ;MASTERR_I2C.c: 80:     TRISC=0b110011000;
-[e = _TRISC -> -> 408 `i `uc ]
+[; ;MASTERR_I2C.c: 80:     TRISB=0;
+[e = _TRISB -> -> 0 `i `uc ]
 "81
-[; ;MASTERR_I2C.c: 81:     TRISD=0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 81:     TRISC=0b110011000;
+[e = _TRISC -> -> 408 `i `uc ]
 "82
-[; ;MASTERR_I2C.c: 82:     TRISE=0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 82:     TRISD=0;
+[e = _TRISD -> -> 0 `i `uc ]
 "83
-[; ;MASTERR_I2C.c: 83:     PORTA=0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 83:     TRISE=0;
+[e = _TRISE -> -> 0 `i `uc ]
 "84
-[; ;MASTERR_I2C.c: 84:     PORTB=0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 84:     PORTA=0;
+[e = _PORTA -> -> 0 `i `uc ]
 "85
-[; ;MASTERR_I2C.c: 85:     PORTC=0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 85:     PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
 "86
-[; ;MASTERR_I2C.c: 86:     PORTD=0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 86:     PORTC=0;
+[e = _PORTC -> -> 0 `i `uc ]
 "87
-[; ;MASTERR_I2C.c: 87:     PORTE=0;
+[; ;MASTERR_I2C.c: 87:     PORTD=0;
+[e = _PORTD -> -> 0 `i `uc ]
+"88
+[; ;MASTERR_I2C.c: 88:     PORTE=0;
 [e = _PORTE -> -> 0 `i `uc ]
-"89
-[; ;MASTERR_I2C.c: 89:     I2C_INIT(100000);
-[e ( _I2C_INIT (1 -> -> 100000 `l `ul ]
 "90
-[; ;MASTERR_I2C.c: 90:     UART_INIT(9600);
-[e ( _UART_INIT (1 -> -> 9600 `i `l ]
+[; ;MASTERR_I2C.c: 90:     I2C_INIT(100000);
+[e ( _I2C_INIT (1 -> -> 100000 `l `ul ]
 "91
-[; ;MASTERR_I2C.c: 91:     inicializacion();
-[e ( _inicializacion ..  ]
+[; ;MASTERR_I2C.c: 91:     UART_INIT(9600);
+[e ( _UART_INIT (1 -> -> 9600 `i `l ]
 "92
-[; ;MASTERR_I2C.c: 92:     LOOP();
+[; ;MASTERR_I2C.c: 92:     inicializacion();
+[e ( _inicializacion ..  ]
+"93
+[; ;MASTERR_I2C.c: 93:     LOOP();
 [e ( _LOOP ..  ]
-"94
-[; ;MASTERR_I2C.c: 94: }
+"95
+[; ;MASTERR_I2C.c: 95: }
 [e :UE 143 ]
 }
-"96
-[; ;MASTERR_I2C.c: 96: void LOOP(void){
+"97
+[; ;MASTERR_I2C.c: 97: void LOOP(void){
 [v _LOOP `(v ~T0 @X0 1 ef ]
 {
 [e :U _LOOP ]
 [f ]
-"97
-[; ;MASTERR_I2C.c: 97:         lcd_msg("ADC  CONT.  LUZ");
-[e ( _lcd_msg (1 :s 1C ]
 "98
-[; ;MASTERR_I2C.c: 98:     while(1){
+[; ;MASTERR_I2C.c: 98:     lcd_msg("ADC  CONT.  LUZ");
+[e ( _lcd_msg (1 :s 1C ]
+"99
+[; ;MASTERR_I2C.c: 99:     while(1){
 [e :U 146 ]
 {
-"99
-[; ;MASTERR_I2C.c: 99:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
 "100
-[; ;MASTERR_I2C.c: 100:         I2C_Master_Write(0x21);
-[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+[; ;MASTERR_I2C.c: 100:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "101
-[; ;MASTERR_I2C.c: 101:         analogic_digital_a = I2C_Master_Read(0);
-[e = _analogic_digital_a -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;MASTERR_I2C.c: 101:         I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
 "102
-[; ;MASTERR_I2C.c: 102:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;MASTERR_I2C.c: 102:         analogic_digital_a = I2C_Master_Read(0);
+[e = _analogic_digital_a -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
 "103
-[; ;MASTERR_I2C.c: 103:         _delay((unsigned long)((2)*(8000000/4000.0)));
+[; ;MASTERR_I2C.c: 103:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"104
+[; ;MASTERR_I2C.c: 104:         _delay((unsigned long)((2)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"105
-[; ;MASTERR_I2C.c: 105:          voltage = (analogic_digital_a*5.0)/255.0;
-[e = _voltage -> / * -> -> _analogic_digital_a `i `d .5.0 .255.0 `f ]
 "106
-[; ;MASTERR_I2C.c: 106:         DC1 = (voltage)*100;
-[e = _DC1 -> * _voltage -> -> 100 `i `f `i ]
+[; ;MASTERR_I2C.c: 106:          voltage = (analogic_digital_a*5.0)/255.0;
+[e = _voltage -> / * -> -> _analogic_digital_a `i `d .5.0 .255.0 `f ]
 "107
-[; ;MASTERR_I2C.c: 107:         ADC_1_A = DC1%10;
-[e = _ADC_1_A % _DC1 -> 10 `i ]
+[; ;MASTERR_I2C.c: 107:         DC1 = (voltage)*100;
+[e = _DC1 -> * _voltage -> -> 100 `i `f `i ]
 "108
-[; ;MASTERR_I2C.c: 108:         itoa(ADCA_CHARA,ADC_1_A,10);
-[e ( _itoa (3 , , &U _ADCA_CHARA _ADC_1_A -> 10 `i ]
+[; ;MASTERR_I2C.c: 108:         ADC_1_A = DC1%10;
+[e = _ADC_1_A % _DC1 -> 10 `i ]
 "109
-[; ;MASTERR_I2C.c: 109:         ADC_1_B = (DC1/10)%10;
-[e = _ADC_1_B % / _DC1 -> 10 `i -> 10 `i ]
+[; ;MASTERR_I2C.c: 109:         itoa(ADCA_CHARA,ADC_1_A,10);
+[e ( _itoa (3 , , &U _ADCA_CHARA _ADC_1_A -> 10 `i ]
 "110
-[; ;MASTERR_I2C.c: 110:         itoa(ADCB_CHARB,ADC_1_B,10);
-[e ( _itoa (3 , , &U _ADCB_CHARB _ADC_1_B -> 10 `i ]
+[; ;MASTERR_I2C.c: 110:         ADC_1_B = (DC1/10)%10;
+[e = _ADC_1_B % / _DC1 -> 10 `i -> 10 `i ]
 "111
-[; ;MASTERR_I2C.c: 111:         ADC_A = (DC1/100)%10;
-[e = _ADC_A % / _DC1 -> 100 `i -> 10 `i ]
+[; ;MASTERR_I2C.c: 111:         itoa(ADCB_CHARB,ADC_1_B,10);
+[e ( _itoa (3 , , &U _ADCB_CHARB _ADC_1_B -> 10 `i ]
 "112
-[; ;MASTERR_I2C.c: 112:         itoa(ADCC_CHARC,ADC_A,10);
-[e ( _itoa (3 , , &U _ADCC_CHARC _ADC_A -> 10 `i ]
+[; ;MASTERR_I2C.c: 112:         ADC_A = (DC1/100)%10;
+[e = _ADC_A % / _DC1 -> 100 `i -> 10 `i ]
 "113
-[; ;MASTERR_I2C.c: 113:         strcat(ADCB_CHARB,ADCA_CHARA);
-[e ( _strcat (2 , &U _ADCB_CHARB -> &U _ADCA_CHARA `*Cuc ]
+[; ;MASTERR_I2C.c: 113:         itoa(ADCC_CHARC,ADC_A,10);
+[e ( _itoa (3 , , &U _ADCC_CHARC _ADC_A -> 10 `i ]
 "114
-[; ;MASTERR_I2C.c: 114:         strcpy(POINTERA,".");
-[e ( _strcpy (2 , &U _POINTERA :s 2C ]
+[; ;MASTERR_I2C.c: 114:         strcat(ADCB_CHARB,ADCA_CHARA);
+[e ( _strcat (2 , &U _ADCB_CHARB -> &U _ADCA_CHARA `*Cuc ]
 "115
-[; ;MASTERR_I2C.c: 115:         strcat(POINTERA,ADCB_CHARB);
-[e ( _strcat (2 , &U _POINTERA -> &U _ADCB_CHARB `*Cuc ]
+[; ;MASTERR_I2C.c: 115:         strcpy(POINTERA,".");
+[e ( _strcpy (2 , &U _POINTERA :s 2C ]
 "116
-[; ;MASTERR_I2C.c: 116:         strcat(ADCC_CHARC,POINTERA);
-[e ( _strcat (2 , &U _ADCC_CHARC -> &U _POINTERA `*Cuc ]
+[; ;MASTERR_I2C.c: 116:         strcat(POINTERA,ADCB_CHARB);
+[e ( _strcat (2 , &U _POINTERA -> &U _ADCB_CHARB `*Cuc ]
 "117
-[; ;MASTERR_I2C.c: 117:         lcd_cmd(0xC0);
+[; ;MASTERR_I2C.c: 117:         strcat(ADCC_CHARC,POINTERA);
+[e ( _strcat (2 , &U _ADCC_CHARC -> &U _POINTERA `*Cuc ]
+"118
+[; ;MASTERR_I2C.c: 118:         lcd_cmd(0xC0);
 [e ( _lcd_cmd (1 -> -> 192 `i `uc ]
-"120
-[; ;MASTERR_I2C.c: 120:         I2C_Master_RepeatedStart();
-[e ( _I2C_Master_RepeatedStart ..  ]
 "121
-[; ;MASTERR_I2C.c: 121:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"122
-[; ;MASTERR_I2C.c: 122:         I2C_Master_Write(0x11);
-[e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
-"123
-[; ;MASTERR_I2C.c: 123:         CONTADOR = I2C_Master_Read(0);
-[e = _CONTADOR -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"124
-[; ;MASTERR_I2C.c: 124:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"125
-[; ;MASTERR_I2C.c: 125:         _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"127
-[; ;MASTERR_I2C.c: 127:         CONTD = CONTADOR/10;
-[e = _CONTD / -> _CONTADOR `i -> 10 `i ]
-"128
-[; ;MASTERR_I2C.c: 128:         itoa(CONTD_CHAR,CONTD,10);
-[e ( _itoa (3 , , &U _CONTD_CHAR _CONTD -> 10 `i ]
-"129
-[; ;MASTERR_I2C.c: 129:         CONTU = CONTADOR%10;
-[e = _CONTU % -> _CONTADOR `i -> 10 `i ]
-"130
-[; ;MASTERR_I2C.c: 130:         itoa(CONTU_CHAR,CONTU,10);
-[e ( _itoa (3 , , &U _CONTU_CHAR _CONTU -> 10 `i ]
-"131
-[; ;MASTERR_I2C.c: 131:         strcat(CONTD_CHAR,CONTU_CHAR);
-[e ( _strcat (2 , &U _CONTD_CHAR -> &U _CONTU_CHAR `*Cuc ]
-"134
-[; ;MASTERR_I2C.c: 134:         I2C_Master_RepeatedStart();
+[; ;MASTERR_I2C.c: 121:         I2C_Master_RepeatedStart();
 [e ( _I2C_Master_RepeatedStart ..  ]
-"137
-[; ;MASTERR_I2C.c: 137:         I2C_Master_Start();
+"122
+[; ;MASTERR_I2C.c: 122:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"138
-[; ;MASTERR_I2C.c: 138:         I2C_Master_Write(0x31);
-[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
-"139
-[; ;MASTERR_I2C.c: 139:         analogic_digital_b = I2C_Master_Read(0);
-[e = _analogic_digital_b -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"140
-[; ;MASTERR_I2C.c: 140:         I2C_Master_Stop();
+"123
+[; ;MASTERR_I2C.c: 123:         I2C_Master_Write(0x11);
+[e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
+"124
+[; ;MASTERR_I2C.c: 124:         CONTADOR = I2C_Master_Read(0);
+[e = _CONTADOR -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"125
+[; ;MASTERR_I2C.c: 125:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"141
-[; ;MASTERR_I2C.c: 141:         _delay((unsigned long)((2)*(8000000/4000.0)));
+"126
+[; ;MASTERR_I2C.c: 126:         _delay((unsigned long)((2)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"143
-[; ;MASTERR_I2C.c: 143:         if(analogic_digital_b>=9){
+"128
+[; ;MASTERR_I2C.c: 128:         CONTD = CONTADOR/10;
+[e = _CONTD / -> _CONTADOR `i -> 10 `i ]
+"129
+[; ;MASTERR_I2C.c: 129:         itoa(CONTD_CHAR,CONTD,10);
+[e ( _itoa (3 , , &U _CONTD_CHAR _CONTD -> 10 `i ]
+"130
+[; ;MASTERR_I2C.c: 130:         CONTU = CONTADOR%10;
+[e = _CONTU % -> _CONTADOR `i -> 10 `i ]
+"131
+[; ;MASTERR_I2C.c: 131:         itoa(CONTU_CHAR,CONTU,10);
+[e ( _itoa (3 , , &U _CONTU_CHAR _CONTU -> 10 `i ]
+"132
+[; ;MASTERR_I2C.c: 132:         strcat(CONTD_CHAR,CONTU_CHAR);
+[e ( _strcat (2 , &U _CONTD_CHAR -> &U _CONTU_CHAR `*Cuc ]
+"135
+[; ;MASTERR_I2C.c: 135:         I2C_Master_RepeatedStart();
+[e ( _I2C_Master_RepeatedStart ..  ]
+"138
+[; ;MASTERR_I2C.c: 138:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"139
+[; ;MASTERR_I2C.c: 139:         I2C_Master_Write(0x31);
+[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
+"140
+[; ;MASTERR_I2C.c: 140:         analogic_digital_b = I2C_Master_Read(0);
+[e = _analogic_digital_b -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"141
+[; ;MASTERR_I2C.c: 141:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"142
+[; ;MASTERR_I2C.c: 142:         _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"144
+[; ;MASTERR_I2C.c: 144:         if(analogic_digital_b>=9){
 [e $ ! >= -> _analogic_digital_b `i -> 9 `i 148  ]
 {
-"144
-[; ;MASTERR_I2C.c: 144:             PORTAbits.RA0=0;
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 "145
-[; ;MASTERR_I2C.c: 145:         }
+[; ;MASTERR_I2C.c: 145:             PORTAbits.RA0=0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"146
+[; ;MASTERR_I2C.c: 146:         }
 }
 [e :U 148 ]
-"146
-[; ;MASTERR_I2C.c: 146:         if(analogic_digital_b<=8){
+"147
+[; ;MASTERR_I2C.c: 147:         if(analogic_digital_b<=8){
 [e $ ! <= -> _analogic_digital_b `i -> 8 `i 149  ]
 {
-"147
-[; ;MASTERR_I2C.c: 147:             PORTAbits.RA0=1;
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
 "148
-[; ;MASTERR_I2C.c: 148:         }
+[; ;MASTERR_I2C.c: 148:             PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+"149
+[; ;MASTERR_I2C.c: 149:         }
 }
 [e :U 149 ]
-"161
-[; ;MASTERR_I2C.c: 161:         CONTLUZA = analogic_digital_b/10;
-[e = _CONTLUZA / -> _analogic_digital_b `i -> 10 `i ]
 "162
-[; ;MASTERR_I2C.c: 162:         itoa(CONTLUZA_CHAR,CONTLUZA,10);
-[e ( _itoa (3 , , &U _CONTLUZA_CHAR _CONTLUZA -> 10 `i ]
+[; ;MASTERR_I2C.c: 162:         CONTLUZA = analogic_digital_b/10;
+[e = _CONTLUZA / -> _analogic_digital_b `i -> 10 `i ]
 "163
-[; ;MASTERR_I2C.c: 163:         CONTLUZB = analogic_digital_b%10;
-[e = _CONTLUZB % -> _analogic_digital_b `i -> 10 `i ]
+[; ;MASTERR_I2C.c: 163:         itoa(CONTLUZA_CHAR,CONTLUZA,10);
+[e ( _itoa (3 , , &U _CONTLUZA_CHAR _CONTLUZA -> 10 `i ]
 "164
-[; ;MASTERR_I2C.c: 164:         itoa(CONTLUZB_CHAR,CONTLUZB,10);
-[e ( _itoa (3 , , &U _CONTLUZB_CHAR _CONTLUZB -> 10 `i ]
+[; ;MASTERR_I2C.c: 164:         CONTLUZB = analogic_digital_b%10;
+[e = _CONTLUZB % -> _analogic_digital_b `i -> 10 `i ]
 "165
-[; ;MASTERR_I2C.c: 165:         strcat(CONTLUZA_CHAR,CONTLUZB_CHAR);
+[; ;MASTERR_I2C.c: 165:         itoa(CONTLUZB_CHAR,CONTLUZB,10);
+[e ( _itoa (3 , , &U _CONTLUZB_CHAR _CONTLUZB -> 10 `i ]
+"166
+[; ;MASTERR_I2C.c: 166:         strcat(CONTLUZA_CHAR,CONTLUZB_CHAR);
 [e ( _strcat (2 , &U _CONTLUZA_CHAR -> &U _CONTLUZB_CHAR `*Cuc ]
-"170
-[; ;MASTERR_I2C.c: 170:         lcd_msg(ADCC_CHARC);
-[e ( _lcd_msg (1 -> &U _ADCC_CHARC `*uc ]
 "171
-[; ;MASTERR_I2C.c: 171:         lcd_msg("V  ");
-[e ( _lcd_msg (1 :s 3C ]
+[; ;MASTERR_I2C.c: 171:         lcd_msg(ADCC_CHARC);
+[e ( _lcd_msg (1 -> &U _ADCC_CHARC `*uc ]
 "172
-[; ;MASTERR_I2C.c: 172:         lcd_msg(CONTD_CHAR);
-[e ( _lcd_msg (1 -> &U _CONTD_CHAR `*uc ]
+[; ;MASTERR_I2C.c: 172:         lcd_msg("V  ");
+[e ( _lcd_msg (1 :s 3C ]
 "173
-[; ;MASTERR_I2C.c: 173:         lcd_msg("  ");
-[e ( _lcd_msg (1 :s 4C ]
+[; ;MASTERR_I2C.c: 173:         lcd_msg(CONTD_CHAR);
+[e ( _lcd_msg (1 -> &U _CONTD_CHAR `*uc ]
 "174
-[; ;MASTERR_I2C.c: 174:         lcd_msg(CONTLUZA_CHAR);
-[e ( _lcd_msg (1 -> &U _CONTLUZA_CHAR `*uc ]
+[; ;MASTERR_I2C.c: 174:         lcd_msg("  ");
+[e ( _lcd_msg (1 :s 4C ]
 "175
-[; ;MASTERR_I2C.c: 175:         UART_WRITE(ADCC_CHARC);
-[e ( _UART_WRITE (1 -> &U _ADCC_CHARC `uc ]
+[; ;MASTERR_I2C.c: 175:         lcd_msg(CONTLUZA_CHAR);
+[e ( _lcd_msg (1 -> &U _CONTLUZA_CHAR `*uc ]
 "176
-[; ;MASTERR_I2C.c: 176:         _delay((unsigned long)((5)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;MASTERR_I2C.c: 176:         UART_WRITE(ADCC_CHARC);
+[e ( _UART_WRITE (1 -> &U _ADCC_CHARC `uc ]
 "177
-[; ;MASTERR_I2C.c: 177:         UART_WRITE(CONTD_CHAR);
-[e ( _UART_WRITE (1 -> &U _CONTD_CHAR `uc ]
-"178
-[; ;MASTERR_I2C.c: 178:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[; ;MASTERR_I2C.c: 177:         _delay((unsigned long)((5)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"178
+[; ;MASTERR_I2C.c: 178:         UART_WRITE(CONTD_CHAR);
+[e ( _UART_WRITE (1 -> &U _CONTD_CHAR `uc ]
 "179
-[; ;MASTERR_I2C.c: 179:         UART_WRITE(CONTLUZA_CHAR);
+[; ;MASTERR_I2C.c: 179:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"180
+[; ;MASTERR_I2C.c: 180:         UART_WRITE(CONTLUZA_CHAR);
 [e ( _UART_WRITE (1 -> &U _CONTLUZA_CHAR `uc ]
 "181
-[; ;MASTERR_I2C.c: 181:         I2C_Master_RepeatedStart();
-[e ( _I2C_Master_RepeatedStart ..  ]
-"183
-[; ;MASTERR_I2C.c: 183:     }
+[; ;MASTERR_I2C.c: 181:     }
 }
 [e :U 145 ]
 [e $U 146  ]
 [e :U 147 ]
-"184
-[; ;MASTERR_I2C.c: 184: }
+"182
+[; ;MASTERR_I2C.c: 182: }
 [e :UE 144 ]
 }
 [a 1C 65 68 67 32 32 67 79 78 84 46 32 32 76 85 90 0 ]

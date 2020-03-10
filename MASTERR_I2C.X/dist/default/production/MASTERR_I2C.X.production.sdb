@@ -53,9 +53,9 @@
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "52
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-"77 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+"78 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
 [v _main main `(v  1 e 1 0 ]
-"96
+"97
 [v _LOOP LOOP `(v  1 e 1 0 ]
 "18 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
 [v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
@@ -257,10 +257,10 @@
 [v _ADCC_CHARC ADCC_CHARC `[5]uc  1 e 5 0 ]
 "73
 [v _POINTERA POINTERA `[5]uc  1 e 5 0 ]
-"77
+"78
 [v _main main `(v  1 e 1 0 ]
 {
-"94
+"95
 } 0
 "66 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
 [v _inicializacion inicializacion `(v  1 e 1 0 ]
@@ -286,10 +286,10 @@
 [v ___aldiv@dividend dividend `l  1 p 4 4 ]
 "41
 } 0
-"96 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+"97 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
 [v _LOOP LOOP `(v  1 e 1 0 ]
 {
-"184
+"182
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcpy.c
 [v _strcpy strcpy `(*.4uc  1 e 1 0 ]
