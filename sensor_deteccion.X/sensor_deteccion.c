@@ -83,7 +83,7 @@ void __interrupt() isr(void){
     }
 }
 void main(void) {
-    initOsc(6);
+    initOsc(7);
     setup();
     while(1){
         //PORTD = ~PORTAbits.RA0;
@@ -173,7 +173,7 @@ void main(void) {
 void setup(void){
     TRISA=0b11111111;
     TRISB=0;
-    TRISC=0;
+    TRISC=0b00011000;
     TRISD=0;
     TRISE=0;
     ANSEL=0;

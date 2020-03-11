@@ -11,14 +11,14 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\juan\AppData\Local\Temp\shv8.o
+$C:\Users\juan\AppData\Local\Temp\s2cg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\sensor_deteccion.X.production.o
 cinit CODE 0 F F 10 2
-text1 CODE 0 1D7 1D7 1A 2
-text2 CODE 0 1F1 1F1 1A 2
+text1 CODE 0 1D7 1D7 1B 2
+text2 CODE 0 1F2 1F2 1A 2
 text3 CODE 0 179 179 5E 2
 text4 CODE 0 118 118 61 2
 maintext CODE 0 1F 1F F9 2
@@ -42,13 +42,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 20B-1FFF 2
+CONST 20C-1FFF 2
 ENTRY 3-3 2
-ENTRY 20B-1FFF 2
+ENTRY 20C-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 20B-1FFF 2
+CODE 20C-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -56,9 +56,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 20B-1FFF 2
+STRCODE 20C-1FFF 2
 STRING 3-3 2
-STRING 20B-1FFF 2
+STRING 20C-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -73,23 +73,23 @@ STRING 20B-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\sensor_deteccion.X.production.o
-F cinit CODE >822:C:\Users\juan\AppData\Local\Temp\shv8.s
-F cinit CODE >825:C:\Users\juan\AppData\Local\Temp\shv8.s
-F cinit CODE >866:C:\Users\juan\AppData\Local\Temp\shv8.s
-10 cinit CODE >867:C:\Users\juan\AppData\Local\Temp\shv8.s
-11 cinit CODE >868:C:\Users\juan\AppData\Local\Temp\shv8.s
-12 cinit CODE >869:C:\Users\juan\AppData\Local\Temp\shv8.s
-13 cinit CODE >870:C:\Users\juan\AppData\Local\Temp\shv8.s
-14 cinit CODE >871:C:\Users\juan\AppData\Local\Temp\shv8.s
-15 cinit CODE >872:C:\Users\juan\AppData\Local\Temp\shv8.s
-16 cinit CODE >875:C:\Users\juan\AppData\Local\Temp\shv8.s
-17 cinit CODE >876:C:\Users\juan\AppData\Local\Temp\shv8.s
-18 cinit CODE >877:C:\Users\juan\AppData\Local\Temp\shv8.s
-19 cinit CODE >878:C:\Users\juan\AppData\Local\Temp\shv8.s
-1A cinit CODE >879:C:\Users\juan\AppData\Local\Temp\shv8.s
-1B cinit CODE >885:C:\Users\juan\AppData\Local\Temp\shv8.s
-1B cinit CODE >887:C:\Users\juan\AppData\Local\Temp\shv8.s
-1C cinit CODE >888:C:\Users\juan\AppData\Local\Temp\shv8.s
+F cinit CODE >822:C:\Users\juan\AppData\Local\Temp\s2cg.s
+F cinit CODE >825:C:\Users\juan\AppData\Local\Temp\s2cg.s
+F cinit CODE >866:C:\Users\juan\AppData\Local\Temp\s2cg.s
+10 cinit CODE >867:C:\Users\juan\AppData\Local\Temp\s2cg.s
+11 cinit CODE >868:C:\Users\juan\AppData\Local\Temp\s2cg.s
+12 cinit CODE >869:C:\Users\juan\AppData\Local\Temp\s2cg.s
+13 cinit CODE >870:C:\Users\juan\AppData\Local\Temp\s2cg.s
+14 cinit CODE >871:C:\Users\juan\AppData\Local\Temp\s2cg.s
+15 cinit CODE >872:C:\Users\juan\AppData\Local\Temp\s2cg.s
+16 cinit CODE >875:C:\Users\juan\AppData\Local\Temp\s2cg.s
+17 cinit CODE >876:C:\Users\juan\AppData\Local\Temp\s2cg.s
+18 cinit CODE >877:C:\Users\juan\AppData\Local\Temp\s2cg.s
+19 cinit CODE >878:C:\Users\juan\AppData\Local\Temp\s2cg.s
+1A cinit CODE >879:C:\Users\juan\AppData\Local\Temp\s2cg.s
+1B cinit CODE >885:C:\Users\juan\AppData\Local\Temp\s2cg.s
+1B cinit CODE >887:C:\Users\juan\AppData\Local\Temp\s2cg.s
+1C cinit CODE >888:C:\Users\juan\AppData\Local\Temp\s2cg.s
 4 intentry CODE >51:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 118 text4 CODE >51:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 118 text4 CODE >52:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
@@ -166,33 +166,33 @@ F cinit CODE >866:C:\Users\juan\AppData\Local\Temp\shv8.s
 1B1 text3 CODE >56:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
 1D5 text3 CODE >58:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
 1D6 text3 CODE >59:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
-1F1 text2 CODE >76:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-1F2 text2 CODE >77:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-1F6 text2 CODE >78:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-1FA text2 CODE >79:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-1FE text2 CODE >80:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-200 text2 CODE >81:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-201 text2 CODE >82:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-202 text2 CODE >83:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-203 text2 CODE >84:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-204 text2 CODE >85:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-207 text2 CODE >86:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
-20A text2 CODE >87:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+1F2 text2 CODE >76:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+1F3 text2 CODE >77:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+1F7 text2 CODE >78:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+1FB text2 CODE >79:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+1FF text2 CODE >80:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+201 text2 CODE >81:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+202 text2 CODE >82:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+203 text2 CODE >83:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+204 text2 CODE >84:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+205 text2 CODE >85:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+208 text2 CODE >86:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
+20B text2 CODE >87:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
 1D7 text1 CODE >173:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 1D7 text1 CODE >174:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 1DB text1 CODE >175:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 1DC text1 CODE >176:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1DD text1 CODE >177:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1DE text1 CODE >178:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1DF text1 CODE >179:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1E2 text1 CODE >180:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1E3 text1 CODE >182:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1E6 text1 CODE >183:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1E7 text1 CODE >184:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1E8 text1 CODE >185:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1E9 text1 CODE >186:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1EA text1 CODE >187:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
-1F0 text1 CODE >188:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1DE text1 CODE >177:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1DF text1 CODE >178:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1E0 text1 CODE >179:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1E3 text1 CODE >180:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1E4 text1 CODE >182:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1E7 text1 CODE >183:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1E8 text1 CODE >184:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1E9 text1 CODE >185:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1EA text1 CODE >186:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1EB text1 CODE >187:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+1F1 text1 CODE >188:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 1F maintext CODE >85:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 1F maintext CODE >86:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 25 maintext CODE >87:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
@@ -291,20 +291,20 @@ _S7 70 0 COMMON 1 bssCOMMON dist/default/production\sensor_deteccion.X.productio
 _S8 20 0 BANK0 1 bssBANK0 dist/default/production\sensor_deteccion.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\shv8.o
+___sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\s2cg.o
 _main 3E 0 CODE 0 maintext dist/default/production\sensor_deteccion.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
-start 18 0 CODE 0 init C:\Users\juan\AppData\Local\Temp\shv8.o
+start 18 0 CODE 0 init C:\Users\juan\AppData\Local\Temp\s2cg.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\shv8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\shv8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\shv8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\shv8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\shv8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\shv8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s2cg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s2cg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s2cg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s2cg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s2cg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\s2cg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
@@ -314,9 +314,9 @@ _ANSELH 189 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __size_of_initOsc 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\shv8.o
-___stacklo 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\shv8.o
-_I2C_Slave_Init 3E2 0 CODE 0 text2 dist/default/production\sensor_deteccion.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\s2cg.o
+___stacklo 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\s2cg.o
+_I2C_Slave_Init 3E4 0 CODE 0 text2 dist/default/production\sensor_deteccion.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
@@ -329,13 +329,13 @@ _SSPCON 14 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __end_of_initOsc 3AE 0 CODE 0 text3 dist/default/production\sensor_deteccion.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\shv8.o
+___int_sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\s2cg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 3E 0 CODE 0 cinit -
-__end_of_I2C_Slave_Init 416 0 CODE 0 text2 dist/default/production\sensor_deteccion.X.production.o
+__end_of_I2C_Slave_Init 418 0 CODE 0 text2 dist/default/production\sensor_deteccion.X.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
@@ -379,7 +379,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __end_of_isr 2F2 0 CODE 0 text4 dist/default/production\sensor_deteccion.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juan\AppData\Local\Temp\shv8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\juan\AppData\Local\Temp\s2cg.o
 initOsc@frec 7A 0 COMMON 1 cstackCOMMON dist/default/production\sensor_deteccion.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __pmaintext 3E 0 CODE 0 maintext dist/default/production\sensor_deteccion.X.production.o
@@ -406,7 +406,7 @@ __HbssBANK0 0 0 ABS 0 bssBANK0 -
 _initOsc 2F2 0 CODE 0 text3 dist/default/production\sensor_deteccion.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 __ptext1 3AE 0 CODE 0 text1 dist/default/production\sensor_deteccion.X.production.o
-__ptext2 3E2 0 CODE 0 text2 dist/default/production\sensor_deteccion.X.production.o
+__ptext2 3E4 0 CODE 0 text2 dist/default/production\sensor_deteccion.X.production.o
 __ptext3 2F2 0 CODE 0 text3 dist/default/production\sensor_deteccion.X.production.o
 __ptext4 230 0 CODE 0 text4 dist/default/production\sensor_deteccion.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
@@ -435,7 +435,7 @@ _TRISB 86 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.o
-__end_of_setup 3E2 0 CODE 0 text1 dist/default/production\sensor_deteccion.X.production.o
+__end_of_setup 3E4 0 CODE 0 text1 dist/default/production\sensor_deteccion.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\sensor_deteccion.X.production.o
@@ -473,7 +473,7 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\sensor_deteccion.X.production.
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intentry 0 4 8 207 2
+intentry 0 4 8 208 2
 reset_vec 0 0 0 3 2
 bssBANK0 1 20 20 6 1
 bssCOMMON 1 70 70 B 1

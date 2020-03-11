@@ -567,8 +567,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "86
-[; ;sensor_deteccion.c: 86:     initOsc(6);
-[e ( _initOsc (1 -> -> 6 `i `uc ]
+[; ;sensor_deteccion.c: 86:     initOsc(7);
+[e ( _initOsc (1 -> -> 7 `i `uc ]
 "87
 [; ;sensor_deteccion.c: 87:     setup();
 [e ( _setup ..  ]
@@ -874,8 +874,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;sensor_deteccion.c: 175:     TRISB=0;
 [e = _TRISB -> -> 0 `i `uc ]
 "176
-[; ;sensor_deteccion.c: 176:     TRISC=0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;sensor_deteccion.c: 176:     TRISC=0b00011000;
+[e = _TRISC -> -> 24 `i `uc ]
 "177
 [; ;sensor_deteccion.c: 177:     TRISD=0;
 [e = _TRISD -> -> 0 `i `uc ]
