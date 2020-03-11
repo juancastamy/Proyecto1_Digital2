@@ -2630,7 +2630,15 @@ typedef uint16_t uintptr_t;
 # 3 "UART.c" 2
 
 # 1 "./UART.h" 1
-# 48 "./UART.h"
+# 43 "./UART.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 43 "./UART.h" 2
+
+
+
+
+
+
 uint8_t UART_INIT(const long int baudrate);
 uint8_t UART_READ(void);
 void UART_Read_Text(char *Output, unsigned int length);

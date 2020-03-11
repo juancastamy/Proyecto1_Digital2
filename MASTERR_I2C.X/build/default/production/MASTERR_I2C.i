@@ -2894,7 +2894,15 @@ void I2C_Slave_Init(uint8_t address);
 # 40 "MASTERR_I2C.c" 2
 
 # 1 "./UART.h" 1
-# 48 "./UART.h"
+# 43 "./UART.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 43 "./UART.h" 2
+
+
+
+
+
+
 uint8_t UART_INIT(const long int baudrate);
 uint8_t UART_READ(void);
 void UART_Read_Text(char *Output, unsigned int length);
@@ -2903,7 +2911,7 @@ void UART_Write_Text(char *text);
 # 41 "MASTERR_I2C.c" 2
 
 
-
+void LOOP(void);
 uint8_t analogic_digital_a;
 uint8_t CONTADOR;
 uint8_t analogic_digital_b;
@@ -2913,6 +2921,12 @@ int CONTLUZA;
 int CONTLUZB;
 char CONTLUZA_CHAR[5];
 char CONTLUZB_CHAR[5];
+
+int uniT;
+int decT;
+int uniHR;
+int decHR;
+
 int DC2;
 int LUZ_1_A;
 int LUZ_1_B;
@@ -2934,6 +2948,12 @@ char ADCA_CHARA[5];
 char ADCB_CHARB[5];
 char ADCC_CHARC[5];
 char POINTERA[5];
+char T_byte1;
+
+int uniT_int;
+int decT_int;
+char uniT_char[5];
+char decT_char[5];
 
 void LOOP(void);
 void SETUP(void);
@@ -2941,7 +2961,7 @@ void SETUP(void);
 void main(void) {
     TRISA=0;
     TRISB=0;
-    TRISC=0b110011000;
+    TRISC=0b000011000;
     TRISD=0;
     TRISE=0;
     PORTA=0;
@@ -2958,15 +2978,52 @@ void main(void) {
 }
 
 void LOOP(void){
-    lcd_msg("ADC  CONT.  LUZ");
+    lcd_msg("TEMP CONT LUZ");
     while(1){
         I2C_Master_Start();
-        I2C_Master_Write(0x21);
+        I2C_Master_Write(0x31);
         analogic_digital_a = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((2)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
 
-         voltage = (analogic_digital_a*5.0)/255.0;
+        CONTLUZA = analogic_digital_b/10;
+        itoa(CONTLUZA_CHAR,CONTLUZA,10);
+        CONTLUZB = analogic_digital_b%10;
+        itoa(CONTLUZB_CHAR,CONTLUZB,10);
+        strcat(CONTLUZA_CHAR,CONTLUZB_CHAR);
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x31);
+        T_byte1 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        decT = T_byte1/10;
+        itoa(decT_char,decT,10);
+        uniT = T_byte1%10;
+        itoa(uniT_char,uniT ,10);
+        strcat(decT_char,uniT_char);
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x11);
+        CONTADOR = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        CONTD = CONTADOR/10;
+        itoa(CONTD_CHAR,CONTD,10);
+        CONTU = CONTADOR%10;
+        itoa(CONTU_CHAR,CONTU,10);
+        strcat(CONTD_CHAR,CONTU_CHAR);
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x21);
+        analogic_digital_b = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        voltage = (analogic_digital_a*5.0)/255.0;
         DC1 = (voltage)*100;
         ADC_1_A = DC1%10;
         itoa(ADCA_CHARA,ADC_1_A,10);
@@ -2978,53 +3035,14 @@ void LOOP(void){
         strcpy(POINTERA,".");
         strcat(POINTERA,ADCB_CHARB);
         strcat(ADCC_CHARC,POINTERA);
+
         lcd_cmd(0xC0);
-
-
-        I2C_Master_RepeatedStart();
-        I2C_Master_Start();
-        I2C_Master_Write(0x11);
-        CONTADOR = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((2)*(8000000/4000.0)));
-
-        CONTD = CONTADOR/10;
-        itoa(CONTD_CHAR,CONTD,10);
-        CONTU = CONTADOR%10;
-        itoa(CONTU_CHAR,CONTU,10);
-        strcat(CONTD_CHAR,CONTU_CHAR);
-
-
-        I2C_Master_RepeatedStart();
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x31);
-        analogic_digital_b = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((2)*(8000000/4000.0)));
-
-        if(analogic_digital_b>=9){
-            PORTAbits.RA0=0;
-        }
-        if(analogic_digital_b<=8){
-            PORTAbits.RA0=1;
-        }
-# 162 "MASTERR_I2C.c"
-        CONTLUZA = analogic_digital_b/10;
-        itoa(CONTLUZA_CHAR,CONTLUZA,10);
-        CONTLUZB = analogic_digital_b%10;
-        itoa(CONTLUZB_CHAR,CONTLUZB,10);
-        strcat(CONTLUZA_CHAR,CONTLUZB_CHAR);
-
-
-
-
-        lcd_msg(ADCC_CHARC);
-        lcd_msg("V  ");
+        lcd_msg(decT_char);
+        lcd_msg("  ");
         lcd_msg(CONTD_CHAR);
         lcd_msg("  ");
         lcd_msg(CONTLUZA_CHAR);
+
         UART_WRITE(ADCC_CHARC);
         _delay((unsigned long)((5)*(8000000/4000.0)));
         UART_WRITE(CONTD_CHAR);

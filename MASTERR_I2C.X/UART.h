@@ -39,7 +39,8 @@
 #ifndef _XTAL_FREQ
 #define _XTAL_FREQ 8000000
 #endif
-
+#include<xc.h>
+#include<stdint.h>
 //******************************************************************************
 
 //Prototipos de Funciones
