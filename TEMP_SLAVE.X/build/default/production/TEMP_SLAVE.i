@@ -2887,13 +2887,18 @@ extern char * ftoa(float f, int * status);
 
 
 
+
 uint8_t z;
 char ADC;
-void setup(void);
-void PWM (void);
-void adc(void);
 void LOOP(void);
 void ANALOGICO(void);
+void PWM (void);
+char ultrasonico;
+char distance;
+char dist = 0;
+char S1 =0;
+int calc_distance(void);
+void LOOP(void);
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
@@ -2932,28 +2937,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 }
 
 void main(void) {
-    setup();
-    PWM();
-    adc();
-    I2C_Slave_Init(0x30);
-    while(1){
-        ANALOGICO();
-
-        if( > ){
-            _delay_ms(10);
-            CCP1CONbits.DC1B = 0b00;
-            CCPR1L = 0b00001000;
-        }
-        if(ADC>5){
-            _delay_ms(10);
-            CCP1CONbits.DC1B = 0b00;
-            CCPR1L = 3;
-        }
-
-}
-
-void setup(void){
-    OSCCONbits.IRCF = 0b111;
+    OSCCONbits.IRCF = 0b100;
     OSCCONbits.OSTS= 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 0;
@@ -2962,7 +2946,7 @@ void setup(void){
     TRISA = 0b00000001;
     TRISB = 0;
     TRISC = 0b00011000;
-    TRISD = 0;
+    TRISD = 0b00000010;
     TRISE = 0;
     ANSEL = 0b00000001;
     ANSELH = 0;
@@ -2971,38 +2955,102 @@ void setup(void){
     PORTD = 0;
     PORTE = 0;
     PORTA = 0;
-}
 
-void PWM(void){
-
-    CCP1CON = 0b00111100;
-    TRISCbits.TRISC2 = 1;
-    PR2 = 155;
-    CCPR1L=27;
-    PIR1bits.TMR2IF = 0;
-    T2CONbits.T2CKPS = 0b11;
-    T2CONbits.TMR2ON = 1;
-    while(!TMR2IF);
-    TMR2IF = 0;
-    TRISC2=0;
-}
-
-void adc(void){
 
     ADCON0bits.ADCS = 01;
     ADCON0bits.ADON = 1;
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
+    I2C_Slave_Init(0x20);
+    PWM();
+    LOOP();
+
+}
+
+void LOOP(void){
+    while(1){
+        ANALOGICO();
+        if(ultrasonico == 0x0f){
+            CCPR1L = 25;
+            S1= 1;
+        }
+        if(ADC>=5 & S1 ==1){
+            S1=0;
+        }
+        if(ADC==0 & S1==0){
+            CCPR1L = 10;
+        }
+
+    dist = calc_dist()/5;
+
+    if(dist>0){
+    ultrasonico = 0x00;
+    }
+    else
+    {ultrasonico = 0x0F;}
+    }
+
 }
 
 void ANALOGICO(void){
     _delay((unsigned long)((1)*(8000000/4000.0)));
-        ADCON0bits.CHS = 0000;
-        ADCON0bits.ADON = 1;
-        ADCON0bits.GO = 1;
-        while(ADCON0bits.GO);
-       ADC = ADRESH;
-       PORTB = ADC;
-       return;
+    ADCON0bits.CHS = 0000;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO);
+    ADC = ADRESH;
+    return;
+}
+
+
+
+void PWM(void){
+
+    TRISCbits.TRISC2 = 1;
+    PR2 = 200;
+    CCP1CONbits.CCP1M3 = 1;
+    CCP1CONbits.CCP1M2 = 1;
+    CCP1CONbits.CCP1M1 = 0;
+    CCP1CONbits.CCP1M0 = 0;
+
+
+    CCPR1L = 27;
+    CCP1CONbits.DC1B0 = 1;
+    CCP1CONbits.DC1B1 = 1;
+
+
+
+    PIR1bits.TMR2IF = 0;
+
+    T2CONbits.T2CKPS = 0b11;
+    T2CONbits.TMR2ON = 1;
+    while(!TMR2IF);
+    TMR2IF = 0;
+    TRISC2=0;
+    return;
+}
+
+
+
+int calc_dist(void){
+    int distance=0;
+    TMR1=0;
+
+    RD0=1;
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+    RD0=0;
+
+    while(!RD1);
+
+
+    TMR1ON=1;
+
+    while(RD1);
+
+    TMR1ON=0;
+
+
+    distance=TMR1/58.82;
+    return distance;
 }

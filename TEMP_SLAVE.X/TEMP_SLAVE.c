@@ -35,15 +35,20 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define _XTAL_FREQ 8000000
+#define  TRIGGER RD0
+#define  ECHO    RD1
 
 uint8_t z;
 char ADC;
-void setup(void);
-void PWM (void);
-void adc(void);
 void LOOP(void);
 void ANALOGICO(void);
+void PWM (void);
+char ultrasonico;
+char distance;
+char dist = 0;
+char S1 =0;
+int calc_distance(void);
+void LOOP(void);
 
 
 void __interrupt() isr(void){
@@ -82,29 +87,7 @@ void __interrupt() isr(void){
 }
 
 void main(void) {
-    setup();
-    PWM();
-    adc();
-    I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
-    while(1){
-        ANALOGICO();
-        //GIRO A 90 GRADORS
-        if(/*VARIABLE DEL ULTRAZONICO*/>/*DISTANCIA REQUERIDA PARA QUE SE ACTIVE*/){
-            __delay_ms(10);
-            CCP1CONbits.DC1B = 0b00;
-            CCPR1L = 0b00001000;
-        }
-        if(ADC>5){
-            __delay_ms(10);
-            CCP1CONbits.DC1B = 0b00;
-            CCPR1L = 3;
-        }
-    }
-    return;
-}
-
-void setup(void){
-    OSCCONbits.IRCF = 0b111; //8Mhz
+    OSCCONbits.IRCF = 0b100; //8Mhz
     OSCCONbits.OSTS= 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 0;
@@ -113,7 +96,7 @@ void setup(void){
     TRISA = 0b00000001;
     TRISB = 0;
     TRISC = 0b00011000;
-    TRISD = 0;
+    TRISD = 0b00000010;
     TRISE = 0;
     ANSEL = 0b00000001;
     ANSELH = 0;
@@ -122,38 +105,102 @@ void setup(void){
     PORTD = 0;
     PORTE = 0;
     PORTA = 0;
-}
 
-void PWM(void){
-    // inicializacion de PWM
-    CCP1CON = 0b00111100;
-    TRISCbits.TRISC2 = 1;       // CCP1 entrada
-    PR2 = 155;                  //valor para periodo de 20ms
-    CCPR1L=27;
-    PIR1bits.TMR2IF = 0;        // se limpea la bandera del TMR2
-    T2CONbits.T2CKPS = 0b11;    //se coloca el Prescaler 16
-    T2CONbits.TMR2ON = 1;       //se enciende el TRM2
-    while(!TMR2IF);
-    TMR2IF = 0;                //SE LIEMPIA LA BANDERA DEL TRM2
-    TRISC2=0;                  //PORTC 2 SE DECLARA COMO SALIDA
-}
-
-void adc(void){
-    //se inicializa ADC     
+            
     ADCON0bits.ADCS = 01;
     ADCON0bits.ADON = 1;   // adc on
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;
+    I2C_Slave_Init(0x20); //Initialize as a I2C Slave with address 0x20
+    PWM();
+    LOOP();
+  
+}
+
+void LOOP(void){
+    while(1){
+        ANALOGICO();
+        if(ultrasonico == 0x0f){
+            CCPR1L = 25;
+            S1= 1;
+        }
+        if(ADC>=5 & S1 ==1){
+            S1=0;
+        }
+        if(ADC==0 & S1==0){
+            CCPR1L = 10;
+        }
+       
+    dist = calc_dist()/5;
+   
+    if(dist>0){
+    ultrasonico = 0x00;
+    }
+    else
+    {ultrasonico = 0x0F;}
+    }
+    
 }
 
 void ANALOGICO(void){
     __delay_ms(1);
-        ADCON0bits.CHS = 0000;
-        ADCON0bits.ADON = 1;
-        ADCON0bits.GO = 1;
-        while(ADCON0bits.GO);
-       ADC = ADRESH;
-       PORTB = ADC;
-       return;
+    ADCON0bits.CHS = 0000;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO);
+    ADC = ADRESH;
+    return;
+}
+
+
+
+void PWM(void){
+    // inicializacion de PWM
+    TRISCbits.TRISC2 = 1;       // CCP1 entrada
+    PR2 = 200;                  //valor para periodo de 20ms
+    CCP1CONbits.CCP1M3 = 1;
+    CCP1CONbits.CCP1M2 = 1;
+    CCP1CONbits.CCP1M1 = 0;
+    CCP1CONbits.CCP1M0 = 0;
+    
+   
+    CCPR1L = 27;
+    CCP1CONbits.DC1B0 = 1;
+    CCP1CONbits.DC1B1 = 1;
+    
+  
+    
+    PIR1bits.TMR2IF = 0;        // se limpea la bandera del TMR2
+    
+    T2CONbits.T2CKPS = 0b11;    //se coloca el Prescaler 16
+    T2CONbits.TMR2ON = 1;       //se enciende el TRM2
+    while(!TMR2IF);
+    TMR2IF = 0;                //SE LIEMPIA LA BANDERA DEL TRM2
+    TRISC2=0;                  //PORTC 2 SE DECLARA COMO SALIDA
+    return;
+}
+
+
+
+int calc_dist(void){
+    int distance=0;
+    TMR1=0;
+    // Send Trigger Pulse To The Sensor
+    TRIGGER=1;
+    __delay_us(10);
+    TRIGGER=0;
+    // Wait For The Echo Pulse From The Sensor
+    while(!ECHO);
+    // Turn ON Timer Module & Disable Interrupts
+
+    TMR1ON=1;
+    // Wait Until The Pulse Ends
+    while(ECHO);
+    // Turn OFF The Timer & Re-Enable The Interrupts
+    TMR1ON=0;
+
+    // Calculate The Distance Using The Equation
+    distance=TMR1/58.82;
+    return distance;
 }
