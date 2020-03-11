@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\sensor_deteccion.X.production.sym \
   --cmf=dist/default/production\sensor_deteccion.X.production.cmf -z \
-  -Q16F887 -oC:\Users\juan\AppData\Local\Temp\s2cg.2 \
+  -Q16F887 -oC:\Users\juan\AppData\Local\Temp\s9ng.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/sensor_deteccion.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
@@ -19,7 +19,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\juan\AppData\Local\Temp\s2cg.o \
+  -DENTRY=2 -k C:\Users\juan\AppData\Local\Temp\s9ng.o \
   dist/default/production\sensor_deteccion.X.production.o 
 
 Object code version is 3.11
@@ -29,36 +29,45 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\juan\AppData\Local\Temp\s2cg.o
+C:\Users\juan\AppData\Local\Temp\s9ng.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\sensor_deteccion.X.production.o
-                cinit                                 F        F       10        8       0
+                cinit                                 F        F       1E        8       0
                 intentry                              4        4        8        8       0
-                text4                               118      118       61        8       0
-                text3                               179      179       5E        8       0
-                text2                               1F2      1F2       1A        8       0
-                text1                               1D7      1D7       1B        8       0
-                maintext                             1F       1F       F9        8       0
-                cstackBANK0                          23       23        3       20       1
-                cstackCOMMON                         77       77        4       70       1
-                bssBANK0                             20       20        3       20       1
-                bssCOMMON                            70       70        7       70       1
+                text6                               146      146       61        8       0
+                text5                               1A7      1A7       5E        8       0
+                text4                               250      250       16        8       0
+                text3                               23A      23A       16        8       0
+                text2                               220      220       1A        8       0
+                text1                               205      205       1B        8       0
+                maintext                             2D       2D      119        8       0
+                cstackBANK0                          30       30        5       20       1
+                cstackCOMMON                         76       76        5       70       1
+                inittext                            266      266       13        8       0
+                dataBANK0                            20       20        A       20       1
+                bssBANK0                             2A       2A        6       20       1
+                bssCOMMON                            70       70        6       70       1
+                idataBANK0                          279      279        A        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              C        C        3         0
-                cinit                                 F        F       10         0
+                cinit                                 F        F       1E         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text4                               118      118       61         0
-                text3                               179      179       5E         0
-                text2                               1F2      1F2       1A         0
-                text1                               1D7      1D7       1B         0
-                maintext                             1F       1F       F9         0
+                text6                               146      146       61         0
+                text5                               1A7      1A7       5E         0
+                text4                               250      250       16         0
+                text3                               23A      23A       16         0
+                text2                               220      220       1A         0
+                text1                               205      205       1B         0
+                maintext                             2D       2D      119         0
+                inittext                            266      266       13         0
+                idataBANK0                          279      279        A         0
 
         CLASS   STRCODE        
 
@@ -69,12 +78,13 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         77       77        4         1
-                bssCOMMON                            70       70        7         1
+                cstackCOMMON                         76       76        5         1
+                bssCOMMON                            70       70        6         1
 
         CLASS   BANK0          
-                cstackBANK0                          23       23        3         1
-                bssBANK0                             20       20        3         1
+                cstackBANK0                          30       30        5         1
+                dataBANK0                            20       20        A         1
+                bssBANK0                             2A       2A        6         1
 
         CLASS   BANK1          
 
@@ -107,8 +117,8 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000208  00020C         8       0  CODE        2
-                bssBANK0                       000020  000006  000026        20       1  BANK0       1
+                intentry                       000004  00027F  000283         8       0  CODE        2
+                dataBANK0                      000020  000015  000035        20       1  BANK0       1
                 bssCOMMON                      000070  00000B  00007B        70       1  COMMON      1
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
@@ -116,20 +126,20 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0026-006F             4A           1
+        BANK0            0035-006F             3B           1
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         020C-1FFF            800
+                         0283-1FFF            800
         COMMON           007B-007D              3           1
         CONST            0003-0003              1           2
-                         020C-1FFF            100
+                         0283-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         020C-1FFF            100
+                         0283-1FFF            100
         IDLOC            2000-2003              4           2
-        RAM              0026-006F             4A           1
+        RAM              0035-006F             3B           1
                          00A0-00EF             50
                          0110-016F             60
                          0190-01EF             60
@@ -139,19 +149,21 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         020C-1FFF           1DF4
+                         0283-1FFF           1D7D
         STRING           0003-0003              1           2
-                         020C-1FFF            100
+                         0283-1FFF            100
 
                                   Symbol Table
 
-I2C_Slave_Init@address    cstackCOMMON 007A
+I2C_Slave_Init@address    cstackCOMMON 0079
 _ANSEL                    (abs)        0188
 _ANSELH                   (abs)        0189
 _BF                       (abs)        04A0
 _GIE                      (abs)        005F
-_I2C_Slave_Init           text2        01F2
+_I2C_Slave_Init           text2        0220
 _OSCCONbits               (abs)        008F
+_PARQUEO1                 dataBANK0    0025
+_PARQUEO2                 dataBANK0    0020
 _PEIE                     (abs)        005E
 _PIR1bits                 (abs)        000C
 _PORTA                    (abs)        0005
@@ -161,14 +173,15 @@ _PORTBbits                (abs)        0006
 _PORTC                    (abs)        0007
 _PORTD                    (abs)        0008
 _PORTE                    (abs)        0009
-_S1                       bssCOMMON    0076
-_S2                       bssCOMMON    0075
-_S3                       bssCOMMON    0074
-_S4                       bssCOMMON    0073
-_S5                       bssCOMMON    0072
-_S6                       bssCOMMON    0071
-_S7                       bssCOMMON    0070
-_S8                       bssBANK0     0020
+_PORTEbits                (abs)        0009
+_S1                       bssCOMMON    0075
+_S2                       bssCOMMON    0074
+_S3                       bssCOMMON    0073
+_S4                       bssCOMMON    0072
+_S5                       bssCOMMON    0071
+_S6                       bssCOMMON    0070
+_S7                       bssBANK0     002D
+_S8                       bssBANK0     002C
 _SSPADD                   (abs)        0093
 _SSPBUF                   (abs)        0013
 _SSPCON                   (abs)        0014
@@ -206,18 +219,21 @@ __Hbank2                  bank2        0000
 __Hbank3                  bank3        0000
 __HbssBANK0               bssBANK0     0000
 __HbssCOMMON              bssCOMMON    0000
-__Hcinit                  cinit        001F
+__Hcinit                  cinit        002D
 __Hclrtext                clrtext      0000
 __Hcode                   code         0000
 __Hcommon                 common       0000
 __Hconfig                 config       2009
 __HcstackBANK0            cstackBANK0  0000
 __HcstackCOMMON           cstackCOMMON 0000
+__HdataBANK0              dataBANK0    0000
 __Heeprom_data            eeprom_data  0000
 __Hend_init               end_init     000F
 __Hfunctab                functab      0000
+__HidataBANK0             idataBANK0   0000
 __Hidloc                  idloc        0000
 __Hinit                   init         000C
+__Hinittext               inittext     0000
 __Hintentry               intentry     000C
 __Hmaintext               maintext     0000
 __Hpowerup                powerup      0000
@@ -248,11 +264,14 @@ __Lcommon                 common       0000
 __Lconfig                 config       2007
 __LcstackBANK0            cstackBANK0  0000
 __LcstackCOMMON           cstackCOMMON 0000
+__LdataBANK0              dataBANK0    0000
 __Leeprom_data            eeprom_data  0000
 __Lend_init               end_init     000C
 __Lfunctab                functab      0000
+__LidataBANK0             idataBANK0   0000
 __Lidloc                  idloc        0000
 __Linit                   init         000C
+__Linittext               inittext     0000
 __Lintentry               intentry     0004
 __Lmaintext               maintext     0000
 __Lpowerup                powerup      0000
@@ -278,37 +297,51 @@ ___latbits                (abs)        0002
 ___sp                     stack        0000
 ___stackhi                (abs)        0000
 ___stacklo                (abs)        0000
-__end_of_I2C_Slave_Init   text2        020C
-__end_of__initialization  cinit        001B
-__end_of_initOsc          text3        01D7
-__end_of_isr              text4        0179
-__end_of_main             maintext     0118
-__end_of_setup            text1        01F2
+__end_of_I2C_Slave_Init   text2        023A
+__end_of__initialization  cinit        0029
+__end_of_initOsc          text5        0205
+__end_of_isr              text6        01A7
+__end_of_main             maintext     0146
+__end_of_parqueo1         text4        0266
+__end_of_parqueo2         text3        0250
+__end_of_setup            text1        0220
 __initialization          cinit        000F
-__pbssBANK0               bssBANK0     0020
+__pbssBANK0               bssBANK0     002A
 __pbssCOMMON              bssCOMMON    0070
-__pcstackBANK0            cstackBANK0  0023
-__pcstackCOMMON           cstackCOMMON 0077
+__pcstackBANK0            cstackBANK0  0030
+__pcstackCOMMON           cstackCOMMON 0076
+__pdataBANK0              dataBANK0    0020
+__pidataBANK0             idataBANK0   0279
 __pintentry               intentry     0004
-__pmaintext               maintext     001F
-__ptext1                  text1        01D7
-__ptext2                  text2        01F2
-__ptext3                  text3        0179
-__ptext4                  text4        0118
+__pmaintext               maintext     002D
+__ptext1                  text1        0205
+__ptext2                  text2        0220
+__ptext3                  text3        023A
+__ptext4                  text4        0250
+__ptext5                  text5        01A7
+__ptext6                  text6        0146
 __size_of_I2C_Slave_Init  (abs)        0000
 __size_of_initOsc         (abs)        0000
 __size_of_isr             (abs)        0000
 __size_of_main            (abs)        0000
+__size_of_parqueo1        (abs)        0000
+__size_of_parqueo2        (abs)        0000
 __size_of_setup           (abs)        0000
-_initOsc                  text3        0179
-_isr                      text4        0118
-_main                     maintext     001F
-_setup                    text1        01D7
-_vehiculos                bssBANK0     0022
-_z                        bssBANK0     0021
+_initOsc                  text5        01A7
+_isr                      text6        0146
+_main                     maintext     002D
+_n1                       bssBANK0     002B
+_n2                       bssBANK0     002A
+_parqueo1                 text4        0250
+_parqueo2                 text3        023A
+_setup                    text1        0205
+_vehiculos                bssBANK0     002F
+_z                        bssBANK0     002E
 btemp                     (abs)        007E
-end_of_initialization     cinit        001B
-initOsc@frec              cstackCOMMON 007A
+end_of_initialization     cinit        0029
+initOsc@frec              cstackBANK0  0030
+init_fetch0               inittext     0266
+init_ram0                 inittext     026A
 interrupt_function        intentry     0004
 intlevel0                 functab      0000
 intlevel1                 functab      0000
@@ -327,7 +360,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 85 in file "sensor_deteccion.c"
+		line 92 in file "sensor_deteccion.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -343,12 +376,14 @@ FUNCTION INFORMATION:
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
       Locals:         0       0       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
+      Temps:          0       2       0       0       0
+      Totals:         0       2       0       0       0
+Total ram usage:        2 bytes
  Hardware stack levels required when called:    3
  This function calls:
 		_initOsc
+		_parqueo1
+		_parqueo2
 		_setup
  This function is called by:
 		Startup code after reset
@@ -357,7 +392,7 @@ Total ram usage:        1 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 173 in file "sensor_deteccion.c"
+		line 184 in file "sensor_deteccion.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -415,13 +450,13 @@ Total ram usage:        1 bytes
  This function uses a non-reentrant model
 
 
- *************** function _initOsc *****************
+ *************** function _parqueo2 *****************
  Defined at:
-		line 9 in file "OSCILADOR.c"
+		line 207 in file "sensor_deteccion.c"
  Parameters:    Size  Location     Type
-  frec            1    wreg     unsigned char 
+		None
  Auto vars:     Size  Location     Type
-  frec            1    3[COMMON] unsigned char 
+		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -432,9 +467,69 @@ Total ram usage:        1 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
-      Locals:         1       0       0       0       0
-      Temps:          0       2       0       0       0
-      Totals:         1       2       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       3       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _parqueo1 *****************
+ Defined at:
+		line 200 in file "sensor_deteccion.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       3       0       0       0
+      Totals:         0       3       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _initOsc *****************
+ Defined at:
+		line 9 in file "OSCILADOR.c"
+ Parameters:    Size  Location     Type
+  frec            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  frec            1    0[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       1       0       0       0
+      Temps:          2       0       0       0       0
+      Totals:         2       1       0       0       0
 Total ram usage:        3 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
@@ -447,7 +542,7 @@ Total ram usage:        3 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 51 in file "sensor_deteccion.c"
+		line 58 in file "sensor_deteccion.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -479,24 +574,26 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 sensor_deteccion.c
-		_main          		CODE           	001F	0000	250
-		_isr           		CODE           	0118	0000	98
-		_setup         		CODE           	01D7	0000	28
+		_parqueo1      		CODE           	0250	0000	23
+		_parqueo2      		CODE           	023A	0000	23
+		_main          		CODE           	002D	0000	282
+		_isr           		CODE           	0146	0000	98
+		_setup         		CODE           	0205	0000	28
 
-sensor_deteccion.c estimated size: 376
+sensor_deteccion.c estimated size: 454
 
 I2C_SLAVE3.c
-		_I2C_Slave_Init		CODE           	01F2	0000	27
+		_I2C_Slave_Init		CODE           	0220	0000	27
 
 I2C_SLAVE3.c estimated size: 27
 
 shared
-		__initialization		CODE           	000F	0000	13
+		__initialization		CODE           	000F	0000	27
 
-shared estimated size: 13
+shared estimated size: 27
 
 OSCILADOR.c
-		_initOsc       		CODE           	0179	0000	95
+		_initOsc       		CODE           	01A7	0000	95
 
 OSCILADOR.c estimated size: 95
 

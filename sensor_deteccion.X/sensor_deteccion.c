@@ -1,5 +1,5 @@
 /*
- * Second lab for Digital 2 course
+ * proyect 1 Digital 2 course
  * File:   sensor_deteccion.c
  * Author: Juan Diego Castillo Amaya
  * Student ID: 17074
@@ -47,7 +47,14 @@ char S5=0;
 char S6=0;
 char S7=0;
 char S8=0;
+char n1;
+char n2;
+unsigned char PARQUEO1[] = {0x7E,0x48,0x3D,0x6D,0x4B};
+unsigned char PARQUEO2[] = {0x7E,0x48,0x3D,0x6D,0x4B};
+
 void setup(void);
+void parqueo1(void);
+void parqueo2(void);
 void __interrupt() isr(void){
    if(PIR1bits.SSPIF == 1){ 
 
@@ -86,7 +93,6 @@ void main(void) {
     initOsc(7);
     setup();
     while(1){
-        //PORTD = ~PORTAbits.RA0;
         if(PORTAbits.RA0==1 && S1==0){
             vehiculos++;
             S1= 1;
@@ -166,7 +172,12 @@ void main(void) {
             vehiculos--;
             S8=0;
             PORTBbits.RB7 = 0;
-        }
+        }   
+        parqueo1();
+        __delay_ms(5);
+        parqueo2();
+        __delay_ms(5);
+        
     }
     return;
 }
@@ -174,8 +185,8 @@ void setup(void){
     TRISA=0b11111111;
     TRISB=0;
     TRISC=0b00011000;
-    TRISD=0;
-    TRISE=0;
+    TRISD=0b00000000;
+    TRISE=0b00000000;
     ANSEL=0;
     ANSELH=0;  
     
@@ -185,4 +196,18 @@ void setup(void){
     PORTD=0;
     PORTE=0;
     I2C_Slave_Init(0x10);
+}
+void parqueo1(void){
+    n1 = S1 + S2 + S3 + S4;
+    PORTEbits.RE0=1;
+    PORTEbits.RE1=0;
+    PORTD = PARQUEO1[n1];
+    return;
+}
+void parqueo2(void){
+    n2 = S5 + S6 + S7 + S8;
+    PORTEbits.RE0=0;
+    PORTEbits.RE1=1;
+    PORTD = PARQUEO2[n2];
+    return;
 }
