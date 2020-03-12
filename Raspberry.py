@@ -2,15 +2,32 @@
 import sys
 import time
 import spidev
+from Adafruit_IO import MQTTClient
 # inicializamos SPI
 spi = spidev.SpiDev()
 #especificamos a qie slave nos vamos a comunicar
 spi.open(0,0)
 # especificamos velocidad de comunicacion
 spi.speed_max_hz = 1953000
+#Definimos el modo del SPI
+spi.mode = 0b11
 
-# Import Adafruit IO MQTT client.
-from Adafruit_IO import MQTTClient
+try:
+    while True:
+        resp = spi.readbytes(4)
+        if (resp[0] != 255):
+            print(resp)
+            value = resp[1] + resp[2]
+            print(value)
+            byte1 = bin(resp[0])[2:].rjust(8,'0')
+            byte2 = bin(resp[1])[2:].rjust(8,'0')
+            byte3 = bin(resp[2])[2:].rjust(8,'0')
+            byte4 = bin(resp[3])[2:].rjust(8,'0')
+            print(byte)
+            time.sleep(0.1)
+            except KeyboardInterrupt:
+            spi.close()
+
 
 # Set to your Adafruit IO key.
 # Remember, your key is a secret,
