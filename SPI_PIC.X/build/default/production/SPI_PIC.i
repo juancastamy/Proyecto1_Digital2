@@ -2710,6 +2710,10 @@ char spiRead();
 # 40 "SPI_PIC.c" 2
 
 
+
+uint8_t Luz;
+uint8_t Temp;
+uint8_t Parq;
 void setup(void);
 
 void main(void) {
@@ -2717,9 +2721,17 @@ void main(void) {
     initOsc(7);
     UART_INIT(9600);
     while(1){
-        PORTB = UART_READ();
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        spiWrite(PORTB);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        Luz = UART_READ();
+        spiWrite(Luz);
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+        Temp = UART_READ();
+        spiWrite(Temp);
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+        Parq = UART_READ;
+        spiWrite(Parq);
+        _delay((unsigned long)((300)*(8000000/4000.0)));
+
     }
     return;
 }

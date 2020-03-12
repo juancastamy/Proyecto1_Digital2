@@ -40,6 +40,9 @@
 #include "SPI_SLAVE.h"
 #define _XTAL_FREQ 8000000
 
+uint8_t Luz;
+uint8_t Temp;
+uint8_t Parq;
 void setup(void);
 
 void main(void) {
@@ -47,9 +50,17 @@ void main(void) {
     initOsc(7);
     UART_INIT(9600);
     while(1){
-        PORTB = UART_READ();
-        __delay_ms (5);
-        spiWrite(PORTB);
+        __delay_ms(100);
+        Luz = UART_READ();
+        spiWrite(Luz);
+        __delay_ms(200);
+        Temp = UART_READ();
+        spiWrite(Temp);
+        __delay_ms(200);
+        Parq = UART_READ;
+        spiWrite(Parq);
+        __delay_ms (300);
+        
     }
     return;
 }

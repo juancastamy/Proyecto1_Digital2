@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"67 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"79 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [e E1304 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -57,9 +57,9 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "8 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\OSCI.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
-"44 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"48 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [v _main main `(v  1 e 1 0 ]
-"56
+"68
 [v _setup setup `(v  1 e 1 0 ]
 "12 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_SLAVE.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -71,9 +71,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _UART_INIT UART_INIT `(uc  1 e 1 0 ]
 "23
 [v _UART_READ UART_READ `(uc  1 e 1 0 ]
-"228 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S222 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S221 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -82,14 +80,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"482
-[s S231 . 1 `uc 1 . 1 0 :2:0 
+"482 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[s S230 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S236 . 1 `S222 1 . 1 0 `S231 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES236  1 e 1 @11 ]
+[u S235 . 1 `S221 1 . 1 0 `S230 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES235  1 e 1 @11 ]
 [s S104 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -139,7 +137,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S180 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S179 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -149,9 +147,9 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S189 . 1 `S180 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES189  1 e 1 @136 ]
-[s S203 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S188 . 1 `S179 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES188  1 e 1 @136 ]
+[s S202 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -160,25 +158,25 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S211 . 1 `S203 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES211  1 e 1 @140 ]
-[s S309 . 1 `uc 1 SCS 1 0 :1:0 
+[u S210 . 1 `S202 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES210  1 e 1 @140 ]
+[s S311 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S315 . 1 `uc 1 . 1 0 :4:0 
+[s S317 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S320 . 1 `S309 1 . 1 0 `S315 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES320  1 e 1 @143 ]
+[u S322 . 1 `S311 1 . 1 0 `S317 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES322  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S367 . 1 `uc 1 BF 1 0 :1:0 
+[s S369 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -188,39 +186,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S376 . 1 `uc 1 . 1 0 :2:0 
+[s S378 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S381 . 1 `uc 1 . 1 0 :2:0 
+[s S383 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S387 . 1 `uc 1 . 1 0 :2:0 
+[s S389 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S392 . 1 `uc 1 . 1 0 :2:0 
+[s S394 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S397 . 1 `uc 1 . 1 0 :2:0 
+[s S399 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S402 . 1 `uc 1 . 1 0 :2:0 
+[s S404 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S407 . 1 `S367 1 . 1 0 `S376 1 . 1 0 `S381 1 . 1 0 `S387 1 . 1 0 `S392 1 . 1 0 `S397 1 . 1 0 `S402 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES407  1 e 1 @148 ]
+[u S409 . 1 `S369 1 . 1 0 `S378 1 . 1 0 `S383 1 . 1 0 `S389 1 . 1 0 `S394 1 . 1 0 `S399 1 . 1 0 `S404 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES409  1 e 1 @148 ]
 [s S23 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
@@ -252,10 +250,16 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"44 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"43 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+[v _Luz Luz `uc  1 e 1 0 ]
+"44
+[v _Temp Temp `uc  1 e 1 0 ]
+"45
+[v _Parq Parq `uc  1 e 1 0 ]
+"48
 [v _main main `(v  1 e 1 0 ]
 {
-"54
+"66
 } 0
 "35 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_SLAVE.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -266,10 +270,10 @@ SPI_ACTIVE_2_IDLE 64
 [v spiWrite@dat dat `uc  1 a 1 0 ]
 "38
 } 0
-"56 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"68 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"68
+"80
 } 0
 "12 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_SLAVE.c
 [v _spiInit spiInit `(v  1 e 1 0 ]

@@ -1,23 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"42 SPI_PIC.c
-[; ;SPI_PIC.c: 42: void setup(void);
+"46 SPI_PIC.c
+[; ;SPI_PIC.c: 46: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "42 ./OSCI.h
 [v _initOsc `(v ~T0 @X0 0 ef1`uc ]
 "48 ./UART.h
 [; ;./UART.h: 48: uint8_t UART_INIT(const long int baudrate);
 [v _UART_INIT `(uc ~T0 @X0 0 ef1`Cl ]
-"228 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"49 ./UART.h
-[; ;./UART.h: 49: uint8_t UART_READ(void);
-[v _UART_READ `(uc ~T0 @X0 0 ef ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
+"49 ./UART.h
+[; ;./UART.h: 49: uint8_t UART_READ(void);
+[v _UART_READ `(uc ~T0 @X0 0 ef ]
 "47 ./SPI_SLAVE.h
 [; ;./SPI_SLAVE.h: 47: void spiWrite(char);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
@@ -76,8 +73,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "482
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"67 SPI_PIC.c
-[; ;SPI_PIC.c: 67:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"79 SPI_PIC.c
+[; ;SPI_PIC.c: 79:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1304 32 33 34 35 36 37 .. ]
 [n E1304 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1312 0 128 .. ]
@@ -349,88 +346,118 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "34 ./OSCI.h
 [p x FOSC = INTRC_NOCLKOUT ]
+"43 SPI_PIC.c
+[; ;SPI_PIC.c: 43: uint8_t Luz;
+[v _Luz `uc ~T0 @X0 1 e ]
+"44
+[; ;SPI_PIC.c: 44: uint8_t Temp;
+[v _Temp `uc ~T0 @X0 1 e ]
+"45
+[; ;SPI_PIC.c: 45: uint8_t Parq;
+[v _Parq `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"44 SPI_PIC.c
-[; ;SPI_PIC.c: 44: void main(void) {
+"48
+[; ;SPI_PIC.c: 48: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"45
-[; ;SPI_PIC.c: 45:     setup();
+"49
+[; ;SPI_PIC.c: 49:     setup();
 [e ( _setup ..  ]
-"46
-[; ;SPI_PIC.c: 46:     initOsc(7);
+"50
+[; ;SPI_PIC.c: 50:     initOsc(7);
 [e ( _initOsc (1 -> -> 7 `i `uc ]
-"47
-[; ;SPI_PIC.c: 47:     UART_INIT(9600);
+"51
+[; ;SPI_PIC.c: 51:     UART_INIT(9600);
 [e ( _UART_INIT (1 -> -> 9600 `i `l ]
-"48
-[; ;SPI_PIC.c: 48:     while(1){
+"52
+[; ;SPI_PIC.c: 52:     while(1){
 [e :U 140 ]
 {
-"49
-[; ;SPI_PIC.c: 49:         PORTB = UART_READ();
-[e = _PORTB ( _UART_READ ..  ]
-"50
-[; ;SPI_PIC.c: 50:         _delay((unsigned long)((5)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"51
-[; ;SPI_PIC.c: 51:         spiWrite(PORTB);
-[e ( _spiWrite (1 -> _PORTB `uc ]
-"52
-[; ;SPI_PIC.c: 52:     }
+"53
+[; ;SPI_PIC.c: 53:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"54
+[; ;SPI_PIC.c: 54:         Luz = UART_READ();
+[e = _Luz ( _UART_READ ..  ]
+"55
+[; ;SPI_PIC.c: 55:         spiWrite(Luz);
+[e ( _spiWrite (1 -> _Luz `uc ]
+"56
+[; ;SPI_PIC.c: 56:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"57
+[; ;SPI_PIC.c: 57:         Temp = UART_READ();
+[e = _Temp ( _UART_READ ..  ]
+"58
+[; ;SPI_PIC.c: 58:         spiWrite(Temp);
+[e ( _spiWrite (1 -> _Temp `uc ]
+"59
+[; ;SPI_PIC.c: 59:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"60
+[; ;SPI_PIC.c: 60:         Parq = UART_READ;
+[e = _Parq -> &U _UART_READ `uc ]
+"61
+[; ;SPI_PIC.c: 61:         spiWrite(Parq);
+[e ( _spiWrite (1 -> _Parq `uc ]
+"62
+[; ;SPI_PIC.c: 62:         _delay((unsigned long)((300)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"64
+[; ;SPI_PIC.c: 64:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"53
-[; ;SPI_PIC.c: 53:     return;
+"65
+[; ;SPI_PIC.c: 65:     return;
 [e $UE 138  ]
-"54
-[; ;SPI_PIC.c: 54: }
+"66
+[; ;SPI_PIC.c: 66: }
 [e :UE 138 ]
 }
-"56
-[; ;SPI_PIC.c: 56: void setup (void){
+"68
+[; ;SPI_PIC.c: 68: void setup (void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"57
-[; ;SPI_PIC.c: 57:     TRISA = 0;
+"69
+[; ;SPI_PIC.c: 69:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"58
-[; ;SPI_PIC.c: 58:     TRISB = 0;
+"70
+[; ;SPI_PIC.c: 70:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"59
-[; ;SPI_PIC.c: 59:     TRISC = 0b11010000;
+"71
+[; ;SPI_PIC.c: 71:     TRISC = 0b11010000;
 [e = _TRISC -> -> 208 `i `uc ]
-"60
-[; ;SPI_PIC.c: 60:     TRISD = 0;
+"72
+[; ;SPI_PIC.c: 72:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"61
-[; ;SPI_PIC.c: 61:     TRISDbits.TRISD1 = 0;
+"73
+[; ;SPI_PIC.c: 73:     TRISDbits.TRISD1 = 0;
 [e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
-"62
-[; ;SPI_PIC.c: 62:     ANSEL = 0;
+"74
+[; ;SPI_PIC.c: 74:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"63
-[; ;SPI_PIC.c: 63:     ANSELH = 0;
+"75
+[; ;SPI_PIC.c: 75:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"64
-[; ;SPI_PIC.c: 64:     PIE1bits.RCIE = 1;
+"76
+[; ;SPI_PIC.c: 76:     PIE1bits.RCIE = 1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"65
-[; ;SPI_PIC.c: 65:     INTCONbits.PEIE = 1;
+"77
+[; ;SPI_PIC.c: 77:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"66
-[; ;SPI_PIC.c: 66:     INTCONbits.GIE = 1;
+"78
+[; ;SPI_PIC.c: 78:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"67
-[; ;SPI_PIC.c: 67:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"79
+[; ;SPI_PIC.c: 79:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1304 4 . `E1312 0 . `E1316 1 . `E1320 0 ]
-"68
-[; ;SPI_PIC.c: 68: }
+"80
+[; ;SPI_PIC.c: 80: }
 [e :UE 142 ]
 }
