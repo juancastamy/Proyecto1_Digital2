@@ -112,6 +112,7 @@ void LOOP(void){
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x31);     //7 bit address + Read
         analogic_digital_a = I2C_Master_Read(0); //Read + Acknowledge
+        UART_WRITE(analogic_digital_a);
         I2C_Master_Stop();          //Stop condition
         __delay_ms(200);
         
@@ -125,7 +126,8 @@ void LOOP(void){
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x31);     //7 bit address + Read
         T_byte1 = I2C_Master_Read(0); //Read + Acknowledge
-        I2C_Master_Stop();          //Stop condition
+        I2C_Master_Stop(); //Stop condition
+        UART_WRITE(T_byte1);
         __delay_ms(200);
        
         decT = T_byte1/10;
@@ -138,6 +140,7 @@ void LOOP(void){
         I2C_Master_Write(0x11);     //7 bit address + Read
         CONTADOR = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
+        UART_WRITE(CONTADOR);
         __delay_ms(200);
         
         CONTD = CONTADOR/10;
@@ -172,10 +175,6 @@ void LOOP(void){
         lcd_msg("  ");
         lcd_msg(CONTLUZA_CHAR);
         
-        UART_WRITE(ADCC_CHARC);
-        __delay_ms(5);
-        UART_WRITE(CONTD_CHAR);
-        __delay_ms(5);
-        UART_WRITE(CONTLUZA_CHAR);
+        
     }
 }
