@@ -38,6 +38,7 @@
 #include "UART.h"
 #include "OSCI.h"
 #include "SPI_SLAVE.h"
+#define _XTAL_FREQ 8000000
 
 void setup(void);
 
