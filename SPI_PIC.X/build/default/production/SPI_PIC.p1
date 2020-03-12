@@ -373,8 +373,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_PIC.c: 49:         PORTB = UART_READ();
 [e = _PORTB ( _UART_READ ..  ]
 "50
-[; ;SPI_PIC.c: 50:         _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;SPI_PIC.c: 50:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "51
 [; ;SPI_PIC.c: 51:         spiWrite(PORTB);
 [e ( _spiWrite (1 -> _PORTB `uc ]

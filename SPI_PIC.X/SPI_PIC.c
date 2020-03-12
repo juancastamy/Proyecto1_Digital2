@@ -47,7 +47,7 @@ void main(void) {
     UART_INIT(9600);
     while(1){
         PORTB = UART_READ();
-        __delay_ms (1);
+        __delay_ms (5);
         spiWrite(PORTB);
     }
     return;

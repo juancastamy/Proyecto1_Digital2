@@ -2718,7 +2718,7 @@ void main(void) {
     UART_INIT(9600);
     while(1){
         PORTB = UART_READ();
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+        _delay((unsigned long)((5)*(8000000/4000.0)));
         spiWrite(PORTB);
     }
     return;
