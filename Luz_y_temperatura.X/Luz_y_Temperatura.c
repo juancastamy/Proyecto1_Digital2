@@ -44,6 +44,11 @@ char ADC;
 void LOOP(void);
 void ANALOGICO(void);
 
+ void START_DHT11(void);
+void CHECK_RESPONSE(void);
+char ReadData();
+unsigned char check;
+
 
 unsigned char T_byte1;
 unsigned char T_byte2;
@@ -161,12 +166,40 @@ void LOOP(void){
         }
         if(ADC<=8){
             PORTDbits.RD1=1;
- 
+        }
+        
+         START_DHT11();
+        CHECK_RESPONSE();
+        
+        if(check == 1){
+        
+            RH_byte1 = ReadData();
+            RH_byte2 = ReadData();
+            T_byte1 = ReadData();
+            T_byte2 = ReadData();
+            sum = ReadData();
+            
+            if(sum == ((RH_byte1+RH_byte2+T_byte1+T_byte2) & 0xFF)){
+              decHR = RH_byte1/10;
+              itoa(decHR_char,decHR,10);
+              uniHR = RH_byte1%10;
+              itoa(uniHR_char,uniHR,10);
+              decT = T_byte1/10;
+              itoa(decT_char,decT,10);
+              uniT = T_byte1%10;
+              itoa(uniT_char,uniT ,10);
+              strcat(decHR_char,uniHR_char);
+              strcat(decT_char,uniT_char);
+        // temperatura = decT
+              
+              
             }
         }
       
+        
+    }
     
-
+}
 
 void ANALOGICO(void){
     __delay_ms(1);
