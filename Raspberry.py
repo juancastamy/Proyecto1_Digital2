@@ -11,22 +11,20 @@ spi.open(0,0)
 spi.speed_max_hz = 1953000
 #Definimos el modo del SPI
 spi.mode = 0b11
-
+#Lee la cantidad de bytes que queremos
 try:
     while True:
         resp = spi.readbytes(4)
         if (resp[0] != 255):
             print(resp)
+            #value = 256*resp[0] + resp[1]
             value = resp[1] + resp[2]
             print(value)
             byte1 = bin(resp[0])[2:].rjust(8,'0')
             byte2 = bin(resp[1])[2:].rjust(8,'0')
             byte3 = bin(resp[2])[2:].rjust(8,'0')
             byte4 = bin(resp[3])[2:].rjust(8,'0')
-            print(byte)
-            time.sleep(0.1)
-            except KeyboardInterrupt:
-            spi.close()
+        time.sleep(0.1)
 
 
 # Set to your Adafruit IO key.
@@ -85,22 +83,22 @@ client.loop_background()
 # Now send new values every 10 seconds.
 print('Publishing a new message every 10 seconds (press Ctrl-C to quit)...')
 while True:
-    value = random.randint(0, 100)
+    value = byte1
     #print('Publishing {0} to DemoFeed.'.format(value))
     client.publish('Presión', value)
     time.sleep(10)
 
-    value = random.randint(0, 100)
+    value = byte2
     #print('Publishing {0} to DemoFeed.'.format(value))
     client.publish('Temperatura', value)
     time.sleep(10)
 
-    value = random.randint(0, 100)
+    value = byte3
     #print('Publishing {0} to DemoFeed.'.format(value))
     client.publish('Humedad', value)
     time.sleep(10)
 
-    value = random.randint(0, 100)
+    value = byte4
     #print('Publishing {0} to DemoFeed.'.format(value))
     client.publish('Luz', value)
     time.sleep(10)
