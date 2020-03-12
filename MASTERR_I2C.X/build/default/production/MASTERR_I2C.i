@@ -2982,9 +2982,12 @@ void LOOP(void){
     while(1){
         I2C_Master_Start();
         I2C_Master_Write(0x31);
-        analogic_digital_a = I2C_Master_Read(0);
+        analogic_digital_b = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        UART_WRITE(analogic_digital_b);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
         CONTLUZA = analogic_digital_b/10;
         itoa(CONTLUZA_CHAR,CONTLUZA,10);
@@ -2997,7 +3000,10 @@ void LOOP(void){
         I2C_Master_Write(0x31);
         T_byte1 = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        UART_WRITE(T_byte1);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
         decT = T_byte1/10;
         itoa(decT_char,decT,10);
@@ -3009,7 +3015,9 @@ void LOOP(void){
         I2C_Master_Write(0x11);
         CONTADOR = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        UART_WRITE(CONTADOR);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
 
         CONTD = CONTADOR/10;
         itoa(CONTD_CHAR,CONTD,10);
@@ -3019,7 +3027,7 @@ void LOOP(void){
 
         I2C_Master_Start();
         I2C_Master_Write(0x21);
-        analogic_digital_b = I2C_Master_Read(0);
+        analogic_digital_a = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
@@ -3042,11 +3050,5 @@ void LOOP(void){
         lcd_msg(CONTD_CHAR);
         lcd_msg("  ");
         lcd_msg(CONTLUZA_CHAR);
-
-        UART_WRITE(ADCC_CHARC);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        UART_WRITE(CONTD_CHAR);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        UART_WRITE(CONTLUZA_CHAR);
     }
 }

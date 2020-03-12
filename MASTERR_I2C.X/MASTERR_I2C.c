@@ -111,10 +111,12 @@ void LOOP(void){
     while(1){
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x31);     //7 bit address + Read
-        analogic_digital_a = I2C_Master_Read(0); //Read + Acknowledge
-        UART_WRITE(analogic_digital_a);
-        I2C_Master_Stop();          //Stop condition
-        __delay_ms(200);
+        analogic_digital_b = I2C_Master_Read(0); //Read + Acknowledge
+        I2C_Master_Stop(); //Stop condition
+        __delay_ms(100);
+        UART_WRITE(analogic_digital_b);
+        __delay_ms(100);
+        
         
         CONTLUZA = analogic_digital_b/10;
         itoa(CONTLUZA_CHAR,CONTLUZA,10);
@@ -127,8 +129,10 @@ void LOOP(void){
         I2C_Master_Write(0x31);     //7 bit address + Read
         T_byte1 = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop(); //Stop condition
+        __delay_ms(100);
         UART_WRITE(T_byte1);
-        __delay_ms(200);
+        __delay_ms(100);
+        
        
         decT = T_byte1/10;
         itoa(decT_char,decT,10);
@@ -140,8 +144,9 @@ void LOOP(void){
         I2C_Master_Write(0x11);     //7 bit address + Read
         CONTADOR = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
+        __delay_ms(100);
         UART_WRITE(CONTADOR);
-        __delay_ms(200);
+        __delay_ms(100);
         
         CONTD = CONTADOR/10;
         itoa(CONTD_CHAR,CONTD,10);
@@ -151,7 +156,7 @@ void LOOP(void){
                 
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x21);     //7 bit address + Read
-        analogic_digital_b = I2C_Master_Read(0); //Read + Acknowledge
+        analogic_digital_a = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
         __delay_ms(200);
         
@@ -174,7 +179,5 @@ void LOOP(void){
         lcd_msg(CONTD_CHAR);
         lcd_msg("  ");
         lcd_msg(CONTLUZA_CHAR);
-        
-        
     }
 }
