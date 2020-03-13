@@ -1,4 +1,4 @@
-# 1 "sensor_deteccion.c"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "sensor_deteccion.c" 2
-# 16 "sensor_deteccion.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2511,368 +2491,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 34 "sensor_deteccion.c" 2
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 
-# 1 "./OSCILADOR.h" 1
-# 34 "./OSCILADOR.h"
-#pragma config FOSC = INTRC_NOCLKOUT
 
 
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+{
+ volatile unsigned char *cp = to;
 
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
 
+  EECON1 &= 0x7F;
 
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 37 "./OSCILADOR.h" 2
-
-
-
-
-
-
-void initOsc(uint8_t frec);
-# 35 "sensor_deteccion.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 36 "sensor_deteccion.c" 2
-
-# 1 "./I2C_SLAVE3.h" 1
-# 38 "./I2C_SLAVE3.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 38 "./I2C_SLAVE3.h" 2
-
-
-
-void I2C_Master_Init(const unsigned long c);
-void I2C_Master_Wait();
-void I2C_Master_Start();
-void I2C_Master_RepeatedStart();
-void I2C_Master_Stop();
-void I2C_Master_Write(unsigned d);
-unsigned short I2C_Master_Read(unsigned short a);
-void I2C_Slave_Init(uint8_t address);
-# 37 "sensor_deteccion.c" 2
-
-# 1 "./UART.h" 1
-# 48 "./UART.h"
-uint8_t UART_INIT(const long int baudrate);
-uint8_t UART_READ(void);
-void UART_Read_Text(char *Output, unsigned int length);
-void UART_WRITE(char data);
-void UART_Write_Text(char *text);
-# 38 "sensor_deteccion.c" 2
-
-
-
-uint8_t vehiculos;
-uint8_t z;
-char S1=0;
-char S2=0;
-char S3=0;
-char S4=0;
-char S5=0;
-char S6=0;
-char S7=0;
-char S8=0;
-char n1;
-char n2;
-unsigned char PARQUEO1[] = {0x7E,0x48,0x3D,0x6D,0x4B};
-unsigned char PARQUEO2[] = {0x7E,0x48,0x3D,0x6D,0x4B};
-
-void setup(void);
-void parqueo1(void);
-void parqueo2(void);
-void __attribute__((picinterrupt(("")))) isr(void){
-   if(PIR1bits.SSPIF == 1){
-
-        SSPCONbits.CKP = 0;
-
-        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-            z = SSPBUF;
-            SSPCONbits.SSPOV = 0;
-            SSPCONbits.WCOL = 0;
-            SSPCONbits.CKP = 1;
-        }
-
-        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-
-            z = SSPBUF;
-
-            PIR1bits.SSPIF = 0;
-            SSPCONbits.CKP = 1;
-            while(!SSPSTATbits.BF);
-            PORTD = SSPBUF;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
-
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
-            SSPBUF = vehiculos;
-            SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
-            while(SSPSTATbits.BF);
-        }
-
-        PIR1bits.SSPIF = 0;
-    }
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
-void main(void) {
-    initOsc(7);
-    UART_INIT(9600);
-    setup();
-    while(1){
-        if(PORTAbits.RA0==1 && S1==0){
-            vehiculos++;
-            S1= 1;
-            PORTBbits.RB0=1;
-        }
-        if(PORTAbits.RA0==0 && S1==1){
-            vehiculos--;
-            S1=0;
-            PORTBbits.RB0 = 0;
-        }
-        if(PORTAbits.RA1==1 && S2==0){
-            vehiculos++;
-            S2= 1;
-            PORTBbits.RB1=1;
-        }
-        if(PORTAbits.RA1==0 && S2==1){
-            vehiculos--;
-            S2=0;
-            PORTBbits.RB1 = 0;
-        }
-        if(PORTAbits.RA2==1 && S3==0){
-            vehiculos++;
-            S3= 1;
-            PORTBbits.RB2=1;
-        }
-        if(PORTAbits.RA2==0 && S3==1){
-            vehiculos--;
-            S3=0;
-            PORTBbits.RB2 = 0;
-        }
-        if(PORTAbits.RA3==1 && S4==0){
-            vehiculos++;
-            S4= 1;
-            PORTBbits.RB3=1;
-        }
-        if(PORTAbits.RA3==0 && S4==1){
-            vehiculos--;
-            S4=0;
-            PORTBbits.RB3 = 0;
-        }
-        if(PORTAbits.RA4==1 && S5==0){
-            vehiculos++;
-            S5= 1;
-            PORTBbits.RB4=1;
-        }
-        if(PORTAbits.RA4==0 && S5==1){
-            vehiculos--;
-            S5=0;
-            PORTBbits.RB4 = 0;
-        }
-        if(PORTAbits.RA5==1 && S6==0){
-            vehiculos++;
-            S6= 1;
-            PORTBbits.RB5=1;
-        }
-        if(PORTAbits.RA5==0 && S6==1){
-            vehiculos--;
-            S6=0;
-            PORTBbits.RB5 = 0;
-        }
-        if(PORTAbits.RA6==1 && S7==0){
-            vehiculos++;
-            S7= 1;
-            PORTBbits.RB6=1;
-        }
-        if(PORTAbits.RA6==0 && S7==1){
-            vehiculos--;
-            S7=0;
-            PORTBbits.RB6 = 0;
-        }
-        if(PORTAbits.RA7==1 && S8==0){
-            vehiculos++;
-            S8= 1;
-            PORTBbits.RB7=1;
-        }
-        if(PORTAbits.RA7==0 && S8==1){
-            vehiculos--;
-            S8=0;
-            PORTBbits.RB7 = 0;
-        }
-        parqueo1();
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        parqueo2();
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        if(n1==0){
-        UART_WRITE(0);
-        }
-        if(n1>0){
-            UART_WRITE(1);
-        }
-    }
-    return;
+
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+{
+ const unsigned char *ptr =from;
+
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
+
+ EECON1 &= 0x7F;
+
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
-void setup(void){
-    TRISA=0b11111111;
-    TRISB=0;
-    TRISC=0b00011000;
-    TRISD=0b00000000;
-    TRISE=0b00000000;
-    ANSEL=0;
-    ANSELH=0;
 
-    PORTA=0;
-    PORTB=0;
-    PORTC=0;
-    PORTD=0;
-    PORTE=0;
-
-
-
-    I2C_Slave_Init(0x10);
+unsigned char
+__eetoc(__eeprom void *addr)
+{
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
-void parqueo1(void){
-    n1 = S1 + S2 + S3 + S4;
-    PORTEbits.RE0=1;
-    PORTEbits.RE1=0;
-    PORTD = PARQUEO1[n1];
-    return;
+
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
-void parqueo2(void){
-    n2 = S5 + S6 + S7 + S8;
-    PORTEbits.RE0=0;
-    PORTEbits.RE1=1;
-    PORTD = PARQUEO2[n2];
-    return;
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
+}
+
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

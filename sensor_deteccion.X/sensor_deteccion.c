@@ -35,7 +35,8 @@
 #include "OSCILADOR.h"
 #include <stdint.h>
 #include "I2C_SLAVE3.h"
-#define __XTAL_FREQ 4000000
+#include "UART.h"
+#define __XTAL_FREQ 8000000
 
 uint8_t vehiculos;
 uint8_t z;
@@ -91,6 +92,7 @@ void __interrupt() isr(void){
 }
 void main(void) {
     initOsc(7);
+    UART_INIT(9600);
     setup();
     while(1){
         if(PORTAbits.RA0==1 && S1==0){
@@ -174,10 +176,15 @@ void main(void) {
             PORTBbits.RB7 = 0;
         }   
         parqueo1();
-        __delay_ms(5);
-        parqueo2();
-        __delay_ms(5);
-        
+        __delay_ms(1);
+        parqueo2(); 
+        __delay_ms(1);
+        if(n1==0){
+        UART_WRITE(0);
+        }
+        if(n1>0){
+            UART_WRITE(1);
+        }
     }
     return;
 }
@@ -195,6 +202,9 @@ void setup(void){
     PORTC=0;
     PORTD=0;
     PORTE=0;
+    
+    
+    
     I2C_Slave_Init(0x10);
 }
 void parqueo1(void){

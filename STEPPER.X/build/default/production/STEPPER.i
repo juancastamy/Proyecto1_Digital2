@@ -1,4 +1,4 @@
-# 1 "sensor_deteccion.c"
+# 1 "STEPPER.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "sensor_deteccion.c" 2
-# 16 "sensor_deteccion.c"
+# 1 "STEPPER.c" 2
+# 13 "STEPPER.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2511,13 +2511,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 34 "sensor_deteccion.c" 2
-
-# 1 "./OSCILADOR.h" 1
-# 34 "./OSCILADOR.h"
-#pragma config FOSC = INTRC_NOCLKOUT
-
-
+# 31 "STEPPER.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2652,227 +2646,116 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 37 "./OSCILADOR.h" 2
-
-
-
-
-
-
-void initOsc(uint8_t frec);
-# 35 "sensor_deteccion.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 36 "sensor_deteccion.c" 2
-
-# 1 "./I2C_SLAVE3.h" 1
-# 38 "./I2C_SLAVE3.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 38 "./I2C_SLAVE3.h" 2
-
-
-
-void I2C_Master_Init(const unsigned long c);
-void I2C_Master_Wait();
-void I2C_Master_Start();
-void I2C_Master_RepeatedStart();
-void I2C_Master_Stop();
-void I2C_Master_Write(unsigned d);
-unsigned short I2C_Master_Read(unsigned short a);
-void I2C_Slave_Init(uint8_t address);
-# 37 "sensor_deteccion.c" 2
+# 32 "STEPPER.c" 2
 
 # 1 "./UART.h" 1
 # 48 "./UART.h"
 uint8_t UART_INIT(const long int baudrate);
-uint8_t UART_READ(void);
+char UART_READ();
 void UART_Read_Text(char *Output, unsigned int length);
 void UART_WRITE(char data);
 void UART_Write_Text(char *text);
-# 38 "sensor_deteccion.c" 2
+# 33 "STEPPER.c" 2
 
 
 
-uint8_t vehiculos;
-uint8_t z;
-char S1=0;
-char S2=0;
-char S3=0;
-char S4=0;
-char S5=0;
-char S6=0;
-char S7=0;
-char S8=0;
-char n1;
-char n2;
-unsigned char PARQUEO1[] = {0x7E,0x48,0x3D,0x6D,0x4B};
-unsigned char PARQUEO2[] = {0x7E,0x48,0x3D,0x6D,0x4B};
-
-void setup(void);
-void parqueo1(void);
-void parqueo2(void);
-void __attribute__((picinterrupt(("")))) isr(void){
-   if(PIR1bits.SSPIF == 1){
-
-        SSPCONbits.CKP = 0;
-
-        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-            z = SSPBUF;
-            SSPCONbits.SSPOV = 0;
-            SSPCONbits.WCOL = 0;
-            SSPCONbits.CKP = 1;
-        }
-
-        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-
-            z = SSPBUF;
-
-            PIR1bits.SSPIF = 0;
-            SSPCONbits.CKP = 1;
-            while(!SSPSTATbits.BF);
-            PORTD = SSPBUF;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
-
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
-            SSPBUF = vehiculos;
-            SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
-            while(SSPSTATbits.BF);
-        }
-
-        PIR1bits.SSPIF = 0;
+void LOOP(void);
+void Abrir(void);
+void Cerrar (void);
+char S0 = 0;
+char S1 = 0;
+char i = 0;
+char P1=0;
+uint8_t P2;
+void __attribute__((picinterrupt(("")))) ISR(void){
+    if(PIR1bits.RCIF==1){
+        PORTE = UART_READ();
+        P1=PORTE;
+        PIR1bits.RCIF=0;
     }
+    return;
 }
+
 void main(void) {
-    initOsc(7);
+  OSCCONbits.IRCF = 0b111;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
     UART_INIT(9600);
-    setup();
+    PIE1bits.RCIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+    TRISA = 0b00000001;
+    TRISB = 0b00000000;
+    TRISC = 0b00000000;
+    TRISD = 0b00000000;
+    TRISE = 0b0000;
+    ANSEL = 0b00000000;
+    ANSELH= 0b00000000;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+    PORTE = 0;
+    PORTA = 0;
+
+    LOOP();
+
+
+
+
+}
+
+void LOOP(void){
     while(1){
-        if(PORTAbits.RA0==1 && S1==0){
-            vehiculos++;
-            S1= 1;
-            PORTBbits.RB0=1;
+    Abrir();
+    Cerrar();
+   }
+    }
+# 101 "STEPPER.c"
+void Abrir(void){
+    if (P1 == 1 && S0 == 0){
+        for (i=0; i<=128;i++){
+            if (i<=128){
+                PORTB = 0b00000001;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000010;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000100;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00001000;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+            }
         }
-        if(PORTAbits.RA0==0 && S1==1){
-            vehiculos--;
-            S1=0;
-            PORTBbits.RB0 = 0;
-        }
-        if(PORTAbits.RA1==1 && S2==0){
-            vehiculos++;
-            S2= 1;
-            PORTBbits.RB1=1;
-        }
-        if(PORTAbits.RA1==0 && S2==1){
-            vehiculos--;
-            S2=0;
-            PORTBbits.RB1 = 0;
-        }
-        if(PORTAbits.RA2==1 && S3==0){
-            vehiculos++;
-            S3= 1;
-            PORTBbits.RB2=1;
-        }
-        if(PORTAbits.RA2==0 && S3==1){
-            vehiculos--;
-            S3=0;
-            PORTBbits.RB2 = 0;
-        }
-        if(PORTAbits.RA3==1 && S4==0){
-            vehiculos++;
-            S4= 1;
-            PORTBbits.RB3=1;
-        }
-        if(PORTAbits.RA3==0 && S4==1){
-            vehiculos--;
-            S4=0;
-            PORTBbits.RB3 = 0;
-        }
-        if(PORTAbits.RA4==1 && S5==0){
-            vehiculos++;
-            S5= 1;
-            PORTBbits.RB4=1;
-        }
-        if(PORTAbits.RA4==0 && S5==1){
-            vehiculos--;
-            S5=0;
-            PORTBbits.RB4 = 0;
-        }
-        if(PORTAbits.RA5==1 && S6==0){
-            vehiculos++;
-            S6= 1;
-            PORTBbits.RB5=1;
-        }
-        if(PORTAbits.RA5==0 && S6==1){
-            vehiculos--;
-            S6=0;
-            PORTBbits.RB5 = 0;
-        }
-        if(PORTAbits.RA6==1 && S7==0){
-            vehiculos++;
-            S7= 1;
-            PORTBbits.RB6=1;
-        }
-        if(PORTAbits.RA6==0 && S7==1){
-            vehiculos--;
-            S7=0;
-            PORTBbits.RB6 = 0;
-        }
-        if(PORTAbits.RA7==1 && S8==0){
-            vehiculos++;
-            S8= 1;
-            PORTBbits.RB7=1;
-        }
-        if(PORTAbits.RA7==0 && S8==1){
-            vehiculos--;
-            S8=0;
-            PORTBbits.RB7 = 0;
-        }
-        parqueo1();
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        parqueo2();
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        if(n1==0){
-        UART_WRITE(0);
-        }
-        if(n1>0){
-            UART_WRITE(1);
-        }
+        S0=1;
+        i=0;
+    }
+    else{
+        PORTB=0;
     }
     return;
 }
-void setup(void){
-    TRISA=0b11111111;
-    TRISB=0;
-    TRISC=0b00011000;
-    TRISD=0b00000000;
-    TRISE=0b00000000;
-    ANSEL=0;
-    ANSELH=0;
 
-    PORTA=0;
-    PORTB=0;
-    PORTC=0;
-    PORTD=0;
-    PORTE=0;
-
-
-
-    I2C_Slave_Init(0x10);
-}
-void parqueo1(void){
-    n1 = S1 + S2 + S3 + S4;
-    PORTEbits.RE0=1;
-    PORTEbits.RE1=0;
-    PORTD = PARQUEO1[n1];
-    return;
-}
-void parqueo2(void){
-    n2 = S5 + S6 + S7 + S8;
-    PORTEbits.RE0=0;
-    PORTEbits.RE1=1;
-    PORTD = PARQUEO2[n2];
+void Cerrar (void){
+    if (P1==0 && S0==1 && RA0==1){
+        S1=1;
+    }
+    if (P1==0 && S0==1 && S1==1 && RA0==0){
+        for (i=0; i<=128;i++){
+            if (i<=128){
+                PORTB = 0b00001000;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000100;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000010;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000001;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+            }
+        }
+        S1=0;
+        S0=0;
+        i=0;
+    }
     return;
 }
