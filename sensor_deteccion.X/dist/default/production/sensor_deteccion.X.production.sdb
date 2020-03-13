@@ -5,6 +5,8 @@
 [d frameptr 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
@@ -19,19 +21,23 @@
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
 "9 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
-"58 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"63 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _isr isr `II(v  1 e 1 0 ]
-"92
+"97
 [v _main main `(v  1 e 1 0 ]
-"184
-[v _setup setup `(v  1 e 1 0 ]
 "200
+[v _setup setup `(v  1 e 1 0 ]
+"220
 [v _parqueo1 parqueo1 `(v  1 e 1 0 ]
-"207
+"235
 [v _parqueo2 parqueo2 `(v  1 e 1 0 ]
+"6 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\UART.c
+[v _UART_INIT UART_INIT `(uc  1 e 1 0 ]
+"30
+[v _UART_WRITE UART_WRITE `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S207 . 1 `uc 1 RA0 1 0 :1:0 
+[s S212 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -41,11 +47,11 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "183
-[u S216 . 1 `S207 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES216  1 e 1 @5 ]
+[u S221 . 1 `S212 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES221  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S228 . 1 `uc 1 RB0 1 0 :1:0 
+[s S233 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -55,22 +61,20 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S237 . 1 `S228 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES237  1 e 1 @6 ]
+[u S242 . 1 `S233 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES242  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-"414
-[v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S273 . 1 `uc 1 RE0 1 0 :1:0 
+[s S272 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S278 . 1 `S273 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES278  1 e 1 @9 ]
+[u S277 . 1 `S272 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES277  1 e 1 @9 ]
 [s S59 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -100,13 +104,39 @@
 ]
 [u S89 . 1 `S78 1 . 1 0 `S84 1 . 1 0 ]
 [v _SSPCONbits SSPCONbits `VES89  1 e 1 @20 ]
+[s S487 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1068
+[s S496 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S500 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S503 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S506 . 1 `S487 1 . 1 0 `S496 1 . 1 0 `S500 1 . 1 0 `S503 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES506  1 e 1 @24 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S358 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S370 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -116,8 +146,8 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S367 . 1 `S358 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES367  1 e 1 @135 ]
+[u S379 . 1 `S370 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES379  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
@@ -138,7 +168,7 @@
 [v _OSCCONbits OSCCONbits `VES33  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S379 . 1 `uc 1 SEN 1 0 :1:0 
+[s S391 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -148,8 +178,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S388 . 1 `S379 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES388  1 e 1 @145 ]
+[u S400 . 1 `S391 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES400  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -197,6 +227,27 @@
 ]
 [u S145 . 1 `S105 1 . 1 0 `S114 1 . 1 0 `S119 1 . 1 0 `S125 1 . 1 0 `S130 1 . 1 0 `S135 1 . 1 0 `S140 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES145  1 e 1 @148 ]
+[s S450 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"2582
+[s S459 . 1 `uc 1 TXD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 nTX8 1 0 :1:6 
+]
+[s S463 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[u S466 . 1 `S450 1 . 1 0 `S459 1 . 1 0 `S463 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES466  1 e 1 @152 ]
+"2642
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -207,6 +258,8 @@
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "4040
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4175
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
 "4274
 [v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4277
@@ -215,43 +268,43 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"40 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"41 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _vehiculos vehiculos `uc  1 e 1 0 ]
-"41
-[v _z z `uc  1 e 1 0 ]
 "42
-[v _S1 S1 `uc  1 e 1 0 ]
+[v _z z `uc  1 e 1 0 ]
 "43
-[v _S2 S2 `uc  1 e 1 0 ]
+[v _S1 S1 `uc  1 e 1 0 ]
 "44
-[v _S3 S3 `uc  1 e 1 0 ]
+[v _S2 S2 `uc  1 e 1 0 ]
 "45
-[v _S4 S4 `uc  1 e 1 0 ]
+[v _S3 S3 `uc  1 e 1 0 ]
 "46
-[v _S5 S5 `uc  1 e 1 0 ]
+[v _S4 S4 `uc  1 e 1 0 ]
 "47
-[v _S6 S6 `uc  1 e 1 0 ]
+[v _S5 S5 `uc  1 e 1 0 ]
 "48
-[v _S7 S7 `uc  1 e 1 0 ]
+[v _S6 S6 `uc  1 e 1 0 ]
 "49
-[v _S8 S8 `uc  1 e 1 0 ]
+[v _S7 S7 `uc  1 e 1 0 ]
 "50
-[v _n1 n1 `uc  1 e 1 0 ]
+[v _S8 S8 `uc  1 e 1 0 ]
 "51
-[v _n2 n2 `uc  1 e 1 0 ]
+[v _n1 n1 `uc  1 e 1 0 ]
 "52
+[v _n2 n2 `uc  1 e 1 0 ]
+"56
 [v _PARQUEO1 PARQUEO1 `[5]uc  1 e 5 0 ]
-"53
+"57
 [v _PARQUEO2 PARQUEO2 `[5]uc  1 e 5 0 ]
-"92
+"97
 [v _main main `(v  1 e 1 0 ]
 {
-"183
+"199
 } 0
-"184
+"200
 [v _setup setup `(v  1 e 1 0 ]
 {
-"199
+"219
 } 0
 "76 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\I2C_SLAVE3.c
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
@@ -261,26 +314,53 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "87
 } 0
-"207 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"235 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _parqueo2 parqueo2 `(v  1 e 1 0 ]
 {
-"213
+"241
 } 0
-"200
+"220
 [v _parqueo1 parqueo1 `(v  1 e 1 0 ]
 {
-"206
+"234
+} 0
+"30 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\UART.c
+[v _UART_WRITE UART_WRITE `(v  1 e 1 0 ]
+{
+[v UART_WRITE@data data `uc  1 a 1 wreg ]
+[v UART_WRITE@data data `uc  1 a 1 wreg ]
+[v UART_WRITE@data data `uc  1 a 1 3 ]
+"33
 } 0
 "9 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\OSCILADOR.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
 {
 [v initOsc@frec frec `uc  1 a 1 wreg ]
 [v initOsc@frec frec `uc  1 a 1 wreg ]
-[v initOsc@frec frec `uc  1 a 1 0 ]
+[v initOsc@frec frec `uc  1 a 1 5 ]
 "59
 } 0
-"58 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
+"6 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\UART.c
+[v _UART_INIT UART_INIT `(uc  1 e 1 0 ]
+{
+[v UART_INIT@baudrate baudrate `DCl  1 p 4 14 ]
+"16
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"63 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\sensor_deteccion.X\sensor_deteccion.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"91
+"96
 } 0

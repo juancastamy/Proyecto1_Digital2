@@ -2682,6 +2682,23 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 # 37 "sensor_deteccion.c" 2
 
+# 1 "./UART.h" 1
+# 43 "./UART.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 43 "./UART.h" 2
+
+
+
+
+
+
+uint8_t UART_INIT(const long int baudrate);
+uint8_t UART_READ(void);
+void UART_Read_Text(char *Output, unsigned int length);
+void UART_WRITE(char data);
+void UART_Write_Text(char *text);
+# 38 "sensor_deteccion.c" 2
+
 
 
 uint8_t vehiculos;
@@ -2696,12 +2713,16 @@ char S7=0;
 char S8=0;
 char n1;
 char n2;
+char x;
+char i=0;
+char s = 0;
 unsigned char PARQUEO1[] = {0x7E,0x48,0x3D,0x6D,0x4B};
 unsigned char PARQUEO2[] = {0x7E,0x48,0x3D,0x6D,0x4B};
 
 void setup(void);
 void parqueo1(void);
 void parqueo2(void);
+
 void __attribute__((picinterrupt(("")))) isr(void){
    if(PIR1bits.SSPIF == 1){
 
@@ -2738,8 +2759,10 @@ void __attribute__((picinterrupt(("")))) isr(void){
 }
 void main(void) {
     initOsc(7);
+    UART_INIT(9600);
     setup();
     while(1){
+# 111 "sensor_deteccion.c"
         if(PORTAbits.RA0==1 && S1==0){
             vehiculos++;
             S1= 1;
@@ -2820,6 +2843,7 @@ void main(void) {
             S8=0;
             PORTBbits.RB7 = 0;
         }
+
         parqueo1();
         _delay((unsigned long)((5)*(4000000/4000.0)));
         parqueo2();
@@ -2831,7 +2855,7 @@ void main(void) {
 void setup(void){
     TRISA=0b11111111;
     TRISB=0;
-    TRISC=0b00011000;
+    TRISC=0b10011000;
     TRISD=0b00000000;
     TRISE=0b00000000;
     ANSEL=0;
@@ -2841,20 +2865,32 @@ void setup(void){
     PORTB=0;
     PORTC=0;
     PORTD=0;
-    PORTE=0;
+
+    PORTEbits.RE0=0;
+    PORTEbits.RE1=0;
+    PORTEbits.RE2=0;
+    PORTEbits.RE3=0;
     I2C_Slave_Init(0x10);
 }
 void parqueo1(void){
     n1 = S1 + S2 + S3 + S4;
+    PORTD = PARQUEO1[n1];
+    if(n1==0 ){
+            UART_WRITE(0);
+
+        }
+        if(n1>0){
+            UART_WRITE(1);
+
+        }
     PORTEbits.RE0=1;
     PORTEbits.RE1=0;
-    PORTD = PARQUEO1[n1];
     return;
 }
 void parqueo2(void){
     n2 = S5 + S6 + S7 + S8;
+    PORTD = PARQUEO2[n2];
     PORTEbits.RE0=0;
     PORTEbits.RE1=1;
-    PORTD = PARQUEO2[n2];
     return;
 }
