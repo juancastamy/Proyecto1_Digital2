@@ -102,9 +102,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;STEPPER.c: 37: void Abrir(void);
 [v _Abrir `(v ~T0 @X0 0 ef ]
+"39
+[; ;STEPPER.c: 39: void cicloAbrir(void);
+[v _cicloAbrir `(v ~T0 @X0 0 ef ]
 "38
 [; ;STEPPER.c: 38: void Cerrar (void);
 [v _Cerrar `(v ~T0 @X0 0 ef ]
+"40
+[; ;STEPPER.c: 40: void cicloCerrar (void);
+[v _cicloCerrar `(v ~T0 @X0 0 ef ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -370,303 +376,315 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"39 STEPPER.c
-[; ;STEPPER.c: 39: char S0 = 0;
+"41 STEPPER.c
+[; ;STEPPER.c: 41: char S0 = 0;
 [v _S0 `uc ~T0 @X0 1 e ]
 [i _S0
 -> -> 0 `i `uc
 ]
-"40
-[; ;STEPPER.c: 40: char S1 = 0;
+"42
+[; ;STEPPER.c: 42: char S1 = 0;
 [v _S1 `uc ~T0 @X0 1 e ]
 [i _S1
 -> -> 0 `i `uc
 ]
-"41
-[; ;STEPPER.c: 41: char i = 0;
+"43
+[; ;STEPPER.c: 43: char S3=0;
+[v _S3 `uc ~T0 @X0 1 e ]
+[i _S3
+-> -> 0 `i `uc
+]
+"44
+[; ;STEPPER.c: 44: char S4=0;
+[v _S4 `uc ~T0 @X0 1 e ]
+[i _S4
+-> -> 0 `i `uc
+]
+"45
+[; ;STEPPER.c: 45: char S5=0;
+[v _S5 `uc ~T0 @X0 1 e ]
+[i _S5
+-> -> 0 `i `uc
+]
+"46
+[; ;STEPPER.c: 46: char S6=0;
+[v _S6 `uc ~T0 @X0 1 e ]
+[i _S6
+-> -> 0 `i `uc
+]
+"47
+[; ;STEPPER.c: 47: char i = 0;
 [v _i `uc ~T0 @X0 1 e ]
 [i _i
 -> -> 0 `i `uc
 ]
-"42
-[; ;STEPPER.c: 42: char P1=0;
+"48
+[; ;STEPPER.c: 48: char P1=0;
 [v _P1 `uc ~T0 @X0 1 e ]
 [i _P1
 -> -> 0 `i `uc
 ]
-"43
-[; ;STEPPER.c: 43: uint8_t P2;
+"49
+[; ;STEPPER.c: 49: uint8_t P2;
 [v _P2 `uc ~T0 @X0 1 e ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"44
-[; ;STEPPER.c: 44: void __attribute__((picinterrupt(("")))) ISR(void){
+"50
+[; ;STEPPER.c: 50: void __attribute__((picinterrupt(("")))) ISR(void){
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"45
-[; ;STEPPER.c: 45:     if(PIR1bits.RCIF==1){
+"51
+[; ;STEPPER.c: 51:     if(PIR1bits.RCIF==1){
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 139  ]
 {
-"46
-[; ;STEPPER.c: 46:         PORTE = UART_READ();
+"52
+[; ;STEPPER.c: 52:         PORTE = UART_READ();
 [e = _PORTE -> ( _UART_READ ..  `uc ]
-"47
-[; ;STEPPER.c: 47:         P1=PORTE;
+"53
+[; ;STEPPER.c: 53:         P1=PORTE;
 [e = _P1 -> _PORTE `uc ]
-"48
-[; ;STEPPER.c: 48:         PIR1bits.RCIF=0;
+"54
+[; ;STEPPER.c: 54:         PIR1bits.RCIF=0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"49
-[; ;STEPPER.c: 49:     }
+"55
+[; ;STEPPER.c: 55:     }
 }
 [e :U 139 ]
-"50
-[; ;STEPPER.c: 50:     return;
+"56
+[; ;STEPPER.c: 56:     return;
 [e $UE 138  ]
-"51
-[; ;STEPPER.c: 51: }
+"57
+[; ;STEPPER.c: 57: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"53
-[; ;STEPPER.c: 53: void main(void) {
+"59
+[; ;STEPPER.c: 59: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"54
-[; ;STEPPER.c: 54:   OSCCONbits.IRCF = 0b111;
-[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
-"55
-[; ;STEPPER.c: 55:     OSCCONbits.OSTS= 0;
-[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
-"56
-[; ;STEPPER.c: 56:     OSCCONbits.HTS = 0;
-[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
-"57
-[; ;STEPPER.c: 57:     OSCCONbits.LTS = 0;
-[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
-"58
-[; ;STEPPER.c: 58:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"59
-[; ;STEPPER.c: 59:     UART_INIT(9600);
-[e ( _UART_INIT (1 -> -> 9600 `i `l ]
 "60
-[; ;STEPPER.c: 60:     PIE1bits.RCIE = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;STEPPER.c: 60:   OSCCONbits.IRCF = 0b111;
+[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
 "61
-[; ;STEPPER.c: 61:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;STEPPER.c: 61:     OSCCONbits.OSTS= 0;
+[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
 "62
-[; ;STEPPER.c: 62:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;STEPPER.c: 62:     OSCCONbits.HTS = 0;
+[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
 "63
-[; ;STEPPER.c: 63:     TRISA = 0b00000001;
-[e = _TRISA -> -> 1 `i `uc ]
+[; ;STEPPER.c: 63:     OSCCONbits.LTS = 0;
+[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
 "64
-[; ;STEPPER.c: 64:     TRISB = 0b00000000;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;STEPPER.c: 64:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "65
-[; ;STEPPER.c: 65:     TRISC = 0b00000000;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;STEPPER.c: 65:     UART_INIT(9600);
+[e ( _UART_INIT (1 -> -> 9600 `i `l ]
 "66
-[; ;STEPPER.c: 66:     TRISD = 0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;STEPPER.c: 66:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
 "67
-[; ;STEPPER.c: 67:     TRISE = 0b0000;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;STEPPER.c: 67:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "68
-[; ;STEPPER.c: 68:     ANSEL = 0b00000000;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;STEPPER.c: 68:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "69
-[; ;STEPPER.c: 69:     ANSELH= 0b00000000;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;STEPPER.c: 69:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
 "70
-[; ;STEPPER.c: 70:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;STEPPER.c: 70:     TRISB = 0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
 "71
-[; ;STEPPER.c: 71:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;STEPPER.c: 71:     TRISC = 0b00000000;
+[e = _TRISC -> -> 0 `i `uc ]
 "72
-[; ;STEPPER.c: 72:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;STEPPER.c: 72:     TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
 "73
-[; ;STEPPER.c: 73:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;STEPPER.c: 73:     TRISE = 0b0000;
+[e = _TRISE -> -> 0 `i `uc ]
 "74
-[; ;STEPPER.c: 74:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;STEPPER.c: 74:     ANSEL = 0b00000000;
+[e = _ANSEL -> -> 0 `i `uc ]
+"75
+[; ;STEPPER.c: 75:     ANSELH= 0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
 "76
-[; ;STEPPER.c: 76:     LOOP();
+[; ;STEPPER.c: 76:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"77
+[; ;STEPPER.c: 77:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"78
+[; ;STEPPER.c: 78:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"79
+[; ;STEPPER.c: 79:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"80
+[; ;STEPPER.c: 80:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"82
+[; ;STEPPER.c: 82:     LOOP();
 [e ( _LOOP ..  ]
-"81
-[; ;STEPPER.c: 81: }
+"87
+[; ;STEPPER.c: 87: }
 [e :UE 140 ]
 }
-"83
-[; ;STEPPER.c: 83: void LOOP(void){
+"89
+[; ;STEPPER.c: 89: void LOOP(void){
 [v _LOOP `(v ~T0 @X0 1 ef ]
 {
 [e :U _LOOP ]
 [f ]
-"84
-[; ;STEPPER.c: 84:     while(1){
+"90
+[; ;STEPPER.c: 90:     while(1){
 [e :U 143 ]
 {
-"85
-[; ;STEPPER.c: 85:     Abrir();
+"91
+[; ;STEPPER.c: 91:     Abrir();
 [e ( _Abrir ..  ]
-"86
-[; ;STEPPER.c: 86:     Cerrar();
+"92
+[; ;STEPPER.c: 92:     cicloAbrir();
+[e ( _cicloAbrir ..  ]
+"93
+[; ;STEPPER.c: 93:     Cerrar();
 [e ( _Cerrar ..  ]
-"87
-[; ;STEPPER.c: 87:    }
+"94
+[; ;STEPPER.c: 94:     cicloCerrar();
+[e ( _cicloCerrar ..  ]
+"95
+[; ;STEPPER.c: 95:    }
 }
 [e :U 142 ]
 [e $U 143  ]
 [e :U 144 ]
-"88
-[; ;STEPPER.c: 88:     }
+"96
+[; ;STEPPER.c: 96:     }
 [e :UE 141 ]
 }
-"101
-[; ;STEPPER.c: 101: void Abrir(void){
+"109
+[; ;STEPPER.c: 109: void Abrir(void){
 [v _Abrir `(v ~T0 @X0 1 ef ]
 {
 [e :U _Abrir ]
 [f ]
-"102
-[; ;STEPPER.c: 102:     if (P1 == 1 && S0 == 0){
+"110
+[; ;STEPPER.c: 110:     if (P1 == 1 && S0 == 0){
 [e $ ! && == -> _P1 `i -> 1 `i == -> _S0 `i -> 0 `i 146  ]
 {
-"103
-[; ;STEPPER.c: 103:         for (i=0; i<=128;i++){
+"111
+[; ;STEPPER.c: 111:         for (i=0; i<=128;i++){
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ <= -> _i `i -> 128 `i 147  ]
 [e $U 148  ]
 [e :U 147 ]
 {
-"104
-[; ;STEPPER.c: 104:             if (i<=128){
+"112
+[; ;STEPPER.c: 112:             if (i<=128){
 [e $ ! <= -> _i `i -> 128 `i 150  ]
 {
-"105
-[; ;STEPPER.c: 105:                 PORTB = 0b00000001;
-[e = _PORTB -> -> 1 `i `uc ]
-"106
-[; ;STEPPER.c: 106:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"107
-[; ;STEPPER.c: 107:                 PORTB = 0b00000010;
-[e = _PORTB -> -> 2 `i `uc ]
-"108
-[; ;STEPPER.c: 108:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"109
-[; ;STEPPER.c: 109:                 PORTB = 0b00000100;
-[e = _PORTB -> -> 4 `i `uc ]
-"110
-[; ;STEPPER.c: 110:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"111
-[; ;STEPPER.c: 111:                 PORTB = 0b00001000;
-[e = _PORTB -> -> 8 `i `uc ]
-"112
-[; ;STEPPER.c: 112:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "113
-[; ;STEPPER.c: 113:             }
+[; ;STEPPER.c: 113:                 PORTB = 0b00000001;
+[e = _PORTB -> -> 1 `i `uc ]
+"114
+[; ;STEPPER.c: 114:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"115
+[; ;STEPPER.c: 115:                 PORTB = 0b00000010;
+[e = _PORTB -> -> 2 `i `uc ]
+"116
+[; ;STEPPER.c: 116:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"117
+[; ;STEPPER.c: 117:                 PORTB = 0b00000100;
+[e = _PORTB -> -> 4 `i `uc ]
+"118
+[; ;STEPPER.c: 118:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"119
+[; ;STEPPER.c: 119:                 PORTB = 0b00001000;
+[e = _PORTB -> -> 8 `i `uc ]
+"120
+[; ;STEPPER.c: 120:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"121
+[; ;STEPPER.c: 121:             }
 }
 [e :U 150 ]
-"114
-[; ;STEPPER.c: 114:         }
+"122
+[; ;STEPPER.c: 122:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ <= -> _i `i -> 128 `i 147  ]
 [e :U 148 ]
 }
-"115
-[; ;STEPPER.c: 115:         S0=1;
+"123
+[; ;STEPPER.c: 123:         S0=1;
 [e = _S0 -> -> 1 `i `uc ]
-"116
-[; ;STEPPER.c: 116:         i=0;
+"124
+[; ;STEPPER.c: 124:         i=0;
 [e = _i -> -> 0 `i `uc ]
-"117
-[; ;STEPPER.c: 117:     }
+"125
+[; ;STEPPER.c: 125:         S3=1;
+[e = _S3 -> -> 1 `i `uc ]
+"126
+[; ;STEPPER.c: 126:     }
 }
 [e $U 151  ]
-"118
-[; ;STEPPER.c: 118:     else{
+"127
+[; ;STEPPER.c: 127:     else{
 [e :U 146 ]
 {
-"119
-[; ;STEPPER.c: 119:         PORTB=0;
+"128
+[; ;STEPPER.c: 128:         PORTB=0;
 [e = _PORTB -> -> 0 `i `uc ]
-"120
-[; ;STEPPER.c: 120:     }
+"129
+[; ;STEPPER.c: 129:     }
 }
 [e :U 151 ]
-"121
-[; ;STEPPER.c: 121:     return;
+"130
+[; ;STEPPER.c: 130:     return;
 [e $UE 145  ]
-"122
-[; ;STEPPER.c: 122: }
+"131
+[; ;STEPPER.c: 131: }
 [e :UE 145 ]
 }
-"124
-[; ;STEPPER.c: 124: void Cerrar (void){
-[v _Cerrar `(v ~T0 @X0 1 ef ]
+"132
+[; ;STEPPER.c: 132: void cicloAbrir (void){
+[v _cicloAbrir `(v ~T0 @X0 1 ef ]
 {
-[e :U _Cerrar ]
+[e :U _cicloAbrir ]
 [f ]
-"125
-[; ;STEPPER.c: 125:     if (P1==0 && S0==1 && RA0==1){
-[e $ ! && && == -> _P1 `i -> 0 `i == -> _S0 `i -> 1 `i == -> _RA0 `i -> 1 `i 153  ]
+"133
+[; ;STEPPER.c: 133:     if (S3==1 && S0 == 1){
+[e $ ! && == -> _S3 `i -> 1 `i == -> _S0 `i -> 1 `i 153  ]
 {
-"126
-[; ;STEPPER.c: 126:         S1=1;
-[e = _S1 -> -> 1 `i `uc ]
-"127
-[; ;STEPPER.c: 127:     }
-}
-[e :U 153 ]
-"128
-[; ;STEPPER.c: 128:     if (P1==0 && S0==1 && S1==1 && RA0==0){
-[e $ ! && && && == -> _P1 `i -> 0 `i == -> _S0 `i -> 1 `i == -> _S1 `i -> 1 `i == -> _RA0 `i -> 0 `i 154  ]
+"134
+[; ;STEPPER.c: 134:         for (S4=0;S4<=4;S4++){
 {
-"129
-[; ;STEPPER.c: 129:         for (i=0; i<=128;i++){
+[e = _S4 -> -> 0 `i `uc ]
+[e $ <= -> _S4 `i -> 4 `i 154  ]
+[e $U 155  ]
+[e :U 154 ]
+{
+"135
+[; ;STEPPER.c: 135:         for (i=0; i<=128;i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ <= -> _i `i -> 128 `i 155  ]
-[e $U 156  ]
-[e :U 155 ]
+[e $ <= -> _i `i -> 128 `i 157  ]
+[e $U 158  ]
+[e :U 157 ]
 {
-"130
-[; ;STEPPER.c: 130:             if (i<=128){
-[e $ ! <= -> _i `i -> 128 `i 158  ]
-{
-"131
-[; ;STEPPER.c: 131:                 PORTB = 0b00001000;
-[e = _PORTB -> -> 8 `i `uc ]
-"132
-[; ;STEPPER.c: 132:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"133
-[; ;STEPPER.c: 133:                 PORTB = 0b00000100;
-[e = _PORTB -> -> 4 `i `uc ]
-"134
-[; ;STEPPER.c: 134:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"135
-[; ;STEPPER.c: 135:                 PORTB = 0b00000010;
-[e = _PORTB -> -> 2 `i `uc ]
 "136
-[; ;STEPPER.c: 136:                 _delay((unsigned long)((2)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;STEPPER.c: 136:             if (i<=128){
+[e $ ! <= -> _i `i -> 128 `i 160  ]
+{
 "137
 [; ;STEPPER.c: 137:                 PORTB = 0b00000001;
 [e = _PORTB -> -> 1 `i `uc ]
@@ -674,33 +692,269 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;STEPPER.c: 138:                 _delay((unsigned long)((2)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "139
-[; ;STEPPER.c: 139:             }
-}
-[e :U 158 ]
+[; ;STEPPER.c: 139:                 PORTB = 0b00000010;
+[e = _PORTB -> -> 2 `i `uc ]
 "140
-[; ;STEPPER.c: 140:         }
+[; ;STEPPER.c: 140:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"141
+[; ;STEPPER.c: 141:                 PORTB = 0b00000100;
+[e = _PORTB -> -> 4 `i `uc ]
+"142
+[; ;STEPPER.c: 142:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"143
+[; ;STEPPER.c: 143:                 PORTB = 0b00001000;
+[e = _PORTB -> -> 8 `i `uc ]
+"144
+[; ;STEPPER.c: 144:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"145
+[; ;STEPPER.c: 145:             }
+}
+[e :U 160 ]
+"146
+[; ;STEPPER.c: 146:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 128 `i 155  ]
-[e :U 156 ]
+[e $ <= -> _i `i -> 128 `i 157  ]
+[e :U 158 ]
 }
-"141
-[; ;STEPPER.c: 141:         S1=0;
-[e = _S1 -> -> 0 `i `uc ]
-"142
-[; ;STEPPER.c: 142:         S0=0;
-[e = _S0 -> -> 0 `i `uc ]
-"143
-[; ;STEPPER.c: 143:         i=0;
+"147
+[; ;STEPPER.c: 147:         S0=1;
+[e = _S0 -> -> 1 `i `uc ]
+"148
+[; ;STEPPER.c: 148:         i=0;
 [e = _i -> -> 0 `i `uc ]
-"144
-[; ;STEPPER.c: 144:     }
+"149
+[; ;STEPPER.c: 149:         S3=0;
+[e = _S3 -> -> 0 `i `uc ]
+"150
+[; ;STEPPER.c: 150:     }
 }
-[e :U 154 ]
-"145
-[; ;STEPPER.c: 145:     return;
+[e ++ _S4 -> -> 1 `i `uc ]
+[e $ <= -> _S4 `i -> 4 `i 154  ]
+[e :U 155 ]
+}
+"151
+[; ;STEPPER.c: 151:         S4=0;
+[e = _S4 -> -> 0 `i `uc ]
+"152
+[; ;STEPPER.c: 152:     }
+}
+[e $U 161  ]
+"153
+[; ;STEPPER.c: 153:     else{
+[e :U 153 ]
+{
+"154
+[; ;STEPPER.c: 154:         PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
+"155
+[; ;STEPPER.c: 155:     }
+}
+[e :U 161 ]
+"156
+[; ;STEPPER.c: 156:     return;
 [e $UE 152  ]
-"146
-[; ;STEPPER.c: 146: }
+"157
+[; ;STEPPER.c: 157: }
 [e :UE 152 ]
+}
+"161
+[; ;STEPPER.c: 161: void Cerrar (void){
+[v _Cerrar `(v ~T0 @X0 1 ef ]
+{
+[e :U _Cerrar ]
+[f ]
+"162
+[; ;STEPPER.c: 162:     if (P1==0 && S0==1 && RA0==1){
+[e $ ! && && == -> _P1 `i -> 0 `i == -> _S0 `i -> 1 `i == -> _RA0 `i -> 1 `i 163  ]
+{
+"163
+[; ;STEPPER.c: 163:         S1=1;
+[e = _S1 -> -> 1 `i `uc ]
+"164
+[; ;STEPPER.c: 164:     }
+}
+[e :U 163 ]
+"165
+[; ;STEPPER.c: 165:     if (P1==0 && S0==1 && S1==1 && RA0==0){
+[e $ ! && && && == -> _P1 `i -> 0 `i == -> _S0 `i -> 1 `i == -> _S1 `i -> 1 `i == -> _RA0 `i -> 0 `i 164  ]
+{
+"166
+[; ;STEPPER.c: 166:         S1=0;
+[e = _S1 -> -> 0 `i `uc ]
+"167
+[; ;STEPPER.c: 167:         for (i=0; i<=128;i++){
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 128 `i 165  ]
+[e $U 166  ]
+[e :U 165 ]
+{
+"168
+[; ;STEPPER.c: 168:             if (i<=128){
+[e $ ! <= -> _i `i -> 128 `i 168  ]
+{
+"169
+[; ;STEPPER.c: 169:                 PORTB = 0b00001000;
+[e = _PORTB -> -> 8 `i `uc ]
+"170
+[; ;STEPPER.c: 170:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"171
+[; ;STEPPER.c: 171:                 PORTB = 0b00000100;
+[e = _PORTB -> -> 4 `i `uc ]
+"172
+[; ;STEPPER.c: 172:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"173
+[; ;STEPPER.c: 173:                 PORTB = 0b00000010;
+[e = _PORTB -> -> 2 `i `uc ]
+"174
+[; ;STEPPER.c: 174:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"175
+[; ;STEPPER.c: 175:                 PORTB = 0b00000001;
+[e = _PORTB -> -> 1 `i `uc ]
+"176
+[; ;STEPPER.c: 176:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"177
+[; ;STEPPER.c: 177:             }
+}
+[e :U 168 ]
+"178
+[; ;STEPPER.c: 178:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 128 `i 165  ]
+[e :U 166 ]
+}
+"179
+[; ;STEPPER.c: 179:         S0=1;
+[e = _S0 -> -> 1 `i `uc ]
+"180
+[; ;STEPPER.c: 180:         i=0;
+[e = _i -> -> 0 `i `uc ]
+"181
+[; ;STEPPER.c: 181:         S5=1;
+[e = _S5 -> -> 1 `i `uc ]
+"182
+[; ;STEPPER.c: 182:     }
+}
+[e :U 164 ]
+"183
+[; ;STEPPER.c: 183:     return;
+[e $UE 162  ]
+"184
+[; ;STEPPER.c: 184: }
+[e :UE 162 ]
+}
+"186
+[; ;STEPPER.c: 186: void cicloCerrar(void){
+[v _cicloCerrar `(v ~T0 @X0 1 ef ]
+{
+[e :U _cicloCerrar ]
+[f ]
+"187
+[; ;STEPPER.c: 187:     if (S5==1 && S0 == 1){
+[e $ ! && == -> _S5 `i -> 1 `i == -> _S0 `i -> 1 `i 170  ]
+{
+"188
+[; ;STEPPER.c: 188:         for (S6=0;S6<=4;S6++){
+{
+[e = _S6 -> -> 0 `i `uc ]
+[e $ <= -> _S6 `i -> 4 `i 171  ]
+[e $U 172  ]
+[e :U 171 ]
+{
+"189
+[; ;STEPPER.c: 189:         for (i=0; i<=128;i++){
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 128 `i 174  ]
+[e $U 175  ]
+[e :U 174 ]
+{
+"190
+[; ;STEPPER.c: 190:             if (i<=128){
+[e $ ! <= -> _i `i -> 128 `i 177  ]
+{
+"191
+[; ;STEPPER.c: 191:                 PORTB = 0b00001000;
+[e = _PORTB -> -> 8 `i `uc ]
+"192
+[; ;STEPPER.c: 192:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"193
+[; ;STEPPER.c: 193:                 PORTB = 0b00000100;
+[e = _PORTB -> -> 4 `i `uc ]
+"194
+[; ;STEPPER.c: 194:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"195
+[; ;STEPPER.c: 195:                 PORTB = 0b00000010;
+[e = _PORTB -> -> 2 `i `uc ]
+"196
+[; ;STEPPER.c: 196:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"197
+[; ;STEPPER.c: 197:                 PORTB = 0b00000001;
+[e = _PORTB -> -> 1 `i `uc ]
+"198
+[; ;STEPPER.c: 198:                 _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"199
+[; ;STEPPER.c: 199:             }
+}
+[e :U 177 ]
+"200
+[; ;STEPPER.c: 200:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 128 `i 174  ]
+[e :U 175 ]
+}
+"201
+[; ;STEPPER.c: 201:         S0=0;
+[e = _S0 -> -> 0 `i `uc ]
+"202
+[; ;STEPPER.c: 202:         i=0;
+[e = _i -> -> 0 `i `uc ]
+"203
+[; ;STEPPER.c: 203:         S5=0;
+[e = _S5 -> -> 0 `i `uc ]
+"204
+[; ;STEPPER.c: 204:     }
+}
+[e ++ _S6 -> -> 1 `i `uc ]
+[e $ <= -> _S6 `i -> 4 `i 171  ]
+[e :U 172 ]
+}
+"205
+[; ;STEPPER.c: 205:         S6=0;
+[e = _S6 -> -> 0 `i `uc ]
+"206
+[; ;STEPPER.c: 206:     }
+}
+[e $U 178  ]
+"207
+[; ;STEPPER.c: 207:     else{
+[e :U 170 ]
+{
+"208
+[; ;STEPPER.c: 208:         PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
+"209
+[; ;STEPPER.c: 209:     }
+}
+[e :U 178 ]
+"210
+[; ;STEPPER.c: 210:     return;
+[e $UE 169  ]
+"211
+[; ;STEPPER.c: 211: }
+[e :UE 169 ]
 }

@@ -36,8 +36,14 @@
 void LOOP(void);
 void Abrir(void);
 void Cerrar (void);
+void cicloAbrir(void);
+void cicloCerrar (void);
 char S0 = 0;
 char S1 = 0;
+char S3=0;
+char S4=0;
+char S5=0;
+char S6=0;
 char i = 0;
 char P1=0;
 uint8_t P2;
@@ -83,7 +89,9 @@ void main(void) {
 void LOOP(void){
     while(1){
     Abrir();
+    cicloAbrir();
     Cerrar();
+    cicloCerrar();
    }
     }
 
@@ -114,18 +122,70 @@ void Abrir(void){
         }
         S0=1;
         i=0;
+        S3=1;
     }
     else{
         PORTB=0;
     }
     return;
 }
+void cicloAbrir (void){
+    if (S3==1 && S0 == 1){
+        for (S4=0;S4<=4;S4++){
+        for (i=0; i<=128;i++){
+            if (i<=128){
+                PORTB = 0b00000001;
+                __delay_ms(2);
+                PORTB = 0b00000010;
+                __delay_ms(2);
+                PORTB = 0b00000100;
+                __delay_ms(2);
+                PORTB = 0b00001000;
+                __delay_ms(2);
+            }
+        }
+        S0=1;
+        i=0;
+        S3=0;
+    }
+        S4=0;
+    }
+    else{
+        PORTB=0;
+    }
+    return;
+}
+    
+
 
 void Cerrar (void){
     if (P1==0 && S0==1 && BOTON==1){
         S1=1;
     }
     if (P1==0 && S0==1 && S1==1 && BOTON==0){
+        S1=0;
+        for (i=0; i<=128;i++){
+            if (i<=128){
+                PORTB = 0b00001000;
+                __delay_ms(2);
+                PORTB = 0b00000100;
+                __delay_ms(2);
+                PORTB = 0b00000010;
+                __delay_ms(2);
+                PORTB = 0b00000001;
+                __delay_ms(2);
+            }
+        } 
+        S0=1;
+        i=0;
+        S5=1;
+    }
+    return;
+}
+
+void cicloCerrar(void){
+    if (S5==1 && S0 == 1){
+        for (S6=0;S6<=4;S6++){
         for (i=0; i<=128;i++){
             if (i<=128){
                 PORTB = 0b00001000;
@@ -138,9 +198,14 @@ void Cerrar (void){
                 __delay_ms(2);
             }
         }
-        S1=0;
         S0=0;
         i=0;
+        S5=0;
+    }
+        S6=0;
+    }
+    else{
+        PORTB=0;
     }
     return;
 }

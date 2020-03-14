@@ -2662,8 +2662,14 @@ void UART_Write_Text(char *text);
 void LOOP(void);
 void Abrir(void);
 void Cerrar (void);
+void cicloAbrir(void);
+void cicloCerrar (void);
 char S0 = 0;
 char S1 = 0;
+char S3=0;
+char S4=0;
+char S5=0;
+char S6=0;
 char i = 0;
 char P1=0;
 uint8_t P2;
@@ -2709,10 +2715,12 @@ void main(void) {
 void LOOP(void){
     while(1){
     Abrir();
+    cicloAbrir();
     Cerrar();
+    cicloCerrar();
    }
     }
-# 101 "STEPPER.c"
+# 109 "STEPPER.c"
 void Abrir(void){
     if (P1 == 1 && S0 == 0){
         for (i=0; i<=128;i++){
@@ -2729,6 +2737,33 @@ void Abrir(void){
         }
         S0=1;
         i=0;
+        S3=1;
+    }
+    else{
+        PORTB=0;
+    }
+    return;
+}
+void cicloAbrir (void){
+    if (S3==1 && S0 == 1){
+        for (S4=0;S4<=4;S4++){
+        for (i=0; i<=128;i++){
+            if (i<=128){
+                PORTB = 0b00000001;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000010;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000100;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00001000;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+            }
+        }
+        S0=1;
+        i=0;
+        S3=0;
+    }
+        S4=0;
     }
     else{
         PORTB=0;
@@ -2736,11 +2771,14 @@ void Abrir(void){
     return;
 }
 
+
+
 void Cerrar (void){
     if (P1==0 && S0==1 && RA0==1){
         S1=1;
     }
     if (P1==0 && S0==1 && S1==1 && RA0==0){
+        S1=0;
         for (i=0; i<=128;i++){
             if (i<=128){
                 PORTB = 0b00001000;
@@ -2753,9 +2791,36 @@ void Cerrar (void){
                 _delay((unsigned long)((2)*(8000000/4000.0)));
             }
         }
-        S1=0;
+        S0=1;
+        i=0;
+        S5=1;
+    }
+    return;
+}
+
+void cicloCerrar(void){
+    if (S5==1 && S0 == 1){
+        for (S6=0;S6<=4;S6++){
+        for (i=0; i<=128;i++){
+            if (i<=128){
+                PORTB = 0b00001000;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000100;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000010;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+                PORTB = 0b00000001;
+                _delay((unsigned long)((2)*(8000000/4000.0)));
+            }
+        }
         S0=0;
         i=0;
+        S5=0;
+    }
+        S6=0;
+    }
+    else{
+        PORTB=0;
     }
     return;
 }

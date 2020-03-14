@@ -13,16 +13,20 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"44 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\STEPPER.c
+"50 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\STEPPER.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"53
+"59
 [v _main main `(v  1 e 1 0 ]
-"83
+"89
 [v _LOOP LOOP `(v  1 e 1 0 ]
-"101
+"109
 [v _Abrir Abrir `(v  1 e 1 0 ]
-"124
+"132
+[v _cicloAbrir cicloAbrir `(v  1 e 1 0 ]
+"161
 [v _Cerrar Cerrar `(v  1 e 1 0 ]
+"186
+[v _cicloCerrar cicloCerrar `(v  1 e 1 0 ]
 "6 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\UART.c
 [v _UART_INIT UART_INIT `(uc  1 e 1 0 ]
 "23
@@ -65,7 +69,7 @@
 "553
 [u S30 . 1 `S22 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES30  1 e 1 @12 ]
-[s S241 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S255 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -75,18 +79,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S250 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S264 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S254 . 1 `uc 1 . 1 0 :6:0 
+[s S268 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S257 . 1 `uc 1 . 1 0 :6:0 
+[s S271 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S260 . 1 `S241 1 . 1 0 `S250 1 . 1 0 `S254 1 . 1 0 `S257 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES260  1 e 1 @24 ]
+[u S274 . 1 `S255 1 . 1 0 `S264 1 . 1 0 `S268 1 . 1 0 `S271 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES274  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
@@ -126,7 +130,7 @@
 ]
 [u S57 . 1 `S46 1 . 1 0 `S52 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES57  1 e 1 @143 ]
-[s S204 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S218 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -136,15 +140,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S213 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S227 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S217 . 1 `uc 1 . 1 0 :6:0 
+[s S231 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S220 . 1 `S204 1 . 1 0 `S213 1 . 1 0 `S217 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES220  1 e 1 @152 ]
+[u S234 . 1 `S218 1 . 1 0 `S227 1 . 1 0 `S231 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES234  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -153,18 +157,26 @@
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4079
 [v _RA0 RA0 `VEb  1 e 0 @40 ]
-"39 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\STEPPER.c
+"41 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\STEPPER.c
 [v _S0 S0 `uc  1 e 1 0 ]
-"40
-[v _S1 S1 `uc  1 e 1 0 ]
-"41
-[v _i i `uc  1 e 1 0 ]
 "42
+[v _S1 S1 `uc  1 e 1 0 ]
+"43
+[v _S3 S3 `uc  1 e 1 0 ]
+"44
+[v _S4 S4 `uc  1 e 1 0 ]
+"45
+[v _S5 S5 `uc  1 e 1 0 ]
+"46
+[v _S6 S6 `uc  1 e 1 0 ]
+"47
+[v _i i `uc  1 e 1 0 ]
+"48
 [v _P1 P1 `uc  1 e 1 0 ]
-"53
+"59
 [v _main main `(v  1 e 1 0 ]
 {
-"81
+"87
 } 0
 "6 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\UART.c
 [v _UART_INIT UART_INIT `(uc  1 e 1 0 ]
@@ -185,25 +197,35 @@
 [v ___aldiv@dividend dividend `l  1 p 4 4 ]
 "41
 } 0
-"83 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\STEPPER.c
+"89 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\STEPPER.c
 [v _LOOP LOOP `(v  1 e 1 0 ]
 {
-"88
+"96
 } 0
-"124
+"186
+[v _cicloCerrar cicloCerrar `(v  1 e 1 0 ]
+{
+"211
+} 0
+"132
+[v _cicloAbrir cicloAbrir `(v  1 e 1 0 ]
+{
+"157
+} 0
+"161
 [v _Cerrar Cerrar `(v  1 e 1 0 ]
 {
-"146
+"184
 } 0
-"101
+"109
 [v _Abrir Abrir `(v  1 e 1 0 ]
 {
-"122
+"131
 } 0
-"44
+"50
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"51
+"57
 } 0
 "23 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\STEPPER.X\UART.c
 [v _UART_READ UART_READ `(uc  1 e 1 0 ]
