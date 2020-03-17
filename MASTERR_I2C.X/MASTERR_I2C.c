@@ -40,10 +40,11 @@
 #include "I2C.h"
 #include "UART.h"
 #define _XTAL_FREQ  8000000
-void LOOP(void);
+#define BOTON RA0
 uint8_t analogic_digital_a;
 uint8_t CONTADOR;
 uint8_t analogic_digital_b;
+uint8_t SONICO;
 float voltage;
 float luz;
 int CONTLUZA;
@@ -64,9 +65,13 @@ char LUZA_CHARA[5];
 char LUZB_CHARB[5];
 char LUZC_CHARC[5];
 char POINTERB[5];
+char SONICOD_CHAR[5];
+char SONICOU_CHAR[5];
 int CONTD;
+int SONICOD;
 char CONTD_CHAR[5];
 int CONTU;
+int SONICOU;
 char CONTU_CHAR[5];
 float voltage;
 int DC1;
@@ -78,68 +83,52 @@ char ADCB_CHARB[5];
 char ADCC_CHARC[5];
 char POINTERA[5];
 char T_byte1;
-
+char S0;
+char S1;
 int uniT_int;
 int decT_int;
 char uniT_char[5];
 char decT_char[5];
 
-void LOOP(void);
-void SETUP(void);
 
+void SETUP(void);
 void main(void) {
-    TRISA=0;
-    TRISB=0;
-    TRISC=0b000011000;
-    TRISD=0;
-    TRISE=0;
-    PORTA=0;
-    PORTB=0;
-    PORTC=0;
-    PORTD=0;
-    PORTE=0;
-    
+    SETUP();
     I2C_INIT(100000);
     UART_INIT(9600);
-    inicializacion();
-    LOOP();
-
-}
-
-void LOOP(void){
-    lcd_msg("TEMP CONT LUZ");
+    
     while(1){
+        //-------------------------------------SENSOR DE LUZ----------------------------------------------
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x31);     //7 bit address + Read
         analogic_digital_b = I2C_Master_Read(0); //Read + Acknowledge
-        I2C_Master_Stop(); //Stop condition
+        I2C_Master_Stop();          //Stop condition
         __delay_ms(100);
         UART_WRITE(analogic_digital_b);
         __delay_ms(100);
-        
-        
+        //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         CONTLUZA = analogic_digital_b/10;
         itoa(CONTLUZA_CHAR,CONTLUZA,10);
         CONTLUZB = analogic_digital_b%10;
         itoa(CONTLUZB_CHAR,CONTLUZB,10);
         strcat(CONTLUZA_CHAR,CONTLUZB_CHAR);
         
-        
+        //------------------------------------SENSOR DE TEMPERATURA---------------------------------------
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x31);     //7 bit address + Read
         T_byte1 = I2C_Master_Read(0); //Read + Acknowledge
-        I2C_Master_Stop(); //Stop condition
+        I2C_Master_Stop();          //Stop condition
         __delay_ms(100);
         UART_WRITE(T_byte1);
         __delay_ms(100);
-        
-       
+        //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         decT = T_byte1/10;
         itoa(decT_char,decT,10);
         uniT = T_byte1%10;
         itoa(uniT_char,uniT ,10);
         strcat(decT_char,uniT_char);
         
+        //-------------------------------------SENSOR DE PARQUEOS-------------------------------------------
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x11);     //7 bit address + Read
         CONTADOR = I2C_Master_Read(0); //Read + Acknowledge
@@ -147,37 +136,88 @@ void LOOP(void){
         __delay_ms(100);
         UART_WRITE(CONTADOR);
         __delay_ms(100);
-        
+        //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         CONTD = CONTADOR/10;
         itoa(CONTD_CHAR,CONTD,10);
         CONTU = CONTADOR%10;
         itoa(CONTU_CHAR,CONTU,10);
-        strcat(CONTD_CHAR,CONTU_CHAR);     
-                
+        
+        //----------------------------------SENSOR DE PRESION---------------------------------------------
         I2C_Master_Start();         //Start condition
         I2C_Master_Write(0x21);     //7 bit address + Read
         analogic_digital_a = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
-        __delay_ms(200);
+        __delay_ms(100);
+        UART_WRITE(analogic_digital_a);
+        __delay_ms(100);
+        //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
+        DC1 = analogic_digital_a/10;
+        itoa(ADCA_CHARA,DC1,10);
+        DC2 = analogic_digital_a%10;
+        itoa(ADCB_CHARB,DC2,10);
+        strcat(ADCA_CHARA,ADCB_CHARB);
         
-        voltage = (analogic_digital_a*5.0)/255.0;
-        DC1 = (voltage)*100;
-        ADC_1_A = DC1%10;
-        itoa(ADCA_CHARA,ADC_1_A,10);
-        ADC_1_B = (DC1/10)%10;
-        itoa(ADCB_CHARB,ADC_1_B,10);
-        ADC_A = (DC1/100)%10;
-        itoa(ADCC_CHARC,ADC_A,10);
-        strcat(ADCB_CHARB,ADCA_CHARA);
-        strcpy(POINTERA,".");
-        strcat(POINTERA,ADCB_CHARB);
-        strcat(ADCC_CHARC,POINTERA);
-
-        lcd_cmd(0xC0); 
-        lcd_msg(decT_char);
-        lcd_msg("  ");
-        lcd_msg(CONTD_CHAR);
-        lcd_msg("  ");
-        lcd_msg(CONTLUZA_CHAR);
+        //-----------------------------SENSOR ULTRASONICO------------------------------------------------
+        I2C_Master_Start();         //Start condition
+        I2C_Master_Write(0x21);     //7 bit address + Read
+        SONICO = I2C_Master_Read(0); //Read + Acknowledge
+        I2C_Master_Stop();          //Stop condition
+        __delay_ms(100);
+        UART_WRITE(SONICO);
+        __delay_ms(100);
+        //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
+        SONICOD = SONICO/10;
+        itoa(SONICOD_CHAR,SONICOD,10);
+        SONICOU = SONICO%10;
+        itoa(SONICOU_CHAR,SONICOU,10);
+        
+        
+        //-----------------------------PRIMER SETUP DE PANTALLA LCD PARA DESPLEGAR------------------------
+        if(BOTON==0){
+            if(S0==1){
+            lcd_cmd(0x01);
+            S0=0;
+            }
+            lcd_cmd(0x80); 
+            lcd_msg("TEMP CARROS LUZ ");
+            lcd_cmd(0xC0);
+            lcd_msg(" ");
+            lcd_msg(decT_char);
+            lcd_msg("    ");
+            lcd_msg(CONTU_CHAR);
+            lcd_msg("    ");
+            lcd_msg(CONTLUZA_CHAR);
+            lcd_msg(" ");   
+        }
+        //-----------------------------SEGUNDO SETUP DE PANTALLA LCD PARA DESPLEGAR------------------------
+        if(BOTON == 1){
+            if(S0==0){
+            lcd_cmd(0x01);
+            S0=1;
+            }
+            lcd_cmd(0x80); 
+            lcd_msg(" FUERZA ULTRA   ");
+            lcd_cmd(0xC0);
+            lcd_msg("  ");
+            lcd_msg(ADCA_CHARA);
+            lcd_msg("     ");
+            lcd_msg(SONICOU_CHAR);
+            lcd_msg("      ");
+        }
     }
+}
+
+void SETUP (void){
+    TRISA=0b00000001;
+    TRISB=0;
+    TRISC=0b000011000;
+    TRISD=0;
+    TRISE=0;
+    ANSEL = 0b00000000;
+    ANSELH =0b00000000;
+    PORTA=0;
+    PORTB=0;
+    PORTC=0;
+    PORTD=0;
+    PORTE=0;
 }

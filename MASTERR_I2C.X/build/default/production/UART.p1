@@ -306,7 +306,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;UART.c: 7:  SPBRG = (8000000 - baudrate*16)/(baudrate*16);
 [e = _SPBRG -> / - -> 8000000 `l * _baudrate -> -> 16 `i `l * _baudrate -> -> 16 `i `l `uc ]
 "8
-[; ;UART.c: 8:      TXSTAbits.BRGH = 1;
+[; ;UART.c: 8:     TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "9
 [; ;UART.c: 9:     TXSTAbits.TXEN = 1;
