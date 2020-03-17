@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "SPI_PIC.c" 2
-# 16 "SPI_PIC.c"
+# 22 "SPI_PIC.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2513,7 +2513,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 36 "SPI_PIC.c" 2
+# 42 "SPI_PIC.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2648,7 +2648,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 37 "SPI_PIC.c" 2
+# 43 "SPI_PIC.c" 2
 
 # 1 "./UART.h" 1
 # 48 "./UART.h"
@@ -2657,7 +2657,7 @@ uint8_t UART_READ(void);
 void UART_Read_Text(char *Output, unsigned int length);
 void UART_WRITE(char data);
 void UART_Write_Text(char *text);
-# 38 "SPI_PIC.c" 2
+# 44 "SPI_PIC.c" 2
 
 # 1 "./OSCI.h" 1
 # 34 "./OSCI.h"
@@ -2670,7 +2670,7 @@ void UART_Write_Text(char *text);
 
 
 void initOsc(uint8_t frec);
-# 39 "SPI_PIC.c" 2
+# 45 "SPI_PIC.c" 2
 
 # 1 "./SPI_SLAVE.h" 1
 # 17 "./SPI_SLAVE.h"
@@ -2707,13 +2707,15 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 40 "SPI_PIC.c" 2
+# 46 "SPI_PIC.c" 2
 
 
 
 uint8_t Luz;
 uint8_t Temp;
 uint8_t Parq;
+uint8_t ULTRA;
+uint8_t Presion;
 void setup(void);
 
 void main(void) {
@@ -2721,16 +2723,27 @@ void main(void) {
     initOsc(7);
     UART_INIT(9600);
     while(1){
+
         _delay((unsigned long)((100)*(8000000/4000.0)));
         Luz = UART_READ();
         spiWrite(Luz);
         _delay((unsigned long)((200)*(8000000/4000.0)));
+
         Temp = UART_READ();
         spiWrite(Temp);
         _delay((unsigned long)((200)*(8000000/4000.0)));
+
         Parq = UART_READ;
         spiWrite(Parq);
-        _delay((unsigned long)((300)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        Presion = UART_READ();
+        spiWrite(Presion);
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        ULTRA = UART_READ();
+        spiWrite(ULTRA);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
 
     }
     return;

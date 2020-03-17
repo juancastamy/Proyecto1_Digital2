@@ -4,6 +4,12 @@
  * Author: Juan Diego Castillo Amaya
  * Student ID: 17074
  *
+ * Author: Carlos Avendaño
+ * Student ID: 17192
+ * 
+ * Author: Juan Pablo Zea
+ * Student ID: 15401
+ * 
  * Created on March 10, 2020
  */
 
@@ -43,6 +49,8 @@
 uint8_t Luz;
 uint8_t Temp;
 uint8_t Parq;
+uint8_t ULTRA;
+uint8_t Presion;
 void setup(void);
 
 void main(void) {
@@ -50,16 +58,27 @@ void main(void) {
     initOsc(7);
     UART_INIT(9600);
     while(1){
+        //-------------------SENSOR LUZ-----------------------------------
         __delay_ms(100);
-        Luz = UART_READ();
-        spiWrite(Luz);
+        Luz = UART_READ();          //SE RECIVE EL VALOR POR UART
+        spiWrite(Luz);              //SE ENVIA POR SPI 
         __delay_ms(200);
-        Temp = UART_READ();
-        spiWrite(Temp);
+        //-----------------SENSOR TEMPERATURA------------------------------
+        Temp = UART_READ();         // SE RECIVE EL VALOR POR UART
+        spiWrite(Temp);             //SE ENVIA POR SPI        
         __delay_ms(200);
-        Parq = UART_READ;
-        spiWrite(Parq);
-        __delay_ms (300);
+        //----------------SENSOR DE PARQUEOS------------------------------
+        Parq = UART_READ;           //SE RECIVE EL VALOR POR UART
+        spiWrite(Parq);             //SE ENVIA POR SPI
+        __delay_ms (200);
+        //------------------SENSOR PRESION--------------------------------
+        Presion = UART_READ();      //SE RECIVE EL VALOR POR UART
+        spiWrite(Presion);          //SE ENVIA POR SPI
+        __delay_ms(200);
+        //------------------SENSOR ULTRASONICO----------------------------
+        ULTRA = UART_READ();        //SE RECIVE EL VALOR POR UART
+        spiWrite(ULTRA);            //SE ENVIA POR SPI
+        __delay_ms(100);
         
     }
     return;

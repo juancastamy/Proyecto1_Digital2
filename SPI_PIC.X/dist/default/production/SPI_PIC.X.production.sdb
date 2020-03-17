@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"79 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"98 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [e E1304 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -57,9 +57,9 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "8 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\OSCI.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
-"48 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"56 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [v _main main `(v  1 e 1 0 ]
-"68
+"87
 [v _setup setup `(v  1 e 1 0 ]
 "12 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_SLAVE.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -160,23 +160,23 @@ SPI_ACTIVE_2_IDLE 64
 "1718
 [u S210 . 1 `S202 1 . 1 0 ]
 [v _PIE1bits PIE1bits `VES210  1 e 1 @140 ]
-[s S311 . 1 `uc 1 SCS 1 0 :1:0 
+[s S313 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S317 . 1 `uc 1 . 1 0 :4:0 
+[s S319 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S322 . 1 `S311 1 . 1 0 `S317 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES322  1 e 1 @143 ]
+[u S324 . 1 `S313 1 . 1 0 `S319 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES324  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S369 . 1 `uc 1 BF 1 0 :1:0 
+[s S371 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -186,39 +186,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S378 . 1 `uc 1 . 1 0 :2:0 
+[s S380 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S383 . 1 `uc 1 . 1 0 :2:0 
+[s S385 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S389 . 1 `uc 1 . 1 0 :2:0 
+[s S391 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S394 . 1 `uc 1 . 1 0 :2:0 
+[s S396 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S399 . 1 `uc 1 . 1 0 :2:0 
+[s S401 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S404 . 1 `uc 1 . 1 0 :2:0 
+[s S406 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S409 . 1 `S369 1 . 1 0 `S378 1 . 1 0 `S383 1 . 1 0 `S389 1 . 1 0 `S394 1 . 1 0 `S399 1 . 1 0 `S404 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES409  1 e 1 @148 ]
+[u S411 . 1 `S371 1 . 1 0 `S380 1 . 1 0 `S385 1 . 1 0 `S391 1 . 1 0 `S396 1 . 1 0 `S401 1 . 1 0 `S406 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES411  1 e 1 @148 ]
 [s S23 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
@@ -250,16 +250,20 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"43 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"49 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [v _Luz Luz `uc  1 e 1 0 ]
-"44
+"50
 [v _Temp Temp `uc  1 e 1 0 ]
-"45
+"51
 [v _Parq Parq `uc  1 e 1 0 ]
-"48
+"52
+[v _ULTRA ULTRA `uc  1 e 1 0 ]
+"53
+[v _Presion Presion `uc  1 e 1 0 ]
+"56
 [v _main main `(v  1 e 1 0 ]
 {
-"66
+"85
 } 0
 "35 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_SLAVE.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -270,10 +274,10 @@ SPI_ACTIVE_2_IDLE 64
 [v spiWrite@dat dat `uc  1 a 1 0 ]
 "38
 } 0
-"68 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
+"87 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_PIC.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"80
+"99
 } 0
 "12 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\SPI_PIC.X\SPI_SLAVE.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
