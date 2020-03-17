@@ -1,8 +1,15 @@
 /*
- * File:   Luz_y_Temperatura
- * Author: juanz
+ * Project 1 for Digital 2 course
+ * File:   lab_5.c
+ * Author: Juan Diego Castillo Amaya
+ * Student ID: 17074
+ * 
+ * Author: Carlos Avandaño
+ * Student ID: 17192
  *
- * Created on 3 de marzo de 2020, 17:54
+ * Author: Juan Pablo Zea
+ * Student ID: 15401
+ * Created on March 3, 2020
  */
 
 
@@ -30,23 +37,21 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
-#include "I2C_SLAVE.h"
+#include "I2C.h"
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
-
 #include <stdlib.h>
+#include "OSCILADOR.h"
+#include "ADC.h"
+
 #define TRIS_DHT TRISDbits.TRISD2
 #define PORT_DHT PORTDbits.RD2
+#define _XTAL_FREQ 8000000
 
 uint8_t z;
 char ADC;
-void LOOP(void);
-void ANALOGICO(void);
 
- void START_DHT11(void);
-void CHECK_RESPONSE(void);
-char ReadData();
 unsigned char check;
 
 
@@ -74,6 +79,13 @@ char S0=0;
 
 unsigned sum; 
 
+void SETUP(void);
+void START_DHT11(void);
+void CHECK_RESPONSE(void);
+char ReadData();
+
+
+
 void __interrupt() isr(void){
    if(PIR1bits.SSPIF == 1){ 
 
@@ -99,76 +111,28 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            if(S0==0){
-            SSPBUF = ADC;
-            S0 = 1;
+            SSPBUF = PORTB;
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
-            PIR1bits.SSPIF = 0;
-            return;
-            }
-            if(S0==1){
-            SSPBUF = T_byte1;
-            S0 = 0;
-            SSPCONbits.CKP = 1;
-            __delay_us(250);
-            while(SSPSTATbits.BF);
-            PIR1bits.SSPIF = 0; 
-            return;
-            }
-            
-          
-
         }
-
         PIR1bits.SSPIF = 0;    
     }
 }
 
-void main(void) {
-    OSCCONbits.IRCF = 0b111; //8Mhz
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1; 
-    
-    TRISA = 0b00000001;
-    TRISB = 0;
-    TRISC = 0b00011000;
-    TRISD = 0;
-    TRISE = 0;
-    ANSEL = 0b00000001;
-    ANSELH = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
-    PORTA = 0;
-
-            
-    ADCON0bits.ADCS = 01;
-    ADCON0bits.ADON = 1;   // adc on
-    ADCON1bits.ADFM = 0;
-    ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
-    I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
-  
-      LOOP();
-  
-}
-
-void LOOP(void){
+void main(void) { 
+    SETUP();
+    initOsc(7);
     while(1){
-        ANALOGICO();
-        if(ADC>=9){
+        ADC1();
+        if(ADC>=17){
             PORTDbits.RD1=0;
         }
         if(ADC<=8){
             PORTDbits.RD1=1;
         }
         
-         START_DHT11();
+        START_DHT11();
         CHECK_RESPONSE();
         
         if(check == 1){
@@ -190,27 +154,61 @@ void LOOP(void){
               itoa(uniT_char,uniT ,10);
               strcat(decHR_char,uniHR_char);
               strcat(decT_char,uniT_char);
-        // temperatura = decT
-              
-              
             }
         }
-      
-        
     }
-    
-}
-
-void ANALOGICO(void){
-    __delay_ms(1);
-        ADCON0bits.CHS = 0000;
-        ADCON0bits.ADON = 1;
-        ADCON0bits.GO = 1;
-        while(ADCON0bits.GO);
-       ADC = ADRESH;
-       PORTB = ADC;
-       return;
 }
 
 
+
+void SETUP (void){
+    TRISA = 0b00000001;
+    TRISB = 0;
+    TRISC = 0b00011000;
+    TRISD = 0;
+    TRISE = 0;
+    ANSEL = 0b00000001;
+    ANSELH = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+    PORTE = 0;
+    PORTA = 0;
+    I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
+}
+
+ void START_DHT11(void){  // inicia el sensor de temperatura
+    TRIS_DHT = 0;
+    PORT_DHT = 0;
+    __delay_ms(18);
+    PORT_DHT = 1;
+    __delay_us(30);
+    TRIS_DHT=1;
+}
  
+ void CHECK_RESPONSE(void){
+   check = 0;
+   __delay_us(40);
+   if(PORT_DHT == 0){
+       __delay_us(80);
+       if(PORT_DHT == 1){         // mantener el ojo en este if
+           check = 1;
+           __delay_us(40);
+       }
+   }
+ }
+ 
+ char ReadData(){
+     char i, j;
+     for(j = 0; j<8; j++){
+         while(!PORT_DHT);
+         __delay_us(30);
+         if(PORT_DHT == 0)
+             i&= ~(1<<(7-j));
+         else{
+             i|= (1<< (7-j));
+         while(PORT_DHT);
+         }  
+     }
+     return i;
+ } 
