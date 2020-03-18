@@ -59,6 +59,7 @@ char S0 = 0;
 char S1 = 0;
 char S2 = 0;
 
+
 void SETUP(void);
 int calc_distance(void);
 
@@ -118,17 +119,29 @@ void main(void) {
     PWM_INIT();
     while(1){
         ADC1();
-        if(ultrasonico == 0x0f){
+        //---------------FUNCION PARA ABRIR---------------------------------
+        if(ultrasonico == 0x0f & CCPR1L == 10){
             CCPR1L = 25;
             S1= 1;
         }
-        if(adc>=5 & S1 ==1){
+        if(adc>=5 & S1 ==1 & CCPR1L == 25){
             S1=0;
         }
-        if(adc==0 & S1==0){
+        if(adc==0 & S1==0 & CCPR1L == 25){
             CCPR1L = 10;
         }
-       
+        //----------------FUNCION PARA CERRAR------------------------------
+        if(adc>= 5 & CCPR1L == 10){
+            CCPR1L = 25;   
+        }
+        if(ultrasonico == 0x0f & S2==1 & CCPR1L == 25){
+            S2 = 1;
+        }
+        if (ultrasonico == 0x00 & S2 == 1 & CCPR1L == 25){
+            CCPR1L = 10;
+            S2 = 0;
+        }
+        
         dist = calc_dist()/5;
 
         if(dist>0){
