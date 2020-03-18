@@ -49,7 +49,6 @@
 #define PORT_DHT PORTDbits.RD2
 
 uint8_t z;
-
 unsigned char check;
 
 
@@ -139,14 +138,14 @@ void main(void) {
     ADCSETUP();
     while(1){
         ADC1();
-        if(adc>=17){
+        if(PORTB>=17){
             PORTDbits.RD1=0;
         }
-        if(adc<=8){
+        if(PORTB<=8){
             PORTDbits.RD1=1;
         }
         
-        START_DHT11();
+         START_DHT11();
         CHECK_RESPONSE();
         
         if(check == 1){
@@ -169,8 +168,8 @@ void main(void) {
               strcat(decHR_char,uniHR_char);
               strcat(decT_char,uniT_char);
             }
-        }
-    }
+        }        
+    }   
 }
 
 
@@ -192,38 +191,38 @@ void SETUP (void){
     I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
 }
 
-void START_DHT11(void){  // inicia el sensor de temperatura
-    TRIS_DHT = 0;
-    PORT_DHT = 0;
-    __delay_ms(18);
-    PORT_DHT = 1;
-    __delay_us(30);
-    TRIS_DHT=1;
-}
+ void START_DHT11(void){  // inicia el sensor de temperatura
+     TRIS_DHT = 0;
+     PORT_DHT = 0;
+     __delay_ms(18);
+     PORT_DHT = 1;
+     __delay_us(30);
+     TRIS_DHT=1;  
+ }
  
-void CHECK_RESPONSE(void){
-    check = 0;
-    __delay_us(40);
-    if(PORT_DHT == 0){
-        __delay_us(80);
-        if(PORT_DHT == 1){         // mantener el ojo en este if
-            check = 1;
-            __delay_us(40);
-        }
-    }
-}
+ void CHECK_RESPONSE(void){
+   check = 0;
+   __delay_us(40);
+   if(PORT_DHT == 0){
+       __delay_us(80);
+       if(PORT_DHT == 1){         // mantener el ojo en este if
+           check = 1;
+           __delay_us(40);
+       }
+   }
+ }
  
-char ReadData(){
-    char i, j;
-    for(j = 0; j<8; j++){
-        while(!PORT_DHT);
-        __delay_us(30);
-        if(PORT_DHT == 0)
-         i&= ~(1<<(7-j));
-        else{
-         i|= (1<< (7-j));
-        while(PORT_DHT);
-    }
-    }
-    return i;
-} 
+ char ReadData(){
+     char i, j;
+     for(j = 0; j<8; j++){
+         while(!PORT_DHT);
+         __delay_us(30);
+         if(PORT_DHT == 0)
+             i&= ~(1<<(7-j));
+         else{
+             i|= (1<< (7-j));
+         while(PORT_DHT);
+         }  
+     }
+     return i;
+ }

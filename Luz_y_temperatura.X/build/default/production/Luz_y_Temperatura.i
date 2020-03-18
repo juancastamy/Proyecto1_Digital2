@@ -2917,7 +2917,6 @@ void ADC1(void);
 
 
 uint8_t z;
-
 unsigned char check;
 
 
@@ -3007,14 +3006,14 @@ void main(void) {
     ADCSETUP();
     while(1){
         ADC1();
-        if(adc>=17){
+        if(PORTB>=17){
             PORTDbits.RD1=0;
         }
-        if(adc<=8){
+        if(PORTB<=8){
             PORTDbits.RD1=1;
         }
 
-        START_DHT11();
+         START_DHT11();
         CHECK_RESPONSE();
 
         if(check == 1){
@@ -3060,38 +3059,38 @@ void SETUP (void){
     I2C_Slave_Init(0x30);
 }
 
-void START_DHT11(void){
-    TRISDbits.TRISD2 = 0;
-    PORTDbits.RD2 = 0;
-    _delay((unsigned long)((18)*(4000000/4000.0)));
-    PORTDbits.RD2 = 1;
-    _delay((unsigned long)((30)*(4000000/4000000.0)));
-    TRISDbits.TRISD2=1;
-}
+ void START_DHT11(void){
+     TRISDbits.TRISD2 = 0;
+     PORTDbits.RD2 = 0;
+     _delay((unsigned long)((18)*(4000000/4000.0)));
+     PORTDbits.RD2 = 1;
+     _delay((unsigned long)((30)*(4000000/4000000.0)));
+     TRISDbits.TRISD2=1;
+ }
 
-void CHECK_RESPONSE(void){
-    check = 0;
-    _delay((unsigned long)((40)*(4000000/4000000.0)));
-    if(PORTDbits.RD2 == 0){
-        _delay((unsigned long)((80)*(4000000/4000000.0)));
-        if(PORTDbits.RD2 == 1){
-            check = 1;
-            _delay((unsigned long)((40)*(4000000/4000000.0)));
-        }
-    }
-}
+ void CHECK_RESPONSE(void){
+   check = 0;
+   _delay((unsigned long)((40)*(4000000/4000000.0)));
+   if(PORTDbits.RD2 == 0){
+       _delay((unsigned long)((80)*(4000000/4000000.0)));
+       if(PORTDbits.RD2 == 1){
+           check = 1;
+           _delay((unsigned long)((40)*(4000000/4000000.0)));
+       }
+   }
+ }
 
-char ReadData(){
-    char i, j;
-    for(j = 0; j<8; j++){
-        while(!PORTDbits.RD2);
-        _delay((unsigned long)((30)*(4000000/4000000.0)));
-        if(PORTDbits.RD2 == 0)
-         i&= ~(1<<(7-j));
-        else{
-         i|= (1<< (7-j));
-        while(PORTDbits.RD2);
-    }
-    }
-    return i;
-}
+ char ReadData(){
+     char i, j;
+     for(j = 0; j<8; j++){
+         while(!PORTDbits.RD2);
+         _delay((unsigned long)((30)*(4000000/4000000.0)));
+         if(PORTDbits.RD2 == 0)
+             i&= ~(1<<(7-j));
+         else{
+             i|= (1<< (7-j));
+         while(PORTDbits.RD2);
+         }
+     }
+     return i;
+ }

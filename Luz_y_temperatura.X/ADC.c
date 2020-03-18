@@ -18,7 +18,7 @@ void ADC1 (void){
     PIR1bits.ADIF = 0;
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO == 1);
-    adc = ADRESH;   
+    PORTB = ADRESH;
     return;
 }
 
