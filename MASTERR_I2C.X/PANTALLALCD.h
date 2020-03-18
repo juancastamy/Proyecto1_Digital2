@@ -56,4 +56,3 @@ void lcd_lat(void);
 void inicializacion(void);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
-

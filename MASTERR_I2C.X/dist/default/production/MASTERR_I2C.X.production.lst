@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Wed Mar 18 00:23:17 2020
+                                                                                               Wed Mar 18 00:51:01 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -1102,21 +1102,21 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1088                           ;MASTERR_I2C.c: 96:     SETUP();
   1089  03F6  120A  118A  203C  120A  118A  	fcall	_SETUP
   1090                           
-  1091                           ;MASTERR_I2C.c: 97:     inicializacion();
-  1092  03FB  120A  158A  276C  120A  118A  	fcall	_inicializacion
-  1093                           
-  1094                           ;MASTERR_I2C.c: 98:     I2C_INIT(100000);
-  1095  0400  3000               	movlw	0
-  1096  0401  1283               	bcf	3,5	;RP0=0, select bank0
-  1097  0402  1303               	bcf	3,6	;RP1=0, select bank0
-  1098  0403  00D7               	movwf	I2C_INIT@c+3
-  1099  0404  3001               	movlw	1
-  1100  0405  00D6               	movwf	I2C_INIT@c+2
-  1101  0406  3086               	movlw	134
-  1102  0407  00D5               	movwf	I2C_INIT@c+1
-  1103  0408  30A0               	movlw	160
-  1104  0409  00D4               	movwf	I2C_INIT@c
-  1105  040A  120A  118A  20A8  120A  118A  	fcall	_I2C_INIT
+  1091                           ;MASTERR_I2C.c: 97:     I2C_INIT(100000);
+  1092  03FB  3000               	movlw	0
+  1093  03FC  1283               	bcf	3,5	;RP0=0, select bank0
+  1094  03FD  1303               	bcf	3,6	;RP1=0, select bank0
+  1095  03FE  00D7               	movwf	I2C_INIT@c+3
+  1096  03FF  3001               	movlw	1
+  1097  0400  00D6               	movwf	I2C_INIT@c+2
+  1098  0401  3086               	movlw	134
+  1099  0402  00D5               	movwf	I2C_INIT@c+1
+  1100  0403  30A0               	movlw	160
+  1101  0404  00D4               	movwf	I2C_INIT@c
+  1102  0405  120A  118A  20A8  120A  118A  	fcall	_I2C_INIT
+  1103                           
+  1104                           ;MASTERR_I2C.c: 98:     inicializacion();
+  1105  040A  120A  158A  276C  120A  118A  	fcall	_inicializacion
   1106                           
   1107                           ;MASTERR_I2C.c: 99:     UART_INIT(9600);
   1108  040F  3000               	movlw	0
@@ -1662,7 +1662,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1648  0635  2E36               	nop2
   1649  0636                     l1903:	
   1650                           
-  1651                           ;MASTERR_I2C.c: 155:         DC1 = analogic_digital_a/10;
+  1651                           ;MASTERR_I2C.c: 155:          DC1 = analogic_digital_a/10;
   1652  0636  300A               	movlw	10
   1653  0637  00F0               	movwf	___awdiv@divisor
   1654  0638  3000               	movlw	0
@@ -1923,12 +1923,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1909  0734  01C9               	clrf	_S0
   1910  0735                     l1943:	
   1911                           
-  1912                           ;MASTERR_I2C.c: 182:             lcd_cmd(0x80);
+  1912                           ;MASTERR_I2C.c: 182:         lcd_cmd(0x80);
   1913  0735  3080               	movlw	128
   1914  0736  120A  158A  2748  120A  118A  	fcall	_lcd_cmd
   1915  073B                     l1945:	
   1916                           
-  1917                           ;MASTERR_I2C.c: 183:             lcd_msg("TEMP CARROS LUZ ");
+  1917                           ;MASTERR_I2C.c: 183:         lcd_msg("TEMP CARROS LUZ ");
   1918  073B  3012               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
   1919  073C  00F3               	movwf	lcd_msg@c
   1920  073D  3080               	movlw	128
@@ -1936,12 +1936,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1922  073F  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1923  0744                     l1947:	
   1924                           
-  1925                           ;MASTERR_I2C.c: 184:             lcd_cmd(0xC0);
+  1925                           ;MASTERR_I2C.c: 184:         lcd_cmd(0xC0);
   1926  0744  30C0               	movlw	192
   1927  0745  120A  158A  2748  120A  118A  	fcall	_lcd_cmd
   1928  074A                     l1949:	
   1929                           
-  1930                           ;MASTERR_I2C.c: 185:             lcd_msg(" ");
+  1930                           ;MASTERR_I2C.c: 185:         lcd_msg(" ");
   1931  074A  3028               	movlw	(low (((STR_9+5)-__stringbase)| (0+32768)))& (0+255)
   1932  074B  00F3               	movwf	lcd_msg@c
   1933  074C  3080               	movlw	128
@@ -1949,7 +1949,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1935  074E  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1936  0753                     l1951:	
   1937                           
-  1938                           ;MASTERR_I2C.c: 186:             lcd_msg(decT_char);
+  1938                           ;MASTERR_I2C.c: 186:         lcd_msg(decT_char);
   1939  0753  30C1               	movlw	(low (_decT_char| 0))& (0+255)
   1940  0754  00F3               	movwf	lcd_msg@c
   1941  0755  3000               	movlw	0
@@ -1957,7 +1957,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1943  0757  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1944  075C                     l1953:	
   1945                           
-  1946                           ;MASTERR_I2C.c: 187:             lcd_msg("    ");
+  1946                           ;MASTERR_I2C.c: 187:         lcd_msg("    ");
   1947  075C  3025               	movlw	(low (((STR_9+2)-__stringbase)| (0+32768)))& (0+255)
   1948  075D  00F3               	movwf	lcd_msg@c
   1949  075E  3080               	movlw	128
@@ -1965,7 +1965,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1951  0760  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1952  0765                     l1955:	
   1953                           
-  1954                           ;MASTERR_I2C.c: 188:             lcd_msg(CONTU_CHAR);
+  1954                           ;MASTERR_I2C.c: 188:         lcd_msg(CONTU_CHAR);
   1955  0765  30D5               	movlw	(low (_CONTU_CHAR| 0))& (0+255)
   1956  0766  00F3               	movwf	lcd_msg@c
   1957  0767  3000               	movlw	0
@@ -1973,7 +1973,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1959  0769  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1960  076E                     l1957:	
   1961                           
-  1962                           ;MASTERR_I2C.c: 189:             lcd_msg("    ");
+  1962                           ;MASTERR_I2C.c: 189:         lcd_msg("    ");
   1963  076E  3025               	movlw	(low (((STR_9+2)-__stringbase)| (0+32768)))& (0+255)
   1964  076F  00F3               	movwf	lcd_msg@c
   1965  0770  3080               	movlw	128
@@ -1981,7 +1981,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1967  0772  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1968  0777                     l1959:	
   1969                           
-  1970                           ;MASTERR_I2C.c: 190:             lcd_msg(CONTLUZA_CHAR);
+  1970                           ;MASTERR_I2C.c: 190:         lcd_msg(CONTLUZA_CHAR);
   1971  0777  304F               	movlw	(low (_CONTLUZA_CHAR| 0))& (0+255)
   1972  0778  00F3               	movwf	lcd_msg@c
   1973  0779  3000               	movlw	0
@@ -1989,7 +1989,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1975  077B  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1976  0780                     l1961:	
   1977                           
-  1978                           ;MASTERR_I2C.c: 191:             lcd_msg(" ");
+  1978                           ;MASTERR_I2C.c: 191:         lcd_msg(" ");
   1979  0780  3028               	movlw	(low (((STR_9+5)-__stringbase)| (0+32768)))& (0+255)
   1980  0781  00F3               	movwf	lcd_msg@c
   1981  0782  3080               	movlw	128
@@ -1997,7 +1997,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1983  0784  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   1984  0789                     l1963:	
   1985                           
-  1986                           ;MASTERR_I2C.c: 194:         if(RA0 == 1){
+  1986                           ;MASTERR_I2C.c: 195:         if(RA0 == 1){
   1987  0789  1283               	bcf	3,5	;RP0=0, select bank0
   1988  078A  1303               	bcf	3,6	;RP1=0, select bank0
   1989  078B  1C05               	btfss	5,0	;volatile
@@ -2008,7 +2008,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1994  078F                     u1380:	
   1995  078F                     l1965:	
   1996                           
-  1997                           ;MASTERR_I2C.c: 195:             if(S0==0){
+  1997                           ;MASTERR_I2C.c: 196:             if(S0==0){
   1998  078F  0849               	movf	_S0,w
   1999  0790  1D03               	btfss	3,2
   2000  0791  2F93               	goto	u1391
@@ -2018,26 +2018,26 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2004  0794                     u1390:	
   2005  0794                     l1967:	
   2006                           
-  2007                           ;MASTERR_I2C.c: 196:             lcd_cmd(0x01);
+  2007                           ;MASTERR_I2C.c: 197:             lcd_cmd(0x01);
   2008  0794  3001               	movlw	1
   2009  0795  120A  158A  2748  120A  118A  	fcall	_lcd_cmd
   2010  079A                     l1969:	
   2011                           
-  2012                           ;MASTERR_I2C.c: 197:             S0=1;
+  2012                           ;MASTERR_I2C.c: 198:             S0=1;
   2013  079A  1283               	bcf	3,5	;RP0=0, select bank0
   2014  079B  1303               	bcf	3,6	;RP1=0, select bank0
   2015  079C  01C9               	clrf	_S0
   2016  079D  0AC9               	incf	_S0,f
   2017  079E                     l155:	
-  2018                           ;MASTERR_I2C.c: 198:             }
+  2018                           ;MASTERR_I2C.c: 199:             }
   2019                           
   2020                           
-  2021                           ;MASTERR_I2C.c: 199:             lcd_cmd(0x80);
+  2021                           ;MASTERR_I2C.c: 200:             lcd_cmd(0x80);
   2022  079E  3080               	movlw	128
   2023  079F  120A  158A  2748  120A  118A  	fcall	_lcd_cmd
   2024  07A4                     l1971:	
   2025                           
-  2026                           ;MASTERR_I2C.c: 200:             lcd_msg(" FUERZA ULTRA   ");
+  2026                           ;MASTERR_I2C.c: 201:             lcd_msg(" FUERZA ULTRA   ");
   2027  07A4  3001               	movlw	(low ((STR_6-__stringbase)| (0+32768)))& (0+255)
   2028  07A5  00F3               	movwf	lcd_msg@c
   2029  07A6  3080               	movlw	128
@@ -2045,39 +2045,39 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2031  07A8  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   2032  07AD                     l1973:	
   2033                           
-  2034                           ;MASTERR_I2C.c: 201:             lcd_cmd(0xC0);
+  2034                           ;MASTERR_I2C.c: 202:             lcd_cmd(0xC0);
   2035  07AD  30C0               	movlw	192
   2036  07AE  120A  158A  2748  120A  118A  	fcall	_lcd_cmd
   2037                           
-  2038                           ;MASTERR_I2C.c: 202:             lcd_msg("  ");
+  2038                           ;MASTERR_I2C.c: 203:             lcd_msg("  ");
   2039  07B3  3027               	movlw	(low (((STR_9+4)-__stringbase)| (0+32768)))& (0+255)
   2040  07B4  00F3               	movwf	lcd_msg@c
   2041  07B5  3080               	movlw	128
   2042  07B6  00F4               	movwf	lcd_msg@c+1
   2043  07B7  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   2044                           
-  2045                           ;MASTERR_I2C.c: 203:             lcd_msg(ADCA_CHARA);
+  2045                           ;MASTERR_I2C.c: 204:             lcd_msg(ADCA_CHARA);
   2046  07BC  30D0               	movlw	(low (_ADCA_CHARA| 0))& (0+255)
   2047  07BD  00F3               	movwf	lcd_msg@c
   2048  07BE  3000               	movlw	0
   2049  07BF  00F4               	movwf	lcd_msg@c+1
   2050  07C0  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   2051                           
-  2052                           ;MASTERR_I2C.c: 204:             lcd_msg("     ");
+  2052                           ;MASTERR_I2C.c: 205:             lcd_msg("     ");
   2053  07C5  3024               	movlw	(low (((STR_9+1)-__stringbase)| (0+32768)))& (0+255)
   2054  07C6  00F3               	movwf	lcd_msg@c
   2055  07C7  3080               	movlw	128
   2056  07C8  00F4               	movwf	lcd_msg@c+1
   2057  07C9  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   2058                           
-  2059                           ;MASTERR_I2C.c: 205:             lcd_msg(SONICOU_CHAR);
+  2059                           ;MASTERR_I2C.c: 206:             lcd_msg(SONICOU_CHAR);
   2060  07CE  30DF               	movlw	(low (_SONICOU_CHAR| 0))& (0+255)
   2061  07CF  00F3               	movwf	lcd_msg@c
   2062  07D0  3000               	movlw	0
   2063  07D1  00F4               	movwf	lcd_msg@c+1
   2064  07D2  120A  158A  27B1  120A  118A  	fcall	_lcd_msg
   2065                           
-  2066                           ;MASTERR_I2C.c: 206:             lcd_msg("      ");
+  2066                           ;MASTERR_I2C.c: 207:             lcd_msg("      ");
   2067  07D7  3023               	movlw	(low ((STR_9-__stringbase)| (0+32768)))& (0+255)
   2068  07D8  00F3               	movwf	lcd_msg@c
   2069  07D9  3080               	movlw	128
@@ -2188,7 +2188,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2174  0FB1                     __ptext2:	
   2175 ;; *************** function _lcd_msg *****************
   2176 ;; Defined at:
-  2177 ;;		line 60 in file "PANTALLALCD.c"
+  2177 ;;		line 52 in file "PANTALLALCD.c"
   2178 ;; Parameters:    Size  Location     Type
   2179 ;;  c               2    3[COMMON] PTR unsigned char 
   2180 ;;		 -> STR_9(7), STR_8(6), STR_7(3), STR_6(17), 
@@ -2228,11 +2228,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2214                           ; Regs used in _lcd_msg: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
   2215                           
   2216                           
-  2217                           ;PANTALLALCD.c: 61:     while(*c != 0)
+  2217                           ;PANTALLALCD.c: 53:     while(*c != 0)
   2218  0FB1  2FC6               	goto	l1747
   2219  0FB2                     l1743:	
   2220                           
-  2221                           ;PANTALLALCD.c: 62:         lcd_dwr(*c++);
+  2221                           ;PANTALLALCD.c: 54:         lcd_dwr(*c++);
   2222  0FB2  0874               	movf	lcd_msg@c+1,w
   2223  0FB3  00FF               	movwf	btemp+1
   2224  0FB4  0873               	movf	lcd_msg@c,w
@@ -2248,7 +2248,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2234  0FC5  07F4               	addwf	lcd_msg@c+1,f
   2235  0FC6                     l1747:	
   2236                           
-  2237                           ;PANTALLALCD.c: 61:     while(*c != 0)
+  2237                           ;PANTALLALCD.c: 53:     while(*c != 0)
   2238  0FC6  0874               	movf	lcd_msg@c+1,w
   2239  0FC7  1283               	bcf	3,5	;RP0=0, select bank0
   2240  0FC8  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2271,7 +2271,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2257  0F5A                     __ptext3:	
   2258 ;; *************** function _lcd_dwr *****************
   2259 ;; Defined at:
-  2260 ;;		line 51 in file "PANTALLALCD.c"
+  2260 ;;		line 43 in file "PANTALLALCD.c"
   2261 ;; Parameters:    Size  Location     Type
   2262 ;;  x               1    wreg     unsigned char 
   2263 ;; Auto vars:     Size  Location     Type
@@ -2310,26 +2310,26 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2296  0F5A  00F2               	movwf	lcd_dwr@x
   2297  0F5B                     l1535:	
   2298                           
-  2299                           ;PANTALLALCD.c: 52:     lcd_ready();
+  2299                           ;PANTALLALCD.c: 44:     lcd_ready();
   2300  0F5B  120A  158A  27D7  120A  158A  	fcall	_lcd_ready
   2301  0F60                     l1537:	
   2302                           
-  2303                           ;PANTALLALCD.c: 53:     PORTB = x;
+  2303                           ;PANTALLALCD.c: 45:     PORTB = x;
   2304  0F60  0872               	movf	lcd_dwr@x,w
   2305  0F61  1283               	bcf	3,5	;RP0=0, select bank0
   2306  0F62  1303               	bcf	3,6	;RP1=0, select bank0
   2307  0F63  0086               	movwf	6	;volatile
   2308  0F64                     l1539:	
   2309                           
-  2310                           ;PANTALLALCD.c: 54:     RD5 = 1;
+  2310                           ;PANTALLALCD.c: 46:     RD5 = 1;
   2311  0F64  1688               	bsf	8,5	;volatile
   2312  0F65                     l1541:	
   2313                           
-  2314                           ;PANTALLALCD.c: 55:     RD6 = 0;
+  2314                           ;PANTALLALCD.c: 47:     RD6 = 0;
   2315  0F65  1308               	bcf	8,6	;volatile
   2316  0F66                     l1543:	
   2317                           
-  2318                           ;PANTALLALCD.c: 56:     lcd_lat();
+  2318                           ;PANTALLALCD.c: 48:     lcd_lat();
   2319  0F66  120A  158A  2739  120A  158A  	fcall	_lcd_lat
   2320  0F6B                     l189:	
   2321  0F6B  0008               	return
@@ -2867,7 +2867,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2853  0F6C                     __ptext8:	
   2854 ;; *************** function _inicializacion *****************
   2855 ;; Defined at:
-  2856 ;;		line 66 in file "PANTALLALCD.c"
+  2856 ;;		line 58 in file "PANTALLALCD.c"
   2857 ;; Parameters:    Size  Location     Type
   2858 ;;		None
   2859 ;; Auto vars:     Size  Location     Type
@@ -2898,28 +2898,28 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2884                           
   2885                           ;psect for function _inicializacion
   2886  0F6C                     _inicializacion:	
-  2887  0F6C                     l1651:	
+  2887  0F6C                     l1665:	
   2888                           ;incstack = 0
   2889                           ; Regs used in _inicializacion: [wreg+status,2+status,0+pclath+cstack]
   2890                           
   2891                           
-  2892                           ;PANTALLALCD.c: 67:     lcd_cmd(0x38);
+  2892                           ;PANTALLALCD.c: 59:     lcd_cmd(0x38);
   2893  0F6C  3038               	movlw	56
   2894  0F6D  120A  158A  2748  120A  158A  	fcall	_lcd_cmd
   2895                           
-  2896                           ;PANTALLALCD.c: 68:     lcd_cmd(0x0C);
+  2896                           ;PANTALLALCD.c: 60:     lcd_cmd(0x0C);
   2897  0F72  300C               	movlw	12
   2898  0F73  120A  158A  2748  120A  158A  	fcall	_lcd_cmd
   2899                           
-  2900                           ;PANTALLALCD.c: 69:     lcd_cmd(0x01);
+  2900                           ;PANTALLALCD.c: 61:     lcd_cmd(0x01);
   2901  0F78  3001               	movlw	1
   2902  0F79  120A  158A  2748  120A  158A  	fcall	_lcd_cmd
   2903                           
-  2904                           ;PANTALLALCD.c: 70:     lcd_cmd(0x06);
+  2904                           ;PANTALLALCD.c: 62:     lcd_cmd(0x06);
   2905  0F7E  3006               	movlw	6
   2906  0F7F  120A  158A  2748  120A  158A  	fcall	_lcd_cmd
   2907                           
-  2908                           ;PANTALLALCD.c: 71:     lcd_cmd(0x80);
+  2908                           ;PANTALLALCD.c: 63:     lcd_cmd(0x80);
   2909  0F84  3080               	movlw	128
   2910  0F85  120A  158A  2748  120A  158A  	fcall	_lcd_cmd
   2911  0F8A                     l198:	
@@ -2930,7 +2930,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2916  0F48                     __ptext9:	
   2917 ;; *************** function _lcd_cmd *****************
   2918 ;; Defined at:
-  2919 ;;		line 18 in file "PANTALLALCD.c"
+  2919 ;;		line 10 in file "PANTALLALCD.c"
   2920 ;; Parameters:    Size  Location     Type
   2921 ;;  x               1    wreg     unsigned char 
   2922 ;; Auto vars:     Size  Location     Type
@@ -2970,26 +2970,26 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2956  0F48  00F2               	movwf	lcd_cmd@x
   2957  0F49                     l1523:	
   2958                           
-  2959                           ;PANTALLALCD.c: 19:     lcd_ready();
+  2959                           ;PANTALLALCD.c: 11:     lcd_ready();
   2960  0F49  120A  158A  27D7  120A  158A  	fcall	_lcd_ready
   2961  0F4E                     l1525:	
   2962                           
-  2963                           ;PANTALLALCD.c: 20:     PORTB = x;
+  2963                           ;PANTALLALCD.c: 12:     PORTB = x;
   2964  0F4E  0872               	movf	lcd_cmd@x,w
   2965  0F4F  1283               	bcf	3,5	;RP0=0, select bank0
   2966  0F50  1303               	bcf	3,6	;RP1=0, select bank0
   2967  0F51  0086               	movwf	6	;volatile
   2968  0F52                     l1527:	
   2969                           
-  2970                           ;PANTALLALCD.c: 21:     RD5 = 0;
+  2970                           ;PANTALLALCD.c: 13:     RD5 = 0;
   2971  0F52  1288               	bcf	8,5	;volatile
   2972  0F53                     l1529:	
   2973                           
-  2974                           ;PANTALLALCD.c: 22:     RD6 = 0;
+  2974                           ;PANTALLALCD.c: 14:     RD6 = 0;
   2975  0F53  1308               	bcf	8,6	;volatile
   2976  0F54                     l1531:	
   2977                           
-  2978                           ;PANTALLALCD.c: 23:     lcd_lat();
+  2978                           ;PANTALLALCD.c: 15:     lcd_lat();
   2979  0F54  120A  158A  2739  120A  158A  	fcall	_lcd_lat
   2980  0F59                     l178:	
   2981  0F59  0008               	return
@@ -2999,7 +2999,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   2985  0FD7                     __ptext10:	
   2986 ;; *************** function _lcd_ready *****************
   2987 ;; Defined at:
-  2988 ;;		line 33 in file "PANTALLALCD.c"
+  2988 ;;		line 25 in file "PANTALLALCD.c"
   2989 ;; Parameters:    Size  Location     Type
   2990 ;;		None
   2991 ;; Auto vars:     Size  Location     Type
@@ -3035,33 +3035,33 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3021                           ; Regs used in _lcd_ready: [wreg+status,2+status,0]
   3022                           
   3023                           
-  3024                           ;PANTALLALCD.c: 34:     PORTB = 0xFF;
+  3024                           ;PANTALLALCD.c: 26:     PORTB = 0xFF;
   3025  0FD7  30FF               	movlw	255
   3026  0FD8  1283               	bcf	3,5	;RP0=0, select bank0
   3027  0FD9  1303               	bcf	3,6	;RP1=0, select bank0
   3028  0FDA  0086               	movwf	6	;volatile
   3029  0FDB                     l1449:	
   3030                           
-  3031                           ;PANTALLALCD.c: 35:     PORTB &= 0x80;
+  3031                           ;PANTALLALCD.c: 27:     PORTB &= 0x80;
   3032  0FDB  3080               	movlw	128
   3033  0FDC  00F0               	movwf	??_lcd_ready
   3034  0FDD  0870               	movf	??_lcd_ready,w
   3035  0FDE  0586               	andwf	6,f	;volatile
   3036  0FDF                     l1451:	
   3037                           
-  3038                           ;PANTALLALCD.c: 36:     RD5 = 0;
+  3038                           ;PANTALLALCD.c: 28:     RD5 = 0;
   3039  0FDF  1288               	bcf	8,5	;volatile
   3040  0FE0                     l1453:	
   3041                           
-  3042                           ;PANTALLALCD.c: 37:     RD6 = 1;
+  3042                           ;PANTALLALCD.c: 29:     RD6 = 1;
   3043  0FE0  1708               	bsf	8,6	;volatile
   3044  0FE1                     l1455:	
   3045                           
-  3046                           ;PANTALLALCD.c: 38:     RD7 = 0;
+  3046                           ;PANTALLALCD.c: 30:     RD7 = 0;
   3047  0FE1  1388               	bcf	8,7	;volatile
   3048  0FE2                     l1457:	
   3049                           
-  3050                           ;PANTALLALCD.c: 39:     _delay((unsigned long)((30)*(8000000/4000.0)));
+  3050                           ;PANTALLALCD.c: 31:     _delay((unsigned long)((30)*(8000000/4000.0)));
   3051  0FE2  304E               	movlw	78
   3052  0FE3  00F1               	movwf	??_lcd_ready+1
   3053  0FE4  30EB               	movlw	235
@@ -3073,12 +3073,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3059  0FE9  2FE6               	goto	u1507
   3060  0FEA                     l1459:	
   3061                           
-  3062                           ;PANTALLALCD.c: 40:     RD7 = 1;
+  3062                           ;PANTALLALCD.c: 32:     RD7 = 1;
   3063  0FEA  1283               	bcf	3,5	;RP0=0, select bank0
   3064  0FEB  1303               	bcf	3,6	;RP1=0, select bank0
   3065  0FEC  1788               	bsf	8,7	;volatile
   3066                           
-  3067                           ;PANTALLALCD.c: 41:     if (PORTB == 0x80){
+  3067                           ;PANTALLALCD.c: 33:     if (PORTB == 0x80){
   3068  0FED  3080               	movlw	128
   3069  0FEE  0606               	xorwf	6,w	;volatile
   3070  0FEF  1D03               	btfss	3,2
@@ -3089,11 +3089,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3075  0FF3                     u710:	
   3076  0FF3                     l1461:	
   3077                           
-  3078                           ;PANTALLALCD.c: 42:     RD7 = 0;
+  3078                           ;PANTALLALCD.c: 34:     RD7 = 0;
   3079  0FF3  1388               	bcf	8,7	;volatile
   3080  0FF4                     l1463:	
   3081                           
-  3082                           ;PANTALLALCD.c: 43:     _delay((unsigned long)((30)*(8000000/4000.0)));
+  3082                           ;PANTALLALCD.c: 35:     _delay((unsigned long)((30)*(8000000/4000.0)));
   3083  0FF4  304E               	movlw	78
   3084  0FF5  00F1               	movwf	??_lcd_ready+1
   3085  0FF6  30EB               	movlw	235
@@ -3105,12 +3105,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3091  0FFB  2FF8               	goto	u1517
   3092  0FFC                     l1465:	
   3093                           
-  3094                           ;PANTALLALCD.c: 44:     RD7 = 1;
+  3094                           ;PANTALLALCD.c: 36:     RD7 = 1;
   3095  0FFC  1283               	bcf	3,5	;RP0=0, select bank0
   3096  0FFD  1303               	bcf	3,6	;RP1=0, select bank0
   3097  0FFE  1788               	bsf	8,7	;volatile
   3098  0FFF                     l186:	
-  3099                           ;PANTALLALCD.c: 45:     }
+  3099                           ;PANTALLALCD.c: 37:     }
   3100                           
   3101  0FFF  0008               	return
   3102  1000                     __end_of_lcd_ready:	
@@ -3119,7 +3119,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3105  0F39                     __ptext11:	
   3106 ;; *************** function _lcd_lat *****************
   3107 ;; Defined at:
-  3108 ;;		line 27 in file "PANTALLALCD.c"
+  3108 ;;		line 19 in file "PANTALLALCD.c"
   3109 ;; Parameters:    Size  Location     Type
   3110 ;;		None
   3111 ;; Auto vars:     Size  Location     Type
@@ -3155,13 +3155,13 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3141                           ; Regs used in _lcd_lat: [wreg]
   3142                           
   3143                           
-  3144                           ;PANTALLALCD.c: 28:     RD7 = 1;
+  3144                           ;PANTALLALCD.c: 20:     RD7 = 1;
   3145  0F39  1283               	bcf	3,5	;RP0=0, select bank0
   3146  0F3A  1303               	bcf	3,6	;RP1=0, select bank0
   3147  0F3B  1788               	bsf	8,7	;volatile
   3148  0F3C                     l1469:	
   3149                           
-  3150                           ;PANTALLALCD.c: 29:    _delay((unsigned long)((30)*(8000000/4000.0)));
+  3150                           ;PANTALLALCD.c: 21:    _delay((unsigned long)((30)*(8000000/4000.0)));
   3151  0F3C  304E               	movlw	78
   3152  0F3D  00F1               	movwf	??_lcd_lat+1
   3153  0F3E  30EB               	movlw	235
@@ -3173,7 +3173,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3159  0F43  2F40               	goto	u1527
   3160  0F44                     l1471:	
   3161                           
-  3162                           ;PANTALLALCD.c: 30:    RD7 = 0;
+  3162                           ;PANTALLALCD.c: 22:    RD7 = 0;
   3163  0F44  1283               	bcf	3,5	;RP0=0, select bank0
   3164  0F45  1303               	bcf	3,6	;RP1=0, select bank0
   3165  0F46  1388               	bcf	8,7	;volatile
@@ -4006,7 +4006,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3992  003C                     __ptext17:	
   3993 ;; *************** function _SETUP *****************
   3994 ;; Defined at:
-  3995 ;;		line 211 in file "MASTERR_I2C.c"
+  3995 ;;		line 212 in file "MASTERR_I2C.c"
   3996 ;; Parameters:    Size  Location     Type
   3997 ;;		None
   3998 ;; Auto vars:     Size  Location     Type
@@ -4041,50 +4041,50 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4027                           ; Regs used in _SETUP: [wreg+status,2]
   4028                           
   4029                           
-  4030                           ;MASTERR_I2C.c: 212:     TRISA=0b00000001;
+  4030                           ;MASTERR_I2C.c: 213:      TRISA=0b00000001;
   4031  003C  3001               	movlw	1
   4032  003D  1683               	bsf	3,5	;RP0=1, select bank1
   4033  003E  1303               	bcf	3,6	;RP1=0, select bank1
   4034  003F  0085               	movwf	5	;volatile
   4035  0040                     l1647:	
   4036                           
-  4037                           ;MASTERR_I2C.c: 213:     TRISB=0;
+  4037                           ;MASTERR_I2C.c: 214:     TRISB=0;
   4038  0040  0186               	clrf	6	;volatile
   4039  0041                     l1649:	
   4040                           
-  4041                           ;MASTERR_I2C.c: 214:     TRISC=0b000011000;
+  4041                           ;MASTERR_I2C.c: 215:     TRISC=0b000011000;
   4042  0041  3018               	movlw	24
   4043  0042  0087               	movwf	7	;volatile
   4044                           
-  4045                           ;MASTERR_I2C.c: 215:     TRISD=0;
+  4045                           ;MASTERR_I2C.c: 216:     TRISD=0;
   4046  0043  0188               	clrf	8	;volatile
   4047                           
-  4048                           ;MASTERR_I2C.c: 216:     TRISE=0;
+  4048                           ;MASTERR_I2C.c: 217:     TRISE=0;
   4049  0044  0189               	clrf	9	;volatile
   4050                           
-  4051                           ;MASTERR_I2C.c: 217:     ANSEL = 0b00000000;
+  4051                           ;MASTERR_I2C.c: 218:     ANSEL = 0b00000000;
   4052  0045  1683               	bsf	3,5	;RP0=1, select bank3
   4053  0046  1703               	bsf	3,6	;RP1=1, select bank3
   4054  0047  0188               	clrf	8	;volatile
   4055                           
-  4056                           ;MASTERR_I2C.c: 218:     ANSELH =0b00000000;
+  4056                           ;MASTERR_I2C.c: 219:     ANSELH =0b00000000;
   4057  0048  0189               	clrf	9	;volatile
   4058                           
-  4059                           ;MASTERR_I2C.c: 219:     PORTA=0;
+  4059                           ;MASTERR_I2C.c: 220:     PORTA=0;
   4060  0049  1283               	bcf	3,5	;RP0=0, select bank0
   4061  004A  1303               	bcf	3,6	;RP1=0, select bank0
   4062  004B  0185               	clrf	5	;volatile
   4063                           
-  4064                           ;MASTERR_I2C.c: 220:     PORTB=0;
+  4064                           ;MASTERR_I2C.c: 221:     PORTB=0;
   4065  004C  0186               	clrf	6	;volatile
   4066                           
-  4067                           ;MASTERR_I2C.c: 221:     PORTC=0;
+  4067                           ;MASTERR_I2C.c: 222:     PORTC=0;
   4068  004D  0187               	clrf	7	;volatile
   4069                           
-  4070                           ;MASTERR_I2C.c: 222:     PORTD=0;
+  4070                           ;MASTERR_I2C.c: 223:     PORTD=0;
   4071  004E  0188               	clrf	8	;volatile
   4072                           
-  4073                           ;MASTERR_I2C.c: 223:     PORTE=0;
+  4073                           ;MASTERR_I2C.c: 224:     PORTE=0;
   4074  004F  0189               	clrf	9	;volatile
   4075  0050                     l161:	
   4076  0050  0008               	return
@@ -4460,7 +4460,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4446                           
   4447                           ;psect for function _I2C_INIT
   4448  00A8                     _I2C_INIT:	
-  4449  00A8                     l1655:	
+  4449  00A8                     l1651:	
   4450                           ;incstack = 0
   4451                           ; Regs used in _I2C_INIT: [wreg+status,2+status,0+pclath+cstack]
   4452                           
@@ -4470,13 +4470,13 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4456  00A9  1283               	bcf	3,5	;RP0=0, select bank0
   4457  00AA  1303               	bcf	3,6	;RP1=0, select bank0
   4458  00AB  0094               	movwf	20	;volatile
-  4459  00AC                     l1657:	
+  4459  00AC                     l1653:	
   4460                           
   4461                           ;I2C.c: 7:     SSPCON2 = 0;
   4462  00AC  1683               	bsf	3,5	;RP0=1, select bank1
   4463  00AD  1303               	bcf	3,6	;RP1=0, select bank1
   4464  00AE  0191               	clrf	17	;volatile
-  4465  00AF                     l1659:	
+  4465  00AF                     l1655:	
   4466                           
   4467                           ;I2C.c: 8:     SSPADD = (8000000/(4*c))-1;
   4468  00AF  1283               	bcf	3,5	;RP0=0, select bank0
@@ -4522,15 +4522,15 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4508  00D9  1683               	bsf	3,5	;RP0=1, select bank1
   4509  00DA  1303               	bcf	3,6	;RP1=0, select bank1
   4510  00DB  0093               	movwf	19	;volatile
-  4511  00DC                     l1661:	
+  4511  00DC                     l1657:	
   4512                           
   4513                           ;I2C.c: 9:     SSPSTAT = 0;
   4514  00DC  0194               	clrf	20	;volatile
-  4515  00DD                     l1663:	
+  4515  00DD                     l1659:	
   4516                           
   4517                           ;I2C.c: 10:     TRISCbits.TRISC3 = 1;
   4518  00DD  1587               	bsf	7,3	;volatile
-  4519  00DE                     l1665:	
+  4519  00DE                     l1661:	
   4520                           
   4521                           ;I2C.c: 11:     TRISCbits.TRISC4 = 1;
   4522  00DE  1607               	bsf	7,4	;volatile
@@ -4978,7 +4978,7 @@ DATA                 0      0      AE      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Wed Mar 18 00:23:17 2020
+Symbol Table                                                                                   Wed Mar 18 00:51:01 2020
 
                         pc 0002                __CFG_CP$OFF 0000                         _S0 0049  
                        _S1 0048               ___awdiv@sign 0076                         fsr 0004  
@@ -5033,20 +5033,20 @@ Symbol Table                                                                    
                      l1481 0125                       l1641 0354                       l1633 033D  
                      l1625 030F                       l1617 02EE                       l1721 0F92  
                      l1537 0F60                       l1563 0259                       l1555 022D  
-                     l1571 0277                       l1547 0F2C                       l1715 0F27  
-                     l1811 0183                       l1803 016E                       l1467 0F39  
-                     l1459 0FEA                       l1651 0F6C                       l1491 014B  
+                     l1571 0277                       l1651 00A8                       l1547 0F2C  
+                     l1715 0F27                       l1811 0183                       l1803 016E  
+                     l1467 0F39                       l1459 0FEA                       l1491 014B  
                      l1483 012C                       l1475 011A                       l1635 0345  
                      l1627 0311                       l1619 0301                       l1723 0F99  
                      l1539 0F64                       l1731 0052                       l1565 0267  
-                     l1557 023A                       l1661 00DC                       l1549 0F32  
-                     l1709 0F0D                       l1645 003C                       l1581 0371  
-                     l1821 01A2                       l1813 0187                       l1805 0173  
-                     l1469 0F3C                       l1493 014C                       l1485 0130  
-                     l1477 011C                       l1637 034C                       l1629 0324  
-                     l1725 0F9D                       l1717 0F8E                       l1741 0FB1  
-                     l1733 0057                       l1901 0627                       l1567 0268  
-                     l1559 023E                       l1663 00DD                       l1655 00A8  
+                     l1557 023A                       l1661 00DE                       l1653 00AC  
+                     l1549 0F32                       l1709 0F0D                       l1645 003C  
+                     l1581 0371                       l1821 01A2                       l1813 0187  
+                     l1805 0173                       l1469 0F3C                       l1493 014C  
+                     l1485 0130                       l1477 011C                       l1637 034C  
+                     l1629 0324                       l1725 0F9D                       l1717 0F8E  
+                     l1741 0FB1                       l1733 0057                       l1901 0627  
+                     l1567 0268                       l1559 023E                       l1655 00AF  
                      l1647 0040                       l1591 0393                       l1583 037C  
                      l1575 0359                       l1671 0210                       l1751 0281  
                      l1815 018B                       l1807 0179                       l1823 01A8  
@@ -5054,14 +5054,14 @@ Symbol Table                                                                    
                      l1639 034E                       l1727 0FA2                       l1719 0F8E  
                      l1743 0FB2                       l1735 005B                       l1911 0682  
                      l1903 0636                       l1831 03F6                       l1569 0271  
-                     l1665 00DE                       l1657 00AC                       l1649 0041  
-                     l1593 03A0                       l1585 0380                       l1577 035C  
-                     l1681 0217                       l1673 0211                       l1761 0295  
-                     l1753 0285                       l1825 01AD                       l1817 0195  
-                     l1809 017C                       l1489 0145                       l1497 0159  
+                     l1657 00DC                       l1649 0041                       l1593 03A0  
+                     l1585 0380                       l1577 035C                       l1681 0217  
+                     l1673 0211                       l1761 0295                       l1753 0285  
+                     l1825 01AD                       l1817 0195                       l1809 017C  
+                     l1665 0F6C                       l1489 0145                       l1497 0159  
                      l1745 0FC0                       l1737 0064                       l1921 06AF  
                      l1913 068E                       l1905 064E                       l1841 048B  
-                     l1833 043F                       l1659 00AF                       l1691 0F1B  
+                     l1833 043F                       l1659 00DD                       l1691 0F1B  
                      l1595 03A4                       l1587 0388                       l1579 0360  
                      l1683 0218                       l1675 0212                       l1771 02AB  
                      l1763 0299                       l1755 028A                       l1827 01B2  

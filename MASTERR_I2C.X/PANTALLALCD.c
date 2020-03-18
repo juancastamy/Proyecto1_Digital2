@@ -1,11 +1,3 @@
-/* 
- * File:   LCD.c
- * Author: CHARLIE
- *
- * Created on 14 de febrero de 2020, 12:50
- */
-
-
 #include "PANTALLALCD.h"
 #include <xc.h>
 #include <pic16f887.h>
@@ -71,4 +63,3 @@ void inicializacion(void){
     lcd_cmd(0x80);  
     return;
 }
-

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\MASTERR_I2C.X.production.sym \
   --cmf=dist/default/production\MASTERR_I2C.X.production.cmf -z -Q16F887 \
-  -oC:\Users\juan\AppData\Local\Temp\sdto.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\juan\AppData\Local\Temp\s8gk.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/MASTERR_I2C.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\juan\AppData\Local\Temp\sdto.o \
+  -DENTRY=2 -k C:\Users\juan\AppData\Local\Temp\s8gk.o \
   dist/default/production\MASTERR_I2C.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\juan\AppData\Local\Temp\sdto.o
+C:\Users\juan\AppData\Local\Temp\s8gk.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\MASTERR_I2C.X.production.o
@@ -629,7 +629,7 @@ Total ram usage:        4 bytes
 
  *************** function _lcd_msg *****************
  Defined at:
-		line 60 in file "PANTALLALCD.c"
+		line 52 in file "PANTALLALCD.c"
  Parameters:    Size  Location     Type
   c               2    3[COMMON] PTR unsigned char 
 		 -> STR_9(7), STR_8(6), STR_7(3), STR_6(17), 
@@ -663,7 +663,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcd_dwr *****************
  Defined at:
-		line 51 in file "PANTALLALCD.c"
+		line 43 in file "PANTALLALCD.c"
  Parameters:    Size  Location     Type
   x               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -838,7 +838,7 @@ Total ram usage:        8 bytes
 
  *************** function _inicializacion *****************
  Defined at:
-		line 66 in file "PANTALLALCD.c"
+		line 58 in file "PANTALLALCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -868,7 +868,7 @@ Total ram usage:        0 bytes
 
  *************** function _lcd_cmd *****************
  Defined at:
-		line 18 in file "PANTALLALCD.c"
+		line 10 in file "PANTALLALCD.c"
  Parameters:    Size  Location     Type
   x               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -900,7 +900,7 @@ Total ram usage:        1 bytes
 
  *************** function _lcd_ready *****************
  Defined at:
-		line 33 in file "PANTALLALCD.c"
+		line 25 in file "PANTALLALCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -930,7 +930,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcd_lat *****************
  Defined at:
-		line 27 in file "PANTALLALCD.c"
+		line 19 in file "PANTALLALCD.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1114,7 +1114,7 @@ Total ram usage:       15 bytes
 
  *************** function _SETUP *****************
  Defined at:
-		line 211 in file "MASTERR_I2C.c"
+		line 212 in file "MASTERR_I2C.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

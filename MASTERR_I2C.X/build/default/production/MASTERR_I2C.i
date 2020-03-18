@@ -2912,6 +2912,7 @@ void UART_Write_Text(char *text);
 
 
 
+
 uint8_t analogic_digital_a;
 uint8_t CONTADOR;
 uint8_t analogic_digital_b;
@@ -2961,12 +2962,11 @@ int decT_int;
 char uniT_char[5];
 char decT_char[5];
 
-
 void SETUP(void);
 void main(void) {
     SETUP();
-    inicializacion();
     I2C_INIT(100000);
+    inicializacion();
     UART_INIT(9600);
 
     while(1){
@@ -3023,7 +3023,7 @@ void main(void) {
         UART_WRITE(analogic_digital_a);
         _delay((unsigned long)((100)*(8000000/4000.0)));
 
-        DC1 = analogic_digital_a/10;
+         DC1 = analogic_digital_a/10;
         itoa(ADCA_CHARA,DC1,10);
         DC2 = analogic_digital_a%10;
         itoa(ADCB_CHARB,DC2,10);
@@ -3050,17 +3050,18 @@ void main(void) {
             lcd_cmd(0x01);
             S0=0;
             }
-            lcd_cmd(0x80);
-            lcd_msg("TEMP CARROS LUZ ");
-            lcd_cmd(0xC0);
-            lcd_msg(" ");
-            lcd_msg(decT_char);
-            lcd_msg("    ");
-            lcd_msg(CONTU_CHAR);
-            lcd_msg("    ");
-            lcd_msg(CONTLUZA_CHAR);
-            lcd_msg(" ");
+        lcd_cmd(0x80);
+        lcd_msg("TEMP CARROS LUZ ");
+        lcd_cmd(0xC0);
+        lcd_msg(" ");
+        lcd_msg(decT_char);
+        lcd_msg("    ");
+        lcd_msg(CONTU_CHAR);
+        lcd_msg("    ");
+        lcd_msg(CONTLUZA_CHAR);
+        lcd_msg(" ");
         }
+
 
         if(RA0 == 1){
             if(S0==0){
@@ -3080,7 +3081,7 @@ void main(void) {
 }
 
 void SETUP (void){
-    TRISA=0b00000001;
+     TRISA=0b00000001;
     TRISB=0;
     TRISC=0b000011000;
     TRISD=0;

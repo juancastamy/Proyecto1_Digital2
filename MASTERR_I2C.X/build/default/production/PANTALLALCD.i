@@ -7,14 +7,6 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "PANTALLALCD.c" 2
-
-
-
-
-
-
-
-
 # 1 "./PANTALLALCD.h" 1
 # 34 "./PANTALLALCD.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -2509,7 +2501,7 @@ void lcd_msg(unsigned char *c);
 void lcd_ready(void);
 void lcd_lat(void);
 void inicializacion(void);
-# 9 "PANTALLALCD.c" 2
+# 1 "PANTALLALCD.c" 2
 
 
 
@@ -2647,7 +2639,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 13 "PANTALLALCD.c" 2
+# 5 "PANTALLALCD.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\string.h" 1 3
 
@@ -2700,7 +2692,7 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 14 "PANTALLALCD.c" 2
+# 6 "PANTALLALCD.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
 # 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
@@ -2782,7 +2774,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 15 "PANTALLALCD.c" 2
+# 7 "PANTALLALCD.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2867,7 +2859,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 16 "PANTALLALCD.c" 2
+# 8 "PANTALLALCD.c" 2
 
 
 void lcd_cmd(unsigned char x){
