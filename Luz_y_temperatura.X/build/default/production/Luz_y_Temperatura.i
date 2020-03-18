@@ -2916,6 +2916,8 @@ void ADC1(void);
 
 
 
+
+
 uint8_t z;
 unsigned char check;
 
@@ -2971,7 +2973,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
             PORTD = SSPBUF;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
 
         }
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2981,7 +2983,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             SSPBUF = adc;
             S0 = 1;
             SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
             PIR1bits.SSPIF = 0;
             return;
@@ -2990,7 +2992,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             SSPBUF = T_byte1;
             S0 = 0;
             SSPCONbits.CKP = 1;
-            _delay((unsigned long)((250)*(4000000/4000000.0)));
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
             PIR1bits.SSPIF = 0;
             return;
@@ -3006,10 +3008,10 @@ void main(void) {
     ADCSETUP();
     while(1){
         ADC1();
-        if(PORTB>=17){
+        if(adc>=17){
             PORTDbits.RD1=0;
         }
-        if(PORTB<=8){
+        if(adc<=8){
             PORTDbits.RD1=1;
         }
 
@@ -3037,6 +3039,12 @@ void main(void) {
               strcat(decT_char,uniT_char);
             }
         }
+        if (T_byte1 > 27){
+            PORTBbits.RB0 = 1;
+        }
+        else{
+            PORTBbits.RB0 = 0;
+        }
     }
 }
 
@@ -3062,20 +3070,20 @@ void SETUP (void){
  void START_DHT11(void){
      TRISDbits.TRISD2 = 0;
      PORTDbits.RD2 = 0;
-     _delay((unsigned long)((18)*(4000000/4000.0)));
+     _delay((unsigned long)((18)*(8000000/4000.0)));
      PORTDbits.RD2 = 1;
-     _delay((unsigned long)((30)*(4000000/4000000.0)));
+     _delay((unsigned long)((30)*(8000000/4000000.0)));
      TRISDbits.TRISD2=1;
  }
 
  void CHECK_RESPONSE(void){
    check = 0;
-   _delay((unsigned long)((40)*(4000000/4000000.0)));
+   _delay((unsigned long)((40)*(8000000/4000000.0)));
    if(PORTDbits.RD2 == 0){
-       _delay((unsigned long)((80)*(4000000/4000000.0)));
+       _delay((unsigned long)((80)*(8000000/4000000.0)));
        if(PORTDbits.RD2 == 1){
            check = 1;
-           _delay((unsigned long)((40)*(4000000/4000000.0)));
+           _delay((unsigned long)((40)*(8000000/4000000.0)));
        }
    }
  }
@@ -3084,7 +3092,7 @@ void SETUP (void){
      char i, j;
      for(j = 0; j<8; j++){
          while(!PORTDbits.RD2);
-         _delay((unsigned long)((30)*(4000000/4000000.0)));
+         _delay((unsigned long)((30)*(8000000/4000000.0)));
          if(PORTDbits.RD2 == 0)
              i&= ~(1<<(7-j));
          else{

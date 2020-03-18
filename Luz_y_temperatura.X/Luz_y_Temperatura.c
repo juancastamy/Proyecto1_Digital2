@@ -45,6 +45,8 @@
 #include "OSCILADOR.h"
 #include "ADC.h"
 
+#define _XTAL_FREQ 8000000
+
 #define TRIS_DHT TRISDbits.TRISD2
 #define PORT_DHT PORTDbits.RD2
 
@@ -138,10 +140,10 @@ void main(void) {
     ADCSETUP();
     while(1){
         ADC1();
-        if(PORTB>=17){
+        if(adc>=17){
             PORTDbits.RD1=0;
         }
-        if(PORTB<=8){
+        if(adc<=8){
             PORTDbits.RD1=1;
         }
         
@@ -168,7 +170,13 @@ void main(void) {
               strcat(decHR_char,uniHR_char);
               strcat(decT_char,uniT_char);
             }
-        }        
+        }
+        if (T_byte1 > 27){
+            PORTBbits.RB0 = 1;
+        }
+        else{
+            PORTBbits.RB0 = 0;
+        }
     }   
 }
 

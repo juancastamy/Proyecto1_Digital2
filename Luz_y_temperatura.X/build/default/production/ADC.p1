@@ -48,9 +48,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-"228
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "1238
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
@@ -357,8 +354,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 146  ]
 [e :U 147 ]
 "21
-[; ;ADC.c: 21:     PORTB = ADRESH;
-[e = _PORTB _ADRESH ]
+[; ;ADC.c: 21:     adc = ADRESH;
+[e = _adc _ADRESH ]
 "22
 [; ;ADC.c: 22:     return;
 [e $UE 144  ]
