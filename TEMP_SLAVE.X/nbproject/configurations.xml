@@ -5,6 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>TEMP_SENSE.h</itemPath>
+      <itemPath>OSCILADOR.h</itemPath>
+      <itemPath>ADC.h</itemPath>
+      <itemPath>PWM.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -15,6 +18,9 @@
                    projectFiles="true">
       <itemPath>TEMP_SLAVE.c</itemPath>
       <itemPath>TEMP_SENSE.c</itemPath>
+      <itemPath>OSCILADOR.c</itemPath>
+      <itemPath>ADC.c</itemPath>
+      <itemPath>PWM.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

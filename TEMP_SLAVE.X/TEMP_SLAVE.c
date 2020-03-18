@@ -1,8 +1,16 @@
 /*
- * File:   SLAVE_I2C.c
- * Author: CHARLIE
+ * Project 1 Digital 2 course
+ * File:   lab_4.c
+ * Author: Juan Diego Castillo Amaya
+ * Student ID: 17074
  *
- * Created on 26 de febrero de 2020, 17:54
+ * Author: Carlos Avendaño
+ * Student ID: 17192
+ * 
+ * Author: Juan Pablo Zea
+ * Student ID: 15401
+ * 
+ * Created on March 9, 2020
  */
 
 
@@ -30,26 +38,27 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
-#include "TEMP_SENSE.h"
+
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "TEMP_SENSE.h"
+#include "OSCILADOR.h"  
+#include "ADC.h"
+#include "PWM.h"
 #define  TRIGGER RD0
 #define  ECHO    RD1
 
 uint8_t z;
-char ADC;
-void LOOP(void);
-void ANALOGICO(void);
-void PWM (void);
+
 char ultrasonico;
 char distance;
 char dist = 0;
 char S1 =0;
-int calc_distance(void);
-void LOOP(void);
 
+void SETUP(void);
+int calc_distance(void);
 
 void __interrupt() isr(void){
    if(PIR1bits.SSPIF == 1){ 
@@ -76,7 +85,7 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = ADC;
+            SSPBUF = adc;
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -87,12 +96,35 @@ void __interrupt() isr(void){
 }
 
 void main(void) {
-    OSCCONbits.IRCF = 0b100; //8Mhz
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1; 
-    
+    initOsc(7);
+    SETUP();
+    I2C_Slave_Init(0x20); //Initialize as a I2C Slave with address 0x20
+    PWM_INIT();
+    while(1){
+        ADC1();
+        if(ultrasonico == 0x0f){
+            CCPR1L = 25;
+            S1= 1;
+        }
+        if(adc>=5 & S1 ==1){
+            S1=0;
+        }
+        if(adc==0 & S1==0){
+            CCPR1L = 10;
+        }
+       
+        dist = calc_dist()/5;
+
+        if(dist>0){
+        ultrasonico = 0x00;
+        }
+        else
+        {ultrasonico = 0x0F;}
+        }
+  
+}
+
+void SETUP(void){
     TRISA = 0b00000001;
     TRISB = 0;
     TRISC = 0b00011000;
@@ -106,82 +138,8 @@ void main(void) {
     PORTE = 0;
     PORTA = 0;
 
-            
-    ADCON0bits.ADCS = 01;
-    ADCON0bits.ADON = 1;   // adc on
-    ADCON1bits.ADFM = 0;
-    ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
-    I2C_Slave_Init(0x20); //Initialize as a I2C Slave with address 0x20
-    PWM();
-    LOOP();
-  
+    ADCSETUP();
 }
-
-void LOOP(void){
-    while(1){
-        ANALOGICO();
-        if(ultrasonico == 0x0f){
-            CCPR1L = 25;
-            S1= 1;
-        }
-        if(ADC>=5 & S1 ==1){
-            S1=0;
-        }
-        if(ADC==0 & S1==0){
-            CCPR1L = 10;
-        }
-       
-    dist = calc_dist()/5;
-   
-    if(dist>0){
-    ultrasonico = 0x00;
-    }
-    else
-    {ultrasonico = 0x0F;}
-    }
-    
-}
-
-void ANALOGICO(void){
-    __delay_ms(1);
-    ADCON0bits.CHS = 0000;
-    ADCON0bits.ADON = 1;
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO);
-    ADC = ADRESH;
-    return;
-}
-
-
-
-void PWM(void){
-    // inicializacion de PWM
-    TRISCbits.TRISC2 = 1;       // CCP1 entrada
-    PR2 = 200;                  //valor para periodo de 20ms
-    CCP1CONbits.CCP1M3 = 1;
-    CCP1CONbits.CCP1M2 = 1;
-    CCP1CONbits.CCP1M1 = 0;
-    CCP1CONbits.CCP1M0 = 0;
-    
-   
-    CCPR1L = 27;
-    CCP1CONbits.DC1B0 = 1;
-    CCP1CONbits.DC1B1 = 1;
-    
-  
-    
-    PIR1bits.TMR2IF = 0;        // se limpea la bandera del TMR2
-    
-    T2CONbits.T2CKPS = 0b11;    //se coloca el Prescaler 16
-    T2CONbits.TMR2ON = 1;       //se enciende el TRM2
-    while(!TMR2IF);
-    TMR2IF = 0;                //SE LIEMPIA LA BANDERA DEL TRM2
-    TRISC2=0;                  //PORTC 2 SE DECLARA COMO SALIDA
-    return;
-}
-
-
 
 int calc_dist(void){
     int distance=0;
