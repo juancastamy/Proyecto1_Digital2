@@ -2965,6 +2965,7 @@ char decT_char[5];
 void SETUP(void);
 void main(void) {
     SETUP();
+    inicializacion();
     I2C_INIT(100000);
     UART_INIT(9600);
 
