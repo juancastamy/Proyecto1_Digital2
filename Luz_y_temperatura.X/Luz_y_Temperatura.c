@@ -106,26 +106,31 @@ void __interrupt() isr(void){
             PORTD = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
             __delay_us(250);
 
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
             if(S0==0){
-            SSPBUF = adc;	
-            S0 = 1;	
-            SSPCONbits.CKP = 1;	
-            __delay_us(250);	
-            while(SSPSTATbits.BF);	
-            PIR1bits.SSPIF = 0;	
-            return;	
-            }	
-            if(S0==1){	
-            SSPBUF = T_byte1;	
-            S0 = 0;
+            SSPBUF = adc;
+            S0 = 1;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
             while(SSPSTATbits.BF);
+            PIR1bits.SSPIF = 0;
+            return;
+            }
+            if(S0==1){
+            SSPBUF = T_byte1;
+            S0 = 0;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+            PIR1bits.SSPIF = 0; 
+            return;
+            }
         }
         PIR1bits.SSPIF = 0;    
     }
-}
 }
 
 void main(void) { 
@@ -175,6 +180,7 @@ void SETUP (void){
     TRISB = 0;
     TRISC = 0b00011000;
     TRISD = 0;
+    TRISDbits.TRISD1 = 0;
     TRISE = 0;
     ANSEL = 0b00000001;
     ANSELH = 0;

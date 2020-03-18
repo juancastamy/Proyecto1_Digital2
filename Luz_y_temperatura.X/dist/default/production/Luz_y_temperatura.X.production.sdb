@@ -37,15 +37,15 @@
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
 "87 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\Luz_y_Temperatura.c
 [v _isr isr `II(v  1 e 1 0 ]
-"131
+"136
 [v _main main `(v  1 e 1 0 ]
-"173
+"178
 [v _SETUP SETUP `(v  1 e 1 0 ]
-"189
+"195
 [v _START_DHT11 START_DHT11 `(v  1 e 1 0 ]
-"198
+"204
 [v _CHECK_RESPONSE CHECK_RESPONSE `(v  1 e 1 0 ]
-"210
+"216
 [v _ReadData ReadData `(uc  1 e 1 0 ]
 "9 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\OSCILADOR.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -147,7 +147,7 @@
 [v _TRISCbits TRISCbits `VES483  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S244 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S232 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -157,8 +157,8 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S253 . 1 `S244 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES253  1 e 1 @136 ]
+[u S241 . 1 `S232 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES241  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
 [s S338 . 1 `uc 1 SCS 1 0 :1:0 
@@ -295,10 +295,10 @@
 [v _S0 S0 `uc  1 e 1 0 ]
 "78
 [v _sum sum `ui  1 e 2 0 ]
-"131
+"136
 [v _main main `(v  1 e 1 0 ]
 {
-"169
+"174
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
 [v _strcat strcat `(*.4uc  1 e 1 0 ]
@@ -393,15 +393,15 @@
 [v ___awdiv@dividend dividend `i  1 p 2 5 ]
 "41
 } 0
-"189 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\Luz_y_Temperatura.c
+"195 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\Luz_y_Temperatura.c
 [v _START_DHT11 START_DHT11 `(v  1 e 1 0 ]
 {
-"196
+"202
 } 0
-"173
+"178
 [v _SETUP SETUP `(v  1 e 1 0 ]
 {
-"187
+"193
 } 0
 "76 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\I2C.c
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
@@ -411,18 +411,18 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "87
 } 0
-"210 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\Luz_y_Temperatura.c
+"216 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\Luz_y_Temperatura.c
 [v _ReadData ReadData `(uc  1 e 1 0 ]
 {
-"211
+"217
 [v ReadData@j j `uc  1 a 1 6 ]
 [v ReadData@i i `uc  1 a 1 5 ]
-"223
+"229
 } 0
-"198
+"204
 [v _CHECK_RESPONSE CHECK_RESPONSE `(v  1 e 1 0 ]
 {
-"208
+"214
 } 0
 "3 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\ADC.c
 [v _ADCSETUP ADCSETUP `(v  1 e 1 0 ]
@@ -437,5 +437,5 @@
 "87 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\Luz_y_Temperatura.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"129
+"134
 } 0

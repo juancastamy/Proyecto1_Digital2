@@ -2974,7 +2974,8 @@ void __attribute__((picinterrupt(("")))) isr(void){
             PORTD = SSPBUF;
             _delay((unsigned long)((250)*(4000000/4000000.0)));
 
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
             if(S0==0){
@@ -2989,11 +2990,15 @@ void __attribute__((picinterrupt(("")))) isr(void){
             if(S0==1){
             SSPBUF = T_byte1;
             S0 = 0;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
             while(SSPSTATbits.BF);
+            PIR1bits.SSPIF = 0;
+            return;
+            }
         }
         PIR1bits.SSPIF = 0;
     }
-}
 }
 
 void main(void) {
@@ -3043,6 +3048,7 @@ void SETUP (void){
     TRISB = 0;
     TRISC = 0b00011000;
     TRISD = 0;
+    TRISDbits.TRISD1 = 0;
     TRISE = 0;
     ANSEL = 0b00000001;
     ANSELH = 0;
