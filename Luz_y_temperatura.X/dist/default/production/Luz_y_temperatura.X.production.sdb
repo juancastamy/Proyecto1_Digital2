@@ -5,7 +5,7 @@
 [d frameptr 0 ]
 "3 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\ADC.c
 [v _ADCSETUP ADCSETUP `(v  1 e 1 0 ]
-"11
+"10
 [v _ADC1 ADC1 `(v  1 e 1 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
@@ -367,7 +367,7 @@
 [v initOsc@frec frec `uc  1 a 1 wreg ]
 [v initOsc@frec frec `uc  1 a 1 wreg ]
 [v initOsc@frec frec `uc  1 a 1 5 ]
-"59
+"62
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -427,9 +427,9 @@
 "3 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\Luz_y_temperatura.X\ADC.c
 [v _ADCSETUP ADCSETUP `(v  1 e 1 0 ]
 {
-"10
+"9
 } 0
-"11
+"10
 [v _ADC1 ADC1 `(v  1 e 1 0 ]
 {
 "23

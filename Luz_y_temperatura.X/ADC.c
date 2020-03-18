@@ -1,8 +1,7 @@
 
 #include "ADC.h"
 void ADCSETUP(void){
-    ADCON0bits.ADCS0 = 0;
-    ADCON0bits.ADCS1 = 1;
+    ADCON0bits.ADCS = 01;
     ADCON0bits.ADON = 1;   // adc on
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG0 = 0;
@@ -19,7 +18,8 @@ void ADC1 (void){
     PIR1bits.ADIF = 0;
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO == 1);
-    adc = ADRESH;        
+    adc = ADRESH;   
+    return;
 }
 
 
