@@ -41,7 +41,7 @@
 #include <string.h>
 #include <pic16f887.h>
 uint8_t adc;
-
+void ADCSETUP(void);
 void ADC1(void);
 
 #endif	/* XC_HEADER_TEMPLATE_H */

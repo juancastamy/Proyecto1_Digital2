@@ -1,6 +1,6 @@
 /*
  * Project 1 for Digital 2 course
- * File:   lab_5.c
+ * File:   Project 1
  * Author: Juan Diego Castillo Amaya
  * Student ID: 17074
  * 
@@ -47,10 +47,8 @@
 
 #define TRIS_DHT TRISDbits.TRISD2
 #define PORT_DHT PORTDbits.RD2
-#define _XTAL_FREQ 8000000
 
 uint8_t z;
-char ADC;
 
 unsigned char check;
 
@@ -111,24 +109,35 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTB;
-            SSPCONbits.CKP = 1;
-            __delay_us(250);
+            if(S0==0){
+            SSPBUF = adc;	
+            S0 = 1;	
+            SSPCONbits.CKP = 1;	
+            __delay_us(250);	
+            while(SSPSTATbits.BF);	
+            PIR1bits.SSPIF = 0;	
+            return;	
+            }	
+            if(S0==1){	
+            SSPBUF = T_byte1;	
+            S0 = 0;
             while(SSPSTATbits.BF);
         }
         PIR1bits.SSPIF = 0;    
     }
 }
+}
 
 void main(void) { 
     SETUP();
     initOsc(7);
+    ADCSETUP();
     while(1){
         ADC1();
-        if(ADC>=17){
+        if(adc>=17){
             PORTDbits.RD1=0;
         }
-        if(ADC<=8){
+        if(adc<=8){
             PORTDbits.RD1=1;
         }
         
@@ -177,7 +186,7 @@ void SETUP (void){
     I2C_Slave_Init(0x30); //Initialize as a I2C Slave with address 0x20
 }
 
- void START_DHT11(void){  // inicia el sensor de temperatura
+void START_DHT11(void){  // inicia el sensor de temperatura
     TRIS_DHT = 0;
     PORT_DHT = 0;
     __delay_ms(18);
@@ -186,29 +195,29 @@ void SETUP (void){
     TRIS_DHT=1;
 }
  
- void CHECK_RESPONSE(void){
-   check = 0;
-   __delay_us(40);
-   if(PORT_DHT == 0){
-       __delay_us(80);
-       if(PORT_DHT == 1){         // mantener el ojo en este if
-           check = 1;
-           __delay_us(40);
-       }
-   }
- }
+void CHECK_RESPONSE(void){
+    check = 0;
+    __delay_us(40);
+    if(PORT_DHT == 0){
+        __delay_us(80);
+        if(PORT_DHT == 1){         // mantener el ojo en este if
+            check = 1;
+            __delay_us(40);
+        }
+    }
+}
  
- char ReadData(){
-     char i, j;
-     for(j = 0; j<8; j++){
-         while(!PORT_DHT);
-         __delay_us(30);
-         if(PORT_DHT == 0)
-             i&= ~(1<<(7-j));
-         else{
-             i|= (1<< (7-j));
-         while(PORT_DHT);
-         }  
-     }
-     return i;
- } 
+char ReadData(){
+    char i, j;
+    for(j = 0; j<8; j++){
+        while(!PORT_DHT);
+        __delay_us(30);
+        if(PORT_DHT == 0)
+         i&= ~(1<<(7-j));
+        else{
+         i|= (1<< (7-j));
+        while(PORT_DHT);
+    }
+    }
+    return i;
+} 

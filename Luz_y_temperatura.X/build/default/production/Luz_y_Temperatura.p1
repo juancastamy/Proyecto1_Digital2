@@ -75,16 +75,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3641 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
 [v _BF `Vb ~T0 @X0 0 e@1184 ]
-"228
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 [p mainexit ]
-"82 Luz_y_Temperatura.c
-[; ;Luz_y_Temperatura.c: 82: void SETUP(void);
+"80 Luz_y_Temperatura.c
+[; ;Luz_y_Temperatura.c: 80: void SETUP(void);
 [v _SETUP `(v ~T0 @X0 0 ef ]
 "42 ./OSCILADOR.h
 [v _initOsc `(v ~T0 @X0 0 ef1`uc ]
-"45 ./ADC.h
+"44 ./ADC.h
+[; ;./ADC.h: 44: void ADCSETUP(void);
+[v _ADCSETUP `(v ~T0 @X0 0 ef ]
+"45
 [; ;./ADC.h: 45: void ADC1(void);
 [v _ADC1 `(v ~T0 @X0 0 ef ]
 "358 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
@@ -98,14 +98,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "369
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
 [v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
-"83 Luz_y_Temperatura.c
-[; ;Luz_y_Temperatura.c: 83: void START_DHT11(void);
+"81 Luz_y_Temperatura.c
+[; ;Luz_y_Temperatura.c: 81: void START_DHT11(void);
 [v _START_DHT11 `(v ~T0 @X0 0 ef ]
-"84
-[; ;Luz_y_Temperatura.c: 84: void CHECK_RESPONSE(void);
+"82
+[; ;Luz_y_Temperatura.c: 82: void CHECK_RESPONSE(void);
 [v _CHECK_RESPONSE `(v ~T0 @X0 0 ef ]
-"85
-[; ;Luz_y_Temperatura.c: 85: char ReadData();
+"83
+[; ;Luz_y_Temperatura.c: 83: char ReadData();
 [v _ReadData `(uc ~T0 @X0 0 e? ]
 "113 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdlib.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
@@ -134,6 +134,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3449
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "290
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
@@ -420,479 +423,517 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43 ./ADC.h
 [; ;./ADC.h: 43: uint8_t adc;
 [v _adc `uc ~T0 @X0 1 e ]
-"52 Luz_y_Temperatura.c
-[; ;Luz_y_Temperatura.c: 52: uint8_t z;
+"51 Luz_y_Temperatura.c
+[; ;Luz_y_Temperatura.c: 51: uint8_t z;
 [v _z `uc ~T0 @X0 1 e ]
 "53
-[; ;Luz_y_Temperatura.c: 53: char ADC;
-[v _ADC `uc ~T0 @X0 1 e ]
-"55
-[; ;Luz_y_Temperatura.c: 55: unsigned char check;
+[; ;Luz_y_Temperatura.c: 53: unsigned char check;
 [v _check `uc ~T0 @X0 1 e ]
-"58
-[; ;Luz_y_Temperatura.c: 58: unsigned char T_byte1;
+"56
+[; ;Luz_y_Temperatura.c: 56: unsigned char T_byte1;
 [v _T_byte1 `uc ~T0 @X0 1 e ]
-"59
-[; ;Luz_y_Temperatura.c: 59: unsigned char T_byte2;
+"57
+[; ;Luz_y_Temperatura.c: 57: unsigned char T_byte2;
 [v _T_byte2 `uc ~T0 @X0 1 e ]
-"60
-[; ;Luz_y_Temperatura.c: 60: unsigned char RH_byte1;
+"58
+[; ;Luz_y_Temperatura.c: 58: unsigned char RH_byte1;
 [v _RH_byte1 `uc ~T0 @X0 1 e ]
-"61
-[; ;Luz_y_Temperatura.c: 61: unsigned char RH_byte2;
+"59
+[; ;Luz_y_Temperatura.c: 59: unsigned char RH_byte2;
 [v _RH_byte2 `uc ~T0 @X0 1 e ]
-"63
-[; ;Luz_y_Temperatura.c: 63: int uniT;
+"61
+[; ;Luz_y_Temperatura.c: 61: int uniT;
 [v _uniT `i ~T0 @X0 1 e ]
-"64
-[; ;Luz_y_Temperatura.c: 64: int decT;
+"62
+[; ;Luz_y_Temperatura.c: 62: int decT;
 [v _decT `i ~T0 @X0 1 e ]
-"65
-[; ;Luz_y_Temperatura.c: 65: int uniHR;
+"63
+[; ;Luz_y_Temperatura.c: 63: int uniHR;
 [v _uniHR `i ~T0 @X0 1 e ]
-"66
-[; ;Luz_y_Temperatura.c: 66: int decHR;
+"64
+[; ;Luz_y_Temperatura.c: 64: int decHR;
 [v _decHR `i ~T0 @X0 1 e ]
-"68
-[; ;Luz_y_Temperatura.c: 68: int uniT_int;
+"66
+[; ;Luz_y_Temperatura.c: 66: int uniT_int;
 [v _uniT_int `i ~T0 @X0 1 e ]
-"69
-[; ;Luz_y_Temperatura.c: 69: int decT_int;
+"67
+[; ;Luz_y_Temperatura.c: 67: int decT_int;
 [v _decT_int `i ~T0 @X0 1 e ]
-"70
-[; ;Luz_y_Temperatura.c: 70: int uniHR_int;
+"68
+[; ;Luz_y_Temperatura.c: 68: int uniHR_int;
 [v _uniHR_int `i ~T0 @X0 1 e ]
-"71
-[; ;Luz_y_Temperatura.c: 71: int decHR_int;
+"69
+[; ;Luz_y_Temperatura.c: 69: int decHR_int;
 [v _decHR_int `i ~T0 @X0 1 e ]
-"73
-[; ;Luz_y_Temperatura.c: 73: char uniT_char[5];
+"71
+[; ;Luz_y_Temperatura.c: 71: char uniT_char[5];
 [v _uniT_char `uc ~T0 @X0 -> 5 `i e ]
-"74
-[; ;Luz_y_Temperatura.c: 74: char decT_char[5];
+"72
+[; ;Luz_y_Temperatura.c: 72: char decT_char[5];
 [v _decT_char `uc ~T0 @X0 -> 5 `i e ]
-"75
-[; ;Luz_y_Temperatura.c: 75: char uniHR_char[5];
+"73
+[; ;Luz_y_Temperatura.c: 73: char uniHR_char[5];
 [v _uniHR_char `uc ~T0 @X0 -> 5 `i e ]
-"76
-[; ;Luz_y_Temperatura.c: 76: char decHR_char[5];
+"74
+[; ;Luz_y_Temperatura.c: 74: char decHR_char[5];
 [v _decHR_char `uc ~T0 @X0 -> 5 `i e ]
-"78
-[; ;Luz_y_Temperatura.c: 78: char S0=0;
+"76
+[; ;Luz_y_Temperatura.c: 76: char S0=0;
 [v _S0 `uc ~T0 @X0 1 e ]
 [i _S0
 -> -> 0 `i `uc
 ]
-"80
-[; ;Luz_y_Temperatura.c: 80: unsigned sum;
+"78
+[; ;Luz_y_Temperatura.c: 78: unsigned sum;
 [v _sum `ui ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"89
-[; ;Luz_y_Temperatura.c: 89: void __attribute__((picinterrupt(("")))) isr(void){
+"87
+[; ;Luz_y_Temperatura.c: 87: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"90
-[; ;Luz_y_Temperatura.c: 90:    if(PIR1bits.SSPIF == 1){
+"88
+[; ;Luz_y_Temperatura.c: 88:    if(PIR1bits.SSPIF == 1){
 [e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 144  ]
 {
-"92
-[; ;Luz_y_Temperatura.c: 92:         SSPCONbits.CKP = 0;
+"90
+[; ;Luz_y_Temperatura.c: 90:         SSPCONbits.CKP = 0;
 [e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-"94
-[; ;Luz_y_Temperatura.c: 94:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+"92
+[; ;Luz_y_Temperatura.c: 92:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
 [e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 145  ]
 {
-"95
-[; ;Luz_y_Temperatura.c: 95:             z = SSPBUF;
+"93
+[; ;Luz_y_Temperatura.c: 93:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"96
-[; ;Luz_y_Temperatura.c: 96:             SSPCONbits.SSPOV = 0;
+"94
+[; ;Luz_y_Temperatura.c: 94:             SSPCONbits.SSPOV = 0;
 [e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
-"97
-[; ;Luz_y_Temperatura.c: 97:             SSPCONbits.WCOL = 0;
+"95
+[; ;Luz_y_Temperatura.c: 95:             SSPCONbits.WCOL = 0;
 [e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
-"98
-[; ;Luz_y_Temperatura.c: 98:             SSPCONbits.CKP = 1;
+"96
+[; ;Luz_y_Temperatura.c: 96:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"99
-[; ;Luz_y_Temperatura.c: 99:         }
+"97
+[; ;Luz_y_Temperatura.c: 97:         }
 }
 [e :U 145 ]
-"101
-[; ;Luz_y_Temperatura.c: 101:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+"99
+[; ;Luz_y_Temperatura.c: 99:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 146  ]
 {
-"103
-[; ;Luz_y_Temperatura.c: 103:             z = SSPBUF;
+"101
+[; ;Luz_y_Temperatura.c: 101:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"105
-[; ;Luz_y_Temperatura.c: 105:             PIR1bits.SSPIF = 0;
+"103
+[; ;Luz_y_Temperatura.c: 103:             PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"106
-[; ;Luz_y_Temperatura.c: 106:             SSPCONbits.CKP = 1;
+"104
+[; ;Luz_y_Temperatura.c: 104:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"107
-[; ;Luz_y_Temperatura.c: 107:             while(!SSPSTATbits.BF);
+"105
+[; ;Luz_y_Temperatura.c: 105:             while(!SSPSTATbits.BF);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 148  ]
 [e :U 149 ]
-"108
-[; ;Luz_y_Temperatura.c: 108:             PORTD = SSPBUF;
+"106
+[; ;Luz_y_Temperatura.c: 106:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
+"107
+[; ;Luz_y_Temperatura.c: 107:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "109
-[; ;Luz_y_Temperatura.c: 109:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"111
-[; ;Luz_y_Temperatura.c: 111:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+[; ;Luz_y_Temperatura.c: 109:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
 [e $U 150  ]
 [e :U 146 ]
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 151  ]
 {
-"112
-[; ;Luz_y_Temperatura.c: 112:             z = SSPBUF;
+"110
+[; ;Luz_y_Temperatura.c: 110:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"113
-[; ;Luz_y_Temperatura.c: 113:             BF = 0;
+"111
+[; ;Luz_y_Temperatura.c: 111:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
+"112
+[; ;Luz_y_Temperatura.c: 112:             if(S0==0){
+[e $ ! == -> _S0 `i -> 0 `i 152  ]
+{
+"113
+[; ;Luz_y_Temperatura.c: 113:             SSPBUF = adc;
+[e = _SSPBUF _adc ]
 "114
-[; ;Luz_y_Temperatura.c: 114:             SSPBUF = PORTB;
-[e = _SSPBUF _PORTB ]
+[; ;Luz_y_Temperatura.c: 114:             S0 = 1;
+[e = _S0 -> -> 1 `i `uc ]
 "115
 [; ;Luz_y_Temperatura.c: 115:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "116
-[; ;Luz_y_Temperatura.c: 116:             _delay((unsigned long)((250)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;Luz_y_Temperatura.c: 116:             _delay((unsigned long)((250)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "117
 [; ;Luz_y_Temperatura.c: 117:             while(SSPSTATbits.BF);
-[e $U 152  ]
-[e :U 153 ]
-[e :U 152 ]
-[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 153  ]
+[e $U 153  ]
 [e :U 154 ]
+[e :U 153 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 154  ]
+[e :U 155 ]
 "118
-[; ;Luz_y_Temperatura.c: 118:         }
+[; ;Luz_y_Temperatura.c: 118:             PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"119
+[; ;Luz_y_Temperatura.c: 119:             return;
+[e $UE 143  ]
+"120
+[; ;Luz_y_Temperatura.c: 120:             }
+}
+[e :U 152 ]
+"121
+[; ;Luz_y_Temperatura.c: 121:             if(S0==1){
+[e $ ! == -> _S0 `i -> 1 `i 156  ]
+{
+"122
+[; ;Luz_y_Temperatura.c: 122:             SSPBUF = T_byte1;
+[e = _SSPBUF _T_byte1 ]
+"123
+[; ;Luz_y_Temperatura.c: 123:             S0 = 0;
+[e = _S0 -> -> 0 `i `uc ]
+"124
+[; ;Luz_y_Temperatura.c: 124:             while(SSPSTATbits.BF);
+[e $U 157  ]
+[e :U 158 ]
+[e :U 157 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 158  ]
+[e :U 159 ]
+"125
+[; ;Luz_y_Temperatura.c: 125:         }
+}
+[e :U 156 ]
+"126
+[; ;Luz_y_Temperatura.c: 126:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"127
+[; ;Luz_y_Temperatura.c: 127:     }
 }
 [e :U 151 ]
 [e :U 150 ]
-"119
-[; ;Luz_y_Temperatura.c: 119:         PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"120
-[; ;Luz_y_Temperatura.c: 120:     }
+"128
+[; ;Luz_y_Temperatura.c: 128: }
 }
 [e :U 144 ]
-"121
-[; ;Luz_y_Temperatura.c: 121: }
+"129
+[; ;Luz_y_Temperatura.c: 129: }
 [e :UE 143 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"123
-[; ;Luz_y_Temperatura.c: 123: void main(void) {
+"131
+[; ;Luz_y_Temperatura.c: 131: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"124
-[; ;Luz_y_Temperatura.c: 124:     SETUP();
-[e ( _SETUP ..  ]
-"125
-[; ;Luz_y_Temperatura.c: 125:     initOsc(7);
-[e ( _initOsc (1 -> -> 7 `i `uc ]
-"126
-[; ;Luz_y_Temperatura.c: 126:     while(1){
-[e :U 157 ]
-{
-"127
-[; ;Luz_y_Temperatura.c: 127:         ADC1();
-[e ( _ADC1 ..  ]
-"128
-[; ;Luz_y_Temperatura.c: 128:         if(ADC>=17){
-[e $ ! >= -> _ADC `i -> 17 `i 159  ]
-{
-"129
-[; ;Luz_y_Temperatura.c: 129:             PORTDbits.RD1=0;
-[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
-"130
-[; ;Luz_y_Temperatura.c: 130:         }
-}
-[e :U 159 ]
-"131
-[; ;Luz_y_Temperatura.c: 131:         if(ADC<=8){
-[e $ ! <= -> _ADC `i -> 8 `i 160  ]
-{
 "132
-[; ;Luz_y_Temperatura.c: 132:             PORTDbits.RD1=1;
-[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+[; ;Luz_y_Temperatura.c: 132:     SETUP();
+[e ( _SETUP ..  ]
 "133
-[; ;Luz_y_Temperatura.c: 133:         }
-}
-[e :U 160 ]
+[; ;Luz_y_Temperatura.c: 133:     initOsc(7);
+[e ( _initOsc (1 -> -> 7 `i `uc ]
+"134
+[; ;Luz_y_Temperatura.c: 134:     ADCSETUP();
+[e ( _ADCSETUP ..  ]
 "135
-[; ;Luz_y_Temperatura.c: 135:         START_DHT11();
-[e ( _START_DHT11 ..  ]
-"136
-[; ;Luz_y_Temperatura.c: 136:         CHECK_RESPONSE();
-[e ( _CHECK_RESPONSE ..  ]
-"138
-[; ;Luz_y_Temperatura.c: 138:         if(check == 1){
-[e $ ! == -> _check `i -> 1 `i 161  ]
-{
-"140
-[; ;Luz_y_Temperatura.c: 140:             RH_byte1 = ReadData();
-[e = _RH_byte1 -> ( _ReadData ..  `uc ]
-"141
-[; ;Luz_y_Temperatura.c: 141:             RH_byte2 = ReadData();
-[e = _RH_byte2 -> ( _ReadData ..  `uc ]
-"142
-[; ;Luz_y_Temperatura.c: 142:             T_byte1 = ReadData();
-[e = _T_byte1 -> ( _ReadData ..  `uc ]
-"143
-[; ;Luz_y_Temperatura.c: 143:             T_byte2 = ReadData();
-[e = _T_byte2 -> ( _ReadData ..  `uc ]
-"144
-[; ;Luz_y_Temperatura.c: 144:             sum = ReadData();
-[e = _sum -> ( _ReadData ..  `ui ]
-"146
-[; ;Luz_y_Temperatura.c: 146:             if(sum == ((RH_byte1+RH_byte2+T_byte1+T_byte2) & 0xFF)){
-[e $ ! == _sum -> & + + + -> _RH_byte1 `i -> _RH_byte2 `i -> _T_byte1 `i -> _T_byte2 `i -> 255 `i `ui 162  ]
-{
-"147
-[; ;Luz_y_Temperatura.c: 147:               decHR = RH_byte1/10;
-[e = _decHR / -> _RH_byte1 `i -> 10 `i ]
-"148
-[; ;Luz_y_Temperatura.c: 148:               itoa(decHR_char,decHR,10);
-[e ( _itoa (3 , , &U _decHR_char _decHR -> 10 `i ]
-"149
-[; ;Luz_y_Temperatura.c: 149:               uniHR = RH_byte1%10;
-[e = _uniHR % -> _RH_byte1 `i -> 10 `i ]
-"150
-[; ;Luz_y_Temperatura.c: 150:               itoa(uniHR_char,uniHR,10);
-[e ( _itoa (3 , , &U _uniHR_char _uniHR -> 10 `i ]
-"151
-[; ;Luz_y_Temperatura.c: 151:               decT = T_byte1/10;
-[e = _decT / -> _T_byte1 `i -> 10 `i ]
-"152
-[; ;Luz_y_Temperatura.c: 152:               itoa(decT_char,decT,10);
-[e ( _itoa (3 , , &U _decT_char _decT -> 10 `i ]
-"153
-[; ;Luz_y_Temperatura.c: 153:               uniT = T_byte1%10;
-[e = _uniT % -> _T_byte1 `i -> 10 `i ]
-"154
-[; ;Luz_y_Temperatura.c: 154:               itoa(uniT_char,uniT ,10);
-[e ( _itoa (3 , , &U _uniT_char _uniT -> 10 `i ]
-"155
-[; ;Luz_y_Temperatura.c: 155:               strcat(decHR_char,uniHR_char);
-[e ( _strcat (2 , &U _decHR_char -> &U _uniHR_char `*Cuc ]
-"156
-[; ;Luz_y_Temperatura.c: 156:               strcat(decT_char,uniT_char);
-[e ( _strcat (2 , &U _decT_char -> &U _uniT_char `*Cuc ]
-"157
-[; ;Luz_y_Temperatura.c: 157:             }
-}
+[; ;Luz_y_Temperatura.c: 135:     while(1){
 [e :U 162 ]
+{
+"136
+[; ;Luz_y_Temperatura.c: 136:         ADC1();
+[e ( _ADC1 ..  ]
+"137
+[; ;Luz_y_Temperatura.c: 137:         if(adc>=17){
+[e $ ! >= -> _adc `i -> 17 `i 164  ]
+{
+"138
+[; ;Luz_y_Temperatura.c: 138:             PORTDbits.RD1=0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
+"139
+[; ;Luz_y_Temperatura.c: 139:         }
+}
+[e :U 164 ]
+"140
+[; ;Luz_y_Temperatura.c: 140:         if(adc<=8){
+[e $ ! <= -> _adc `i -> 8 `i 165  ]
+{
+"141
+[; ;Luz_y_Temperatura.c: 141:             PORTDbits.RD1=1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
+"142
+[; ;Luz_y_Temperatura.c: 142:         }
+}
+[e :U 165 ]
+"144
+[; ;Luz_y_Temperatura.c: 144:         START_DHT11();
+[e ( _START_DHT11 ..  ]
+"145
+[; ;Luz_y_Temperatura.c: 145:         CHECK_RESPONSE();
+[e ( _CHECK_RESPONSE ..  ]
+"147
+[; ;Luz_y_Temperatura.c: 147:         if(check == 1){
+[e $ ! == -> _check `i -> 1 `i 166  ]
+{
+"149
+[; ;Luz_y_Temperatura.c: 149:             RH_byte1 = ReadData();
+[e = _RH_byte1 -> ( _ReadData ..  `uc ]
+"150
+[; ;Luz_y_Temperatura.c: 150:             RH_byte2 = ReadData();
+[e = _RH_byte2 -> ( _ReadData ..  `uc ]
+"151
+[; ;Luz_y_Temperatura.c: 151:             T_byte1 = ReadData();
+[e = _T_byte1 -> ( _ReadData ..  `uc ]
+"152
+[; ;Luz_y_Temperatura.c: 152:             T_byte2 = ReadData();
+[e = _T_byte2 -> ( _ReadData ..  `uc ]
+"153
+[; ;Luz_y_Temperatura.c: 153:             sum = ReadData();
+[e = _sum -> ( _ReadData ..  `ui ]
+"155
+[; ;Luz_y_Temperatura.c: 155:             if(sum == ((RH_byte1+RH_byte2+T_byte1+T_byte2) & 0xFF)){
+[e $ ! == _sum -> & + + + -> _RH_byte1 `i -> _RH_byte2 `i -> _T_byte1 `i -> _T_byte2 `i -> 255 `i `ui 167  ]
+{
+"156
+[; ;Luz_y_Temperatura.c: 156:               decHR = RH_byte1/10;
+[e = _decHR / -> _RH_byte1 `i -> 10 `i ]
+"157
+[; ;Luz_y_Temperatura.c: 157:               itoa(decHR_char,decHR,10);
+[e ( _itoa (3 , , &U _decHR_char _decHR -> 10 `i ]
 "158
-[; ;Luz_y_Temperatura.c: 158:         }
+[; ;Luz_y_Temperatura.c: 158:               uniHR = RH_byte1%10;
+[e = _uniHR % -> _RH_byte1 `i -> 10 `i ]
+"159
+[; ;Luz_y_Temperatura.c: 159:               itoa(uniHR_char,uniHR,10);
+[e ( _itoa (3 , , &U _uniHR_char _uniHR -> 10 `i ]
+"160
+[; ;Luz_y_Temperatura.c: 160:               decT = T_byte1/10;
+[e = _decT / -> _T_byte1 `i -> 10 `i ]
+"161
+[; ;Luz_y_Temperatura.c: 161:               itoa(decT_char,decT,10);
+[e ( _itoa (3 , , &U _decT_char _decT -> 10 `i ]
+"162
+[; ;Luz_y_Temperatura.c: 162:               uniT = T_byte1%10;
+[e = _uniT % -> _T_byte1 `i -> 10 `i ]
+"163
+[; ;Luz_y_Temperatura.c: 163:               itoa(uniT_char,uniT ,10);
+[e ( _itoa (3 , , &U _uniT_char _uniT -> 10 `i ]
+"164
+[; ;Luz_y_Temperatura.c: 164:               strcat(decHR_char,uniHR_char);
+[e ( _strcat (2 , &U _decHR_char -> &U _uniHR_char `*Cuc ]
+"165
+[; ;Luz_y_Temperatura.c: 165:               strcat(decT_char,uniT_char);
+[e ( _strcat (2 , &U _decT_char -> &U _uniT_char `*Cuc ]
+"166
+[; ;Luz_y_Temperatura.c: 166:             }
+}
+[e :U 167 ]
+"167
+[; ;Luz_y_Temperatura.c: 167:         }
+}
+[e :U 166 ]
+"168
+[; ;Luz_y_Temperatura.c: 168:     }
 }
 [e :U 161 ]
-"159
-[; ;Luz_y_Temperatura.c: 159:     }
+[e $U 162  ]
+[e :U 163 ]
+"169
+[; ;Luz_y_Temperatura.c: 169: }
+[e :UE 160 ]
 }
-[e :U 156 ]
-[e $U 157  ]
-[e :U 158 ]
-"160
-[; ;Luz_y_Temperatura.c: 160: }
-[e :UE 155 ]
-}
-"164
-[; ;Luz_y_Temperatura.c: 164: void SETUP (void){
+"173
+[; ;Luz_y_Temperatura.c: 173: void SETUP (void){
 [v _SETUP `(v ~T0 @X0 1 ef ]
 {
 [e :U _SETUP ]
 [f ]
-"165
-[; ;Luz_y_Temperatura.c: 165:     TRISA = 0b00000001;
-[e = _TRISA -> -> 1 `i `uc ]
-"166
-[; ;Luz_y_Temperatura.c: 166:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"167
-[; ;Luz_y_Temperatura.c: 167:     TRISC = 0b00011000;
-[e = _TRISC -> -> 24 `i `uc ]
-"168
-[; ;Luz_y_Temperatura.c: 168:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"169
-[; ;Luz_y_Temperatura.c: 169:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"170
-[; ;Luz_y_Temperatura.c: 170:     ANSEL = 0b00000001;
-[e = _ANSEL -> -> 1 `i `uc ]
-"171
-[; ;Luz_y_Temperatura.c: 171:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"172
-[; ;Luz_y_Temperatura.c: 172:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"173
-[; ;Luz_y_Temperatura.c: 173:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
 "174
-[; ;Luz_y_Temperatura.c: 174:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;Luz_y_Temperatura.c: 174:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
 "175
-[; ;Luz_y_Temperatura.c: 175:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;Luz_y_Temperatura.c: 175:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "176
-[; ;Luz_y_Temperatura.c: 176:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;Luz_y_Temperatura.c: 176:     TRISC = 0b00011000;
+[e = _TRISC -> -> 24 `i `uc ]
 "177
-[; ;Luz_y_Temperatura.c: 177:     I2C_Slave_Init(0x30);
-[e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
+[; ;Luz_y_Temperatura.c: 177:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "178
-[; ;Luz_y_Temperatura.c: 178: }
-[e :UE 163 ]
-}
+[; ;Luz_y_Temperatura.c: 178:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
+"179
+[; ;Luz_y_Temperatura.c: 179:     ANSEL = 0b00000001;
+[e = _ANSEL -> -> 1 `i `uc ]
 "180
-[; ;Luz_y_Temperatura.c: 180:  void START_DHT11(void){
+[; ;Luz_y_Temperatura.c: 180:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"181
+[; ;Luz_y_Temperatura.c: 181:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"182
+[; ;Luz_y_Temperatura.c: 182:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"183
+[; ;Luz_y_Temperatura.c: 183:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"184
+[; ;Luz_y_Temperatura.c: 184:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"185
+[; ;Luz_y_Temperatura.c: 185:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"186
+[; ;Luz_y_Temperatura.c: 186:     I2C_Slave_Init(0x30);
+[e ( _I2C_Slave_Init (1 -> -> 48 `i `uc ]
+"187
+[; ;Luz_y_Temperatura.c: 187: }
+[e :UE 168 ]
+}
+"189
+[; ;Luz_y_Temperatura.c: 189: void START_DHT11(void){
 [v _START_DHT11 `(v ~T0 @X0 1 ef ]
 {
 [e :U _START_DHT11 ]
 [f ]
-"181
-[; ;Luz_y_Temperatura.c: 181:     TRISDbits.TRISD2 = 0;
+"190
+[; ;Luz_y_Temperatura.c: 190:     TRISDbits.TRISD2 = 0;
 [e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
-"182
-[; ;Luz_y_Temperatura.c: 182:     PORTDbits.RD2 = 0;
+"191
+[; ;Luz_y_Temperatura.c: 191:     PORTDbits.RD2 = 0;
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-"183
-[; ;Luz_y_Temperatura.c: 183:     _delay((unsigned long)((18)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"184
-[; ;Luz_y_Temperatura.c: 184:     PORTDbits.RD2 = 1;
+"192
+[; ;Luz_y_Temperatura.c: 192:     _delay((unsigned long)((18)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"193
+[; ;Luz_y_Temperatura.c: 193:     PORTDbits.RD2 = 1;
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-"185
-[; ;Luz_y_Temperatura.c: 185:     _delay((unsigned long)((30)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"186
-[; ;Luz_y_Temperatura.c: 186:     TRISDbits.TRISD2=1;
+"194
+[; ;Luz_y_Temperatura.c: 194:     _delay((unsigned long)((30)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"195
+[; ;Luz_y_Temperatura.c: 195:     TRISDbits.TRISD2=1;
 [e = . . _TRISDbits 0 2 -> -> 1 `i `uc ]
-"187
-[; ;Luz_y_Temperatura.c: 187: }
-[e :UE 164 ]
+"196
+[; ;Luz_y_Temperatura.c: 196: }
+[e :UE 169 ]
 }
-"189
-[; ;Luz_y_Temperatura.c: 189:  void CHECK_RESPONSE(void){
+"198
+[; ;Luz_y_Temperatura.c: 198: void CHECK_RESPONSE(void){
 [v _CHECK_RESPONSE `(v ~T0 @X0 1 ef ]
 {
 [e :U _CHECK_RESPONSE ]
 [f ]
-"190
-[; ;Luz_y_Temperatura.c: 190:    check = 0;
-[e = _check -> -> 0 `i `uc ]
-"191
-[; ;Luz_y_Temperatura.c: 191:    _delay((unsigned long)((40)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"192
-[; ;Luz_y_Temperatura.c: 192:    if(PORTDbits.RD2 == 0){
-[e $ ! == -> . . _PORTDbits 0 2 `i -> 0 `i 166  ]
-{
-"193
-[; ;Luz_y_Temperatura.c: 193:        _delay((unsigned long)((80)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"194
-[; ;Luz_y_Temperatura.c: 194:        if(PORTDbits.RD2 == 1){
-[e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 167  ]
-{
-"195
-[; ;Luz_y_Temperatura.c: 195:            check = 1;
-[e = _check -> -> 1 `i `uc ]
-"196
-[; ;Luz_y_Temperatura.c: 196:            _delay((unsigned long)((40)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"197
-[; ;Luz_y_Temperatura.c: 197:        }
-}
-[e :U 167 ]
-"198
-[; ;Luz_y_Temperatura.c: 198:    }
-}
-[e :U 166 ]
 "199
-[; ;Luz_y_Temperatura.c: 199:  }
-[e :UE 165 ]
-}
+[; ;Luz_y_Temperatura.c: 199:     check = 0;
+[e = _check -> -> 0 `i `uc ]
+"200
+[; ;Luz_y_Temperatura.c: 200:     _delay((unsigned long)((40)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "201
-[; ;Luz_y_Temperatura.c: 201:  char ReadData(){
+[; ;Luz_y_Temperatura.c: 201:     if(PORTDbits.RD2 == 0){
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 0 `i 171  ]
+{
+"202
+[; ;Luz_y_Temperatura.c: 202:         _delay((unsigned long)((80)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"203
+[; ;Luz_y_Temperatura.c: 203:         if(PORTDbits.RD2 == 1){
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 1 `i 172  ]
+{
+"204
+[; ;Luz_y_Temperatura.c: 204:             check = 1;
+[e = _check -> -> 1 `i `uc ]
+"205
+[; ;Luz_y_Temperatura.c: 205:             _delay((unsigned long)((40)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"206
+[; ;Luz_y_Temperatura.c: 206:         }
+}
+[e :U 172 ]
+"207
+[; ;Luz_y_Temperatura.c: 207:     }
+}
+[e :U 171 ]
+"208
+[; ;Luz_y_Temperatura.c: 208: }
+[e :UE 170 ]
+}
+"210
+[; ;Luz_y_Temperatura.c: 210: char ReadData(){
 [v _ReadData `(uc ~T0 @X0 1 ef ]
 {
 [e :U _ReadData ]
 [f ]
-"202
-[; ;Luz_y_Temperatura.c: 202:      char i, j;
+"211
+[; ;Luz_y_Temperatura.c: 211:     char i, j;
 [v _i `uc ~T0 @X0 1 a ]
 [v _j `uc ~T0 @X0 1 a ]
-"203
-[; ;Luz_y_Temperatura.c: 203:      for(j = 0; j<8; j++){
+"212
+[; ;Luz_y_Temperatura.c: 212:     for(j = 0; j<8; j++){
 {
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 169  ]
-[e $U 170  ]
-[e :U 169 ]
-{
-"204
-[; ;Luz_y_Temperatura.c: 204:          while(!PORTDbits.RD2);
-[e $U 172  ]
-[e :U 173 ]
-[e :U 172 ]
-[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 173  ]
+[e $ < -> _j `i -> 8 `i 174  ]
+[e $U 175  ]
 [e :U 174 ]
-"205
-[; ;Luz_y_Temperatura.c: 205:          _delay((unsigned long)((30)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"206
-[; ;Luz_y_Temperatura.c: 206:          if(PORTDbits.RD2 == 0)
-[e $ ! == -> . . _PORTDbits 0 2 `i -> 0 `i 175  ]
-"207
-[; ;Luz_y_Temperatura.c: 207:              i&= ~(1<<(7-j));
-[e =& _i -> ~ << -> 1 `i - -> 7 `i -> _j `i `uc ]
-[e $U 176  ]
-"208
-[; ;Luz_y_Temperatura.c: 208:          else{
-[e :U 175 ]
 {
-"209
-[; ;Luz_y_Temperatura.c: 209:              i|= (1<< (7-j));
-[e =| _i -> << -> 1 `i - -> 7 `i -> _j `i `uc ]
-"210
-[; ;Luz_y_Temperatura.c: 210:          while(PORTDbits.RD2);
+"213
+[; ;Luz_y_Temperatura.c: 213:         while(!PORTDbits.RD2);
 [e $U 177  ]
 [e :U 178 ]
 [e :U 177 ]
-[e $ != -> . . _PORTDbits 0 2 `i -> 0 `i 178  ]
+[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 178  ]
 [e :U 179 ]
-"211
-[; ;Luz_y_Temperatura.c: 211:          }
+"214
+[; ;Luz_y_Temperatura.c: 214:         _delay((unsigned long)((30)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"215
+[; ;Luz_y_Temperatura.c: 215:         if(PORTDbits.RD2 == 0)
+[e $ ! == -> . . _PORTDbits 0 2 `i -> 0 `i 180  ]
+"216
+[; ;Luz_y_Temperatura.c: 216:          i&= ~(1<<(7-j));
+[e =& _i -> ~ << -> 1 `i - -> 7 `i -> _j `i `uc ]
+[e $U 181  ]
+"217
+[; ;Luz_y_Temperatura.c: 217:         else{
+[e :U 180 ]
+{
+"218
+[; ;Luz_y_Temperatura.c: 218:          i|= (1<< (7-j));
+[e =| _i -> << -> 1 `i - -> 7 `i -> _j `i `uc ]
+"219
+[; ;Luz_y_Temperatura.c: 219:         while(PORTDbits.RD2);
+[e $U 182  ]
+[e :U 183 ]
+[e :U 182 ]
+[e $ != -> . . _PORTDbits 0 2 `i -> 0 `i 183  ]
+[e :U 184 ]
+"220
+[; ;Luz_y_Temperatura.c: 220:     }
 }
-[e :U 176 ]
-"212
-[; ;Luz_y_Temperatura.c: 212:      }
+[e :U 181 ]
+"221
+[; ;Luz_y_Temperatura.c: 221:     }
 }
 [e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 169  ]
-[e :U 170 ]
+[e $ < -> _j `i -> 8 `i 174  ]
+[e :U 175 ]
 }
-"213
-[; ;Luz_y_Temperatura.c: 213:      return i;
+"222
+[; ;Luz_y_Temperatura.c: 222:     return i;
 [e ) _i ]
-[e $UE 168  ]
-"214
-[; ;Luz_y_Temperatura.c: 214:  }
-[e :UE 168 ]
+[e $UE 173  ]
+"223
+[; ;Luz_y_Temperatura.c: 223: }
+[e :UE 173 ]
 }
