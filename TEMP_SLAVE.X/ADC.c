@@ -1,8 +1,7 @@
 
 #include "ADC.h"
 void ADCSETUP(){
-    ADCON0bits.ADCS0 = 0;
-    ADCON0bits.ADCS1 = 1;
+    ADCON0bits.ADCS = 01;
     ADCON0bits.ADON = 1;   // adc on
     ADCON1bits.ADFM = 0;
     ADCON1bits.VCFG0 = 0;

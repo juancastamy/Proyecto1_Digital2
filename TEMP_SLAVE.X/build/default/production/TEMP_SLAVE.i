@@ -2926,7 +2926,9 @@ uint8_t z;
 char ultrasonico;
 char distance;
 char dist = 0;
-char S1 =0;
+char S0 = 0;
+char S1 = 0;
+char S2 = 0;
 
 void SETUP(void);
 int calc_distance(void);
@@ -2956,19 +2958,33 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
+            if(S0==0){
             SSPBUF = adc;
+            S0 = 1;
             SSPCONbits.CKP = 1;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
             while(SSPSTATbits.BF);
+            PIR1bits.SSPIF = 0;
+            return;
+            }
+            if(S0==1){
+            SSPBUF = dist;
+            S0 = 0;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            while(SSPSTATbits.BF);
+            PIR1bits.SSPIF = 0;
+            return;
+            }
         }
-
         PIR1bits.SSPIF = 0;
     }
 }
 
 void main(void) {
-    initOsc(7);
+    initOsc(4);
     SETUP();
+    ADCSETUP();
     I2C_Slave_Init(0x20);
     PWM_INIT();
     while(1){
@@ -3008,8 +3024,9 @@ void SETUP(void){
     PORTD = 0;
     PORTE = 0;
     PORTA = 0;
-
-    ADCSETUP();
+    S0 = 0;
+    S1 = 0;
+    S2 = 0;
 }
 
 int calc_dist(void){

@@ -415,6 +415,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;OSCILADOR.c: 58:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "59
-[; ;OSCILADOR.c: 59: }
+[; ;OSCILADOR.c: 59:     OSCCONbits.OSTS= 0;
+[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
+"60
+[; ;OSCILADOR.c: 60:     OSCCONbits.HTS = 0;
+[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+"61
+[; ;OSCILADOR.c: 61:     OSCCONbits.LTS = 0;
+[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+"62
+[; ;OSCILADOR.c: 62: }
 [e :UE 138 ]
 }

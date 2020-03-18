@@ -2696,4 +2696,7 @@ void initOsc(uint8_t frec){
     }
 
     OSCCONbits.SCS = 1;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
 }

@@ -56,6 +56,9 @@ void initOsc(uint8_t frec){
     }
 
     OSCCONbits.SCS = 1;      // Se utilizará el reloj interno para el sistema
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
 }
 
 
