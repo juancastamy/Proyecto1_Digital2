@@ -37,9 +37,9 @@
 [v _isr isr `II(v  1 e 1 0 ]
 "115
 [v _main main `(v  1 e 1 0 ]
-"162
+"164
 [v _SETUP SETUP `(v  1 e 1 0 ]
-"180
+"182
 [v _calc_dist calc_dist `(i  1 e 2 0 ]
 "43 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X/ADC.h
 [v _adc adc `uc  1 e 1 0 ]
@@ -294,10 +294,12 @@
 [v _S1 S1 `uc  1 e 1 0 ]
 "60
 [v _S2 S2 `uc  1 e 1 0 ]
+"61
+[v _S3 S3 `uc  1 e 1 0 ]
 "115
 [v _main main `(v  1 e 1 0 ]
 {
-"160
+"162
 } 0
 "9 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\OSCILADOR.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -307,12 +309,12 @@
 [v initOsc@frec frec `uc  1 a 1 5 ]
 "62
 } 0
-"180 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
+"182 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
 [v _calc_dist calc_dist `(i  1 e 2 0 ]
 {
-"181
+"183
 [v calc_dist@distance distance `i  1 a 2 49 ]
-"200
+"202
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -372,10 +374,10 @@
 [v ___awdiv@dividend dividend `i  1 p 2 53 ]
 "41
 } 0
-"162 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
+"164 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\TEMP_SLAVE.c
 [v _SETUP SETUP `(v  1 e 1 0 ]
 {
-"178
+"180
 } 0
 "2 C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\TEMP_SLAVE.X\PWM.c
 [v _PWM_INIT PWM_INIT `(v  1 e 1 0 ]

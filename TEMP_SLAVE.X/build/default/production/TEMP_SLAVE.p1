@@ -96,8 +96,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "927 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 927: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
 [v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
-"151 TEMP_SLAVE.c
-[; ;TEMP_SLAVE.c: 151:         dist = calc_dist()/5;
+"153 TEMP_SLAVE.c
+[; ;TEMP_SLAVE.c: 153:         dist = calc_dist()/5;
 [v _calc_dist `(i ~T0 @X0 0 e? ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
@@ -631,12 +631,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TEMP_SLAVE.c: 122:         ADC1();
 [e ( _ADC1 ..  ]
 "124
-[; ;TEMP_SLAVE.c: 124:         if(ultrasonico == 0x0f & CCPR1L == 10 & S1 == 0 & S2==0){
-[e $ ! & & & == -> _ultrasonico `i -> 15 `i == -> _CCPR1L `i -> 10 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 0 `i 164  ]
+[; ;TEMP_SLAVE.c: 124:         if(ultrasonico == 0x0f & CCPR1L == 8 & S1 == 0 & S2==0){
+[e $ ! & & & == -> _ultrasonico `i -> 15 `i == -> _CCPR1L `i -> 8 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 0 `i 164  ]
 {
 "125
-[; ;TEMP_SLAVE.c: 125:             CCPR1L = 25;
-[e = _CCPR1L -> -> 25 `i `uc ]
+[; ;TEMP_SLAVE.c: 125:             CCPR1L = 24;
+[e = _CCPR1L -> -> 24 `i `uc ]
 "126
 [; ;TEMP_SLAVE.c: 126:             S1 = 1;
 [e = _S1 -> -> 1 `i `uc ]
@@ -648,8 +648,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 164 ]
 "129
-[; ;TEMP_SLAVE.c: 129:         if(adc>=5 & S1 ==1 & S2==0 & CCPR1L == 25){
-[e $ ! & & & >= -> _adc `i -> 5 `i == -> _S1 `i -> 1 `i == -> _S2 `i -> 0 `i == -> _CCPR1L `i -> 25 `i 165  ]
+[; ;TEMP_SLAVE.c: 129:         if(adc>=5 & S1 ==1 & S2==0 & CCPR1L == 24){
+[e $ ! & & & >= -> _adc `i -> 5 `i == -> _S1 `i -> 1 `i == -> _S2 `i -> 0 `i == -> _CCPR1L `i -> 24 `i 165  ]
 {
 "130
 [; ;TEMP_SLAVE.c: 130:             S1 = 0;
@@ -662,23 +662,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 165 ]
 "133
-[; ;TEMP_SLAVE.c: 133:         if(adc==0 & S1==0 & S2==0 & CCPR1L == 25){
-[e $ ! & & & == -> _adc `i -> 0 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 0 `i == -> _CCPR1L `i -> 25 `i 166  ]
+[; ;TEMP_SLAVE.c: 133:         if(adc==0 & S1==0 & S2==0 & CCPR1L == 24){
+[e $ ! & & & == -> _adc `i -> 0 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 0 `i == -> _CCPR1L `i -> 24 `i 166  ]
 {
 "134
-[; ;TEMP_SLAVE.c: 134:             CCPR1L = 10;
-[e = _CCPR1L -> -> 10 `i `uc ]
+[; ;TEMP_SLAVE.c: 134:             CCPR1L = 8;
+[e = _CCPR1L -> -> 8 `i `uc ]
 "135
 [; ;TEMP_SLAVE.c: 135:         }
 }
 [e :U 166 ]
 "137
-[; ;TEMP_SLAVE.c: 137:         if(adc>= 5 & CCPR1L == 10 & S1==0 & S2==0){
-[e $ ! & & & >= -> _adc `i -> 5 `i == -> _CCPR1L `i -> 10 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 0 `i 167  ]
+[; ;TEMP_SLAVE.c: 137:         if(adc>= 5 & CCPR1L == 8 & S1==0 & S2==0){
+[e $ ! & & & >= -> _adc `i -> 5 `i == -> _CCPR1L `i -> 8 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 0 `i 167  ]
 {
 "138
-[; ;TEMP_SLAVE.c: 138:             CCPR1L = 25;
-[e = _CCPR1L -> -> 25 `i `uc ]
+[; ;TEMP_SLAVE.c: 138:             CCPR1L = 24;
+[e = _CCPR1L -> -> 24 `i `uc ]
 "139
 [; ;TEMP_SLAVE.c: 139:             S2 = 1;
 [e = _S2 -> -> 1 `i `uc ]
@@ -687,8 +687,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 167 ]
 "141
-[; ;TEMP_SLAVE.c: 141:         if(ultrasonico == 0x0f & S1==0 & S2==1 & CCPR1L == 25){
-[e $ ! & & & == -> _ultrasonico `i -> 15 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 1 `i == -> _CCPR1L `i -> 25 `i 168  ]
+[; ;TEMP_SLAVE.c: 141:         if(ultrasonico == 0x0f & S1==0 & S2==1 & CCPR1L == 24){
+[e $ ! & & & == -> _ultrasonico `i -> 15 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 1 `i == -> _CCPR1L `i -> 24 `i 168  ]
 {
 "142
 [; ;TEMP_SLAVE.c: 142:             S1 = 0;
@@ -697,164 +697,170 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TEMP_SLAVE.c: 143:             S2 = 1;
 [e = _S2 -> -> 1 `i `uc ]
 "144
-[; ;TEMP_SLAVE.c: 144:         }
+[; ;TEMP_SLAVE.c: 144:             S3 = 1;
+[e = _S3 -> -> 1 `i `uc ]
+"145
+[; ;TEMP_SLAVE.c: 145:         }
 }
 [e :U 168 ]
-"145
-[; ;TEMP_SLAVE.c: 145:         if (ultrasonico == 0x00 & S1==0 & S2 == 1 & CCPR1L == 25){
-[e $ ! & & & == -> _ultrasonico `i -> 0 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 1 `i == -> _CCPR1L `i -> 25 `i 169  ]
-{
 "146
-[; ;TEMP_SLAVE.c: 146:             CCPR1L = 10;
-[e = _CCPR1L -> -> 10 `i `uc ]
+[; ;TEMP_SLAVE.c: 146:         if (ultrasonico == 0x00 & S1==0 & S2 == 1 & S3==1 & CCPR1L == 24){
+[e $ ! & & & & == -> _ultrasonico `i -> 0 `i == -> _S1 `i -> 0 `i == -> _S2 `i -> 1 `i == -> _S3 `i -> 1 `i == -> _CCPR1L `i -> 24 `i 169  ]
+{
 "147
-[; ;TEMP_SLAVE.c: 147:             S1 = 0;
-[e = _S1 -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 147:             CCPR1L = 8;
+[e = _CCPR1L -> -> 8 `i `uc ]
 "148
-[; ;TEMP_SLAVE.c: 148:             S1=0;
+[; ;TEMP_SLAVE.c: 148:             S1 = 0;
 [e = _S1 -> -> 0 `i `uc ]
 "149
-[; ;TEMP_SLAVE.c: 149:         }
+[; ;TEMP_SLAVE.c: 149:             S2 = 0;
+[e = _S2 -> -> 0 `i `uc ]
+"150
+[; ;TEMP_SLAVE.c: 150:             S3 = 0;
+[e = _S3 -> -> 0 `i `uc ]
+"151
+[; ;TEMP_SLAVE.c: 151:         }
 }
 [e :U 169 ]
-"151
-[; ;TEMP_SLAVE.c: 151:         dist = calc_dist()/5;
-[e = _dist -> / ( _calc_dist ..  -> 5 `i `uc ]
 "153
-[; ;TEMP_SLAVE.c: 153:         if(dist>0){
+[; ;TEMP_SLAVE.c: 153:         dist = calc_dist()/5;
+[e = _dist -> / ( _calc_dist ..  -> 5 `i `uc ]
+"155
+[; ;TEMP_SLAVE.c: 155:         if(dist>0){
 [e $ ! > -> _dist `i -> 0 `i 170  ]
 {
-"154
-[; ;TEMP_SLAVE.c: 154:         ultrasonico = 0x00;
+"156
+[; ;TEMP_SLAVE.c: 156:         ultrasonico = 0x00;
 [e = _ultrasonico -> -> 0 `i `uc ]
-"155
-[; ;TEMP_SLAVE.c: 155:         }
+"157
+[; ;TEMP_SLAVE.c: 157:         }
 }
 [e $U 171  ]
-"156
-[; ;TEMP_SLAVE.c: 156:         else
+"158
+[; ;TEMP_SLAVE.c: 158:         else
 [e :U 170 ]
-"157
-[; ;TEMP_SLAVE.c: 157:         {ultrasonico = 0x0F;}
+"159
+[; ;TEMP_SLAVE.c: 159:         {ultrasonico = 0x0F;}
 {
 [e = _ultrasonico -> -> 15 `i `uc ]
 }
 [e :U 171 ]
-"158
-[; ;TEMP_SLAVE.c: 158:         }
+"160
+[; ;TEMP_SLAVE.c: 160:         }
 }
 [e :U 161 ]
 [e $U 162  ]
 [e :U 163 ]
-"160
-[; ;TEMP_SLAVE.c: 160: }
+"162
+[; ;TEMP_SLAVE.c: 162: }
 [e :UE 160 ]
 }
-"162
-[; ;TEMP_SLAVE.c: 162: void SETUP(void){
+"164
+[; ;TEMP_SLAVE.c: 164: void SETUP(void){
 [v _SETUP `(v ~T0 @X0 1 ef ]
 {
 [e :U _SETUP ]
 [f ]
-"163
-[; ;TEMP_SLAVE.c: 163:     TRISA = 0b00000001;
-[e = _TRISA -> -> 1 `i `uc ]
-"164
-[; ;TEMP_SLAVE.c: 164:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
 "165
-[; ;TEMP_SLAVE.c: 165:     TRISC = 0b00011000;
-[e = _TRISC -> -> 24 `i `uc ]
+[; ;TEMP_SLAVE.c: 165:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
 "166
-[; ;TEMP_SLAVE.c: 166:     TRISD = 0b00000010;
-[e = _TRISD -> -> 2 `i `uc ]
+[; ;TEMP_SLAVE.c: 166:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "167
-[; ;TEMP_SLAVE.c: 167:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 167:     TRISC = 0b00011000;
+[e = _TRISC -> -> 24 `i `uc ]
 "168
-[; ;TEMP_SLAVE.c: 168:     ANSEL = 0b00000001;
-[e = _ANSEL -> -> 1 `i `uc ]
+[; ;TEMP_SLAVE.c: 168:     TRISD = 0b00000010;
+[e = _TRISD -> -> 2 `i `uc ]
 "169
-[; ;TEMP_SLAVE.c: 169:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 169:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "170
-[; ;TEMP_SLAVE.c: 170:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 170:     ANSEL = 0b00000001;
+[e = _ANSEL -> -> 1 `i `uc ]
 "171
-[; ;TEMP_SLAVE.c: 171:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 171:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "172
-[; ;TEMP_SLAVE.c: 172:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 172:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "173
-[; ;TEMP_SLAVE.c: 173:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 173:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
 "174
-[; ;TEMP_SLAVE.c: 174:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 174:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
 "175
-[; ;TEMP_SLAVE.c: 175:     S0 = 0;
-[e = _S0 -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 175:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
 "176
-[; ;TEMP_SLAVE.c: 176:     S1 = 0;
-[e = _S1 -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 176:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "177
-[; ;TEMP_SLAVE.c: 177:     S2 = 0;
-[e = _S2 -> -> 0 `i `uc ]
+[; ;TEMP_SLAVE.c: 177:     S0 = 0;
+[e = _S0 -> -> 0 `i `uc ]
 "178
-[; ;TEMP_SLAVE.c: 178: }
+[; ;TEMP_SLAVE.c: 178:     S1 = 0;
+[e = _S1 -> -> 0 `i `uc ]
+"179
+[; ;TEMP_SLAVE.c: 179:     S2 = 0;
+[e = _S2 -> -> 0 `i `uc ]
+"180
+[; ;TEMP_SLAVE.c: 180: }
 [e :UE 172 ]
 }
-"180
-[; ;TEMP_SLAVE.c: 180: int calc_dist(void){
+"182
+[; ;TEMP_SLAVE.c: 182: int calc_dist(void){
 [v _calc_dist `(i ~T0 @X0 1 ef ]
 {
 [e :U _calc_dist ]
 [f ]
-"181
-[; ;TEMP_SLAVE.c: 181:     int distance=0;
+"183
+[; ;TEMP_SLAVE.c: 183:     int distance=0;
 [v _distance `i ~T0 @X0 1 a ]
 [e = _distance -> 0 `i ]
-"182
-[; ;TEMP_SLAVE.c: 182:     TMR1=0;
-[e = _TMR1 -> -> 0 `i `us ]
 "184
-[; ;TEMP_SLAVE.c: 184:     RD0=1;
-[e = _RD0 -> -> 1 `i `b ]
-"185
-[; ;TEMP_SLAVE.c: 185:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;TEMP_SLAVE.c: 184:     TMR1=0;
+[e = _TMR1 -> -> 0 `i `us ]
 "186
-[; ;TEMP_SLAVE.c: 186:     RD0=0;
-[e = _RD0 -> -> 0 `i `b ]
+[; ;TEMP_SLAVE.c: 186:     RD0=1;
+[e = _RD0 -> -> 1 `i `b ]
+"187
+[; ;TEMP_SLAVE.c: 187:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "188
-[; ;TEMP_SLAVE.c: 188:     while(!RD1);
+[; ;TEMP_SLAVE.c: 188:     RD0=0;
+[e = _RD0 -> -> 0 `i `b ]
+"190
+[; ;TEMP_SLAVE.c: 190:     while(!RD1);
 [e $U 174  ]
 [e :U 175 ]
 [e :U 174 ]
 [e $ ! _RD1 175  ]
 [e :U 176 ]
-"191
-[; ;TEMP_SLAVE.c: 191:     TMR1ON=1;
-[e = _TMR1ON -> -> 1 `i `b ]
 "193
-[; ;TEMP_SLAVE.c: 193:     while(RD1);
+[; ;TEMP_SLAVE.c: 193:     TMR1ON=1;
+[e = _TMR1ON -> -> 1 `i `b ]
+"195
+[; ;TEMP_SLAVE.c: 195:     while(RD1);
 [e $U 177  ]
 [e :U 178 ]
 [e :U 177 ]
 [e $ _RD1 178  ]
 [e :U 179 ]
-"195
-[; ;TEMP_SLAVE.c: 195:     TMR1ON=0;
+"197
+[; ;TEMP_SLAVE.c: 197:     TMR1ON=0;
 [e = _TMR1ON -> -> 0 `i `b ]
-"198
-[; ;TEMP_SLAVE.c: 198:     distance=TMR1/58.82;
+"200
+[; ;TEMP_SLAVE.c: 200:     distance=TMR1/58.82;
 [e = _distance -> / -> -> _TMR1 `ui `d .58.82 `i ]
-"199
-[; ;TEMP_SLAVE.c: 199:     return distance;
+"201
+[; ;TEMP_SLAVE.c: 201:     return distance;
 [e ) _distance ]
 [e $UE 173  ]
-"200
-[; ;TEMP_SLAVE.c: 200: }
+"202
+[; ;TEMP_SLAVE.c: 202: }
 [e :UE 173 ]
 }

@@ -9,7 +9,7 @@ void PWM_INIT(void){
     CCP1CONbits.CCP1M0 = 0;
     
    
-    CCPR1L = 25;
+    CCPR1L = 24;
     CCP1CONbits.DC1B0 = 1;
     CCP1CONbits.DC1B1 = 1;
     
