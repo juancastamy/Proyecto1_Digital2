@@ -2894,15 +2894,7 @@ void I2C_Slave_Init(uint8_t address);
 # 40 "MASTERR_I2C.c" 2
 
 # 1 "./UART.h" 1
-# 43 "./UART.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 43 "./UART.h" 2
-
-
-
-
-
-
+# 48 "./UART.h"
 uint8_t UART_INIT(const long int baudrate);
 uint8_t UART_READ(void);
 void UART_Read_Text(char *Output, unsigned int length);
@@ -2975,9 +2967,8 @@ void main(void) {
         I2C_Master_Write(0x31);
         analogic_digital_b = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-        UART_WRITE(analogic_digital_b);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
 
         CONTLUZA = analogic_digital_b/10;
         itoa(CONTLUZA_CHAR,CONTLUZA,10);
@@ -2990,9 +2981,9 @@ void main(void) {
         I2C_Master_Write(0x31);
         T_byte1 = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         UART_WRITE(T_byte1);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
         decT = T_byte1/10;
         itoa(decT_char,decT,10);
@@ -3005,9 +2996,9 @@ void main(void) {
         I2C_Master_Write(0x11);
         CONTADOR = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         UART_WRITE(CONTADOR);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
         CONTD = CONTADOR/10;
         itoa(CONTD_CHAR,CONTD,10);
@@ -3019,9 +3010,9 @@ void main(void) {
         I2C_Master_Write(0x21);
         analogic_digital_a = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         UART_WRITE(analogic_digital_a);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
          DC1 = analogic_digital_a/10;
         itoa(ADCA_CHARA,DC1,10);
@@ -3034,9 +3025,9 @@ void main(void) {
         I2C_Master_Write(0x21);
         SONICO = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         UART_WRITE(SONICO);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
         SONICOD = SONICO/10;
         itoa(SONICOD_CHAR,SONICOD,10);
@@ -3077,6 +3068,13 @@ void main(void) {
             lcd_msg(SONICOU_CHAR);
             lcd_msg("      ");
         }
+
+        UART_WRITE(decT_char);
+        UART_WRITE(CONTU_CHAR);
+        UART_WRITE(CONTLUZA_CHAR);
+        UART_WRITE(ADCA_CHARA);
+        UART_WRITE(SONICOU_CHAR);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
     }
 }
 

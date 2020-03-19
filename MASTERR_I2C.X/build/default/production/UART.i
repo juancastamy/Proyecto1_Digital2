@@ -2630,15 +2630,7 @@ typedef uint16_t uintptr_t;
 # 3 "UART.c" 2
 
 # 1 "./UART.h" 1
-# 43 "./UART.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 43 "./UART.h" 2
-
-
-
-
-
-
+# 48 "./UART.h"
 uint8_t UART_INIT(const long int baudrate);
 uint8_t UART_READ(void);
 void UART_Read_Text(char *Output, unsigned int length);
@@ -2649,7 +2641,7 @@ void UART_Write_Text(char *text);
 
 uint8_t UART_INIT(const long int baudrate){
  SPBRG = (8000000 - baudrate*16)/(baudrate*16);
-    TXSTAbits.BRGH = 1;
+     TXSTAbits.BRGH = 1;
     TXSTAbits.TXEN = 1;
     TXSTAbits.SYNC = 0;
     TXSTAbits.TX9 = 0;

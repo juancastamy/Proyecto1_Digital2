@@ -104,9 +104,8 @@ void main(void) {
         I2C_Master_Write(0x31);     //7 bit address + Read
         analogic_digital_b = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
-        __delay_ms(100);
-        UART_WRITE(analogic_digital_b);
-        __delay_ms(100);
+        __delay_ms(200);
+        
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         CONTLUZA = analogic_digital_b/10;
         itoa(CONTLUZA_CHAR,CONTLUZA,10);
@@ -119,9 +118,9 @@ void main(void) {
         I2C_Master_Write(0x31);     //7 bit address + Read
         T_byte1 = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
-        __delay_ms(100);
+        __delay_ms(200);
         UART_WRITE(T_byte1);
-        __delay_ms(100);
+        
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         decT = T_byte1/10;
         itoa(decT_char,decT,10);
@@ -134,9 +133,9 @@ void main(void) {
         I2C_Master_Write(0x11);     //7 bit address + Read
         CONTADOR = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
-        __delay_ms(100);
+        __delay_ms(200);
         UART_WRITE(CONTADOR);
-        __delay_ms(100);
+        
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         CONTD = CONTADOR/10;
         itoa(CONTD_CHAR,CONTD,10);
@@ -148,9 +147,9 @@ void main(void) {
         I2C_Master_Write(0x21);     //7 bit address + Read
         analogic_digital_a = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
-        __delay_ms(100);
+        __delay_ms(200);
         UART_WRITE(analogic_digital_a);
-        __delay_ms(100);
+       
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
          DC1 = analogic_digital_a/10;
         itoa(ADCA_CHARA,DC1,10);
@@ -163,9 +162,9 @@ void main(void) {
         I2C_Master_Write(0x21);     //7 bit address + Read
         SONICO = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
-        __delay_ms(100);
+        __delay_ms(200);
         UART_WRITE(SONICO);
-        __delay_ms(100);
+        
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         SONICOD = SONICO/10;
         itoa(SONICOD_CHAR,SONICOD,10);
@@ -206,6 +205,13 @@ void main(void) {
             lcd_msg(SONICOU_CHAR);
             lcd_msg("      ");
         }
+        
+        UART_WRITE(decT_char);
+        UART_WRITE(CONTU_CHAR);
+        UART_WRITE(CONTLUZA_CHAR);
+        UART_WRITE(ADCA_CHARA);
+        UART_WRITE(SONICOU_CHAR);
+        __delay_ms(100);
     }
 }
 

@@ -5,7 +5,7 @@
 
 uint8_t UART_INIT(const long int baudrate){
 	SPBRG = (_XTAL_FREQ - baudrate*16)/(baudrate*16); //Valor a meter a SPBRG, dependinte del baudrate usado
-    TXSTAbits.BRGH = 1;
+     TXSTAbits.BRGH = 1;
     TXSTAbits.TXEN = 1;
     TXSTAbits.SYNC = 0;
     TXSTAbits.TX9 = 0;
@@ -52,6 +52,7 @@ void UART_Write_Text(char *text)
 	  UART_Write(text[i]);
 }
 */
+
 
 
 
