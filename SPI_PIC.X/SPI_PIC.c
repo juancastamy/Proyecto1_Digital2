@@ -46,40 +46,106 @@
 #include "SPI_SLAVE.h"
 #define _XTAL_FREQ 8000000
 
-uint8_t Luz;
-uint8_t Temp;
-uint8_t Parq;
-uint8_t ULTRA;
-uint8_t Presion;
+char Luz;
+char Temp;
+char Parq;
+char ULTRA;
+char Presion;
+char RASPBERRY;
+char S0;
 void setup(void);
-
+void __interrupt() ISR(void){
+       
+    if(PIR1bits.SSPIF==1){
+        RASPBERRY = spiRead();
+        
+        if(RASPBERRY == 0){
+          SSPSTATbits.BF= 0;
+          PIR1bits.SSPIF = 0;
+          return;
+        }
+        if(RASPBERRY == 1){
+            SSPSTATbits.BF= 0;
+          PIR1bits.SSPIF = 0;
+          return;
+        }
+        if(RASPBERRY == 2){
+            SSPSTATbits.BF= 0;
+          PIR1bits.SSPIF = 0;
+          return;
+        }
+        if(RASPBERRY == 3){
+            SSPSTATbits.BF= 0;
+          PIR1bits.SSPIF = 0;
+          return;
+        }
+        if(RASPBERRY == 4){
+           SSPSTATbits.BF= 0;
+          PIR1bits.SSPIF = 0;
+          return;
+        }
+       
+          SSPSTATbits.BF= 0;
+          PIR1bits.SSPIF = 0;
+          
+           
+         
+           return;
+    }
+    if(PIR1bits.RCIF == 1){
+        if(S0 == 0){
+        Luz= UART_READ();
+        PIR1bits.RCIF = 0;
+        S0=1;
+        return;
+        }
+         if(S0 == 1){
+        Temp= UART_READ();
+        PIR1bits.RCIF = 0;
+        S0=2;
+        return;
+        }
+         if(S0 == 2){
+        Parq = UART_READ();
+        PIR1bits.RCIF = 0;
+        S0=3;
+        return;
+        }
+         if(S0 == 3){
+        ULTRA= UART_READ();
+        PIR1bits.RCIF = 0;
+        S0=4;
+        return;
+        }
+         if(S0 == 4){
+        Presion= UART_READ();
+        PIR1bits.RCIF = 0;
+        S0 = 0;
+        return;
+        }
+    }
+   
+    return;
+   
+}
 void main(void) {
     setup();
     initOsc(7);
     UART_INIT(9600);
     while(1){
-        //-------------------SENSOR LUZ-----------------------------------
-        __delay_ms(100);
-        Luz = UART_READ();          //SE RECIVE EL VALOR POR UART
-        spiWrite(Luz);              //SE ENVIA POR SPI 
-        __delay_ms(200);
-        //-----------------SENSOR TEMPERATURA------------------------------
-        Temp = UART_READ();         // SE RECIVE EL VALOR POR UART
-        spiWrite(Temp);             //SE ENVIA POR SPI        
-        __delay_ms(200);
-        //----------------SENSOR DE PARQUEOS------------------------------
-        Parq = UART_READ;           //SE RECIVE EL VALOR POR UART
-        spiWrite(Parq);             //SE ENVIA POR SPI
-        __delay_ms (200);
-        //------------------SENSOR PRESION--------------------------------
-        Presion = UART_READ();      //SE RECIVE EL VALOR POR UART
-        spiWrite(Presion);          //SE ENVIA POR SPI
-        __delay_ms(200);
-        //------------------SENSOR ULTRASONICO----------------------------
-        ULTRA = UART_READ();        //SE RECIVE EL VALOR POR UART
-        spiWrite(ULTRA);            //SE ENVIA POR SPI
-        __delay_ms(100);
+
         
+        
+    UART_WRITE(Luz);
+    __delay_ms(1);
+    UART_WRITE(Temp);
+    __delay_ms(1);
+    UART_WRITE(Parq);
+    __delay_ms(1);
+    UART_WRITE(ULTRA);
+    __delay_ms(1);
+    UART_WRITE(Presion);
+    __delay_ms(1);
     }
     return;
 }
@@ -95,5 +161,7 @@ void setup (void){
     PIE1bits.RCIE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
+    RASPBERRY = 0;
+    S0=0;
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
