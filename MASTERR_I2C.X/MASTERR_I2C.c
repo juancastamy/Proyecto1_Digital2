@@ -1,8 +1,15 @@
 /*
- * File:   MASTERR_I2C.c
- * Author: CHARLIE
+ * proyect 1 Digital 2 course
+ * File:   sensor_deteccion.c
+ * Author: Juan Diego Castillo Amaya
+ * Student ID: 17074
+ * 
+ * Author: Carlos Avendaño
+ * Student ID: 17192
  *
- * Created on 26 de febrero de 2020, 22:03
+ * Author: Juan Pablo Zea
+ * Student ID: 15401
+ * Created on March 3 2020, 22:03
  */
 
 
@@ -119,7 +126,7 @@ void main(void) {
         T_byte1 = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
         __delay_ms(200);
-        UART_WRITE(T_byte1);
+       
         
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         decT = T_byte1/10;
@@ -134,7 +141,7 @@ void main(void) {
         CONTADOR = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
         __delay_ms(200);
-        UART_WRITE(CONTADOR);
+        
         
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         CONTD = CONTADOR/10;
@@ -148,7 +155,7 @@ void main(void) {
         analogic_digital_a = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
         __delay_ms(200);
-        UART_WRITE(analogic_digital_a);
+        
        
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
          DC1 = analogic_digital_a/10;
@@ -163,7 +170,7 @@ void main(void) {
         SONICO = I2C_Master_Read(0); //Read + Acknowledge
         I2C_Master_Stop();          //Stop condition
         __delay_ms(200);
-        UART_WRITE(SONICO);
+       
         
         //------------------------------CONVERCION DE VARIABLES PARA PANTALLA LCD-------------------------
         SONICOD = SONICO/10;
@@ -206,12 +213,16 @@ void main(void) {
             lcd_msg("      ");
         }
         
-        UART_WRITE(decT_char);
-        UART_WRITE(CONTU_CHAR);
-        UART_WRITE(CONTLUZA_CHAR);
-        UART_WRITE(ADCA_CHARA);
-        UART_WRITE(SONICOU_CHAR);
-        __delay_ms(100);
+        UART_WRITE(T_byte1);               // TEMPERATURA 
+        __delay_ms(1);
+        UART_WRITE(CONTADOR);            // CARROS 
+        __delay_ms(1);
+        UART_WRITE(analogic_digital_b);   // LUZ
+        __delay_ms(1);
+        UART_WRITE(analogic_digital_a);  // FUERZA 
+        __delay_ms(1);
+        UART_WRITE(SONICO);       // SONICO 
+        __delay_ms(1);
     }
 }
 

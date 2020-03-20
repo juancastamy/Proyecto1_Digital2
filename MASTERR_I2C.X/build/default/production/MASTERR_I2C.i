@@ -2982,7 +2982,7 @@ void main(void) {
         T_byte1 = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
-        UART_WRITE(T_byte1);
+
 
 
         decT = T_byte1/10;
@@ -2997,7 +2997,7 @@ void main(void) {
         CONTADOR = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
-        UART_WRITE(CONTADOR);
+
 
 
         CONTD = CONTADOR/10;
@@ -3011,7 +3011,7 @@ void main(void) {
         analogic_digital_a = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
-        UART_WRITE(analogic_digital_a);
+
 
 
          DC1 = analogic_digital_a/10;
@@ -3026,7 +3026,7 @@ void main(void) {
         SONICO = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
-        UART_WRITE(SONICO);
+
 
 
         SONICOD = SONICO/10;
@@ -3069,12 +3069,16 @@ void main(void) {
             lcd_msg("      ");
         }
 
-        UART_WRITE(decT_char);
-        UART_WRITE(CONTU_CHAR);
-        UART_WRITE(CONTLUZA_CHAR);
-        UART_WRITE(ADCA_CHARA);
-        UART_WRITE(SONICOU_CHAR);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        UART_WRITE(T_byte1);
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        UART_WRITE(CONTADOR);
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        UART_WRITE(analogic_digital_b);
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        UART_WRITE(analogic_digital_a);
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        UART_WRITE(SONICO);
+        _delay((unsigned long)((1)*(8000000/4000.0)));
     }
 }
 

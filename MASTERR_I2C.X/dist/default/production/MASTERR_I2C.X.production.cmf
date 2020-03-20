@@ -13,39 +13,39 @@
 %PSECTS
 $dist/default/production\MASTERR_I2C.X.production.o
 cinit CODE 0 7E4 7E4 1C 2
-text1 CODE 0 77 77 29 2
+text1 CODE 0 6A 6A 29 2
 text2 CODE 0 FDA FDA 26 2
-text3 CODE 0 3C 3C 12 2
+text3 CODE 0 F6E F6E 12 2
 text4 CODE 0 FB4 FB4 26 2
-text5 CODE 0 30D 30D 72 2
-text6 CODE 0 106 106 3A 2
-text7 CODE 0 140 140 44 2
+text5 CODE 0 300 300 72 2
+text6 CODE 0 F9 F9 3A 2
+text7 CODE 0 133 133 44 2
 text8 CODE 0 F95 F95 1F 2
-text9 CODE 0 F6E F6E 12 2
-text10 CODE 0 4E 4E 29 2
-text11 CODE 0 F5F F5F F 2
-text12 CODE 0 184 184 59 2
-text13 CODE 0 2A6 2A6 67 2
-text14 CODE 0 F46 F46 C 2
-text15 CODE 0 1DD 1DD 63 2
-text16 CODE 0 37F 37F 9D 2
+text9 CODE 0 F5C F5C 12 2
+text10 CODE 0 41 41 29 2
+text11 CODE 0 F4D F4D F 2
+text12 CODE 0 177 177 59 2
+text13 CODE 0 299 299 67 2
+text14 CODE 0 F34 F34 C 2
+text15 CODE 0 1D0 1D0 63 2
+text16 CODE 0 372 372 9D 2
 text17 CODE 0 F80 F80 15 2
-text18 CODE 0 F3C F3C A 2
-text19 CODE 0 F33 F33 9 2
-text20 CODE 0 F2A F2A 9 2
-text21 CODE 0 A0 A0 2E 2
-text22 CODE 0 F52 F52 D 2
-text23 CODE 0 CE CE 38 2
-text24 CODE 0 240 240 66 2
-maintext CODE 0 41C 41C 3C8 2
+text18 CODE 0 F2A F2A A 2
+text19 CODE 0 F21 F21 9 2
+text20 CODE 0 F18 F18 9 2
+text21 CODE 0 93 93 2E 2
+text22 CODE 0 F40 F40 D 2
+text23 CODE 0 C1 C1 38 2
+text24 CODE 0 233 233 66 2
+maintext CODE 0 40F 40F 3D5 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 54 54 19 1
 bssBANK0 BANK0 1 20 20 34 1
 bssBANK1 BANK1 1 A0 A0 4E 1
 bssBANK3 BANK3 1 190 190 5 1
 strings STRING 0 3 3 39 2
-clrtext CODE 0 F22 F22 8 2
-$C:\Users\juan\AppData\Local\Temp\si74.o
+clrtext CODE 0 F10 F10 8 2
+$C:\Users\50254\AppData\Local\Temp\sbf8.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
@@ -62,22 +62,27 @@ BANK0 6D-6F 1
 BANK1 EE-EF 1
 BANK2 110-16F 1
 BANK3 195-1EF 1
-CONST 800-F21 2
+CONST 3C-40 2
+CONST 800-F0F 2
 CONST 1000-1FFF 2
-ENTRY 800-F21 2
+ENTRY 3C-40 2
+ENTRY 800-F0F 2
 ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 800-F21 2
+CODE 3C-40 2
+CODE 800-F0F 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
-STRCODE 800-F21 2
+STRCODE 3C-40 2
+STRCODE 800-F0F 2
 STRCODE 1000-1FFF 2
-STRING 800-F21 2
+STRING 3C-40 2
+STRING 800-F0F 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -93,257 +98,257 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MASTERR_I2C.X.production.o
-7E4 cinit CODE >1111:C:\Users\juan\AppData\Local\Temp\si74.s
-7E4 cinit CODE >1114:C:\Users\juan\AppData\Local\Temp\si74.s
-7E4 cinit CODE >1278:C:\Users\juan\AppData\Local\Temp\si74.s
-7E5 cinit CODE >1279:C:\Users\juan\AppData\Local\Temp\si74.s
-7E6 cinit CODE >1280:C:\Users\juan\AppData\Local\Temp\si74.s
-7E7 cinit CODE >1281:C:\Users\juan\AppData\Local\Temp\si74.s
-7E8 cinit CODE >1282:C:\Users\juan\AppData\Local\Temp\si74.s
-7ED cinit CODE >1285:C:\Users\juan\AppData\Local\Temp\si74.s
-7EE cinit CODE >1286:C:\Users\juan\AppData\Local\Temp\si74.s
-7EF cinit CODE >1287:C:\Users\juan\AppData\Local\Temp\si74.s
-7F0 cinit CODE >1288:C:\Users\juan\AppData\Local\Temp\si74.s
-7F5 cinit CODE >1291:C:\Users\juan\AppData\Local\Temp\si74.s
-7F6 cinit CODE >1292:C:\Users\juan\AppData\Local\Temp\si74.s
-7F7 cinit CODE >1293:C:\Users\juan\AppData\Local\Temp\si74.s
-7F8 cinit CODE >1294:C:\Users\juan\AppData\Local\Temp\si74.s
-7F9 cinit CODE >1295:C:\Users\juan\AppData\Local\Temp\si74.s
-7FA cinit CODE >1296:C:\Users\juan\AppData\Local\Temp\si74.s
-7FB cinit CODE >1297:C:\Users\juan\AppData\Local\Temp\si74.s
-7FC cinit CODE >1303:C:\Users\juan\AppData\Local\Temp\si74.s
-7FC cinit CODE >1305:C:\Users\juan\AppData\Local\Temp\si74.s
-7FD cinit CODE >1306:C:\Users\juan\AppData\Local\Temp\si74.s
-240 text24 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-240 text24 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-248 text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-250 text24 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-252 text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-253 text24 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-25C text24 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-260 text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-264 text24 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-26D text24 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-27F text24 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-28D text24 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-28E text24 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-297 text24 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-29D text24 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-2A5 text24 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-CE text23 CODE >5:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-CE text23 CODE >6:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-D2 text23 CODE >7:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-D5 text23 CODE >8:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-102 text23 CODE >9:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-103 text23 CODE >10:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-104 text23 CODE >11:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-105 text23 CODE >13:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F52 text22 CODE >15:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F52 text22 CODE >16:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F5E text22 CODE >17:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-A0 text21 CODE >52:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-A0 text21 CODE >54:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-A5 text21 CODE >55:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-A8 text21 CODE >56:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-AD text21 CODE >57:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-B6 text21 CODE >58:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-BB text21 CODE >59:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C1 text21 CODE >60:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C4 text21 CODE >61:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C5 text21 CODE >62:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C5 text21 CODE >63:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C8 text21 CODE >64:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C8 text21 CODE >65:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-C9 text21 CODE >66:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-CD text21 CODE >67:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F2A text20 CODE >21:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F2A text20 CODE >22:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F2F text20 CODE >23:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F32 text20 CODE >24:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F33 text19 CODE >35:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F33 text19 CODE >36:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F38 text19 CODE >37:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F3B text19 CODE >38:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F3C text18 CODE >44:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F3C text18 CODE >45:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F41 text18 CODE >46:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F45 text18 CODE >47:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
-F80 text17 CODE >218:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F80 text17 CODE >219:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F84 text17 CODE >220:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F85 text17 CODE >221:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F87 text17 CODE >222:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F88 text17 CODE >223:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F89 text17 CODE >224:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F8C text17 CODE >225:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F8D text17 CODE >226:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F90 text17 CODE >227:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F91 text17 CODE >228:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F92 text17 CODE >229:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F93 text17 CODE >230:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F94 text17 CODE >231:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-37F text16 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-37F text16 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-382 text16 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-386 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-391 text16 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-393 text16 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-393 text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-397 text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3A2 text16 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3A6 text16 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3AE text16 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3B6 text16 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3B8 text16 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3B9 text16 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3C2 text16 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3C6 text16 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3CA text16 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3D3 text16 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3E5 text16 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3F3 text16 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3F4 text16 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-3FD text16 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-403 text16 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-408 text16 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-413 text16 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-41B text16 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
-1DD text15 CODE >6:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-1DD text15 CODE >7:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-236 text15 CODE >8:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-237 text15 CODE >9:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-238 text15 CODE >10:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-239 text15 CODE >11:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-23A text15 CODE >13:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-23D text15 CODE >14:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-23E text15 CODE >15:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-23F text15 CODE >16:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-F46 text14 CODE >31:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-F47 text14 CODE >32:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-F4D text14 CODE >33:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-F51 text14 CODE >34:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
-2A6 text13 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2A6 text13 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2A7 text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2AB text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2B0 text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2B2 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2B6 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2BB text13 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2BF text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2C1 text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2C7 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2C9 text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2CA text13 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2D1 text13 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2D5 text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2D9 text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2E0 text13 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2EA text13 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2F0 text13 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2F1 text13 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2F8 text13 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-2FE text13 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-303 text13 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-308 text13 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-30C text13 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-184 text12 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-184 text12 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-185 text12 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-189 text12 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-18E text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-190 text12 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-194 text12 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-199 text12 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-19F text12 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1A1 text12 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1A2 text12 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1A9 text12 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1AD text12 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1B1 text12 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1BB text12 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1C1 text12 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1C8 text12 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1CE text12 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1D3 text12 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1D8 text12 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-1DC text12 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-F5F text11 CODE >19:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F5F text11 CODE >20:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F62 text11 CODE >21:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F6A text11 CODE >22:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F6D text11 CODE >24:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-4E text10 CODE >25:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-4E text10 CODE >26:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-52 text10 CODE >27:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-56 text10 CODE >28:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-57 text10 CODE >29:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-58 text10 CODE >30:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-59 text10 CODE >31:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-61 text10 CODE >32:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-64 text10 CODE >33:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-6A text10 CODE >34:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-6B text10 CODE >35:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-73 text10 CODE >36:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-76 text10 CODE >41:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F6E text9 CODE >10:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F6F text9 CODE >11:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F74 text9 CODE >12:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F78 text9 CODE >13:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F79 text9 CODE >14:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F7A text9 CODE >15:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F7F text9 CODE >17:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F95 text8 CODE >58:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F95 text8 CODE >59:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-F9B text8 CODE >60:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FA1 text8 CODE >61:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FA7 text8 CODE >62:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FAD text8 CODE >63:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FB3 text8 CODE >65:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-140 text7 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-140 text7 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-142 text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-148 text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-14A text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-14B text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-152 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-156 text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-15A text7 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-161 text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-16B text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-171 text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-172 text7 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-179 text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-17F text7 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-183 text7 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-106 text6 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-106 text6 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-10C text6 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-10E text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-10F text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-116 text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-11A text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-11E text6 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-128 text6 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-12E text6 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-135 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-13B text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-13F text6 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-30D text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-310 text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-314 text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-327 text5 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-32B text5 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-331 text5 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-337 text5 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-34A text5 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-35B text5 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-363 text5 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-367 text5 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-36B text5 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-374 text5 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-37A text5 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-37E text5 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+7E4 cinit CODE >1111:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7E4 cinit CODE >1114:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7E4 cinit CODE >1278:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7E5 cinit CODE >1279:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7E6 cinit CODE >1280:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7E7 cinit CODE >1281:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7E8 cinit CODE >1282:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7ED cinit CODE >1285:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7EE cinit CODE >1286:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7EF cinit CODE >1287:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7F0 cinit CODE >1288:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7F5 cinit CODE >1291:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7F6 cinit CODE >1292:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7F7 cinit CODE >1293:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7F8 cinit CODE >1294:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7F9 cinit CODE >1295:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7FA cinit CODE >1296:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7FB cinit CODE >1297:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7FC cinit CODE >1303:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7FC cinit CODE >1305:C:\Users\50254\AppData\Local\Temp\sbf8.s
+7FD cinit CODE >1306:C:\Users\50254\AppData\Local\Temp\sbf8.s
+233 text24 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+233 text24 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+23B text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+243 text24 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+245 text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+246 text24 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+24F text24 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+253 text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+257 text24 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+260 text24 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+272 text24 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+280 text24 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+281 text24 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+28A text24 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+290 text24 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+298 text24 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+C1 text23 CODE >5:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+C1 text23 CODE >6:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+C5 text23 CODE >7:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+C8 text23 CODE >8:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F5 text23 CODE >9:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F6 text23 CODE >10:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F7 text23 CODE >11:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F8 text23 CODE >13:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F40 text22 CODE >15:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F40 text22 CODE >16:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F4C text22 CODE >17:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+93 text21 CODE >52:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+93 text21 CODE >54:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+98 text21 CODE >55:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+9B text21 CODE >56:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+A0 text21 CODE >57:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+A9 text21 CODE >58:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+AE text21 CODE >59:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+B4 text21 CODE >60:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+B7 text21 CODE >61:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+B8 text21 CODE >62:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+B8 text21 CODE >63:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+BB text21 CODE >64:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+BB text21 CODE >65:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+BC text21 CODE >66:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+C0 text21 CODE >67:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F18 text20 CODE >21:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F18 text20 CODE >22:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F1D text20 CODE >23:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F20 text20 CODE >24:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F21 text19 CODE >35:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F21 text19 CODE >36:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F26 text19 CODE >37:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F29 text19 CODE >38:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F2A text18 CODE >44:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F2A text18 CODE >45:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F2F text18 CODE >46:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F33 text18 CODE >47:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\I2C.c
+F80 text17 CODE >222:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F80 text17 CODE >223:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F84 text17 CODE >224:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F85 text17 CODE >225:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F87 text17 CODE >226:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F88 text17 CODE >227:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F89 text17 CODE >228:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F8C text17 CODE >229:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F8D text17 CODE >230:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F90 text17 CODE >231:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F91 text17 CODE >232:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F92 text17 CODE >233:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F93 text17 CODE >234:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F94 text17 CODE >235:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+372 text16 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+372 text16 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+375 text16 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+379 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+384 text16 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+386 text16 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+386 text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+38A text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+395 text16 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+399 text16 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3A1 text16 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3A9 text16 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3AB text16 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3AC text16 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3B5 text16 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3B9 text16 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3BD text16 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3C6 text16 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3D8 text16 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3E6 text16 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3E7 text16 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3F0 text16 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3F6 text16 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+3FB text16 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+406 text16 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+40E text16 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\aldiv.c
+1D0 text15 CODE >6:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+1D0 text15 CODE >7:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+229 text15 CODE >8:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+22A text15 CODE >9:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+22B text15 CODE >10:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+22C text15 CODE >11:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+22D text15 CODE >13:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+230 text15 CODE >14:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+231 text15 CODE >15:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+232 text15 CODE >16:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+F34 text14 CODE >31:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+F35 text14 CODE >32:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+F3B text14 CODE >33:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+F3F text14 CODE >34:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\UART.c
+299 text13 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+299 text13 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+29A text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+29E text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2A3 text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2A5 text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2A9 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2AE text13 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2B2 text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2B4 text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2BA text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2BC text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2BD text13 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2C4 text13 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2C8 text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2CC text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2D3 text13 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2DD text13 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2E3 text13 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2E4 text13 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2EB text13 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2F1 text13 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2F6 text13 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2FB text13 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+2FF text13 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+177 text12 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+177 text12 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+178 text12 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+17C text12 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+181 text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+183 text12 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+187 text12 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+18C text12 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+192 text12 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+194 text12 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+195 text12 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+19C text12 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1A0 text12 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1A4 text12 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1AE text12 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1B4 text12 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1BB text12 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1C1 text12 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1C6 text12 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1CB text12 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+1CF text12 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+F4D text11 CODE >19:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F4D text11 CODE >20:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F50 text11 CODE >21:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F58 text11 CODE >22:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F5B text11 CODE >24:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+41 text10 CODE >25:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+41 text10 CODE >26:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+45 text10 CODE >27:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+49 text10 CODE >28:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+4A text10 CODE >29:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+4B text10 CODE >30:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+4C text10 CODE >31:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+54 text10 CODE >32:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+57 text10 CODE >33:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+5D text10 CODE >34:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+5E text10 CODE >35:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+66 text10 CODE >36:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+69 text10 CODE >41:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F5C text9 CODE >10:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F5D text9 CODE >11:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F62 text9 CODE >12:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F66 text9 CODE >13:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F67 text9 CODE >14:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F68 text9 CODE >15:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F6D text9 CODE >17:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F95 text8 CODE >58:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F95 text8 CODE >59:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F9B text8 CODE >60:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FA1 text8 CODE >61:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FA7 text8 CODE >62:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FAD text8 CODE >63:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FB3 text8 CODE >65:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+133 text7 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+133 text7 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+135 text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+13B text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+13D text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+13E text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+145 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+149 text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+14D text7 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+154 text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+15E text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+164 text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+165 text7 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+16C text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+172 text7 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+176 text7 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+F9 text6 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+F9 text6 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+FF text6 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+101 text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+102 text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+109 text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+10D text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+111 text6 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+11B text6 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+121 text6 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+128 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+12E text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+132 text6 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+300 text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+303 text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+307 text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+31A text5 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+31E text5 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+324 text5 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+32A text5 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+33D text5 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+34E text5 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+356 text5 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+35A text5 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+35E text5 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+367 text5 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+36D text5 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
+371 text5 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
 FB4 text4 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
 FB7 text4 CODE >6:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
 FB7 text4 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
@@ -351,128 +356,128 @@ FBB text4 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\com
 FC6 text4 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
 FCB text4 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
 FD9 text4 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\itoa.c
-3C text3 CODE >43:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-3D text3 CODE >44:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-42 text3 CODE >45:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-46 text3 CODE >46:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-47 text3 CODE >47:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-48 text3 CODE >48:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-4D text3 CODE >50:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FDA text2 CODE >52:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FDA text2 CODE >53:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FDB text2 CODE >54:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FEF text2 CODE >53:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-FFF text2 CODE >56:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
-77 text1 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-78 text1 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-7C text1 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-7D text1 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-81 text1 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-8A text1 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-8E text1 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-92 text1 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-9F text1 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
-41C maintext CODE >95:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-41C maintext CODE >96:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-421 maintext CODE >97:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-430 maintext CODE >98:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-435 maintext CODE >99:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-444 maintext CODE >101:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-444 maintext CODE >103:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-449 maintext CODE >104:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-452 maintext CODE >105:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-460 maintext CODE >106:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-465 maintext CODE >107:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-474 maintext CODE >110:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-48C maintext CODE >111:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-49A maintext CODE >112:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4B2 maintext CODE >113:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4C0 maintext CODE >114:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4CC maintext CODE >117:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4D1 maintext CODE >118:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4DA maintext CODE >119:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4E8 maintext CODE >120:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4ED maintext CODE >121:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-4FC maintext CODE >122:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-504 maintext CODE >125:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-51C maintext CODE >126:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-52A maintext CODE >127:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-542 maintext CODE >128:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-550 maintext CODE >129:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-55C maintext CODE >132:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-561 maintext CODE >133:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-56A maintext CODE >134:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-578 maintext CODE >135:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-57D maintext CODE >136:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-58C maintext CODE >137:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-594 maintext CODE >140:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5AC maintext CODE >141:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5BA maintext CODE >142:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5D2 maintext CODE >143:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5E0 maintext CODE >146:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5E5 maintext CODE >147:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5EE maintext CODE >148:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-5FC maintext CODE >149:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-601 maintext CODE >150:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-610 maintext CODE >151:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-618 maintext CODE >154:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-630 maintext CODE >155:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-63E maintext CODE >156:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-656 maintext CODE >157:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-664 maintext CODE >158:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-670 maintext CODE >161:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-675 maintext CODE >162:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-67E maintext CODE >163:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-68C maintext CODE >164:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-691 maintext CODE >165:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6A0 maintext CODE >166:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6A8 maintext CODE >169:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6C0 maintext CODE >170:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6CE maintext CODE >171:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6E6 maintext CODE >172:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6F4 maintext CODE >176:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6FA maintext CODE >177:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-6FF maintext CODE >178:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-705 maintext CODE >179:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-708 maintext CODE >181:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-70E maintext CODE >182:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-717 maintext CODE >183:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-71D maintext CODE >184:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-726 maintext CODE >185:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-72F maintext CODE >186:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-738 maintext CODE >187:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-741 maintext CODE >188:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-74A maintext CODE >189:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-753 maintext CODE >190:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-75C maintext CODE >194:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-762 maintext CODE >195:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-767 maintext CODE >196:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-76D maintext CODE >197:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-771 maintext CODE >198:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-771 maintext CODE >199:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-777 maintext CODE >200:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-780 maintext CODE >201:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-786 maintext CODE >202:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-78F maintext CODE >203:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-798 maintext CODE >204:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7A1 maintext CODE >205:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7AA maintext CODE >206:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7B3 maintext CODE >209:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7B9 maintext CODE >210:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7BF maintext CODE >211:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7C5 maintext CODE >212:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7CB maintext CODE >213:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-7D1 maintext CODE >214:C:\Users\juan\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
-F22 clrtext CODE >1265:C:\Users\juan\AppData\Local\Temp\si74.s
-F22 clrtext CODE >1266:C:\Users\juan\AppData\Local\Temp\si74.s
-F23 clrtext CODE >1267:C:\Users\juan\AppData\Local\Temp\si74.s
-F23 clrtext CODE >1268:C:\Users\juan\AppData\Local\Temp\si74.s
-F24 clrtext CODE >1269:C:\Users\juan\AppData\Local\Temp\si74.s
-F25 clrtext CODE >1270:C:\Users\juan\AppData\Local\Temp\si74.s
-F26 clrtext CODE >1271:C:\Users\juan\AppData\Local\Temp\si74.s
-F27 clrtext CODE >1272:C:\Users\juan\AppData\Local\Temp\si74.s
-F28 clrtext CODE >1273:C:\Users\juan\AppData\Local\Temp\si74.s
-F29 clrtext CODE >1274:C:\Users\juan\AppData\Local\Temp\si74.s
+F6E text3 CODE >43:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F6F text3 CODE >44:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F74 text3 CODE >45:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F78 text3 CODE >46:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F79 text3 CODE >47:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F7A text3 CODE >48:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+F7F text3 CODE >50:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FDA text2 CODE >52:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FDA text2 CODE >53:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FDB text2 CODE >54:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FEF text2 CODE >53:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+FFF text2 CODE >56:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\PANTALLALCD.c
+6A text1 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+6B text1 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+6F text1 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+70 text1 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+74 text1 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+7D text1 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+81 text1 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+85 text1 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+92 text1 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\strcat.c
+40F maintext CODE >95:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+40F maintext CODE >96:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+414 maintext CODE >97:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+423 maintext CODE >98:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+428 maintext CODE >99:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+437 maintext CODE >101:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+437 maintext CODE >103:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+43C maintext CODE >104:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+445 maintext CODE >105:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+453 maintext CODE >106:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+458 maintext CODE >107:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+467 maintext CODE >110:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+47F maintext CODE >111:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+48D maintext CODE >112:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4A5 maintext CODE >113:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4B3 maintext CODE >114:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4BF maintext CODE >117:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4C4 maintext CODE >118:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4CD maintext CODE >119:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4DB maintext CODE >120:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4E0 maintext CODE >121:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+4EF maintext CODE >125:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+507 maintext CODE >126:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+515 maintext CODE >127:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+52D maintext CODE >128:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+53B maintext CODE >129:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+547 maintext CODE >132:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+54C maintext CODE >133:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+555 maintext CODE >134:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+563 maintext CODE >135:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+568 maintext CODE >136:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+577 maintext CODE >140:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+58F maintext CODE >141:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+59D maintext CODE >142:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5B5 maintext CODE >143:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5C3 maintext CODE >146:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5C8 maintext CODE >147:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5D1 maintext CODE >148:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5DF maintext CODE >149:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5E4 maintext CODE >150:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+5F3 maintext CODE >154:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+60B maintext CODE >155:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+619 maintext CODE >156:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+631 maintext CODE >157:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+63F maintext CODE >158:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+64B maintext CODE >161:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+650 maintext CODE >162:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+659 maintext CODE >163:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+667 maintext CODE >164:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+66C maintext CODE >165:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+67B maintext CODE >169:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+693 maintext CODE >170:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6A1 maintext CODE >171:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6B9 maintext CODE >172:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6C7 maintext CODE >176:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6CD maintext CODE >177:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6D2 maintext CODE >178:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6D8 maintext CODE >179:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6DB maintext CODE >181:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6E1 maintext CODE >182:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6EA maintext CODE >183:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6F0 maintext CODE >184:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+6F9 maintext CODE >185:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+702 maintext CODE >186:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+70B maintext CODE >187:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+714 maintext CODE >188:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+71D maintext CODE >189:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+726 maintext CODE >190:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+72F maintext CODE >194:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+735 maintext CODE >195:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+73A maintext CODE >196:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+740 maintext CODE >197:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+744 maintext CODE >198:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+744 maintext CODE >199:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+74A maintext CODE >200:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+753 maintext CODE >201:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+759 maintext CODE >202:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+762 maintext CODE >203:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+76B maintext CODE >204:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+774 maintext CODE >205:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+77D maintext CODE >206:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+786 maintext CODE >209:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+78E maintext CODE >210:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+798 maintext CODE >211:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7A0 maintext CODE >212:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7AA maintext CODE >213:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7B2 maintext CODE >214:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7BC maintext CODE >215:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7C4 maintext CODE >216:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7CE maintext CODE >217:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+7D6 maintext CODE >218:C:\Users\50254\Documents\GitHub\Proyecto1_Digital2\MASTERR_I2C.X\MASTERR_I2C.c
+F10 clrtext CODE >1265:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F10 clrtext CODE >1266:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F11 clrtext CODE >1267:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F11 clrtext CODE >1268:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F12 clrtext CODE >1269:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F13 clrtext CODE >1270:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F14 clrtext CODE >1271:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F15 clrtext CODE >1272:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F16 clrtext CODE >1273:C:\Users\50254\AppData\Local\Temp\sbf8.s
+F17 clrtext CODE >1274:C:\Users\50254\AppData\Local\Temp\sbf8.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -503,14 +508,14 @@ __Hstrings 0 0 ABS 0 strings -
 itoa@base 5A 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 _RCEN 48B 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\si74.o
+___sp 0 0 STACK 2 stack C:\Users\50254\AppData\Local\Temp\sbf8.o
 _decT 40 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
 _itoa 1F68 0 CODE 0 text4 dist/default/production\MASTERR_I2C.X.production.o
-_main 838 0 CODE 0 maintext dist/default/production\MASTERR_I2C.X.production.o
+_main 81E 0 CODE 0 maintext dist/default/production\MASTERR_I2C.X.production.o
 _uniT 42 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
-_utoa 61A 0 CODE 0 text5 dist/default/production\MASTERR_I2C.X.production.o
+_utoa 600 0 CODE 0 text5 dist/default/production\MASTERR_I2C.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-start 0 0 CODE 0 init C:\Users\juan\AppData\Local\Temp\si74.o
+start 0 0 CODE 0 init C:\Users\50254\AppData\Local\Temp\sbf8.o
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
@@ -525,47 +530,47 @@ __size_of_I2C_INIT 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.
 __Hpowerup 0 0 CODE 0 powerup -
 ___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-__end_of_lcd_ready EE 0 CODE 0 text10 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_lcd_ready D4 0 CODE 0 text10 dist/default/production\MASTERR_I2C.X.production.o
 utoa@c 56 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 utoa@v 54 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\si74.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\si74.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\si74.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\si74.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\si74.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juan\AppData\Local\Temp\si74.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\50254\AppData\Local\Temp\sbf8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\50254\AppData\Local\Temp\sbf8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\50254\AppData\Local\Temp\sbf8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\50254\AppData\Local\Temp\sbf8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\50254\AppData\Local\Temp\sbf8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\50254\AppData\Local\Temp\sbf8.o
 __size_of_lcd_ready 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 strcat@from 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 ___aldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_UART_WRITE 1E8C 0 CODE 0 text14 dist/default/production\MASTERR_I2C.X.production.o
+_UART_WRITE 1E68 0 CODE 0 text14 dist/default/production\MASTERR_I2C.X.production.o
 I2C_Master_Read@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 ___aldiv@sign 55 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 ___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-_lcd_ready 9C 0 CODE 0 text10 dist/default/production\MASTERR_I2C.X.production.o
+_lcd_ready 82 0 CODE 0 text10 dist/default/production\MASTERR_I2C.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-__end_of_lcd_cmd 1F00 0 CODE 0 text9 dist/default/production\MASTERR_I2C.X.production.o
-__end_of_lcd_dwr 9C 0 CODE 0 text3 dist/default/production\MASTERR_I2C.X.production.o
-__end_of_lcd_lat 1EDC 0 CODE 0 text11 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_lcd_cmd 1EDC 0 CODE 0 text9 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_lcd_dwr 1F00 0 CODE 0 text3 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_lcd_lat 1EB8 0 CODE 0 text11 dist/default/production\MASTERR_I2C.X.production.o
 __end_of_lcd_msg 2000 0 CODE 0 text2 dist/default/production\MASTERR_I2C.X.production.o
 I2C_INIT@c 54 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 ___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-_I2C_INIT 19C 0 CODE 0 text23 dist/default/production\MASTERR_I2C.X.production.o
+_I2C_INIT 182 0 CODE 0 text23 dist/default/production\MASTERR_I2C.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_I2C_INIT 20C 0 CODE 0 text23 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_I2C_INIT 1F2 0 CODE 0 text23 dist/default/production\MASTERR_I2C.X.production.o
 ___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 ___lwmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-__end_of___aldiv 838 0 CODE 0 text16 dist/default/production\MASTERR_I2C.X.production.o
-__end_of___awdiv 61A 0 CODE 0 text13 dist/default/production\MASTERR_I2C.X.production.o
-__end_of___awmod 3BA 0 CODE 0 text12 dist/default/production\MASTERR_I2C.X.production.o
-__end_of___lldiv 54C 0 CODE 0 text24 dist/default/production\MASTERR_I2C.X.production.o
-__end_of___lwdiv 308 0 CODE 0 text7 dist/default/production\MASTERR_I2C.X.production.o
-__end_of___lwmod 280 0 CODE 0 text6 dist/default/production\MASTERR_I2C.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\si74.o
-___stacklo 0 0 ABS 0 - C:\Users\juan\AppData\Local\Temp\si74.o
-__end_of_UART_WRITE 1EA4 0 CODE 0 text14 dist/default/production\MASTERR_I2C.X.production.o
+__end_of___aldiv 81E 0 CODE 0 text16 dist/default/production\MASTERR_I2C.X.production.o
+__end_of___awdiv 600 0 CODE 0 text13 dist/default/production\MASTERR_I2C.X.production.o
+__end_of___awmod 3A0 0 CODE 0 text12 dist/default/production\MASTERR_I2C.X.production.o
+__end_of___lldiv 532 0 CODE 0 text24 dist/default/production\MASTERR_I2C.X.production.o
+__end_of___lwdiv 2EE 0 CODE 0 text7 dist/default/production\MASTERR_I2C.X.production.o
+__end_of___lwmod 266 0 CODE 0 text6 dist/default/production\MASTERR_I2C.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\50254\AppData\Local\Temp\sbf8.o
+___stacklo 0 0 ABS 0 - C:\Users\50254\AppData\Local\Temp\sbf8.o
+__end_of_UART_WRITE 1E80 0 CODE 0 text14 dist/default/production\MASTERR_I2C.X.production.o
 __size_of_SETUP 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 _CONTD_CHAR DA 0 BANK1 1 bssBANK1 dist/default/production\MASTERR_I2C.X.production.o
@@ -580,7 +585,7 @@ start_initialization FC8 0 CODE 0 cinit dist/default/production\MASTERR_I2C.X.pr
 _TRISCbits 87 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 ___aldiv@quotient 56 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 ___lldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-clear_ram0 1E44 0 CODE 0 clrtext dist/default/production\MASTERR_I2C.X.production.o
+clear_ram0 1E20 0 CODE 0 clrtext dist/default/production\MASTERR_I2C.X.production.o
 _SONICO 4B 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
 __pcstackBANK0 54 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
@@ -590,13 +595,13 @@ _TRISC3 43B 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 utoa@buf 57 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 utoa@val 78 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juan\AppData\Local\Temp\si74.o
+___int_sp 0 0 STACK 2 stack C:\Users\50254\AppData\Local\Temp\sbf8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 1000 0 CODE 0 cinit -
-__end_of_strcat 140 0 CODE 0 text1 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_strcat 126 0 CODE 0 text1 dist/default/production\MASTERR_I2C.X.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __stringbase 24 0 STRING 0 strings dist/default/production\MASTERR_I2C.X.production.o
@@ -651,19 +656,19 @@ _CONTADOR 4D 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production
 _CONTLUZA 46 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
 _CONTLUZB 44 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
 utoa@base 7A 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-_I2C_Master_Start 1E54 0 CODE 0 text20 dist/default/production\MASTERR_I2C.X.production.o
-_I2C_Master_Write 1E78 0 CODE 0 text18 dist/default/production\MASTERR_I2C.X.production.o
+_I2C_Master_Start 1E30 0 CODE 0 text20 dist/default/production\MASTERR_I2C.X.production.o
+_I2C_Master_Write 1E54 0 CODE 0 text18 dist/default/production\MASTERR_I2C.X.production.o
 strcat@cp 73 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 strcat@to 72 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 __end_of_inicializacion 1F68 0 CODE 0 text8 dist/default/production\MASTERR_I2C.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 __stringtab 6 0 STRING 0 strings dist/default/production\MASTERR_I2C.X.production.o
-_lcd_cmd 1EDC 0 CODE 0 text9 dist/default/production\MASTERR_I2C.X.production.o
-_lcd_dwr 78 0 CODE 0 text3 dist/default/production\MASTERR_I2C.X.production.o
-_lcd_lat 1EBE 0 CODE 0 text11 dist/default/production\MASTERR_I2C.X.production.o
+_lcd_cmd 1EB8 0 CODE 0 text9 dist/default/production\MASTERR_I2C.X.production.o
+_lcd_dwr 1EDC 0 CODE 0 text3 dist/default/production\MASTERR_I2C.X.production.o
+_lcd_lat 1E9A 0 CODE 0 text11 dist/default/production\MASTERR_I2C.X.production.o
 _lcd_msg 1FB4 0 CODE 0 text2 dist/default/production\MASTERR_I2C.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juan\AppData\Local\Temp\si74.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\50254\AppData\Local\Temp\sbf8.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK3 0 0 ABS 0 bssBANK3 -
@@ -673,47 +678,47 @@ _CONTLUZB_CHAR E9 0 BANK1 1 bssBANK1 dist/default/production\MASTERR_I2C.X.produ
 ___awmod@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __size_of_UART_WRITE 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-__ptext10 9C 0 CODE 0 text10 dist/default/production\MASTERR_I2C.X.production.o
-__ptext11 1EBE 0 CODE 0 text11 dist/default/production\MASTERR_I2C.X.production.o
-__ptext12 308 0 CODE 0 text12 dist/default/production\MASTERR_I2C.X.production.o
-__ptext13 54C 0 CODE 0 text13 dist/default/production\MASTERR_I2C.X.production.o
-__ptext14 1E8C 0 CODE 0 text14 dist/default/production\MASTERR_I2C.X.production.o
-__ptext15 3BA 0 CODE 0 text15 dist/default/production\MASTERR_I2C.X.production.o
-__ptext16 6FE 0 CODE 0 text16 dist/default/production\MASTERR_I2C.X.production.o
+__ptext10 82 0 CODE 0 text10 dist/default/production\MASTERR_I2C.X.production.o
+__ptext11 1E9A 0 CODE 0 text11 dist/default/production\MASTERR_I2C.X.production.o
+__ptext12 2EE 0 CODE 0 text12 dist/default/production\MASTERR_I2C.X.production.o
+__ptext13 532 0 CODE 0 text13 dist/default/production\MASTERR_I2C.X.production.o
+__ptext14 1E68 0 CODE 0 text14 dist/default/production\MASTERR_I2C.X.production.o
+__ptext15 3A0 0 CODE 0 text15 dist/default/production\MASTERR_I2C.X.production.o
+__ptext16 6E4 0 CODE 0 text16 dist/default/production\MASTERR_I2C.X.production.o
 __ptext17 1F00 0 CODE 0 text17 dist/default/production\MASTERR_I2C.X.production.o
-__ptext18 1E78 0 CODE 0 text18 dist/default/production\MASTERR_I2C.X.production.o
-__ptext19 1E66 0 CODE 0 text19 dist/default/production\MASTERR_I2C.X.production.o
-__ptext20 1E54 0 CODE 0 text20 dist/default/production\MASTERR_I2C.X.production.o
-__ptext21 140 0 CODE 0 text21 dist/default/production\MASTERR_I2C.X.production.o
-__ptext22 1EA4 0 CODE 0 text22 dist/default/production\MASTERR_I2C.X.production.o
-__ptext23 19C 0 CODE 0 text23 dist/default/production\MASTERR_I2C.X.production.o
-__ptext24 480 0 CODE 0 text24 dist/default/production\MASTERR_I2C.X.production.o
-___aldiv 6FE 0 CODE 0 text16 dist/default/production\MASTERR_I2C.X.production.o
-___awdiv 54C 0 CODE 0 text13 dist/default/production\MASTERR_I2C.X.production.o
-___awmod 308 0 CODE 0 text12 dist/default/production\MASTERR_I2C.X.production.o
-___lldiv 480 0 CODE 0 text24 dist/default/production\MASTERR_I2C.X.production.o
-___lwdiv 280 0 CODE 0 text7 dist/default/production\MASTERR_I2C.X.production.o
-___lwmod 20C 0 CODE 0 text6 dist/default/production\MASTERR_I2C.X.production.o
-__pmaintext 838 0 CODE 0 maintext dist/default/production\MASTERR_I2C.X.production.o
+__ptext18 1E54 0 CODE 0 text18 dist/default/production\MASTERR_I2C.X.production.o
+__ptext19 1E42 0 CODE 0 text19 dist/default/production\MASTERR_I2C.X.production.o
+__ptext20 1E30 0 CODE 0 text20 dist/default/production\MASTERR_I2C.X.production.o
+__ptext21 126 0 CODE 0 text21 dist/default/production\MASTERR_I2C.X.production.o
+__ptext22 1E80 0 CODE 0 text22 dist/default/production\MASTERR_I2C.X.production.o
+__ptext23 182 0 CODE 0 text23 dist/default/production\MASTERR_I2C.X.production.o
+__ptext24 466 0 CODE 0 text24 dist/default/production\MASTERR_I2C.X.production.o
+___aldiv 6E4 0 CODE 0 text16 dist/default/production\MASTERR_I2C.X.production.o
+___awdiv 532 0 CODE 0 text13 dist/default/production\MASTERR_I2C.X.production.o
+___awmod 2EE 0 CODE 0 text12 dist/default/production\MASTERR_I2C.X.production.o
+___lldiv 466 0 CODE 0 text24 dist/default/production\MASTERR_I2C.X.production.o
+___lwdiv 266 0 CODE 0 text7 dist/default/production\MASTERR_I2C.X.production.o
+___lwmod 1F2 0 CODE 0 text6 dist/default/production\MASTERR_I2C.X.production.o
+__pmaintext 81E 0 CODE 0 maintext dist/default/production\MASTERR_I2C.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 _ADCA_CHARA D0 0 BANK1 1 bssBANK1 dist/default/production\MASTERR_I2C.X.production.o
 ___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-_strcat EE 0 CODE 0 text1 dist/default/production\MASTERR_I2C.X.production.o
+_strcat D4 0 CODE 0 text1 dist/default/production\MASTERR_I2C.X.production.o
 ?_I2C_Master_Read 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
-__end_of_I2C_Master_Read 19C 0 CODE 0 text21 dist/default/production\MASTERR_I2C.X.production.o
-__end_of_I2C_Master_Stop 1E78 0 CODE 0 text19 dist/default/production\MASTERR_I2C.X.production.o
-__end_of_I2C_Master_Wait 1EBE 0 CODE 0 text22 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_I2C_Master_Read 182 0 CODE 0 text21 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_I2C_Master_Stop 1E54 0 CODE 0 text19 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_I2C_Master_Wait 1E9A 0 CODE 0 text22 dist/default/production\MASTERR_I2C.X.production.o
 __end_of__stringtab 26 0 STRING 0 strings dist/default/production\MASTERR_I2C.X.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-__end_of_I2C_Master_Start 1E66 0 CODE 0 text20 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_I2C_Master_Start 1E42 0 CODE 0 text20 dist/default/production\MASTERR_I2C.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__end_of_I2C_Master_Write 1E8C 0 CODE 0 text18 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_I2C_Master_Write 1E68 0 CODE 0 text18 dist/default/production\MASTERR_I2C.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __Lend_init 0 0 CODE 0 end_init -
@@ -738,29 +743,29 @@ __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __HbssBANK3 0 0 ABS 0 bssBANK3 -
 ___awmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 __size_of_strcat 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-__end_of_UART_INIT 480 0 CODE 0 text15 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_UART_INIT 466 0 CODE 0 text15 dist/default/production\MASTERR_I2C.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 __size_of_UART_INIT 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
-__ptext1 EE 0 CODE 0 text1 dist/default/production\MASTERR_I2C.X.production.o
+__ptext1 D4 0 CODE 0 text1 dist/default/production\MASTERR_I2C.X.production.o
 __ptext2 1FB4 0 CODE 0 text2 dist/default/production\MASTERR_I2C.X.production.o
-__ptext3 78 0 CODE 0 text3 dist/default/production\MASTERR_I2C.X.production.o
+__ptext3 1EDC 0 CODE 0 text3 dist/default/production\MASTERR_I2C.X.production.o
 __ptext4 1F68 0 CODE 0 text4 dist/default/production\MASTERR_I2C.X.production.o
-__ptext5 61A 0 CODE 0 text5 dist/default/production\MASTERR_I2C.X.production.o
-__ptext6 20C 0 CODE 0 text6 dist/default/production\MASTERR_I2C.X.production.o
-__ptext7 280 0 CODE 0 text7 dist/default/production\MASTERR_I2C.X.production.o
+__ptext5 600 0 CODE 0 text5 dist/default/production\MASTERR_I2C.X.production.o
+__ptext6 1F2 0 CODE 0 text6 dist/default/production\MASTERR_I2C.X.production.o
+__ptext7 266 0 CODE 0 text7 dist/default/production\MASTERR_I2C.X.production.o
 __ptext8 1F2A 0 CODE 0 text8 dist/default/production\MASTERR_I2C.X.production.o
-__ptext9 1EDC 0 CODE 0 text9 dist/default/production\MASTERR_I2C.X.production.o
+__ptext9 1EB8 0 CODE 0 text9 dist/default/production\MASTERR_I2C.X.production.o
 ___aldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 UART_WRITE@data 70 0 COMMON 1 cstackCOMMON dist/default/production\MASTERR_I2C.X.production.o
 _analogic_digital_a 4E 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
 _analogic_digital_b 4C 0 BANK0 1 bssBANK0 dist/default/production\MASTERR_I2C.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_Master_Read 140 0 CODE 0 text21 dist/default/production\MASTERR_I2C.X.production.o
-_I2C_Master_Stop 1E66 0 CODE 0 text19 dist/default/production\MASTERR_I2C.X.production.o
-_I2C_Master_Wait 1EA4 0 CODE 0 text22 dist/default/production\MASTERR_I2C.X.production.o
+_I2C_Master_Read 126 0 CODE 0 text21 dist/default/production\MASTERR_I2C.X.production.o
+_I2C_Master_Stop 1E42 0 CODE 0 text19 dist/default/production\MASTERR_I2C.X.production.o
+_I2C_Master_Wait 1E80 0 CODE 0 text22 dist/default/production\MASTERR_I2C.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-_UART_INIT 3BA 0 CODE 0 text15 dist/default/production\MASTERR_I2C.X.production.o
+_UART_INIT 3A0 0 CODE 0 text15 dist/default/production\MASTERR_I2C.X.production.o
 __CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
 _uniT_char C6 0 BANK1 1 bssBANK1 dist/default/production\MASTERR_I2C.X.production.o
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\MASTERR_I2C.X.production.o
@@ -778,7 +783,7 @@ __Hend_init 6 0 CODE 0 end_init -
 ___aldiv@counter 54 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 __end_of_itoa 1FB4 0 CODE 0 text4 dist/default/production\MASTERR_I2C.X.production.o
 __end_of_main FC8 0 CODE 0 maintext dist/default/production\MASTERR_I2C.X.production.o
-__end_of_utoa 6FE 0 CODE 0 text5 dist/default/production\MASTERR_I2C.X.production.o
+__end_of_utoa 6E4 0 CODE 0 text5 dist/default/production\MASTERR_I2C.X.production.o
 UART_INIT@baudrate 5A 0 BANK0 1 cstackBANK0 dist/default/production\MASTERR_I2C.X.production.o
 __end_of_SETUP 1F2A 0 CODE 0 text17 dist/default/production\MASTERR_I2C.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\MASTERR_I2C.X.production.o
@@ -842,38 +847,38 @@ __size_of_I2C_Master_Wait 0 0 ABS 0 - dist/default/production\MASTERR_I2C.X.prod
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7E4 FC8 1C 2
-text1 0 77 EE 29 2
+text1 0 6A D4 29 2
 text2 0 FDA 1FB4 26 2
-text3 0 3C 78 12 2
+text3 0 F6E 1EDC 12 2
 text4 0 FB4 1F68 26 2
-text5 0 30D 61A 72 2
-text6 0 106 20C 3A 2
-text7 0 140 280 44 2
+text5 0 300 600 72 2
+text6 0 F9 1F2 3A 2
+text7 0 133 266 44 2
 text8 0 F95 1F2A 1F 2
-text9 0 F6E 1EDC 12 2
-text10 0 4E 9C 29 2
-text11 0 F5F 1EBE F 2
-text12 0 184 308 59 2
-text13 0 2A6 54C 67 2
-text14 0 F46 1E8C C 2
-text15 0 1DD 3BA 63 2
-text16 0 37F 6FE 9D 2
+text9 0 F5C 1EB8 12 2
+text10 0 41 82 29 2
+text11 0 F4D 1E9A F 2
+text12 0 177 2EE 59 2
+text13 0 299 532 67 2
+text14 0 F34 1E68 C 2
+text15 0 1D0 3A0 63 2
+text16 0 372 6E4 9D 2
 text17 0 F80 1F00 15 2
-text18 0 F3C 1E78 A 2
-text19 0 F33 1E66 9 2
-text20 0 F2A 1E54 9 2
-text21 0 A0 140 2E 2
-text22 0 F52 1EA4 D 2
-text23 0 CE 19C 38 2
-text24 0 240 480 66 2
-maintext 0 41C 838 3C8 2
+text18 0 F2A 1E54 A 2
+text19 0 F21 1E42 9 2
+text20 0 F18 1E30 9 2
+text21 0 93 126 2E 2
+text22 0 F40 1E80 D 2
+text23 0 C1 182 38 2
+text24 0 233 466 66 2
+maintext 0 40F 81E 3D5 2
 cstackCOMMON 1 70 70 E 1
 reset_vec 0 0 0 3 2
 bssBANK0 1 20 20 4D 1
 bssBANK1 1 A0 A0 4E 1
 bssBANK3 1 190 190 5 1
 strings 0 3 6 39 2
-clrtext 0 F22 1E44 8 2
+clrtext 0 F10 1E20 8 2
 config 0 2007 400E 2 2
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section

@@ -34,9 +34,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\string.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\string.h: 36: extern char * strcat(char *, const char *);
 [v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
-"51 ./UART.h
-[; ;./UART.h: 51: void UART_WRITE(char data);
-[v _UART_WRITE `(v ~T0 @X0 0 ef1`uc ]
 "4079 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4079: extern volatile __bit RA0 __attribute__((address(0x28)));
 [v _RA0 `Vb ~T0 @X0 0 e@40 ]
@@ -46,6 +43,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;./PANTALLALCD.h: 53: void lcd_msg(unsigned char *c);
 [v _lcd_msg `(v ~T0 @X0 0 ef1`*uc ]
+"51 ./UART.h
+[; ;./UART.h: 51: void UART_WRITE(char data);
+[v _UART_WRITE `(v ~T0 @X0 0 ef1`uc ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -546,9 +546,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "121
 [; ;MASTERR_I2C.c: 121:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"122
-[; ;MASTERR_I2C.c: 122:         UART_WRITE(T_byte1);
-[e ( _UART_WRITE (1 _T_byte1 ]
 "125
 [; ;MASTERR_I2C.c: 125:         decT = T_byte1/10;
 [e = _decT / -> _T_byte1 `i -> 10 `i ]
@@ -579,9 +576,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "136
 [; ;MASTERR_I2C.c: 136:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"137
-[; ;MASTERR_I2C.c: 137:         UART_WRITE(CONTADOR);
-[e ( _UART_WRITE (1 -> _CONTADOR `uc ]
 "140
 [; ;MASTERR_I2C.c: 140:         CONTD = CONTADOR/10;
 [e = _CONTD / -> _CONTADOR `i -> 10 `i ]
@@ -609,9 +603,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "150
 [; ;MASTERR_I2C.c: 150:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"151
-[; ;MASTERR_I2C.c: 151:         UART_WRITE(analogic_digital_a);
-[e ( _UART_WRITE (1 -> _analogic_digital_a `uc ]
 "154
 [; ;MASTERR_I2C.c: 154:          DC1 = analogic_digital_a/10;
 [e = _DC1 / -> _analogic_digital_a `i -> 10 `i ]
@@ -642,9 +633,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "165
 [; ;MASTERR_I2C.c: 165:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"166
-[; ;MASTERR_I2C.c: 166:         UART_WRITE(SONICO);
-[e ( _UART_WRITE (1 -> _SONICO `uc ]
 "169
 [; ;MASTERR_I2C.c: 169:         SONICOD = SONICO/10;
 [e = _SONICOD / -> _SONICO `i -> 10 `i ]
@@ -756,77 +744,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 149 ]
 "209
-[; ;MASTERR_I2C.c: 209:         UART_WRITE(decT_char);
-[e ( _UART_WRITE (1 -> &U _decT_char `uc ]
+[; ;MASTERR_I2C.c: 209:         UART_WRITE(T_byte1);
+[e ( _UART_WRITE (1 _T_byte1 ]
 "210
-[; ;MASTERR_I2C.c: 210:         UART_WRITE(CONTU_CHAR);
-[e ( _UART_WRITE (1 -> &U _CONTU_CHAR `uc ]
+[; ;MASTERR_I2C.c: 210:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "211
-[; ;MASTERR_I2C.c: 211:         UART_WRITE(CONTLUZA_CHAR);
-[e ( _UART_WRITE (1 -> &U _CONTLUZA_CHAR `uc ]
+[; ;MASTERR_I2C.c: 211:         UART_WRITE(CONTADOR);
+[e ( _UART_WRITE (1 -> _CONTADOR `uc ]
 "212
-[; ;MASTERR_I2C.c: 212:         UART_WRITE(ADCA_CHARA);
-[e ( _UART_WRITE (1 -> &U _ADCA_CHARA `uc ]
+[; ;MASTERR_I2C.c: 212:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "213
-[; ;MASTERR_I2C.c: 213:         UART_WRITE(SONICOU_CHAR);
-[e ( _UART_WRITE (1 -> &U _SONICOU_CHAR `uc ]
+[; ;MASTERR_I2C.c: 213:         UART_WRITE(analogic_digital_b);
+[e ( _UART_WRITE (1 -> _analogic_digital_b `uc ]
 "214
-[; ;MASTERR_I2C.c: 214:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;MASTERR_I2C.c: 214:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "215
-[; ;MASTERR_I2C.c: 215:     }
+[; ;MASTERR_I2C.c: 215:         UART_WRITE(analogic_digital_a);
+[e ( _UART_WRITE (1 -> _analogic_digital_a `uc ]
+"216
+[; ;MASTERR_I2C.c: 216:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"217
+[; ;MASTERR_I2C.c: 217:         UART_WRITE(SONICO);
+[e ( _UART_WRITE (1 -> _SONICO `uc ]
+"218
+[; ;MASTERR_I2C.c: 218:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"219
+[; ;MASTERR_I2C.c: 219:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"216
-[; ;MASTERR_I2C.c: 216: }
+"220
+[; ;MASTERR_I2C.c: 220: }
 [e :UE 143 ]
 }
-"218
-[; ;MASTERR_I2C.c: 218: void SETUP (void){
+"222
+[; ;MASTERR_I2C.c: 222: void SETUP (void){
 [v _SETUP `(v ~T0 @X0 1 ef ]
 {
 [e :U _SETUP ]
 [f ]
-"219
-[; ;MASTERR_I2C.c: 219:      TRISA=0b00000001;
-[e = _TRISA -> -> 1 `i `uc ]
-"220
-[; ;MASTERR_I2C.c: 220:     TRISB=0;
-[e = _TRISB -> -> 0 `i `uc ]
-"221
-[; ;MASTERR_I2C.c: 221:     TRISC=0b000011000;
-[e = _TRISC -> -> 24 `i `uc ]
-"222
-[; ;MASTERR_I2C.c: 222:     TRISD=0;
-[e = _TRISD -> -> 0 `i `uc ]
 "223
-[; ;MASTERR_I2C.c: 223:     TRISE=0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 223:      TRISA=0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
 "224
-[; ;MASTERR_I2C.c: 224:     ANSEL = 0b00000000;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 224:     TRISB=0;
+[e = _TRISB -> -> 0 `i `uc ]
 "225
-[; ;MASTERR_I2C.c: 225:     ANSELH =0b00000000;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 225:     TRISC=0b000011000;
+[e = _TRISC -> -> 24 `i `uc ]
 "226
-[; ;MASTERR_I2C.c: 226:     PORTA=0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 226:     TRISD=0;
+[e = _TRISD -> -> 0 `i `uc ]
 "227
-[; ;MASTERR_I2C.c: 227:     PORTB=0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 227:     TRISE=0;
+[e = _TRISE -> -> 0 `i `uc ]
 "228
-[; ;MASTERR_I2C.c: 228:     PORTC=0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 228:     ANSEL = 0b00000000;
+[e = _ANSEL -> -> 0 `i `uc ]
 "229
-[; ;MASTERR_I2C.c: 229:     PORTD=0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 229:     ANSELH =0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
 "230
-[; ;MASTERR_I2C.c: 230:     PORTE=0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;MASTERR_I2C.c: 230:     PORTA=0;
+[e = _PORTA -> -> 0 `i `uc ]
 "231
-[; ;MASTERR_I2C.c: 231: }
+[; ;MASTERR_I2C.c: 231:     PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
+"232
+[; ;MASTERR_I2C.c: 232:     PORTC=0;
+[e = _PORTC -> -> 0 `i `uc ]
+"233
+[; ;MASTERR_I2C.c: 233:     PORTD=0;
+[e = _PORTD -> -> 0 `i `uc ]
+"234
+[; ;MASTERR_I2C.c: 234:     PORTE=0;
+[e = _PORTE -> -> 0 `i `uc ]
+"235
+[; ;MASTERR_I2C.c: 235: }
 [e :UE 151 ]
 }
 [a 1C 84 69 77 80 32 67 65 82 82 79 83 32 76 85 90 32 0 ]
