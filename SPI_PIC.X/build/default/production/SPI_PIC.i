@@ -2725,26 +2725,31 @@ void __attribute__((picinterrupt(("")))) ISR(void){
         RASPBERRY = spiRead();
 
         if(RASPBERRY == 0){
+            spiWrite(Temp);
           SSPSTATbits.BF= 0;
           PIR1bits.SSPIF = 0;
           return;
         }
         if(RASPBERRY == 1){
+            spiWrite(Parq);
             SSPSTATbits.BF= 0;
           PIR1bits.SSPIF = 0;
           return;
         }
         if(RASPBERRY == 2){
+            spiWrite(Luz);
             SSPSTATbits.BF= 0;
           PIR1bits.SSPIF = 0;
           return;
         }
         if(RASPBERRY == 3){
+            spiWrite(Presion);
             SSPSTATbits.BF= 0;
           PIR1bits.SSPIF = 0;
           return;
         }
         if(RASPBERRY == 4){
+            spiWrite(ULTRA);
            SSPSTATbits.BF= 0;
           PIR1bits.SSPIF = 0;
           return;
@@ -2759,37 +2764,37 @@ void __attribute__((picinterrupt(("")))) ISR(void){
     }
     if(PIR1bits.RCIF == 1){
         if(S0 == 0){
-        Luz= UART_READ();
+        Temp= UART_READ();
         PIR1bits.RCIF = 0;
         S0=1;
         return;
         }
          if(S0 == 1){
-        Temp= UART_READ();
+        Parq= UART_READ();
         PIR1bits.RCIF = 0;
         S0=2;
         return;
         }
          if(S0 == 2){
-        Parq = UART_READ();
+        Luz = UART_READ();
         PIR1bits.RCIF = 0;
         S0=3;
         return;
         }
          if(S0 == 3){
-        ULTRA= UART_READ();
+        Presion= UART_READ();
         PIR1bits.RCIF = 0;
         S0=4;
         return;
         }
          if(S0 == 4){
-        Presion= UART_READ();
+        ULTRA= UART_READ();
         PIR1bits.RCIF = 0;
         S0 = 0;
         return;
         }
     }
-
+    PIR1bits.RCIF = 0;
     return;
 
 }
@@ -2800,16 +2805,16 @@ void main(void) {
     while(1){
 
 
-
-    UART_WRITE(Luz);
-    _delay((unsigned long)((1)*(8000000/4000.0)));
+    PORTB = RASPBERRY;
     UART_WRITE(Temp);
     _delay((unsigned long)((1)*(8000000/4000.0)));
     UART_WRITE(Parq);
     _delay((unsigned long)((1)*(8000000/4000.0)));
-    UART_WRITE(ULTRA);
+    UART_WRITE(Luz);
     _delay((unsigned long)((1)*(8000000/4000.0)));
     UART_WRITE(Presion);
+    _delay((unsigned long)((1)*(8000000/4000.0)));
+    UART_WRITE(ULTRA);
     _delay((unsigned long)((1)*(8000000/4000.0)));
     }
     return;
@@ -2826,7 +2831,8 @@ void setup (void){
     PIE1bits.RCIE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
+    PIE1bits.SSPIE = 1;
     RASPBERRY = 0;
     S0=0;
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }

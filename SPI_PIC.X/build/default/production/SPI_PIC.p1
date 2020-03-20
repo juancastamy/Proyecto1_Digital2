@@ -15,6 +15,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49 ./SPI_SLAVE.h
 [; ;./SPI_SLAVE.h: 49: char spiRead();
 [v _spiRead `(uc ~T0 @X0 0 e? ]
+"47
+[; ;./SPI_SLAVE.h: 47: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
 "2183 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2183:     struct {
 [s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -62,7 +65,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48 ./UART.h
 [; ;./UART.h: 48: uint8_t UART_INIT(const long int baudrate);
 [v _UART_INIT `(uc ~T0 @X0 0 ef1`Cl ]
-"51
+"228 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"51 ./UART.h
 [; ;./UART.h: 51: void UART_WRITE(char data);
 [v _UART_WRITE `(v ~T0 @X0 0 ef1`uc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
@@ -124,8 +130,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "482
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"166 SPI_PIC.c
-[; ;SPI_PIC.c: 166:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"172 SPI_PIC.c
+[; ;SPI_PIC.c: 172:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1304 32 33 34 35 36 37 .. ]
 [n E1304 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1312 0 128 .. ]
@@ -437,323 +443,347 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RASPBERRY `i -> 0 `i 140  ]
 {
 "63
-[; ;SPI_PIC.c: 63:           SSPSTATbits.BF= 0;
-[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 63:             spiWrite(Temp);
+[e ( _spiWrite (1 _Temp ]
 "64
-[; ;SPI_PIC.c: 64:           PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 64:           SSPSTATbits.BF= 0;
+[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
 "65
-[; ;SPI_PIC.c: 65:           return;
-[e $UE 138  ]
+[; ;SPI_PIC.c: 65:           PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "66
-[; ;SPI_PIC.c: 66:         }
+[; ;SPI_PIC.c: 66:           return;
+[e $UE 138  ]
+"67
+[; ;SPI_PIC.c: 67:         }
 }
 [e :U 140 ]
-"67
-[; ;SPI_PIC.c: 67:         if(RASPBERRY == 1){
+"68
+[; ;SPI_PIC.c: 68:         if(RASPBERRY == 1){
 [e $ ! == -> _RASPBERRY `i -> 1 `i 141  ]
 {
-"68
-[; ;SPI_PIC.c: 68:             SSPSTATbits.BF= 0;
-[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
 "69
-[; ;SPI_PIC.c: 69:           PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 69:             spiWrite(Parq);
+[e ( _spiWrite (1 _Parq ]
 "70
-[; ;SPI_PIC.c: 70:           return;
-[e $UE 138  ]
+[; ;SPI_PIC.c: 70:             SSPSTATbits.BF= 0;
+[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
 "71
-[; ;SPI_PIC.c: 71:         }
+[; ;SPI_PIC.c: 71:           PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"72
+[; ;SPI_PIC.c: 72:           return;
+[e $UE 138  ]
+"73
+[; ;SPI_PIC.c: 73:         }
 }
 [e :U 141 ]
-"72
-[; ;SPI_PIC.c: 72:         if(RASPBERRY == 2){
+"74
+[; ;SPI_PIC.c: 74:         if(RASPBERRY == 2){
 [e $ ! == -> _RASPBERRY `i -> 2 `i 142  ]
 {
-"73
-[; ;SPI_PIC.c: 73:             SSPSTATbits.BF= 0;
-[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
-"74
-[; ;SPI_PIC.c: 74:           PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "75
-[; ;SPI_PIC.c: 75:           return;
-[e $UE 138  ]
+[; ;SPI_PIC.c: 75:             spiWrite(Luz);
+[e ( _spiWrite (1 _Luz ]
 "76
-[; ;SPI_PIC.c: 76:         }
+[; ;SPI_PIC.c: 76:             SSPSTATbits.BF= 0;
+[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
+"77
+[; ;SPI_PIC.c: 77:           PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"78
+[; ;SPI_PIC.c: 78:           return;
+[e $UE 138  ]
+"79
+[; ;SPI_PIC.c: 79:         }
 }
 [e :U 142 ]
-"77
-[; ;SPI_PIC.c: 77:         if(RASPBERRY == 3){
+"80
+[; ;SPI_PIC.c: 80:         if(RASPBERRY == 3){
 [e $ ! == -> _RASPBERRY `i -> 3 `i 143  ]
 {
-"78
-[; ;SPI_PIC.c: 78:             SSPSTATbits.BF= 0;
-[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
-"79
-[; ;SPI_PIC.c: 79:           PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"80
-[; ;SPI_PIC.c: 80:           return;
-[e $UE 138  ]
 "81
-[; ;SPI_PIC.c: 81:         }
+[; ;SPI_PIC.c: 81:             spiWrite(Presion);
+[e ( _spiWrite (1 _Presion ]
+"82
+[; ;SPI_PIC.c: 82:             SSPSTATbits.BF= 0;
+[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
+"83
+[; ;SPI_PIC.c: 83:           PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"84
+[; ;SPI_PIC.c: 84:           return;
+[e $UE 138  ]
+"85
+[; ;SPI_PIC.c: 85:         }
 }
 [e :U 143 ]
-"82
-[; ;SPI_PIC.c: 82:         if(RASPBERRY == 4){
+"86
+[; ;SPI_PIC.c: 86:         if(RASPBERRY == 4){
 [e $ ! == -> _RASPBERRY `i -> 4 `i 144  ]
 {
-"83
-[; ;SPI_PIC.c: 83:            SSPSTATbits.BF= 0;
-[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
-"84
-[; ;SPI_PIC.c: 84:           PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"85
-[; ;SPI_PIC.c: 85:           return;
-[e $UE 138  ]
-"86
-[; ;SPI_PIC.c: 86:         }
-}
-[e :U 144 ]
+"87
+[; ;SPI_PIC.c: 87:             spiWrite(ULTRA);
+[e ( _spiWrite (1 _ULTRA ]
 "88
-[; ;SPI_PIC.c: 88:           SSPSTATbits.BF= 0;
+[; ;SPI_PIC.c: 88:            SSPSTATbits.BF= 0;
 [e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
 "89
 [; ;SPI_PIC.c: 89:           PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"93
-[; ;SPI_PIC.c: 93:            return;
+"90
+[; ;SPI_PIC.c: 90:           return;
 [e $UE 138  ]
+"91
+[; ;SPI_PIC.c: 91:         }
+}
+[e :U 144 ]
+"93
+[; ;SPI_PIC.c: 93:           SSPSTATbits.BF= 0;
+[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
 "94
-[; ;SPI_PIC.c: 94:     }
+[; ;SPI_PIC.c: 94:           PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"98
+[; ;SPI_PIC.c: 98:            return;
+[e $UE 138  ]
+"99
+[; ;SPI_PIC.c: 99:     }
 }
 [e :U 139 ]
-"95
-[; ;SPI_PIC.c: 95:     if(PIR1bits.RCIF == 1){
+"100
+[; ;SPI_PIC.c: 100:     if(PIR1bits.RCIF == 1){
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 145  ]
 {
-"96
-[; ;SPI_PIC.c: 96:         if(S0 == 0){
+"101
+[; ;SPI_PIC.c: 101:         if(S0 == 0){
 [e $ ! == -> _S0 `i -> 0 `i 146  ]
 {
-"97
-[; ;SPI_PIC.c: 97:         Luz= UART_READ();
-[e = _Luz -> ( _UART_READ ..  `uc ]
-"98
-[; ;SPI_PIC.c: 98:         PIR1bits.RCIF = 0;
+"102
+[; ;SPI_PIC.c: 102:         Temp= UART_READ();
+[e = _Temp -> ( _UART_READ ..  `uc ]
+"103
+[; ;SPI_PIC.c: 103:         PIR1bits.RCIF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"99
-[; ;SPI_PIC.c: 99:         S0=1;
+"104
+[; ;SPI_PIC.c: 104:         S0=1;
 [e = _S0 -> -> 1 `i `uc ]
-"100
-[; ;SPI_PIC.c: 100:         return;
+"105
+[; ;SPI_PIC.c: 105:         return;
 [e $UE 138  ]
-"101
-[; ;SPI_PIC.c: 101:         }
+"106
+[; ;SPI_PIC.c: 106:         }
 }
 [e :U 146 ]
-"102
-[; ;SPI_PIC.c: 102:          if(S0 == 1){
+"107
+[; ;SPI_PIC.c: 107:          if(S0 == 1){
 [e $ ! == -> _S0 `i -> 1 `i 147  ]
 {
-"103
-[; ;SPI_PIC.c: 103:         Temp= UART_READ();
-[e = _Temp -> ( _UART_READ ..  `uc ]
-"104
-[; ;SPI_PIC.c: 104:         PIR1bits.RCIF = 0;
+"108
+[; ;SPI_PIC.c: 108:         Parq= UART_READ();
+[e = _Parq -> ( _UART_READ ..  `uc ]
+"109
+[; ;SPI_PIC.c: 109:         PIR1bits.RCIF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"105
-[; ;SPI_PIC.c: 105:         S0=2;
+"110
+[; ;SPI_PIC.c: 110:         S0=2;
 [e = _S0 -> -> 2 `i `uc ]
-"106
-[; ;SPI_PIC.c: 106:         return;
+"111
+[; ;SPI_PIC.c: 111:         return;
 [e $UE 138  ]
-"107
-[; ;SPI_PIC.c: 107:         }
+"112
+[; ;SPI_PIC.c: 112:         }
 }
 [e :U 147 ]
-"108
-[; ;SPI_PIC.c: 108:          if(S0 == 2){
+"113
+[; ;SPI_PIC.c: 113:          if(S0 == 2){
 [e $ ! == -> _S0 `i -> 2 `i 148  ]
 {
-"109
-[; ;SPI_PIC.c: 109:         Parq = UART_READ();
-[e = _Parq -> ( _UART_READ ..  `uc ]
-"110
-[; ;SPI_PIC.c: 110:         PIR1bits.RCIF = 0;
+"114
+[; ;SPI_PIC.c: 114:         Luz = UART_READ();
+[e = _Luz -> ( _UART_READ ..  `uc ]
+"115
+[; ;SPI_PIC.c: 115:         PIR1bits.RCIF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"111
-[; ;SPI_PIC.c: 111:         S0=3;
+"116
+[; ;SPI_PIC.c: 116:         S0=3;
 [e = _S0 -> -> 3 `i `uc ]
-"112
-[; ;SPI_PIC.c: 112:         return;
+"117
+[; ;SPI_PIC.c: 117:         return;
 [e $UE 138  ]
-"113
-[; ;SPI_PIC.c: 113:         }
+"118
+[; ;SPI_PIC.c: 118:         }
 }
 [e :U 148 ]
-"114
-[; ;SPI_PIC.c: 114:          if(S0 == 3){
+"119
+[; ;SPI_PIC.c: 119:          if(S0 == 3){
 [e $ ! == -> _S0 `i -> 3 `i 149  ]
 {
-"115
-[; ;SPI_PIC.c: 115:         ULTRA= UART_READ();
-[e = _ULTRA -> ( _UART_READ ..  `uc ]
-"116
-[; ;SPI_PIC.c: 116:         PIR1bits.RCIF = 0;
+"120
+[; ;SPI_PIC.c: 120:         Presion= UART_READ();
+[e = _Presion -> ( _UART_READ ..  `uc ]
+"121
+[; ;SPI_PIC.c: 121:         PIR1bits.RCIF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"117
-[; ;SPI_PIC.c: 117:         S0=4;
+"122
+[; ;SPI_PIC.c: 122:         S0=4;
 [e = _S0 -> -> 4 `i `uc ]
-"118
-[; ;SPI_PIC.c: 118:         return;
+"123
+[; ;SPI_PIC.c: 123:         return;
 [e $UE 138  ]
-"119
-[; ;SPI_PIC.c: 119:         }
+"124
+[; ;SPI_PIC.c: 124:         }
 }
 [e :U 149 ]
-"120
-[; ;SPI_PIC.c: 120:          if(S0 == 4){
+"125
+[; ;SPI_PIC.c: 125:          if(S0 == 4){
 [e $ ! == -> _S0 `i -> 4 `i 150  ]
 {
-"121
-[; ;SPI_PIC.c: 121:         Presion= UART_READ();
-[e = _Presion -> ( _UART_READ ..  `uc ]
-"122
-[; ;SPI_PIC.c: 122:         PIR1bits.RCIF = 0;
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"123
-[; ;SPI_PIC.c: 123:         S0 = 0;
-[e = _S0 -> -> 0 `i `uc ]
-"124
-[; ;SPI_PIC.c: 124:         return;
-[e $UE 138  ]
-"125
-[; ;SPI_PIC.c: 125:         }
-}
-[e :U 150 ]
 "126
-[; ;SPI_PIC.c: 126:     }
-}
-[e :U 145 ]
+[; ;SPI_PIC.c: 126:         ULTRA= UART_READ();
+[e = _ULTRA -> ( _UART_READ ..  `uc ]
+"127
+[; ;SPI_PIC.c: 127:         PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
 "128
-[; ;SPI_PIC.c: 128:     return;
+[; ;SPI_PIC.c: 128:         S0 = 0;
+[e = _S0 -> -> 0 `i `uc ]
+"129
+[; ;SPI_PIC.c: 129:         return;
 [e $UE 138  ]
 "130
-[; ;SPI_PIC.c: 130: }
+[; ;SPI_PIC.c: 130:         }
+}
+[e :U 150 ]
+"131
+[; ;SPI_PIC.c: 131:     }
+}
+[e :U 145 ]
+"132
+[; ;SPI_PIC.c: 132:     PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"133
+[; ;SPI_PIC.c: 133:     return;
+[e $UE 138  ]
+"135
+[; ;SPI_PIC.c: 135: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"131
-[; ;SPI_PIC.c: 131: void main(void) {
+"136
+[; ;SPI_PIC.c: 136: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"132
-[; ;SPI_PIC.c: 132:     setup();
+"137
+[; ;SPI_PIC.c: 137:     setup();
 [e ( _setup ..  ]
-"133
-[; ;SPI_PIC.c: 133:     initOsc(7);
+"138
+[; ;SPI_PIC.c: 138:     initOsc(7);
 [e ( _initOsc (1 -> -> 7 `i `uc ]
-"134
-[; ;SPI_PIC.c: 134:     UART_INIT(9600);
+"139
+[; ;SPI_PIC.c: 139:     UART_INIT(9600);
 [e ( _UART_INIT (1 -> -> 9600 `i `l ]
-"135
-[; ;SPI_PIC.c: 135:     while(1){
+"140
+[; ;SPI_PIC.c: 140:     while(1){
 [e :U 153 ]
 {
-"139
-[; ;SPI_PIC.c: 139:     UART_WRITE(Luz);
-[e ( _UART_WRITE (1 _Luz ]
-"140
-[; ;SPI_PIC.c: 140:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"141
-[; ;SPI_PIC.c: 141:     UART_WRITE(Temp);
-[e ( _UART_WRITE (1 _Temp ]
-"142
-[; ;SPI_PIC.c: 142:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "143
-[; ;SPI_PIC.c: 143:     UART_WRITE(Parq);
-[e ( _UART_WRITE (1 _Parq ]
+[; ;SPI_PIC.c: 143:     PORTB = RASPBERRY;
+[e = _PORTB -> _RASPBERRY `uc ]
 "144
-[; ;SPI_PIC.c: 144:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;SPI_PIC.c: 144:     UART_WRITE(Temp);
+[e ( _UART_WRITE (1 _Temp ]
 "145
-[; ;SPI_PIC.c: 145:     UART_WRITE(ULTRA);
-[e ( _UART_WRITE (1 _ULTRA ]
+[; ;SPI_PIC.c: 145:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "146
-[; ;SPI_PIC.c: 146:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;SPI_PIC.c: 146:     UART_WRITE(Parq);
+[e ( _UART_WRITE (1 _Parq ]
 "147
-[; ;SPI_PIC.c: 147:     UART_WRITE(Presion);
-[e ( _UART_WRITE (1 _Presion ]
-"148
-[; ;SPI_PIC.c: 148:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;SPI_PIC.c: 147:     _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"148
+[; ;SPI_PIC.c: 148:     UART_WRITE(Luz);
+[e ( _UART_WRITE (1 _Luz ]
 "149
-[; ;SPI_PIC.c: 149:     }
+[; ;SPI_PIC.c: 149:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"150
+[; ;SPI_PIC.c: 150:     UART_WRITE(Presion);
+[e ( _UART_WRITE (1 _Presion ]
+"151
+[; ;SPI_PIC.c: 151:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"152
+[; ;SPI_PIC.c: 152:     UART_WRITE(ULTRA);
+[e ( _UART_WRITE (1 _ULTRA ]
+"153
+[; ;SPI_PIC.c: 153:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"154
+[; ;SPI_PIC.c: 154:     }
 }
 [e :U 152 ]
 [e $U 153  ]
 [e :U 154 ]
-"150
-[; ;SPI_PIC.c: 150:     return;
+"155
+[; ;SPI_PIC.c: 155:     return;
 [e $UE 151  ]
-"151
-[; ;SPI_PIC.c: 151: }
+"156
+[; ;SPI_PIC.c: 156: }
 [e :UE 151 ]
 }
-"153
-[; ;SPI_PIC.c: 153: void setup (void){
+"158
+[; ;SPI_PIC.c: 158: void setup (void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"154
-[; ;SPI_PIC.c: 154:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
-"155
-[; ;SPI_PIC.c: 155:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"156
-[; ;SPI_PIC.c: 156:     TRISC = 0b11010000;
-[e = _TRISC -> -> 208 `i `uc ]
-"157
-[; ;SPI_PIC.c: 157:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"158
-[; ;SPI_PIC.c: 158:     TRISDbits.TRISD1 = 0;
-[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
 "159
-[; ;SPI_PIC.c: 159:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 159:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "160
-[; ;SPI_PIC.c: 160:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 160:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "161
-[; ;SPI_PIC.c: 161:     PIE1bits.RCIE = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;SPI_PIC.c: 161:     TRISC = 0b11010000;
+[e = _TRISC -> -> 208 `i `uc ]
 "162
-[; ;SPI_PIC.c: 162:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;SPI_PIC.c: 162:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "163
-[; ;SPI_PIC.c: 163:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;SPI_PIC.c: 163:     TRISDbits.TRISD1 = 0;
+[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
 "164
-[; ;SPI_PIC.c: 164:     RASPBERRY = 0;
-[e = _RASPBERRY -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 164:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "165
-[; ;SPI_PIC.c: 165:     S0=0;
-[e = _S0 -> -> 0 `i `uc ]
+[; ;SPI_PIC.c: 165:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "166
-[; ;SPI_PIC.c: 166:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1304 4 . `E1312 0 . `E1316 1 . `E1320 0 ]
+[; ;SPI_PIC.c: 166:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
 "167
-[; ;SPI_PIC.c: 167: }
+[; ;SPI_PIC.c: 167:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"168
+[; ;SPI_PIC.c: 168:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"169
+[; ;SPI_PIC.c: 169:     PIE1bits.SSPIE = 1;
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
+"170
+[; ;SPI_PIC.c: 170:     RASPBERRY = 0;
+[e = _RASPBERRY -> -> 0 `i `uc ]
+"171
+[; ;SPI_PIC.c: 171:     S0=0;
+[e = _S0 -> -> 0 `i `uc ]
+"172
+[; ;SPI_PIC.c: 172:     spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1304 5 . `E1312 0 . `E1316 1 . `E1320 0 ]
+"173
+[; ;SPI_PIC.c: 173: }
 [e :UE 155 ]
 }
