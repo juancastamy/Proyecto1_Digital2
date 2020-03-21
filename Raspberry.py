@@ -3,29 +3,14 @@ import sys
 import time
 import spidev
 from Adafruit_IO import MQTTClient
-# inicializamos SPI
-spi = spidev.SpiDev()
-#especificamos a qie slave nos vamos a comunicar
-spi.open(0,0)
-# especificamos velocidad de comunicacion
-spi.speed_max_hz = 1953000
-#Definimos el modo del SPI
-spi.mode = 0b11
-#Lee la cantidad de bytes que queremos
-try:
-    while True:
-        resp = spi.readbytes(4)
-        if (resp[0] != 255):
-            print(resp)
-            #value = 256*resp[0] + resp[1]
-            value = resp[1] + resp[2]
-            print(value)
-            byte1 = bin(resp[0])[2:].rjust(8,'0')
-            byte2 = bin(resp[1])[2:].rjust(8,'0')
-            byte3 = bin(resp[2])[2:].rjust(8,'0')
-            byte4 = bin(resp[3])[2:].rjust(8,'0')
-        time.sleep(0.1)
 
+#iniciamos el spi
+spi = spidev.SpiDev()
+#especificamos a que slave hablaremos
+spi.open(0,0)
+#velocidad de comunicacion
+spi.max_speed_hz = 7629
+spi.mode = 0b00
 
 # Set to your Adafruit IO key.
 # Remember, your key is a secret,
@@ -45,10 +30,11 @@ def connected(client):
     # calls against it easily.
     print('Connected to Adafruit IO!  Listening for DemoFeed changes...')
     # Subscribe to changes on a feed named DemoFeed.
-    client.subscribe('Presión')
-    client.subscribe('Temperatura')
-    client.subscribe('Humedad')
-    client.subscribe('Luz')
+    client.subscribe('temp')
+    client.subscribe('parq')
+    client.subscribe('LUZ')
+    client.subscribe('PRESION')
+    client.subscribe('ULTRASONICO')
 
 def disconnected(client):
     # Disconnected function will be called when the client disconnects.
@@ -83,46 +69,42 @@ client.loop_background()
 # Now send new values every 10 seconds.
 print('Publishing a new message every 10 seconds (press Ctrl-C to quit)...')
 while True:
-    value = byte1
+   # temp = random.randint(0, 100)
     #print('Publishing {0} to DemoFeed.'.format(value))
-    client.publish('Presión', value)
+    ultra = spi.xfer([0x00])
+    byte1 = bin(ultra[0])[2:].rjust(8,'0')
+    decimal1 = int (byte1, 2)
+    client.publish('ULTRASONICO', decimal1)
     time.sleep(10)
 
-    value = byte2
+    #parq = random.randint(0, 100)
     #print('Publishing {0} to DemoFeed.'.format(value))
-    client.publish('Temperatura', value)
+    temp = spi.xfer([0x01])
+    byte2 = bin(temp[0])[2:].rjust(8,'0')
+    decimal2 = int(byte2,2)
+    client.publish('temp', decimal2)
     time.sleep(10)
 
-    value = byte3
+    #luz = random.randint(0, 100)
     #print('Publishing {0} to DemoFeed.'.format(value))
-    client.publish('Humedad', value)
+    parq = spi.xfer([0x02])
+    byte3 = bin(parq[0])[2:].rjust(8,'0')
+    decimal3 = int(byte3,2)
+    client.publish('parq', decimal3)
     time.sleep(10)
 
-    value = byte4
-    #print('Publishing {0} to DemoFeed.'.format(value))
-    client.publish('Luz', value)
+    #presion = random.randint(0, 100)
+    #print('Publishing {0} to DemoFeed.'. format(value))
+    luz = spi.xfer([0x03])
+    byte4 = bin(luz[0])[2:].rjust(8,'0')
+    decimal4 = int(byte4,2)
+    client.publish('LUZ', decimal4)
     time.sleep(10)
-
-# Another option is to pump the message loop yourself by periodically calling
-# the client loop function.  Notice how the loop below changes to call loop
-# continuously while still sending a new message every 10 seconds.  This is a
-# good option if you don't want to or can't have a thread pumping the message
-# loop in the background.
-#last = 0
-#print('Publishing a new message every 10 seconds (press Ctrl-C to quit)...')
-#while True:
-#   # Explicitly pump the message loop.
-#   client.loop()
-#   # Send a new message every 10 seconds.
-#   if (time.time() - last) >= 10.0:
-#       value = random.randint(0, 100)
-#       print('Publishing {0} to DemoFeed.'.format(value))
-#       client.publish('DemoFeed', value)
-#       last = time.time()
-
-# The last option is to just call loop_blocking.  This will run a message loop
-# forever, so your program will not get past the loop_blocking call.  This is
-# good for simple programs which only listen to events.  For more complex programs
-# you probably need to have a background thread loop or explicit message loop like
-# the two previous examples above.
-#client.loop_blocking()
+    
+    #ultra = random.randint(0, 100)
+    #print('Publishing {0} to DemoFeed.'.format(value))
+    presion = spi.xfer([0x04])
+    byte5 = bin(presion[0])[2:].rjust(8,'0')
+    decimal5 = int(byte5,2)
+    client.publish('PRESION', decimal5)
+    time.sleep(10)
